@@ -1,0 +1,69 @@
+.landing-header{
+    height: 65px;
+    
+    &__block{
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        margin: 0 auto;
+
+        &-info{
+            display: flex;
+            align-items: center;
+
+            p{
+                padding-left: 140px;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+            }
+
+            .contract-info{
+                background: rgba(255, 255, 255, 0.1);
+                height: 27px;
+                color: #717275;
+                border-radius: 4px;
+                padding: 0px 8px;
+                margin-left: 22px;
+
+                span{
+                    margin-left: 10px;
+                    color: #fff;
+                }
+            }
+        }
+
+        
+
+        &-login-btns{
+            a{
+                &:nth-child(1){
+                    button{
+                        width: 93px;
+                        background-color: #313236;
+                        height: 43px;
+                        margin-right: 9px;
+
+                        &:hover{
+                            opacity: .8;
+                        }
+                    }
+                }
+
+                &:nth-child(2){
+                    button{
+                        width: 93px;
+                        background-color: #184BFF;
+                        height: 43px;
+
+                        &:hover{
+                            opacity: .8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
