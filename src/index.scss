@@ -48,4 +48,8 @@ body {
     font-size: 16px !important;
     outline: none !important;
     border: 0 !important;
+
+    &:hover{
+      opacity: .8;
+    }
   }
