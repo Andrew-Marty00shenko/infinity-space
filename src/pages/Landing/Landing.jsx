@@ -4,6 +4,7 @@ import LandingHeader from "../../components/LandingHeader/LandingHeader";
 import InfoProjectSection from "../../components/Landing/InfoProjectSection/InfoProjectSection";
 import MainSection from "../../components/Landing/MainSection/MainSection";
 import ContractAddressSection from "../../components/Landing/ContractAddressSection/ContractAddressSection";
+import SliderSection from "../../components/Landing/SliderSection/SliderSection";
 
 import "./Landing.scss";
 
@@ -16,6 +17,7 @@ const Landing = () => {
                 <MainSection />
                 <InfoProjectSection />
                 <ContractAddressSection />
+                <SliderSection />
             </>}
             />
         </Routes>

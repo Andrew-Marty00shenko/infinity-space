@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
+import "swiper/css/bundle";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
