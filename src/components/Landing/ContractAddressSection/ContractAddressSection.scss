@@ -1,0 +1,57 @@
+.contract-address-section{
+    height: 68px;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(181,91,164,1) 0%, rgba(63,63,251,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 32px;
+
+        span{
+            margin-left: 10px;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+        }
+
+        .mobile{
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .contract-address-section{
+        height: 39px;
+    }
+}
+
+@media (max-width:690px) {
+    .contract-address-section{
+        p{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+    
+            span{
+                font-size: 16px;
+                line-height: 19px;
+            }
+
+            .desktop{
+                display: none;
+            }
+
+            .mobile{
+                display: contents;
+                margin-left: 10px;
+            }
+        }
+    }
+}
