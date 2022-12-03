@@ -8,7 +8,7 @@ import SmartContractImg from "../../../assets/images/smart-contract.png";
 const InfoProjectSection = () => {
     return <section className="info-project-section">
         <h2>
-            Our project is a web 3.0 platform
+            Our project is a web 3.0 <span> platform</span>
         </h2>
         <h3>
             Our project is a web 3.0 platform that combines blockchain, cryptocurrency, and smart contracts technologies while allowing community members to make money easily and interestingly and to learn about how works the web 3.0.
