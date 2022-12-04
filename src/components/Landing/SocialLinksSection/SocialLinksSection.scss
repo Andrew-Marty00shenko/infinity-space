@@ -1,0 +1,108 @@
+.social-links-section{
+    height: 64px;
+    background: linear-gradient(90deg, rgba(181,91,164,1) 0%, rgba(63,63,251,1) 100%);
+    padding-top: 14px;
+
+    &__block{
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        div{
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 233px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            color: #fff;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+
+            &:hover{
+                opacity: .8;
+            }
+
+            svg{
+                margin-right: 13px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .social-links-section{
+        height: 175px;
+
+        &__block{
+            padding-left: 50px;
+            padding-right: 50px;
+            flex-wrap: wrap;
+
+            a{
+                &:nth-child(1),&:nth-child(2){
+                    div{
+                        width: 453px;
+                    }
+                }
+            }
+
+            div{
+                height: 67px;
+                width: 299px;
+                margin-left: 4px;
+                margin-right: 4px;
+                margin-bottom: 8px;
+    
+                &:hover{
+                    opacity: .8;
+                }
+    
+                svg{
+                    margin-right: 13px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .social-links-section{
+        height: auto;
+        padding-bottom: 15px;
+
+        &__block{
+            flex-direction: column;
+
+            div{
+                width: 100% !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 690px) {
+    .social-links-section{
+        height: auto;
+        padding-bottom: 15px;
+
+        &__block{
+            padding-left: 15px;
+            padding-right: 15px;
+
+            div{
+                width: 100% !important;
+                font-size: 14px;
+                line-height: 17px;
+
+                svg{
+                    width: 15px;
+                }
+            }
+        }
+    }
+}

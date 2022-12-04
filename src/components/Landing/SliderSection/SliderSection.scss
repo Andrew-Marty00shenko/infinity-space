@@ -1,6 +1,8 @@
 .slider-section{
     padding-top: 100px;  
     overflow: hidden;
+    padding-bottom: 173px;
+
     .desktop{
         display: flex;
         position: relative;
@@ -160,6 +162,7 @@
 
 @media (max-width: 1400px) {
     .slider-section{
+        padding-bottom: 579px;
 
         &__text{
             margin-right: 30px;
@@ -210,9 +213,15 @@
     }
 }
 
+@media (max-width:930px) {
+    .slider-section{
+        padding-bottom: 300px;
+    }
+}
+
 @media (max-width:690px) {
     .slider-section{
-        padding-bottom: 579px;
+        padding-bottom: 314px;
         padding-top: 37px;
 
         .mobile{
@@ -253,7 +262,7 @@
         }
 
         .swiper{
-            top: 124px !important;
+            top: 80px !important;
         }
 
         .swiper-slide {

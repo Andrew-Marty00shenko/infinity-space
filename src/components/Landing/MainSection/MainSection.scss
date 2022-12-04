@@ -1,8 +1,15 @@
 .main-section{
-    max-width: 1200px;
-    margin: 0 auto;
     padding-top: 108px;
     position: relative;
+    background-image: url('../../../assets/images/backgrounds/main-section-back.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: right;
+
+    &__content{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 
     &__back{
         width: 1480px;
@@ -144,6 +151,8 @@
     .main-section{
         padding-left: 56px;
         padding-right: 56px;
+        background-position: right;
+        background-image: url('../../../assets/images/backgrounds/main-section-back-tablet.png');
 
         &__stats{
             margin-top: 559px;
@@ -186,6 +195,8 @@
         padding-top: 50px;
         padding-left: 15px;
         padding-right: 15px;
+        background-position: right;
+        background-image: url('../../../assets/images/backgrounds/main-section-back-mobile.png');
 
         h1{
             font-size: 32px;

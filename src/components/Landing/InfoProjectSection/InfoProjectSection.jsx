@@ -7,33 +7,32 @@ import SmartContractImg from "../../../assets/images/smart-contract.png";
 
 const InfoProjectSection = () => {
     return <section className="info-project-section">
-        <h2>
-            Our project is a web 3.0 <span> platform</span>
-        </h2>
-        <h3>
-            Our project is a web 3.0 platform that combines blockchain, cryptocurrency, and smart contracts technologies while allowing community members to make money easily and interestingly and to learn about how works the web 3.0.
-        </h3>
-        {/* <div className="info-project-section__image">
-            <img src={BackgroundImage} alt="back" />
-        </div> */}
-        <div className="info-project-section__info">
-            <div className="info-block">
-                <img src={ChainImg} alt="chain" />
-                <p>Blockchain</p>
-                <p>Blockchain technology is an advanced database mechanism…</p>
-                <div>Learn more &#62;</div>
-            </div>
-            <div className="info-block">
-                <img src={CryptoCurrencyImg} alt="cryptocurrency" />
-                <p>Cryptocurrency</p>
-                <p>Blockchain-based digital currency that has real tangible value…</p>
-                <div>Learn more &#62;</div>
-            </div>
-            <div className="info-block">
-                <img src={SmartContractImg} alt="smart-contract" />
-                <p>Smart Contract</p>
-                <p>Smart contract is an automated algorithm…</p>
-                <div>Learn more &#62;</div>
+        <div className="info-project-section__top">
+            <h2>
+                Our project is a web 3.0 <span> platform</span>
+            </h2>
+            <h3>
+                Our project is a web 3.0 platform that combines blockchain, cryptocurrency, and smart contracts technologies while allowing community members to make money easily and interestingly and to learn about how works the web 3.0.
+            </h3>
+            <div className="info-project-section__info">
+                <div className="info-block">
+                    <img src={ChainImg} alt="chain" />
+                    <p>Blockchain</p>
+                    <p>Blockchain technology is an advanced database mechanism…</p>
+                    <div>Learn more &#62;</div>
+                </div>
+                <div className="info-block">
+                    <img src={CryptoCurrencyImg} alt="cryptocurrency" />
+                    <p>Cryptocurrency</p>
+                    <p>Blockchain-based digital currency that has real tangible value…</p>
+                    <div>Learn more &#62;</div>
+                </div>
+                <div className="info-block">
+                    <img src={SmartContractImg} alt="smart-contract" />
+                    <p>Smart Contract</p>
+                    <p>Smart contract is an automated algorithm…</p>
+                    <div>Learn more &#62;</div>
+                </div>
             </div>
         </div>
 
