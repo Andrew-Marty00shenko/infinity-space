@@ -1,10 +1,21 @@
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 import Public from "./Public";
 import Private from "./Private";
 
 const Routes = () => {
-    const isAuth = false;
+    const wallet = useSelector(state => state.user.wallet);
+    const navigate = useNavigate();
 
-    return isAuth ? <Private /> : <Public />
+    useEffect(() => {
+        if (wallet === null) {
+            navigate('/');
+        }
+    }, []);
+
+    return wallet !== null ? <Private /> : <Public />
 }
 
 export default Routes;

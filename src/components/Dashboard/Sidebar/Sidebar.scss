@@ -1,0 +1,50 @@
+.sidebar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #1A1B20;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+
+    &__menu{
+        margin: 62px 36px 0px 15px;
+
+        a{
+            li{
+                display: flex;
+                align-items: center;
+                color: #fff;
+                height: 44px;
+                width: 100%;
+                padding: 0px 15px 0px 15px;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                margin-bottom: 15px;
+
+                &:hover, &.active{
+                    background: rgba(255, 255, 255, 0.05);
+                    border-radius: 8px;
+
+                    svg{
+                        path{
+                            stroke: #AFC6FF;
+                        }
+                    }
+                }
+
+                svg{
+                    margin-right: 15px;
+                }
+            }
+
+            &:last-of-type{
+                li{
+                    background: linear-gradient(82deg, rgba(106,91,181,0.4150035014005602) 0%, rgba(165,184,255,0.1) 100%);
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}

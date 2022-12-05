@@ -1,10 +1,27 @@
 import { Modal } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
+import { connectWallet } from '../../../utils/contract/contract';
+import { login } from '../../../redux/slices/userSlice';
 
 import Metamask from "../../../assets/images/metamask.svg";
 
 import "./ModalConnectWallet.scss";
 
 const ModalConnectWallet = ({ modalShow, setModalShow }) => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate()
+
+    const handleClickConnectWallet = async () => {
+        const account = await connectWallet();
+
+        if (account) {
+            navigate('/dashboard')
+            dispatch(login(account));
+        }
+    };
+
     return <Modal
         show={modalShow}
         onHide={() => setModalShow(false)}
@@ -23,7 +40,7 @@ const ModalConnectWallet = ({ modalShow, setModalShow }) => {
         <p>
             To register/authorize, connect your metamask wallet
         </p>
-        <button>
+        <button onClick={handleClickConnectWallet}>
             Connect wallet
         </button>
     </Modal>
