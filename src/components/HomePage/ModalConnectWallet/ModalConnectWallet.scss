@@ -1,0 +1,87 @@
+.modal-backdrop{
+    background-color: rgba(26, 27, 32, 1) !important;
+    backdrop-filter: blur(4.5px);
+}
+
+.modal-connect-wallet{
+   .modal-content{
+        background-image: url('../../../assets/images/backgrounds/modal-connect-wallet-back.png') !important;
+        background-repeat: no-repeat;
+        background-size: cover !important;
+        background: #24252B;
+        box-shadow: 0px 15px 51px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 54px 45px;
+        border: 0;
+        position: relative;
+
+        svg{
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            cursor: pointer;
+
+            &:hover{
+                opacity: .8;
+            }
+        }
+
+        img{
+            width: 97px;
+            height: 84px;
+        }
+
+        h2{
+            font-family: 'Proxima Nova',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 52px;
+            color: #fff;
+            margin-top: 25px;
+        }
+
+        p{
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 32px;
+            color: #fff;
+        }
+
+        button{
+            margin-top: 16px;
+            width: 186px;
+            height: 54px;
+            background: #184BFF;
+        }
+   }
+}
+
+@media (max-width: 690px) {
+    .modal-connect-wallet{
+        .modal-content{
+            padding: 24px;
+    
+            img{
+                width: 69px;
+                height: 60px;
+            }
+    
+            h2{
+                font-size: 22px;
+                line-height: 32px;
+            }
+    
+            p{
+                font-size: 15px;
+                line-height: 24px;
+            }
+    
+            button{
+                width: 100%;
+            }
+       }
+    }
+}
