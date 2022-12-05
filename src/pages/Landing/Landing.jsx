@@ -10,7 +10,11 @@ import FaqSection from "../../components/Landing/FaqSection/FaqSection";
 import SocialLinkSection from "../../components/Landing/SocialLinksSection/SocialLinksSection";
 import LandingFooter from "../../components/LandingFooter/LandingFooter";
 
+import MainHomeSection from "../../components/HomePage/MainSection/MainHomeSection";
+import TransactionsSection from "../../components/HomePage/TransactionsSection/TransactionsSection";
+
 import "./Landing.scss";
+import SupportSection from "../../components/HomePage/SupportSection/SupportSection";
 
 const Landing = () => {
     return <div className="landing">
@@ -25,6 +29,12 @@ const Landing = () => {
                 <DashboardSection />
                 <FaqSection />
                 <SocialLinkSection />
+            </>}
+            />
+            <Route path="/home-page" element={<>
+                <MainHomeSection />
+                <TransactionsSection />
+                <SupportSection />
             </>}
             />
         </Routes>

@@ -19,7 +19,7 @@ const SliderSection = () => {
                 <h3>
                     You can read all the rules of interaction on our platform in the smart contract code yourself. And we'll tell you a few of its undeniable advantages
                 </h3>
-                <Link>
+                <Link to="/home-page">
                     <button>
                         Try now
                     </button>

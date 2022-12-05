@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "./MainSection.scss";
 
 import Image1 from "../../../assets/images/main-section/image-1.png";
@@ -32,9 +34,11 @@ const MainSection = () => {
             <h2>
                 Powerful marketing based on smart contract <br /> technology gives unlimited possibilities
             </h2>
-            <button>
-                Try now
-            </button>
+            <Link to="/home-page">
+                <button>
+                    Try now
+                </button>
+            </Link>
 
             <div className="main-section__stats">
                 <div>
