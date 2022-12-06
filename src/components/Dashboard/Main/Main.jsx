@@ -2,10 +2,56 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
+import { AreaChart, Area, ResponsiveContainer } from 'recharts';
 
 import AllTransactions from "../AllTransactions/AllTransactions";
 
 import "./Main.scss";
+
+const data = [
+    {
+        name: "Page A",
+        uv: 0,
+        pv: 0,
+        amt: 0
+    },
+    {
+        name: "Page B",
+        uv: 2000,
+        pv: 1398,
+        amt: 2210
+    },
+    {
+        name: "Page C",
+        uv: 1000,
+        pv: 9800,
+        amt: 2290
+    },
+    {
+        name: "Page D",
+        uv: 2480,
+        pv: 3908,
+        amt: 2000
+    },
+    {
+        name: "Page E",
+        uv: 1890,
+        pv: 4800,
+        amt: 2181
+    },
+    {
+        name: "Page F",
+        uv: 2390,
+        pv: 3800,
+        amt: 2500
+    },
+    {
+        name: "Page G",
+        uv: 1500,
+        pv: 4300,
+        amt: 2100
+    }
+];
 
 const Main = () => {
     const wallet = useSelector(state => state.user.wallet);
@@ -153,19 +199,37 @@ const Main = () => {
                     </Col>
                     <Col xl={3}>
                         <div className="main-info__stats-block last">
-                            <div className="stats-block__top">
-                                Profits
-                                <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77231 1.00777C6.23755 0.664075 7.76245 0.664075 9.22769 1.00777C11.3437 1.50412 12.9959 3.15631 13.4922 5.27231C13.8359 6.73755 13.8359 8.26245 13.4922 9.72769C12.9959 11.8437 11.3437 13.4959 9.22769 13.9922C7.76245 14.3359 6.23755 14.3359 4.77231 13.9922C2.65631 13.4959 1.00412 11.8437 0.507775 9.72769C0.164075 8.26245 0.164075 6.73755 0.507775 5.27231C1.00412 3.15631 2.65631 1.50412 4.77231 1.00777ZM6.99998 6.06405C7.3965 6.06405 7.71795 5.74261 7.71795 5.34609C7.71795 4.94957 7.3965 4.62812 6.99998 4.62812C6.60346 4.62812 6.28202 4.94957 6.28202 5.34609C6.28202 5.74261 6.60346 6.06405 6.99998 6.06405ZM6.99998 6.60252C7.29737 6.60252 7.53845 6.84361 7.53845 7.141V10.0129C7.53845 10.3102 7.29737 10.5513 6.99998 10.5513C6.70259 10.5513 6.46151 10.3102 6.46151 10.0129V7.141C6.46151 6.84361 6.70259 6.60252 6.99998 6.60252Z" fill="#BFBFC1" />
-                                </svg>
+                            <div>
+                                <div className="stats-block__top">
+                                    Profits
+                                    <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77231 1.00777C6.23755 0.664075 7.76245 0.664075 9.22769 1.00777C11.3437 1.50412 12.9959 3.15631 13.4922 5.27231C13.8359 6.73755 13.8359 8.26245 13.4922 9.72769C12.9959 11.8437 11.3437 13.4959 9.22769 13.9922C7.76245 14.3359 6.23755 14.3359 4.77231 13.9922C2.65631 13.4959 1.00412 11.8437 0.507775 9.72769C0.164075 8.26245 0.164075 6.73755 0.507775 5.27231C1.00412 3.15631 2.65631 1.50412 4.77231 1.00777ZM6.99998 6.06405C7.3965 6.06405 7.71795 5.74261 7.71795 5.34609C7.71795 4.94957 7.3965 4.62812 6.99998 4.62812C6.60346 4.62812 6.28202 4.94957 6.28202 5.34609C6.28202 5.74261 6.60346 6.06405 6.99998 6.06405ZM6.99998 6.60252C7.29737 6.60252 7.53845 6.84361 7.53845 7.141V10.0129C7.53845 10.3102 7.29737 10.5513 6.99998 10.5513C6.70259 10.5513 6.46151 10.3102 6.46151 10.0129V7.141C6.46151 6.84361 6.70259 6.60252 6.99998 6.60252Z" fill="#BFBFC1" />
+                                    </svg>
+                                </div>
+                                <div className="stats-block__bottom">
+                                    <p>
+                                        0
+                                    </p>
+                                    <span>
+                                        + 0
+                                    </span>
+                                </div>
                             </div>
-                            <div className="stats-block__bottom">
-                                <p>
-                                    0
-                                </p>
-                                <span>
-                                    + 0
-                                </span>
+                            <div className="chart">
+                                <ResponsiveContainer>
+                                    <AreaChart
+                                        data={data}
+                                        margin={{
+                                            top: 0,
+                                            right: 0,
+                                            left: 0,
+                                            bottom: 0
+                                        }}
+                                    >
+                                        <Area type="monotone" dataKey="uv" stroke="#39EB8B" fill="#417c5d" />
+                                    </AreaChart>
+
+                                </ResponsiveContainer>
                             </div>
                         </div>
                     </Col>

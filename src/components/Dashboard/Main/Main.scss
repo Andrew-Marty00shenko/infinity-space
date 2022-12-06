@@ -119,9 +119,28 @@
                 backdrop-filter: blur(21px);
                 border-radius: 16px;
                 margin-right: 18px !important;
+               
 
                 &.last{
                     margin-right: 0 !important;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0px;
+                    overflow: hidden;
+
+                    &{
+                        & > div{
+                            &:nth-child(1){
+                                padding: 22px 0px 22px 22px;
+                            }
+                           
+                        }
+
+                        .chart{
+                            width: 60%;
+                            height: 112px;
+                        }
+                    }
                 }
 
                 .stats-block__top{
@@ -243,6 +262,25 @@
     }
 }
 
+@media (max-width: 1338px) {
+    .main{
+        &-info{
+            &__stats{
+                &-block{
+                    &.last{
+                        &{
+                            .chart{
+                                width: 50% ;
+                                height: 112px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 1220px) {
     .main{
         padding-left: 232px;
@@ -280,6 +318,13 @@
 
                     &.last{
                         margin-top: 16px !important;
+
+                        &{
+                            .chart{
+                                width: 75% ;
+                                height: 112px;
+                            }
+                        }
                     }
                 }
             }
