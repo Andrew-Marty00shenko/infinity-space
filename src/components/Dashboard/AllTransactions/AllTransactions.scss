@@ -1,6 +1,5 @@
 .all-transactions{
     margin-top: 39px;
-    padding-bottom: 53px;
 
     h2{
         font-family: 'Proxima Nova',sans-serif;
@@ -175,8 +174,6 @@
 
 @media (max-width: 1400px) {
     .all-transactions{
-       
-
         .total-users, .total-reached{
             padding-top:  20px !important;
 
@@ -210,7 +207,6 @@
 @media (max-width: 952px) {
     .all-transactions{
         padding-top: 50px;
-        padding-bottom: 200px;
         top: -100px;
 
         h2{

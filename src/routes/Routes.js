@@ -13,7 +13,7 @@ const Routes = () => {
         if (wallet === null) {
             navigate('/');
         }
-    }, []);
+    }, [wallet, navigate]);
 
     return wallet !== null ? <Private /> : <Public />
 }

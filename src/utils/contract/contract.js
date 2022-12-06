@@ -5,7 +5,7 @@ export const HASH_LINK = 'https://testnet.bscscan.com';
 
 // export const contract = new web3.eth.Contract(contractABI.abi, contractABI.address);
 
-const web3 = new Web3(new Web3.providers.HttpProvider(BINANCE_RPC_TEST));
+// const web3 = new Web3(new Web3.providers.HttpProvider(BINANCE_RPC_TEST));
 
 export const connectWallet = async () => {
     if (window.ethereum) {
