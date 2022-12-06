@@ -3,7 +3,11 @@
     height: 64px;
     display: flex;
     justify-content: flex-end;
-    padding: 9px 30px 11px;
+    padding: 9px 48px 11px;
+
+    &__burger{
+        display: none;
+    }
 
     &__info{
         display: flex;
@@ -48,5 +52,30 @@
                 margin-right: 8px;  
             }
         }
+    }
+}
+
+@media (max-width: 1220px) {
+    .dashboard-header{
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .dashboard-header{
+        &__info{
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .dashboard-header{
+        padding-right: 15px;
+        
+       &__burger{
+           display: flex;
+           align-items: center;
+       }
     }
 }

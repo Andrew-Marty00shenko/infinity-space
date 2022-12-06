@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { getBnbBalance } from "../../../utils/contract/contract";
 import "./Header.scss";
 
-const Header = () => {
+const Header = ({ showSidebar, setShowSidebar }) => {
     const [bnbBalance, setBnbBalance] = useState(null);
 
     const wallet = useSelector(state => state.user.wallet);
@@ -45,6 +45,12 @@ const Header = () => {
                 </svg>
                 {slicedAddressWallet}
             </div>
+        </div>
+
+        <div className="dashboard-header__burger" onClick={() => setShowSidebar(!showSidebar)}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12H21M3 6H21M9 18H21" stroke="#717275" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
         </div>
     </header>
 }

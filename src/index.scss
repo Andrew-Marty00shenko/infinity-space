@@ -53,3 +53,31 @@ body {
       opacity: .8;
     }
   }
+
+  .Toastify__toast--success, .Toastify__toast--error {
+    background: #2c2c2c !important;
+    color: #fff !important;
+
+    .Toastify__toast-icon{
+      svg{
+          fill: rgba(181,91,164,1);
+      }
+    } 
+    
+    .Toastify__close-button{
+      svg{
+        fill: #fff
+      }
+    }
+
+    .Toastify__progress-bar{
+      background: linear-gradient(90deg, rgba(181,91,164,1) 0%, rgba(63,63,251,1) 100%) !important;
+    }
+  }
+
+  .container-fluid{
+    .row>*{
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+  }

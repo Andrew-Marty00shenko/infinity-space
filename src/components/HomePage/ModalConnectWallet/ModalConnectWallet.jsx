@@ -1,6 +1,7 @@
 import { Modal } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import { connectWallet } from '../../../utils/contract/contract';
 import { login } from '../../../redux/slices/userSlice';
@@ -14,11 +15,15 @@ const ModalConnectWallet = ({ modalShow, setModalShow }) => {
     const navigate = useNavigate()
 
     const handleClickConnectWallet = async () => {
-        const account = await connectWallet();
+        if (window.web3) {
+            const account = await connectWallet();
 
-        if (account) {
-            navigate('/dashboard')
-            dispatch(login(account));
+            if (account) {
+                navigate('/dashboard')
+                dispatch(login(account));
+            }
+        } else {
+            toast.error('Metamask is not intalled');
         }
     };
 

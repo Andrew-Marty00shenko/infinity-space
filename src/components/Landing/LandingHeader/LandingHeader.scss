@@ -72,10 +72,6 @@
             }
         }
     }
-
-    &__mobile{
-        display: none;
-    }
 }
 
 @media (max-width: 1280px) {
@@ -109,13 +105,6 @@
             &-login-btns{
                 display: none;
             }
-        }
-
-        &__mobile{
-            display: block;
-            position: absolute;
-            right: 18px;
-            top: 18px;
         }
     }
 }
