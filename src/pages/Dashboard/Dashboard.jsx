@@ -1,11 +1,12 @@
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Header from "../../components/Dashboard/Header/Header";
 import Sidebar from "../../components/Dashboard/Sidebar/Sidebar";
 import Main from "../../components/Dashboard/Main/Main";
+import Team from "../../components/Dashboard/Team/Team";
 
 import "./Dashboard.scss";
-import { useEffect, useState } from "react";
 
 const Dashboard = () => {
     const [showSidebar, setShowSidebar] = useState(false);
@@ -23,6 +24,7 @@ const Dashboard = () => {
         <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
         <Routes>
             <Route path='/dashboard' element={<Main />} />
+            <Route path='/dashboard/team' element={<Team />} />
         </Routes>
     </div>
 };
