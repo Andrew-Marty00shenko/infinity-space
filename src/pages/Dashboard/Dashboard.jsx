@@ -5,6 +5,7 @@ import Header from "../../components/Dashboard/Header/Header";
 import Sidebar from "../../components/Dashboard/Sidebar/Sidebar";
 import Main from "../../components/Dashboard/Main/Main";
 import Team from "../../components/Dashboard/Team/Team";
+import Links from "../../components/Dashboard/Links/Links";
 
 import "./Dashboard.scss";
 
@@ -25,6 +26,7 @@ const Dashboard = () => {
         <Routes>
             <Route path='/dashboard' element={<Main />} />
             <Route path='/dashboard/team' element={<Team />} />
+            <Route path='/dashboard/links' element={<Links />} />
         </Routes>
     </div>
 };
