@@ -10,7 +10,7 @@ import Image5 from "../../../assets/images/main-section/image-5.png";
 import Image6 from "../../../assets/images/main-section/image-6.svg";
 import Image from "../../../assets/images/backgrounds/Image.png";
 
-const MainSection = () => {
+const MainSection = ({ setClickedSignUp }) => {
     return <section className="main-section">
         <div className="main-section__content">
             {/* <div className="main-section__back"></div>
@@ -35,7 +35,7 @@ const MainSection = () => {
                 Powerful marketing based on smart contract <br /> technology gives unlimited possibilities
             </h2>
             <Link to="/home-page">
-                <button>
+                <button onClick={setClickedSignUp(true)}>
                     Try now
                 </button>
             </Link>

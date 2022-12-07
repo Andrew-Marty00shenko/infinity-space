@@ -6,7 +6,7 @@ import DashboardLaptopopMobile from "../../../assets/images/dashboard-laptop-mob
 
 import "./DashboardSection.scss";
 
-const DashboardSection = () => {
+const DashboardSection = ({ setClickedSignIn, setClickedSignUp }) => {
     return <section className="dashboard-section">
         <div className="dashboard-section__block">
             <img className="dashboard-laptop-desktop" src={DashboardLaptop} alt="laptop" />
@@ -31,12 +31,12 @@ const DashboardSection = () => {
             </p>
             <div className="buttons-block">
                 <Link to="/home-page">
-                    <button>
+                    <button onClick={() => setClickedSignUp(true)}>
                         Sign up
                     </button>
                 </Link>
                 <Link to="/home-page">
-                    <button style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)' }}>
+                    <button style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)' }} onClick={() => setClickedSignIn(true)}>
                         Log in
                     </button>
                 </Link>

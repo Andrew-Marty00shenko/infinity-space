@@ -59,6 +59,66 @@
    }
 }
 
+.modal-register{
+    .modal-content{
+        background: #24252B;
+        box-shadow: 0px 15px 51px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 24px;
+        border: 0;
+        position: relative;
+
+        svg{
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            cursor: pointer;
+
+            &:hover{
+                opacity: .8;
+            }
+        }
+
+        h2{
+            font-family: 'Proxima Nova',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+            color: #fff;
+        }
+
+        input{
+            margin-top: 13px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 0;
+            padding: 19px 18px 17px;
+            color: #fff;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            }
+
+            /* Firefox */
+            &[type=number] {
+            -moz-appearance: textfield;
+            }
+        }
+
+        button{
+            margin-top: 16px;
+            width: 186px;
+            height: 54px;
+            background: #184BFF;
+        }
+    }
+ }
+
 @media (max-width: 690px) {
     .modal-connect-wallet{
         .modal-content{

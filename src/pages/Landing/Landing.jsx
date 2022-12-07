@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { useState } from "react";
 
 import LandingHeader from "../../components/Landing/LandingHeader/LandingHeader";
 import InfoProjectSection from "../../components/Landing/InfoProjectSection/InfoProjectSection";
@@ -17,23 +18,26 @@ import SupportSection from "../../components/HomePage/SupportSection/SupportSect
 import "./Landing.scss";
 
 const Landing = () => {
+    const [clickedSignIn, setClickedSignIn] = useState(false);
+    const [clickedSignUp, setClickedSignUp] = useState(false);
+
     return <div className="landing">
         <Routes>
             <Route path="/" element={<>
-                <LandingHeader />
-                <MainSection />
+                <LandingHeader setClickedSignIn={setClickedSignIn} setClickedSignUp={setClickedSignUp} />
+                <MainSection setClickedSignUp={setClickedSignUp} />
                 <InfoProjectSection />
                 <ContractAddressSection />
-                <SliderSection />
-                <DashboardSection />
+                <SliderSection setClickedSignUp={setClickedSignUp} />
+                <DashboardSection setClickedSignIn={setClickedSignIn} setClickedSignUp={setClickedSignUp} />
                 <FaqSection />
                 <SocialLinkSection />
                 <LandingFooter />
             </>}
             />
             <Route path="/home-page" element={<>
-                <LandingHeader />
-                <MainHomeSection />
+                <LandingHeader clickedSignIn={clickedSignIn} clickedSignUp={clickedSignUp} />
+                <MainHomeSection clickedSignIn={clickedSignIn} clickedSignUp={clickedSignUp} />
                 <TransactionsSection />
                 <SupportSection />
                 <LandingFooter />

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { login } from "../../../redux/slices/userSlice";
 import { connectWallet } from "../../../utils/contract/contract";
@@ -8,17 +9,19 @@ import ModalConnectWallet from "../ModalConnectWallet/ModalConnectWallet";
 
 import "./MainHomeSection.scss";
 
-const MainHomeSection = () => {
+const MainHomeSection = ({ clickedSignIn, clickedSignUp }) => {
     const [modalShow, setModalShow] = useState(false);
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         setModalShow(true);
     }, []);
 
     const handleClickConnectWallet = async () => {
         const account = await connectWallet();
-
+        navigate('/dashboard');
         dispatch(login(account));
     };
 
@@ -35,12 +38,14 @@ const MainHomeSection = () => {
                 <h2>
                     Connect wallet to Register or Login
                 </h2>
-                <button onClick={handleClickConnectWallet}>
+                <button onClick={() => {
+                    clickedSignIn ? handleClickConnectWallet() : setModalShow(true)
+                }}>
                     Connect wallet
                 </button>
             </div>
         </section>
-        <ModalConnectWallet setModalShow={setModalShow} modalShow={modalShow} />
+        <ModalConnectWallet setModalShow={setModalShow} modalShow={modalShow} clickedSignIn={clickedSignIn} clickedSignUp={clickedSignUp} />
     </>
 }
 

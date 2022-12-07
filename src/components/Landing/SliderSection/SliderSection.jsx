@@ -8,7 +8,7 @@ import "swiper/css";
 
 import "./SliderSection.scss";
 
-const SliderSection = () => {
+const SliderSection = ({ setClickedSignUp }) => {
     return <section className="slider-section">
         <div className="desktop">
             <img src={SliderBack} alt="slider-back" />
@@ -20,7 +20,7 @@ const SliderSection = () => {
                     You can read all the rules of interaction on our platform in the smart contract code yourself. And we'll tell you a few of its undeniable advantages
                 </h3>
                 <Link to="/home-page">
-                    <button>
+                    <button onClick={() => setClickedSignUp(true)}>
                         Try now
                     </button>
                 </Link>

@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import "./LandingHeader.scss";
 
-const LandingHeader = () => {
+const LandingHeader = ({ setClickedSignIn, setClickedSignUp, clickedSignIn, clickedSignUp }) => {
     const location = useLocation();
 
     return <header className="landing-header">
@@ -26,19 +26,21 @@ const LandingHeader = () => {
                 {location.pathname === '/' ? (
                     <>
                         <Link to="/home-page">
-                            <button>
+                            <button onClick={() => setClickedSignIn(true)}>
                                 Log in
                             </button>
                         </Link>
                         <Link to="/home-page">
-                            <button>
+                            <button onClick={() => setClickedSignUp(true)}>
                                 Sign up
                             </button>
                         </Link>
                     </>
                 ) : (
-                    <Link to="/home-page">
-                        <button className="connect-btn">
+                    <Link to="/home-page" >
+                        <button className="connect-btn" onClick={() => {
+                            clickedSignIn ? setClickedSignIn(true) : setClickedSignUp(true)
+                        }}>
                             Connect wallet
                         </button>
                     </Link>
