@@ -1,0 +1,133 @@
+.contacts{
+    padding-left: 325px;
+    padding-right: 48px;
+    padding-bottom: 40px;
+
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h2{
+            font-family: 'Proxima Nova',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 40px;
+            margin-right: 16px;
+        }
+
+        div{
+            background: rgba(165, 184, 255, 0.1);
+            border-radius: 35px;
+            font-family: 'Proxima Nova',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            color: #AFC6FF;
+            padding: 8px 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__block{
+        margin: 32px auto;
+        width: 432px;
+        padding: 40px 27px 24px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15.5px);
+        border-radius: 16px;
+        position: relative;
+
+        h3{
+            margin-top: 25px;
+            font-family: 'Proxima Nova',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 26px;
+        }
+
+        p{
+            margin-top: 7px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+        }
+
+        button{
+            margin-top: 14px;
+            background: #184BFF;
+            height: 54px;
+            font-size: 18px;
+            width: 129px;
+        }
+
+        .circle{
+            position: absolute;
+            width: 280px;
+            height: 258px;
+            background: linear-gradient(180deg, #6875DC 0%, rgba(9, 93, 255, 0) 100%);
+            filter: blur(103.5px);
+            bottom: -50%;
+            left: 100px;
+            z-index: -1;
+        }
+
+        .right-background{
+            position: absolute;
+            top: 97px;
+            right: 0;
+            z-index: -1;
+        }
+        .bottom-background{
+            position: absolute;
+            right: 103px;
+            bottom: 0;
+            z-index: -1;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .contacts{
+        padding-left: 15px;
+        padding-right: 15px;
+        &__header{
+            h2{
+                font-size: 24px;
+                line-height: 32px;
+            }
+    
+            div{
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+
+        &__block{
+            width: 100%;
+
+            .circle{
+                right: 30%;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .contacts{
+        &__block{
+            button{
+                width: 100%;
+            }
+
+            .circle{
+                right: 30%;
+            }
+        }
+    }
+}

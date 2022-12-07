@@ -7,6 +7,7 @@ import Main from "../../components/Dashboard/Main/Main";
 import Team from "../../components/Dashboard/Team/Team";
 import Links from "../../components/Dashboard/Links/Links";
 import Stats from "../../components/Dashboard/Stats/Stats";
+import Contacts from "../../components/Dashboard/Contacts/Contacts";
 
 import "./Dashboard.scss";
 
@@ -29,6 +30,7 @@ const Dashboard = () => {
             <Route path='/dashboard/team' element={<Team />} />
             <Route path='/dashboard/links' element={<Links />} />
             <Route path='/dashboard/stats' element={<Stats />} />
+            <Route path='/dashboard/contacts' element={<Contacts />} />
         </Routes>
     </div>
 };
