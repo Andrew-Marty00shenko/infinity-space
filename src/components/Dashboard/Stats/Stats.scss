@@ -1,0 +1,317 @@
+.stats{
+    padding-left: 325px;
+    padding-right: 48px;
+    padding-bottom: 40px;
+
+    &__header{
+        display: flex;
+        align-items: center;
+        h2{
+            font-family: 'Proxima Nova',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 40px;
+            margin-right: 16px;
+        }
+
+        div{
+            background: rgba(165, 184, 255, 0.1);
+            border-radius: 35px;
+            font-family: 'Proxima Nova',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            color: #AFC6FF;
+            padding: 8px 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    table{
+        margin-top: 10px;
+        border-radius: 16px;
+
+        tbody, td, tfoot, th, thead, tr {
+            border: 0;
+        }
+
+        thead{
+            tr{
+                th{
+                    padding: 23px 23px 24px 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #717275;
+                }
+            }
+        }
+
+        tbody{
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15.5px);
+
+            tr{
+                &:first-of-type{
+                    td{
+                        &:first-of-type{
+                            border-top-left-radius: 16px !important;
+                            // padding-left: 0px;
+                        }
+                        &:last-of-type{
+                            border-top-right-radius: 16px !important;
+                        }
+                    }
+                }
+
+                &:last-of-type{
+                    td{
+                        border-bottom: 0 ;
+                        &:first-of-type{
+                            border-bottom-left-radius: 16px !important;
+                        }
+                        &:last-of-type{
+                            border-bottom-right-radius: 16px !important;
+                        }
+                    }
+                }
+
+                td{
+                    font-family: 'Proxima Nova',sans-serif;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #BFBFC1;
+                    padding: 23px 23px 24px 24px;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                    vertical-align: middle;
+
+                    svg{
+                        margin-left: 10px;
+                        cursor: pointer;
+                    }
+
+                    .partner-id{
+                        background: rgba(165, 184, 255, 0.1);
+                        border-radius: 8px;
+                        max-width: 100px;
+                        padding: 8px 12px;
+                        color: #AFC6FF;
+                    }
+
+                    .profit{
+                        svg{
+                            margin-right: 8px;
+                            margin-left: 0;
+                        }
+                    }
+
+                    .partners{
+                        svg{
+                            margin-right: 8px;
+                            margin-left: 0;
+                        }
+                    }
+
+                    .recycle{
+                        background: rgba(57, 235, 139, 0.08);
+                        border-radius: 4px;
+                        padding: 8px 16px 10px;
+                        width: 78px;
+                        color: #39EB8B;
+                    }
+
+                    .missed-profit{
+                        background: rgba(255, 255, 255, 0.1);
+                        border-radius: 4px;
+                        padding: 8px 16px 10px;
+                        width: 129px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__mobile-transactions{
+        display: none;
+    }
+
+    button{
+        width: 100%;
+        background: #313236;
+        height: 62px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1220px) {
+    .stats{
+        padding-left: 232px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    .stats{
+        padding-left: 15px;
+        padding-right: 15px;
+
+        &__header{
+            h2{
+                font-size: 24px;
+                line-height: 32px;
+            }
+    
+            div{
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+
+        &__mobile-transactions{
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            .transaction{
+                width: 100%;
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(15.5px);
+                border-radius: 16px;
+                margin-bottom: 10px;
+
+                &__top{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 16px 20px 15px;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+                    .hrefs{
+                        display: flex;
+                        align-items: center;
+
+                        p{
+                            font-family: 'Proxima Nova',sans-serif;
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 18px;
+                            line-height: 22px;
+                        }
+
+                        svg{
+                            margin-left: 10px;
+                        }
+                    }
+
+                    .partner-id{
+                        padding: 5px 12px;
+                        background: rgba(63, 72, 105, 0.1);
+                        border-radius: 8px;
+                        font-family: 'Proxima Nova',sans-serif;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 17px;
+                        color: #AFC6FF;
+                    }
+                }
+
+                &__middle{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 16px 20px 15px;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+                    .profit{
+                        display: flex;
+                        align-items: center;
+                        font-family: 'Proxima Nova',sans-serif;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: #BFBFC1; 
+
+                        svg{
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .partners{
+                        display: flex;
+                        align-items: center;
+                        font-family: 'Proxima Nova',sans-serif;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: #BFBFC1; 
+                        display: flex;
+                        align-items: center;
+
+                        svg{
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .date{
+                        display: flex;
+                        align-items: center;
+                        font-family: 'Proxima Nova',sans-serif;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: #BFBFC1; 
+                        display: flex;
+                        align-items: center;
+
+                        svg{
+                            margin-right: 10px;
+                        }
+                    }
+                }
+
+                &__bottom{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 16px 20px 15px;
+
+                    .name{
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 17px;
+                        color: #717275;
+                    }
+
+                    .amount{
+                        font-family: 'Proxima Nova',sans-serif;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 17px;
+                        color: #BFBFC1;
+                    }
+                }
+            }
+        }
+
+        table{
+            display: none;
+        }
+
+        button{
+            height: 51px;
+            font-size: 16px;
+        }
+    }
+}
