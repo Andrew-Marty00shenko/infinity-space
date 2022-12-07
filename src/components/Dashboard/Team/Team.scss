@@ -91,6 +91,10 @@
                     padding: 23px 23px 24px 24px;
                     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
                     vertical-align: middle;
+
+                    &:nth-child(3){
+                        width: 35%;
+                    }
                   
 
                     svg{
@@ -133,6 +137,16 @@
         background: #313236;
         height: 62px;
         font-size: 18px;
+    }
+}
+
+@media (max-width: 1364px) {
+    .team{
+        td{
+            &:nth-child(3){
+                width: auto !important;
+            }
+        }
     }
 }
 
@@ -179,7 +193,7 @@
                     padding: 16px 20px 15px;
                     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
-                    .links{
+                    .hrefs{
                         display: flex;
                         align-items: center;
 

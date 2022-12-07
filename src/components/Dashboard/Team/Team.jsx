@@ -154,7 +154,7 @@ const Team = () => {
         <div className="team__mobile-transactions">
             <div className="transaction">
                 <div className="transaction__top">
-                    <div className="links">
+                    <div className="hrefs">
                         <p>
                             0x6E09...7332
                         </p>
@@ -210,7 +210,7 @@ const Team = () => {
             </div>
             <div className="transaction">
                 <div className="transaction__top">
-                    <div className="links">
+                    <div className="hrefs">
                         <p>
                             0x6E09...7332
                         </p>
@@ -266,7 +266,7 @@ const Team = () => {
             </div>
             <div className="transaction">
                 <div className="transaction__top">
-                    <div className="links">
+                    <div className="hrefs">
                         <p>
                             0x6E09...7332
                         </p>
