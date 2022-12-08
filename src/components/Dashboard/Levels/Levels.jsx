@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { Container, Row, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 import Stats from "../Stats/Stats";
 
@@ -81,6 +82,8 @@ const levelsData = [
 ]
 
 const Levels = () => {
+    const navigate = useNavigate();
+
     return <div className="levels">
         <div className="levels__info">
             ID 4728 &#62; <span>
@@ -109,7 +112,9 @@ const Levels = () => {
                                 "stage--active": level.active
                             })} >
                                 <div className="background-active" />
-                                <div className="stage__top">
+                                <div className="stage__top"
+                                    onClick={() => navigate(`${window.location.pathname}/${level.id}`)}
+                                >
                                     <p>
                                         {level.name}
                                     </p>
