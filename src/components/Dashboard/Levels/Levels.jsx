@@ -1,8 +1,10 @@
 import classNames from "classnames";
+import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 import Stats from "../Stats/Stats";
+import ErrorModal from "./ErrorModal/ErrorModal";
 
 import "./Levels.scss";
 
@@ -82,7 +84,16 @@ const levelsData = [
 ]
 
 const Levels = () => {
+    const [modalShow, setModalShow] = useState(false);
     const navigate = useNavigate();
+
+    const handleClickBuyLevel = (level) => {
+        if (!level.active) {
+            setModalShow(true);
+
+            return false;
+        }
+    };
 
     return <div className="levels">
         <div className="levels__info">
@@ -144,7 +155,7 @@ const Levels = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <button disabled={level.active}>
+                                <button disabled={level.active} onClick={() => handleClickBuyLevel(level)}>
                                     {level.active ? <>
                                         <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M6.52975 0.343699C8.4834 -0.114566 10.5166 -0.114566 12.4703 0.343699C15.2916 1.00549 17.4945 3.20842 18.1563 6.02975C18.6146 7.9834 18.6146 10.0166 18.1563 11.9703C17.4945 14.7916 15.2916 16.9945 12.4703 17.6563C10.5166 18.1146 8.4834 18.1146 6.52975 17.6563C3.70842 16.9945 1.5055 14.7916 0.8437 11.9703C0.385433 10.0166 0.385433 7.9834 0.8437 6.02974C1.5055 3.20841 3.70842 1.00549 6.52975 0.343699ZM12.5524 7.47731C12.7689 7.2454 12.7563 6.88195 12.5244 6.6655C12.2925 6.44906 11.9291 6.46159 11.7126 6.6935L8.76776 9.84869L7.27358 8.35451C7.04927 8.1302 6.6856 8.1302 6.4613 8.35451C6.23699 8.57882 6.23699 8.94249 6.4613 9.16679L8.37587 11.0814C8.48601 11.1915 8.63617 11.2522 8.79191 11.2495C8.94765 11.2468 9.09563 11.181 9.20191 11.0671L12.5524 7.47731Z" fill="#39EB8B" />
@@ -162,6 +173,8 @@ const Levels = () => {
         <div className="levels__transactions">
             <Stats levels={true} />
         </div>
+
+        <ErrorModal setModalShow={setModalShow} modalShow={modalShow} />
     </div>
 }
 
