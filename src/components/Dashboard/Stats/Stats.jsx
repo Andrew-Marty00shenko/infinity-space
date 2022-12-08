@@ -1,17 +1,20 @@
+import classNames from "classnames";
 import { Table } from "react-bootstrap";
 
 import "./Stats.scss";
 
-const Stats = () => {
-    return <div className="stats">
-        <div className="team__header">
+const Stats = ({ levels }) => {
+    return <div className={classNames("stats", {
+        "stats--levels": levels
+    })}>
+        {!levels && <div className="team__header">
             <h2>
                 Stats
             </h2>
             <div>
                 ID 0
             </div>
-        </div>
+        </div>}
         <Table responsive>
             <thead>
                 <tr>

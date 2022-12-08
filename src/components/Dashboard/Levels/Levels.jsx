@@ -1,6 +1,8 @@
 import classNames from "classnames";
 import { Container, Row, Col } from "react-bootstrap";
 
+import Stats from "../Stats/Stats";
+
 import "./Levels.scss";
 
 const levelsData = [
@@ -151,6 +153,9 @@ const Levels = () => {
                     })}
                 </Row>
             </Container>
+        </div>
+        <div className="levels__transactions">
+            <Stats levels={true} />
         </div>
     </div>
 }
