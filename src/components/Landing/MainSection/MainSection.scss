@@ -11,68 +11,6 @@
         margin: 0 auto;
     }
 
-    &__back{
-        width: 1480px;
-        height: 678px;
-        left: 72px;
-        top: 0px;
-        z-index: 1;
-        position: absolute;
-        opacity: 1;
-        background: linear-gradient(90deg, #1A1B20 1.92%, rgba(26, 27, 32, 0) 94.87%), linear-gradient(180deg, #1A1B20 0%, rgba(26, 27, 32, 0) 1%), url('../../../assets/images/backgrounds/main-section-back.jpg');
-    }
-
-    .images{
-        width: 1480px;
-        position: relative;
-        .img-1{
-            position: absolute;
-            z-index: 5;
-            right: 0;
-        }
-        .round{
-            width: 599px;
-            height: 536px;
-            right: -80px;
-            top: 150px;
-            overflow: hidden;
-            position: absolute;
-            z-index: 1;
-            background: linear-gradient(180deg, #6875DC 0%, rgba(9, 93, 255, 0) 100%);
-            filter: blur(115.5px);
-        }
-        .img-2{
-            position: absolute;
-            z-index: 6;
-            right: 0;
-            top: 458px;
-        }
-        .img-3{
-            position: absolute;
-            z-index: 2;
-            right: -71px;
-            top: 250px;
-        }
-        .img-4{
-            position: absolute;
-            z-index: 2;
-            right: 580px;
-            top: 458px;
-        }
-        .img-5{
-            position: absolute;
-            z-index: 2;
-            right: 460px;
-            top: -50px;
-        }
-        .img-6{
-            position: absolute;
-            z-index: 2;
-            right: 440px;
-            top: -30px;
-        }
-    }
-
     h1{
         font-family: 'Proxima Nova', sans-serif;
         font-weight: 700;
