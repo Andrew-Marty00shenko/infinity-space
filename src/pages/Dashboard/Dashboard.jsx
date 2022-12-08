@@ -10,6 +10,7 @@ import Team from "../../components/Dashboard/Team/Team";
 import Links from "../../components/Dashboard/Links/Links";
 import Stats from "../../components/Dashboard/Stats/Stats";
 import Contacts from "../../components/Dashboard/Contacts/Contacts";
+import Web3Academy from "../../components/Dashboard/Web3Academy/Web3Academy";
 
 import "./Dashboard.scss";
 
@@ -35,6 +36,7 @@ const Dashboard = () => {
             <Route path='/dashboard/links' element={<Links />} />
             <Route path='/dashboard/stats' element={<Stats />} />
             <Route path='/dashboard/contacts' element={<Contacts />} />
+            <Route path='/dashboard/web3-academy' element={<Web3Academy />} />
         </Routes>
     </div>
 };
