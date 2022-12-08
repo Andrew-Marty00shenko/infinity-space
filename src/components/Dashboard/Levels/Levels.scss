@@ -1,0 +1,266 @@
+.levels{
+    padding-left: 325px;
+    padding-right: 48px;
+    padding-bottom: 40px;
+
+    &__info{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #717275;
+
+        span{
+            color: #Fff;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+
+    &__header{
+        margin-top: 9px;
+        display: flex;
+        align-items: center;
+        h2{
+            font-family: 'Proxima Nova',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 40px;
+            margin-right: 16px;
+        }
+
+        svg{
+            margin-left: 20px;
+            cursor: pointer;
+        }
+    }
+
+    &__stages{
+        margin-top: 14px;
+
+        .stage{
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            margin: 0px 10px 20px;
+            position: relative;
+
+            .background-active{
+                display: none;
+            }
+
+            &--active{
+                background: linear-gradient(180deg, #39486B 0%, #2A6758 100%);
+                box-shadow: 0px 15px 50px rgba(14, 33, 23, 0.2);
+                border-radius: 16px;
+                position: relative;
+
+                .background-active{
+                    position: absolute;
+                    display: block;
+                    background: linear-gradient(180deg, #3662FF 10.78%, rgba(133, 160, 255, 0.51) 116.04%), #D9D9D9;
+                    border-radius: 16px;
+                    transform: rotate(-5.13deg);
+                    height: 158px;
+                    width: 97%;
+                    left: 5px;
+                    top: 20px;
+                    z-index:0 ;
+                }
+
+                .stage__top{
+                    background: rgba(255, 255, 255, 0.05);
+                    box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.21), inset 0px 4px 11px rgba(255, 255, 255, 0.25);
+                    backdrop-filter: blur(11.5px);
+
+                    p{
+                        color: #fff;
+                    }
+    
+                    &-stats{
+                       color: #fff;
+    
+                        svg{
+                            margin-right: 10px;
+    
+                            path{
+                                stroke: #fff;  
+                            }
+                        }
+                    }
+                }
+
+                button{
+                    background: rgba(57, 235, 139, 0.08) !important;
+                    color: #39EB8B;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &:disabled{
+                        &:hover{
+                            opacity: 1 !important;
+                        }
+                    }
+
+                    svg{
+                        display: block !important;
+                        margin-right: 11px;
+                    }
+                }
+            }
+
+            &__top{
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 16px;
+                padding: 12px 18px;
+
+                p{
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 17px;
+                    letter-spacing: 0.08em;
+                    color: #717275;
+                }
+
+                &-price{
+                    text-align: center;
+                    margin-top: 43px;
+                    font-family: 'Proxima Nova',sans-serif;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 22px;
+                    line-height: 27px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    svg{
+                        margin-right: 8px;
+                    }
+                }
+
+                &-stats{
+                    margin-top: 40px;
+                    display: flex;
+                    align-items: center;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: #717275;
+
+                    svg{
+                        margin-right: 10px;
+
+                        path{
+                            stroke: #717275;  
+                        }
+                    }
+                }
+            }
+
+            button{
+                background: #184BFF;
+                width: 100%;
+                height: 54px;
+                margin-top: 12px;
+                position: relative;
+                z-index: 10;
+
+                svg{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1220px) {
+    .levels{
+        padding-left: 232px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    .levels{
+        padding-left: 15px;
+        padding-right: 15px;
+
+        &__header{
+            h2{
+                font-size: 24px;
+                line-height: 32px;
+            }
+    
+            svg{
+                &:nth-child(3){
+                    display: none;
+                }
+            }
+        }
+
+        &__stages{
+            .stage{
+                &--active{
+                    background: linear-gradient(180deg, #39486B 0%, #2A6758 100%);
+                    box-shadow: 0px 15px 50px rgba(14, 33, 23, 0.2);
+                    border-radius: 16px;
+                    position: relative;
+    
+                    .background-active{
+                        position: absolute;
+                        display: block;
+                        background: linear-gradient(180deg, #3662FF 10.78%, rgba(133, 160, 255, 0.51) 116.04%), #D9D9D9;
+                        border-radius: 16px;
+                        transform: rotate(-5.13deg);
+                        height: 220px;
+                        width: 95%;
+                        left: 5px;
+                        top: 20px;
+                        z-index:0 ;
+                    }
+                }
+                &__top{
+                    &-price{
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+    
+                        svg{
+                            margin-right: 8px;
+                        }
+                    }
+    
+                    &-stats{
+                       flex-direction: column;
+                       align-items: flex-start;
+    
+                        svg{
+                            margin-right: 10px;
+    
+                            path{
+                                stroke: #717275;  
+                            }
+                        }
+                    }
+                }
+    
+                button{
+                    background: #184BFF;
+                    width: 100%;
+                    height: 54px;
+                    margin-top: 12px;
+                    position: relative;
+                    z-index: 10;
+    
+                    svg{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

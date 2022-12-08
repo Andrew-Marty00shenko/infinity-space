@@ -2,6 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 import { AreaChart, Area, ResponsiveContainer } from 'recharts';
 
 import AllTransactions from "../AllTransactions/AllTransactions";
@@ -266,9 +267,11 @@ const Main = () => {
                 <p>
                     0 BUSD
                 </p>
-                <button>
-                    Let's go
-                </button>
+                <Link to="/dashboard/user/levels">
+                    <button>
+                        Let's go
+                    </button>
+                </Link>
             </div>
         </div>
 

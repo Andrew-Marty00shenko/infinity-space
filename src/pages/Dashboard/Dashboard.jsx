@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Header from "../../components/Dashboard/Header/Header";
 import Sidebar from "../../components/Dashboard/Sidebar/Sidebar";
 import Main from "../../components/Dashboard/Main/Main";
+import Levels from "../../components/Dashboard/Levels/Levels";
 import Team from "../../components/Dashboard/Team/Team";
 import Links from "../../components/Dashboard/Links/Links";
 import Stats from "../../components/Dashboard/Stats/Stats";
@@ -27,6 +28,7 @@ const Dashboard = () => {
         <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
         <Routes>
             <Route path='/dashboard' element={<Main />} />
+            <Route path='/dashboard/user/levels' element={<Levels />} />
             <Route path='/dashboard/team' element={<Team />} />
             <Route path='/dashboard/links' element={<Links />} />
             <Route path='/dashboard/stats' element={<Stats />} />
