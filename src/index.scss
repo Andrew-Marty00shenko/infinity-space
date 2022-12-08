@@ -13,6 +13,10 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+
+  body{
+    background-color: #1A1B20 !important;
+  }
   
   body,.wrapper, html, #root{
     color: #fff;

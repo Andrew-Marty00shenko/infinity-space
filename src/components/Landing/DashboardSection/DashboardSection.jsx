@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import DashboardLaptop from "../../../assets/images/dashboard-laptop.png";
 import DashboardLaptopopTablet from "../../../assets/images/dashboard-laptop-tablet.png";
-import DashboardLaptopopMobile from "../../../assets/images/dashboard-laptop-mobile.png";
+import DashboardLaptopopMobile from "../../../assets/images/dashboard-mobile.svg";
 
 import "./DashboardSection.scss";
 
