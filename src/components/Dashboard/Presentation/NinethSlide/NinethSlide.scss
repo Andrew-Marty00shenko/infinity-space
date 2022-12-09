@@ -1,0 +1,101 @@
+.presentation-nineth{
+    background-image: url(../../../../assets/images/backgrounds/presentation-9.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    margin: 20px auto;
+    padding: 35px;
+    max-width: 1083px;
+    min-height: 553px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+
+    h2{
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.23em;
+        color: #AFC6FF;
+        display: block;
+        margin-top: 16px;
+
+        span{
+            font-family: 'Proxima Nova',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 47px;
+            line-height: 53px;
+            color: #fff;
+        }
+    }
+
+    h3{
+        font-family: 'Proxima Nova',sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        color: #fff;
+        margin-top: 20px;
+    }
+
+    p{
+        margin-top: 24px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 32px;
+        color: #BFBFC1;
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .presentation-nineth{
+        background-size: 500px 500px;
+        background-position: bottom right;
+        min-height: auto;
+        h2{
+            font-weight: 800;
+            font-size: 15px;
+            line-height: 24px;
+            letter-spacing: 0.23em;
+            color: #AFC6FF;
+            display: block;
+            margin-top: 16px;
+    
+            span{
+                font-size: 25px;
+                line-height: 30px;
+            }
+        }
+
+        p{
+            font-size: 15px !important;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .presentation-nineth{
+        background-size: 300px 300px;
+        background-position: bottom right;
+        min-height: auto;
+        h2{
+            font-weight: 800;
+            font-size: 15px;
+            line-height: 24px;
+            letter-spacing: 0.23em;
+            color: #AFC6FF;
+            display: block;
+            margin-top: 16px;
+    
+            span{
+                font-size: 25px;
+                line-height: 30px;
+            }
+        }
+
+        p{
+            font-size: 15px !important;
+        }
+    }
+}

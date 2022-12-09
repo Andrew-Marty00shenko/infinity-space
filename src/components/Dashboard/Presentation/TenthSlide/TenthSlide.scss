@@ -1,0 +1,67 @@
+.presentation-tenth{
+    background-image: url(../../../../assets/images/backgrounds/presentation-10.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    margin: 20px auto;
+    padding: 35px;
+    max-width: 1083px;
+    min-height: 553px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+
+    div{
+        display: flex;
+        margin-bottom: 24px;
+
+        svg{
+            margin-right: 10px;
+        }
+
+        div{
+            display: block;
+            max-width: 500px;
+
+            h4{
+                font-family: 'Proxima Nova',sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 32px;
+            }
+
+            p{
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 25px;
+                color: #BFBFC1;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .presentation-tenth{
+        background-size: 600px 400px;
+        background-position: bottom right;
+        min-height: auto;
+        h2{
+            font-weight: 800;
+            font-size: 15px;
+            line-height: 24px;
+            letter-spacing: 0.23em;
+            color: #AFC6FF;
+            display: block;
+            margin-top: 16px;
+    
+            span{
+                font-size: 25px;
+                line-height: 30px;
+            }
+        }
+
+        p{
+            font-size: 15px !important;
+        }
+    }
+}

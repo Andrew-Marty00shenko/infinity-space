@@ -1,0 +1,120 @@
+.presentation-fifth{
+    margin: 0 auto;
+    padding: 35px;
+    max-width: 1083px;
+    min-height: 553px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+
+    h2{
+        span{
+            font-family: 'Proxima Nova',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 47px;
+            line-height: 53px;
+            color: #fff;
+        }
+    }
+
+   div{
+       margin-top: 10px;
+       .block{
+            margin-bottom: 5px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Proxima Nova',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+            padding: 33px;
+
+            svg{
+                margin-bottom: 20px;
+            }
+       }
+   }
+
+   p{
+        height: 99px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        font-family: 'Proxima Nova',sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        margin-top: 20px;
+        svg{
+            margin-right: 20px;
+        }
+   }
+}
+
+@media (max-width: 1200px) {
+    .presentation-fifth{
+        min-height: auto;
+        
+        h2{
+            font-weight: 800;
+            font-size: 15px;
+            line-height: 24px;
+            letter-spacing: 0.23em;
+            color: #AFC6FF;
+            display: block;
+            margin-top: 16px;
+    
+            span{
+                font-size: 25px;
+                line-height: 30px;
+            }
+        }
+
+        p,div{
+            font-size: 15px !important;
+            line-height: 20px !important;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .presentation-fifth{
+        min-height: auto;
+        background-size: 570px 370px;
+        h2{
+            font-weight: 800;
+            font-size: 15px;
+            line-height: 24px;
+            letter-spacing: 0.23em;
+            color: #AFC6FF;
+            display: block;
+            margin-top: 16px;
+    
+            span{
+                font-size: 25px;
+                line-height: 30px;
+            }
+        }
+
+        .block{
+            height: 200px !important;
+        }
+
+        p{
+            font-size: 15px !important;
+            padding: 10px;
+            text-align: center;
+
+            svg{
+                display:none;
+            }
+        }
+    }
+}

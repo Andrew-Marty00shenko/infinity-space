@@ -1,0 +1,36 @@
+.presentation-eighth{
+    margin: 20px auto;
+    padding: 35px;
+    max-width: 1083px;
+    min-height: 553px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+
+   div{
+        .block{
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(14.5px);
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 518px;
+            margin-bottom: 20px;
+
+            p{
+                margin-top: 10px;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 25px;
+                color: #BFBFC1;
+            }
+        }
+
+        .video{
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(14.5px);
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 518px;
+            margin-bottom: 20px;
+        }
+   }
+}

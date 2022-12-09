@@ -1,0 +1,109 @@
+.presentation-fourth{
+    background-image: url(../../../../assets/images/backgrounds/presentation-4.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    margin: 30px auto;
+    padding: 35px;
+    max-width: 1083px;
+    min-height: 553px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+
+    h2{
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.23em;
+        color: #AFC6FF;
+        display: block;
+        margin-top: 16px;
+
+        span{
+            display: flex;
+            align-items: center;
+            svg{
+                margin-right: 10px;
+            }
+
+            font-family: 'Proxima Nova',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 47px;
+            line-height: 53px;
+            color: #fff;
+        }
+    }
+
+    h3{
+        margin-top: 24px;
+        font-family: 'Proxima Nova',sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 32px;
+    }
+
+    p{
+        margin-top: 24px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 32px;
+        color: #BFBFC1;
+        max-width: 500px;
+    }
+
+    div{
+        margin-top: 24px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(49.5px);
+        border-radius: 17px;
+        font-family: 'Proxima Nova', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        color: #FFFFFF;
+        padding: 24px 38px;
+        max-width: 500px;
+    }
+
+    button{
+        margin-top: 44px;
+        background: #42434A;
+        border-radius: 20px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 81px;
+        justify-content: center;
+
+        svg{
+            margin-left: 10px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .presentation-fourth{
+        min-height: auto;
+        background-size: 570px 370px;
+        h2{
+            font-weight: 800;
+            font-size: 15px;
+            line-height: 24px;
+            letter-spacing: 0.23em;
+            color: #AFC6FF;
+            display: block;
+            margin-top: 16px;
+    
+            span{
+                font-size: 25px;
+                line-height: 30px;
+            }
+        }
+
+        p{
+            font-size: 15px !important;
+        }
+    }
+}

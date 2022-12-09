@@ -1,0 +1,106 @@
+.presentation-third{
+    background-image: url(../../../../assets/images/backgrounds/presentation-3.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    margin: 30px auto;
+    padding: 35px;
+    max-width: 1083px;
+    min-height: 553px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+
+    h2{
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.23em;
+        color: #AFC6FF;
+        display: block;
+        margin-top: 16px;
+
+        span{
+            font-family: 'Proxima Nova',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 47px;
+            line-height: 53px;
+            color: #fff;
+        }
+    }
+
+    p{
+        margin-top: 24px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 32px;
+        color: #BFBFC1;
+        max-width: 450px;
+
+        &:nth-child(3){
+            font-family: 'Proxima Nova',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 32px;
+            color: #FFFFFF;
+            max-width: 100%;
+        }
+        &:nth-child(5){
+            margin-top: 24px;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 32px;
+            color: #BFBFC1;
+            max-width: 100%;
+        }
+        &:nth-child(7){
+            margin-top: 24px;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 32px;
+            color: #BFBFC1;
+            max-width: 100%;
+        }
+    }
+
+    div{
+        display: flex;
+        align-items: center;
+        font-family: 'Proxima Nova',sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 32px;
+        color: #AFC6FF;
+        margin-top: 20px;
+
+        svg{
+            margin-right: 23px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .presentation-third{
+        min-height: auto;
+        background-size: 200px 170px;
+        h2{
+            font-weight: 800;
+            font-size: 15px;
+            line-height: 24px;
+            letter-spacing: 0.23em;
+            color: #AFC6FF;
+            display: block;
+            margin-top: 16px;
+    
+            span{
+                font-size: 25px;
+                line-height: 30px;
+            }
+        }
+
+        p{
+            font-size: 15px !important;
+        }
+    }
+}

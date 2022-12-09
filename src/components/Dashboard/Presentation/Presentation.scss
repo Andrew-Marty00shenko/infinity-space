@@ -1,0 +1,19 @@
+.presentation{
+    padding-left: 325px;
+    padding-right: 48px;
+    padding-bottom: 40px;
+}
+
+@media (max-width: 1200px) {
+    .presentation{
+        padding-left: 232px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    .presentation{
+       padding-left: 15px;
+       padding-right: 15px;
+    }
+}
