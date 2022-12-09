@@ -69,12 +69,13 @@
         }
 
         .info{
-            a{
+            a,span{
                 font-weight: 700;
                 font-size: 16px;
                 line-height: 19px;
                 color: #BFBFC1;
                 margin-left: 24px;
+                cursor: pointer;
             }
         }
     }

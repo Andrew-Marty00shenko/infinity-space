@@ -1,6 +1,12 @@
+import { useState } from "react";
+
+import PrivacyPolicyModal from "../PrivacyPolicyModal/PrivacyPolicyModal";
+
 import "./LandingFooter.scss"
 
 const LandingFooter = () => {
+    const [show, setShow] = useState(false);
+
     return <footer className="landing-footer">
         <div className="landing-footer__top">
             <div className="block">
@@ -53,11 +59,13 @@ const LandingFooter = () => {
                 <a href="">
                     Terms Of Use
                 </a>
-                <a href="">
+                <span onClick={() => setShow(true)}>
                     Privacy Policy
-                </a>
+                </span>
             </div>
         </div>
+
+        <PrivacyPolicyModal show={show} setShow={setShow} />
     </footer>
 }
 
