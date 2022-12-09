@@ -97,13 +97,14 @@
         position: relative;
 
         &__block{
+            justify-content: flex-end;
 
             &-info{
                 display: none;
             }
 
             &-login-btns{
-                display: none;
+                padding-right: 15px;
             }
         }
     }
