@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -9,8 +9,7 @@ import ModalConnectWallet from "../ModalConnectWallet/ModalConnectWallet";
 
 import "./MainHomeSection.scss";
 
-const MainHomeSection = ({ clickedSignIn, clickedSignUp }) => {
-    const [modalShow, setModalShow] = useState(false);
+const MainHomeSection = ({ modalShow, setModalShow, clickedSignIn, clickedSignUp }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 

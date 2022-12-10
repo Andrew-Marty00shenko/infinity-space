@@ -1,9 +1,27 @@
-import { Link, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { login } from "../../../redux/slices/userSlice";
 
 import "./LandingHeader.scss";
 
-const LandingHeader = ({ setClickedSignIn, setClickedSignUp, clickedSignIn, clickedSignUp }) => {
+const LandingHeader = ({ setClickedSignIn, setClickedSignUp, clickedSignIn, setModalShow }) => {
     const location = useLocation();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const handleClickConnectWallet = async () => {
+        const account = await connectWallet();
+        navigate('/dashboard');
+        dispatch(login(account));
+    };
+
+    const connectWallet = () => {
+        if (clickedSignIn) {
+            handleClickConnectWallet();
+        } else {
+            setModalShow(true);
+        }
+    };
 
     return <header className="landing-header">
         <div className="landing-header__block">
@@ -38,9 +56,7 @@ const LandingHeader = ({ setClickedSignIn, setClickedSignUp, clickedSignIn, clic
                     </>
                 ) : (
                     <Link to="/home-page" >
-                        <button className="connect-btn" onClick={() => {
-                            clickedSignIn ? setClickedSignIn(true) : setClickedSignUp(true)
-                        }}>
+                        <button className="connect-btn" onClick={connectWallet}>
                             Connect wallet
                         </button>
                     </Link>

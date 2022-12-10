@@ -20,6 +20,7 @@ import "./Landing.scss";
 const Landing = () => {
     const [clickedSignIn, setClickedSignIn] = useState(false);
     const [clickedSignUp, setClickedSignUp] = useState(false);
+    const [modalShow, setModalShow] = useState(false);
 
     return <div className="landing">
         <Routes>
@@ -36,8 +37,8 @@ const Landing = () => {
             </>}
             />
             <Route path="/home-page" element={<>
-                <LandingHeader clickedSignIn={clickedSignIn} clickedSignUp={clickedSignUp} />
-                <MainHomeSection clickedSignIn={clickedSignIn} clickedSignUp={clickedSignUp} />
+                <LandingHeader setModalShow={setModalShow} clickedSignIn={clickedSignIn} clickedSignUp={clickedSignUp} />
+                <MainHomeSection modalShow={modalShow} setModalShow={setModalShow} clickedSignIn={clickedSignIn} clickedSignUp={clickedSignUp} />
                 <TransactionsSection />
                 <SupportSection />
                 <LandingFooter />
