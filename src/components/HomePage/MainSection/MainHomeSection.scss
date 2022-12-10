@@ -51,12 +51,21 @@
     }
 }
 
+@media (min-width: 2200px) {
+    .main-home-section{
+        background-repeat: no-repeat;
+        background-size: 122% 111%;
+        background-position: -112px 9px;
+        padding-bottom: 1028px;
+    }
+}
+
 @media (max-width: 1400px) {
     .main-home-section{
         background-image: url('../../../assets/images/backgrounds/home-background-tablet.png');
-        background-size: 100% 130%;
-        background-position: initial;
-        padding-bottom: 554px;
+        background-size: 100% 116%;
+        background-position: inherit;
+        padding-bottom: 605px;
 
         &__content{
             margin-right: 50px;

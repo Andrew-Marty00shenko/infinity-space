@@ -37,7 +37,7 @@ const FaqSection = () => {
                 </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="4">
-                <Accordion.Header>КWhat is the role of the smart contract?</Accordion.Header>
+                <Accordion.Header>What is the role of the smart contract?</Accordion.Header>
                 <Accordion.Body>
                     A smart contract coordinates and distributes transactions and activates your tiers. It enables all processes on the platform to happen automatically.
                 </Accordion.Body>
