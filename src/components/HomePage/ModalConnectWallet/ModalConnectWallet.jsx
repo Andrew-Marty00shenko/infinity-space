@@ -2,19 +2,23 @@ import { Modal } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { useState } from 'react';
 
 import { connectWallet } from '../../../utils/contract/contract';
-import { login } from '../../../redux/slices/userSlice';
+import { login, watch } from '../../../redux/slices/userSlice';
 
 import Metamask from "../../../assets/images/metamask.svg";
 
 import "./ModalConnectWallet.scss";
 
-const ModalConnectWallet = ({ modalShow, setModalShow, clickedSignUp, clickedSignIn }) => {
+const ModalConnectWallet = ({
+    modalShow,
+    setModalShow,
+    clickedSignIn,
+    uplineId,
+    setUplineId
+}) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [uplineIdValue, setUplineIdValue] = useState("");
 
     const handleClickConnectWallet = async () => {
         if (window.web3) {
@@ -29,8 +33,8 @@ const ModalConnectWallet = ({ modalShow, setModalShow, clickedSignUp, clickedSig
         }
     };
 
-    const handleClickRegister = async () => {
-        if (uplineIdValue === "") {
+    const handleClickWatch = async () => {
+        if (uplineId === "") {
             toast.error('Upline Id is required');
         } else {
             if (window.web3) {
@@ -38,7 +42,7 @@ const ModalConnectWallet = ({ modalShow, setModalShow, clickedSignUp, clickedSig
 
                 if (account) {
                     navigate('/dashboard');
-                    dispatch(login(account));
+                    dispatch(watch({ account, uplineId }));
                 }
             } else {
                 toast.error('Metamask is not intalled');
@@ -86,10 +90,10 @@ const ModalConnectWallet = ({ modalShow, setModalShow, clickedSignUp, clickedSig
             </h2>
             <input type="number"
                 placeholder="Enter upliner ID"
-                value={uplineIdValue}
-                onChange={e => setUplineIdValue(e.target.value)}
+                value={uplineId}
+                onChange={e => setUplineId(e.target.value)}
             />
-            <button onClick={handleClickRegister}>
+            <button onClick={handleClickWatch}>
                 Connect wallet
             </button>
         </Modal >

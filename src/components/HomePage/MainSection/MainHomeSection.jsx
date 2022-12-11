@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 import { login } from "../../../redux/slices/userSlice";
 import { connectWallet } from "../../../utils/contract/contract";
@@ -12,6 +13,14 @@ import "./MainHomeSection.scss";
 const MainHomeSection = ({ modalShow, setModalShow, clickedSignIn, clickedSignUp }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const [searchParams] = useSearchParams();
+    const [uplineId, setUplineId] = useState("");
+
+    useEffect(() => {
+        if (searchParams.get('user_id') !== null) {
+            setUplineId(searchParams.get('user_id'));
+        }
+    }, []);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -44,7 +53,14 @@ const MainHomeSection = ({ modalShow, setModalShow, clickedSignIn, clickedSignUp
                 </button>
             </div>
         </section>
-        <ModalConnectWallet setModalShow={setModalShow} modalShow={modalShow} clickedSignIn={clickedSignIn} clickedSignUp={clickedSignUp} />
+        <ModalConnectWallet
+            setModalShow={setModalShow}
+            modalShow={modalShow}
+            clickedSignIn={clickedSignIn}
+            clickedSignUp={clickedSignUp}
+            uplineId={uplineId}
+            setUplineId={setUplineId}
+        />
     </>
 }
 
