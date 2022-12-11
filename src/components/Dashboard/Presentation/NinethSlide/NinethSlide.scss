@@ -45,6 +45,10 @@
         line-height: 32px;
         color: #BFBFC1;
         max-width: 450px;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        backdrop-filter: blur(49.5px);
+        padding: 10px;
     }
 }
 

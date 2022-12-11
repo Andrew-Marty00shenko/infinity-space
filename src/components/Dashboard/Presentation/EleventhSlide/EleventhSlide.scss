@@ -26,8 +26,12 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 32px;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        backdrop-filter: blur(49.5px);
+        padding: 10px;
 
-        svg{
+        img{
             margin-right: 20px;
         }
     }
