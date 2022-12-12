@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
-import { login } from "../../../redux/slices/userSlice";
+import { loginUser } from "../../../redux/slices/userSlice";
 import { connectWallet } from "../../../utils/contract/contract";
 
 import ModalConnectWallet from "../ModalConnectWallet/ModalConnectWallet";
@@ -11,7 +12,6 @@ import ModalConnectWallet from "../ModalConnectWallet/ModalConnectWallet";
 import "./MainHomeSection.scss";
 
 const MainHomeSection = ({ modalShow, setModalShow, clickedSignIn, clickedSignUp }) => {
-    const navigate = useNavigate();
     const dispatch = useDispatch();
     const [searchParams] = useSearchParams();
     const [uplineId, setUplineId] = useState("");
@@ -27,10 +27,16 @@ const MainHomeSection = ({ modalShow, setModalShow, clickedSignIn, clickedSignUp
         setModalShow(true);
     }, []);
 
-    const handleClickConnectWallet = async () => {
-        const account = await connectWallet();
-        navigate('/dashboard');
-        dispatch(login(account));
+    const handleClickConnectWallet = () => {
+        if (window.web3) {
+            const account = connectWallet();
+
+            if (account) {
+                dispatch(loginUser(account));
+            }
+        } else {
+            toast.error('Metamask is not intalled');
+        }
     };
 
     return <>

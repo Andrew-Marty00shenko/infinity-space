@@ -5,7 +5,7 @@ import ChainImg from "../../../assets/images/chain.png";
 import CryptoCurrencyImg from "../../../assets/images/cryptocurrency.png";
 import SmartContractImg from "../../../assets/images/smart-contract.png";
 
-const InfoProjectSection = () => {
+const InfoProjectSection = ({ data }) => {
     return <section className="info-project-section">
         <div className="info-project-section__top">
             <h2>
@@ -49,7 +49,7 @@ const InfoProjectSection = () => {
             <div className="info-project-section__results-blocks">
                 <div className="result-block">
                     <div>
-                        <p className="result-block__top-text">2 351 937</p>
+                        <p className="result-block__top-text">{data.totalUsers}</p>
                         <div>+ 392</div>
                     </div>
                     <p className="result-block__bottom-text">
@@ -58,7 +58,7 @@ const InfoProjectSection = () => {
                 </div>
                 <div className="result-block">
                     <div>
-                        <p className="result-block__top-text">2 351 937</p>
+                        <p className="result-block__top-text">{data.totalProfit}</p>
                         <div>+ 392</div>
                     </div>
                     <p className="result-block__bottom-text">

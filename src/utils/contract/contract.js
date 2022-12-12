@@ -1,11 +1,14 @@
 import Web3 from "web3";
+import contractAbi from "./contractAbi.json";
+import contractBUSDAbi from "./contractBUSDAbi.json";
 
-export const BINANCE_RPC_TEST = 'https://data-seed-prebsc-1-s1.binance.org:8545/';
-export const HASH_LINK = 'https://testnet.bscscan.com';
+const BINANCE_RPC_TEST = 'https://data-seed-prebsc-1-s1.binance.org:8545/';
+// const HASH_LINK = 'https://testnet.bscscan.com';
 
-// export const contract = new web3.eth.Contract(contractABI.abi, contractABI.address);
+const web3 = new Web3(new Web3.providers.HttpProvider(BINANCE_RPC_TEST));
 
-// const web3 = new Web3(new Web3.providers.HttpProvider(BINANCE_RPC_TEST));
+export const contract = new web3.eth.Contract(contractAbi.abi, contractAbi.address);
+export const contractBUSD = new web3.eth.Contract(contractBUSDAbi.abi, contractBUSDAbi.address);
 
 export const connectWallet = async () => {
     if (window.ethereum) {
@@ -34,3 +37,20 @@ export const getBnbBalance = async (wallet) => {
         return bnbBalance;
     }
 };
+
+export const getBUSDBalance = async (wallet) => {
+    if (window.ethereum) {
+        window.web3 = new Web3(window.ethereum);
+
+        const BUSDBalance = await contractBUSD.methods[
+            'balanceOf(address)'
+        ](wallet)
+            .call()
+            .then(res => {
+                const convertedResult = Math.ceil(window.web3.utils.fromWei(res) * 10000) / 10000;
+                return convertedResult;
+            });
+
+        return BUSDBalance;
+    }
+}

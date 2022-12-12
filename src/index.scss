@@ -56,6 +56,10 @@ body {
     &:hover{
       opacity: .8;
     }
+
+    &:disabled{
+      background-color: rgba($color: #3b3b3b, $alpha: 1) !important;
+    }
   }
 
   .Toastify__toast--success, .Toastify__toast--error {

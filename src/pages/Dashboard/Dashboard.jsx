@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 
 import Header from "../../components/Dashboard/Header/Header";
 import Sidebar from "../../components/Dashboard/Sidebar/Sidebar";
@@ -18,6 +18,11 @@ import "./Dashboard.scss";
 
 const Dashboard = () => {
     const [showSidebar, setShowSidebar] = useState(false);
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        navigate('/dashboard')
+    }, []);
 
     useEffect(() => {
         if (window.innerWidth > 800) {

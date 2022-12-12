@@ -1,97 +1,73 @@
 import classNames from "classnames";
+import { useEffect } from "react";
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+
+import { getLevelsInfo } from "../../../redux/slices/levelsSlice";
+import contractAbi from "../../../utils/contract/contractAbi.json";
+import contractBUSDAbi from "../../../utils/contract/contractBUSDAbi.json";
 
 import Stats from "../Stats/Stats";
 import ErrorModal from "./ErrorModal/ErrorModal";
 
 import "./Levels.scss";
 
-const levelsData = [
-    {
-        id: 1,
-        name: 'Level 1',
-        price: 16,
-        active: true
-    },
-    {
-        id: 2,
-        name: 'Level 2',
-        price: 32,
-        active: true
-    },
-    {
-        id: 3,
-        name: 'Level 3',
-        price: 64,
-        active: false
-    },
-    {
-        id: 4,
-        name: 'Level 4',
-        price: 128,
-        active: false
-    },
-    {
-        id: 5,
-        name: 'Level 5',
-        price: 256,
-        active: false
-    },
-    {
-        id: 6,
-        name: 'Level 6',
-        price: 512,
-        active: false
-    },
-    {
-        id: 7,
-        name: 'Level 7',
-        price: 1024,
-        active: false
-    },
-    {
-        id: 8,
-        name: 'Level 8',
-        price: 2048,
-        active: false
-    },
-    {
-        id: 9,
-        name: 'Level 9',
-        price: 4096,
-        active: false
-    },
-    {
-        id: 10,
-        name: 'Level 10',
-        price: 8192,
-        active: false
-    },
-    {
-        id: 11,
-        name: 'Level 11',
-        price: 16382,
-        active: false
-    },
-    {
-        id: 12,
-        name: 'Level 12',
-        price: 32768,
-        active: false
-    },
-]
-
 const Levels = () => {
-    const [modalShow, setModalShow] = useState(false);
+    const user = useSelector(state => state.user.user);
+    const levels = useSelector(state => state.levels.levels);
+    const wallet = useSelector(state => state.user.wallet);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const handleClickBuyLevel = (level) => {
-        if (!level.active) {
-            setModalShow(true);
+    const [modalShow, setModalShow] = useState(false);
 
-            return false;
+    useEffect(() => {
+        dispatch(getLevelsInfo(user.id));
+    }, []);
+
+    const handleClickBuyLevel = (level, levelId) => {
+        const contract = new window.web3.eth.Contract(
+            contractAbi.abi,
+            contractAbi.address,
+            { from: wallet }
+        );
+
+        const busdContract = new window.web3.eth.Contract(
+            contractBUSDAbi.abi,
+            contractBUSDAbi.address,
+            { from: wallet }
+        );
+
+
+
+        if (wallet === user.wallet) {
+            // busdContract.methods
+            //     .approve(contractAbi.address, level.price)
+            //     .send({
+            //         from: wallet
+            //     })
+            //     .on('transactionHash', hash => {
+            //         contract.methods[
+            //             'buyLevel(uint256, uint256)'
+            //         ](Number(levelId), Number(localStorage.getItem("uplineId")))
+            //             .send()
+            //             .then(res => console.log(res))
+            //     })
+        } else {
+            busdContract.methods
+                .approve(contractAbi.address, level.price)
+                .send({
+                    from: wallet
+                })
+                .on('transactionHash', hash => {
+                    contract.methods[
+                        'buyLevel(uint256,uint256)'
+                    ](Number(levelId), Number(localStorage.getItem("uplineId")))
+                        .send()
+                        .then(res => console.log(res))
+                })
         }
     };
 
@@ -106,7 +82,7 @@ const Levels = () => {
                 BUSD
             </h2>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.28718 1.17962C10.7293 0.606792 13.2707 0.606792 15.7128 1.17962C19.2395 2.00687 21.9931 4.76052 22.8204 8.28719C23.3932 10.7293 23.3932 13.2707 22.8204 15.7128C21.9931 19.2395 19.2395 21.9931 15.7128 22.8204C13.2707 23.3932 10.7293 23.3932 8.28719 22.8204C4.76052 21.9931 2.00687 19.2395 1.17962 15.7128C0.606792 13.2707 0.606792 10.7293 1.17962 8.28718C2.00687 4.76051 4.76052 2.00687 8.28718 1.17962ZM12 9.60675C12.6608 9.60675 13.1966 9.07101 13.1966 8.41014C13.1966 7.74928 12.6608 7.21354 12 7.21354C11.3391 7.21354 10.8034 7.74928 10.8034 8.41014C10.8034 9.07101 11.3391 9.60675 12 9.60675ZM12 10.5042C12.4956 10.5042 12.8974 10.906 12.8974 11.4017V16.1881C12.8974 16.6837 12.4956 17.0855 12 17.0855C11.5043 17.0855 11.1025 16.6837 11.1025 16.1881V11.4017C11.1025 10.906 11.5043 10.5042 12 10.5042Z" fill="#AFC6FF" />
+                <path fillRule="evenodd" clipRule="evenodd" d="M8.28718 1.17962C10.7293 0.606792 13.2707 0.606792 15.7128 1.17962C19.2395 2.00687 21.9931 4.76052 22.8204 8.28719C23.3932 10.7293 23.3932 13.2707 22.8204 15.7128C21.9931 19.2395 19.2395 21.9931 15.7128 22.8204C13.2707 23.3932 10.7293 23.3932 8.28719 22.8204C4.76052 21.9931 2.00687 19.2395 1.17962 15.7128C0.606792 13.2707 0.606792 10.7293 1.17962 8.28718C2.00687 4.76051 4.76052 2.00687 8.28718 1.17962ZM12 9.60675C12.6608 9.60675 13.1966 9.07101 13.1966 8.41014C13.1966 7.74928 12.6608 7.21354 12 7.21354C11.3391 7.21354 10.8034 7.74928 10.8034 8.41014C10.8034 9.07101 11.3391 9.60675 12 9.60675ZM12 10.5042C12.4956 10.5042 12.8974 10.906 12.8974 11.4017V16.1881C12.8974 16.6837 12.4956 17.0855 12 17.0855C11.5043 17.0855 11.1025 16.6837 11.1025 16.1881V11.4017C11.1025 10.906 11.5043 10.5042 12 10.5042Z" fill="#AFC6FF" />
             </svg>
             <svg width="140" height="39" viewBox="0 0 140 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="11" width="116" height="39" rx="19.5" fill="#42434A" />
@@ -117,33 +93,33 @@ const Levels = () => {
         <div className="levels__stages">
             <Container fluid>
                 <Row>
-                    {levelsData.map(level => {
-                        return <Col xs={6} sm={6} lg={4} xl={3} xxl={3} key={level.id}>
+                    {levels?.map((level, index) => {
+                        return <Col xs={6} sm={6} lg={4} xl={3} xxl={3} key={index}>
                             <div className={classNames("stage", {
-                                "stage--active": level.active
+                                "stage--active": level.status
                             })} >
                                 <div className="background-active" />
                                 <div className="stage__top"
-                                    onClick={() => navigate(`${window.location.pathname}/${level.id}`)}
+                                    onClick={() => navigate(`${window.location.pathname}/${index + 1}`)}
                                 >
                                     <p>
-                                        {level.name}
+                                        Level {index + 1}
                                     </p>
                                     <div className="stage__top-price">
                                         <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect x="0.5" width="24" height="24" rx="12" fill="#FFED4C" fill-opacity="0.08" />
+                                            <rect x="0.5" width="24" height="24" rx="12" fill="#FFED4C" fillOpacity="0.08" />
                                             <path d="M4.86328 11.9922L6.77913 10.0762L8.69498 11.9922L6.77913 13.9081L4.86328 11.9922ZM7.74744 9.10861L12.4921 4.36353L14.4079 6.27951L9.66302 11.0245L7.74744 9.10861ZM7.72707 14.8564L15.3564 7.22658L17.2722 9.14256L9.64278 16.7723L7.72707 14.8564ZM10.5909 17.7204L18.2202 10.0906L20.136 12.0065L12.5066 19.6363L10.5909 17.7204Z" fill="#FFED4C" />
                                         </svg>
-                                        {level.price}
+                                        {level.price / 1e18}
                                     </div>
                                     <div className="stage__top-stats">
                                         <div>
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M3 18.433C3 16.4308 4.45485 14.7254 6.43204 14.4098L6.61013 14.3814C8.19336 14.1287 9.80664 14.1287 11.3899 14.3814L11.568 14.4098C13.5451 14.7254 15 16.4308 15 18.433C15 19.2984 14.2984 20 13.433 20H4.56697C3.70156 20 3 19.2984 3 18.433Z" stroke="white" stroke-width="1.5" />
-                                                <path d="M12.5 7.5C12.5 9.433 10.933 11 9 11C7.067 11 5.5 9.433 5.5 7.5C5.5 5.567 7.067 4 9 4C10.933 4 12.5 5.567 12.5 7.5Z" stroke="white" stroke-width="1.5" />
-                                                <path d="M15 11C16.933 11 18.5 9.433 18.5 7.5C18.5 5.567 16.933 4 15 4M17.3899 20H19.433C20.2984 20 21 19.2984 21 18.433C21 16.4308 19.5451 14.7254 17.568 14.4098V14.4098C17.4494 14.3909 17.3293 14.3814 17.2093 14.3814C16.8895 14.3814 16.7902 14.3814 16.2412 14.3814" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                                                <path d="M3 18.433C3 16.4308 4.45485 14.7254 6.43204 14.4098L6.61013 14.3814C8.19336 14.1287 9.80664 14.1287 11.3899 14.3814L11.568 14.4098C13.5451 14.7254 15 16.4308 15 18.433C15 19.2984 14.2984 20 13.433 20H4.56697C3.70156 20 3 19.2984 3 18.433Z" stroke="white" strokeWidth="1.5" />
+                                                <path d="M12.5 7.5C12.5 9.433 10.933 11 9 11C7.067 11 5.5 9.433 5.5 7.5C5.5 5.567 7.067 4 9 4C10.933 4 12.5 5.567 12.5 7.5Z" stroke="white" strokeWidth="1.5" />
+                                                <path d="M15 11C16.933 11 18.5 9.433 18.5 7.5C18.5 5.567 16.933 4 15 4M17.3899 20H19.433C20.2984 20 21 19.2984 21 18.433C21 16.4308 19.5451 14.7254 17.568 14.4098V14.4098C17.4494 14.3909 17.3293 14.3814 17.2093 14.3814C16.8895 14.3814 16.7902 14.3814 16.2412 14.3814" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
                                             </svg>
-                                            24
+                                            {level.partnersCount}
                                             &nbsp;
                                         </div>
                                         <br />
@@ -151,14 +127,14 @@ const Levels = () => {
                                             <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M18.8074 7.79967H17.7528C17.3083 3.98019 13.9936 0.914062 10.0008 0.914062C7.7935 0.914062 5.78959 1.87835 4.40343 3.38504C4.03429 3.74665 4.04936 4.22879 4.3507 4.50753C4.65957 4.79381 5.10405 4.79381 5.48072 4.44727C6.60321 3.23438 8.21537 2.47349 10.0008 2.47349C13.1799 2.47349 15.7489 4.80134 16.1783 7.79967H15.0256C14.4456 7.79967 14.2874 8.22907 14.6264 8.69615L16.4269 11.2425C16.7056 11.6191 17.1275 11.6267 17.3987 11.2425L19.2067 8.70368C19.5457 8.22907 19.3951 7.79967 18.8074 7.79967ZM1.19417 9.61523H2.25639C2.70087 13.4347 6.0156 16.5008 10.0008 16.5008C12.2232 16.5008 14.2271 15.529 15.6133 14.0223C15.9749 13.6607 15.9598 13.1786 15.6585 12.8998C15.3496 12.6136 14.9126 12.6136 14.5284 12.9676C13.421 14.1805 11.8088 14.9414 10.0008 14.9414C6.82921 14.9414 4.2603 12.6136 3.83089 9.61523H4.97598C5.54852 9.61523 5.71426 9.18583 5.37525 8.71875L3.56722 6.17243C3.29601 5.79576 2.87414 5.78823 2.60293 6.17243L0.794895 8.71122C0.448354 9.18583 0.606558 9.61523 1.19417 9.61523Z" fill="#39EB8B" />
                                             </svg>
-                                            2432
+                                            {level.reinvestCount}
                                         </div>
                                     </div>
                                 </div>
-                                <button disabled={level.active} onClick={() => handleClickBuyLevel(level)}>
-                                    {level.active ? <>
+                                <button disabled={level.status} onClick={() => handleClickBuyLevel(level, index + 1)}>
+                                    {level.status ? <>
                                         <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.52975 0.343699C8.4834 -0.114566 10.5166 -0.114566 12.4703 0.343699C15.2916 1.00549 17.4945 3.20842 18.1563 6.02975C18.6146 7.9834 18.6146 10.0166 18.1563 11.9703C17.4945 14.7916 15.2916 16.9945 12.4703 17.6563C10.5166 18.1146 8.4834 18.1146 6.52975 17.6563C3.70842 16.9945 1.5055 14.7916 0.8437 11.9703C0.385433 10.0166 0.385433 7.9834 0.8437 6.02974C1.5055 3.20841 3.70842 1.00549 6.52975 0.343699ZM12.5524 7.47731C12.7689 7.2454 12.7563 6.88195 12.5244 6.6655C12.2925 6.44906 11.9291 6.46159 11.7126 6.6935L8.76776 9.84869L7.27358 8.35451C7.04927 8.1302 6.6856 8.1302 6.4613 8.35451C6.23699 8.57882 6.23699 8.94249 6.4613 9.16679L8.37587 11.0814C8.48601 11.1915 8.63617 11.2522 8.79191 11.2495C8.94765 11.2468 9.09563 11.181 9.20191 11.0671L12.5524 7.47731Z" fill="#39EB8B" />
+                                            <path fillRule="evenodd" clipRule="evenodd" d="M6.52975 0.343699C8.4834 -0.114566 10.5166 -0.114566 12.4703 0.343699C15.2916 1.00549 17.4945 3.20842 18.1563 6.02975C18.6146 7.9834 18.6146 10.0166 18.1563 11.9703C17.4945 14.7916 15.2916 16.9945 12.4703 17.6563C10.5166 18.1146 8.4834 18.1146 6.52975 17.6563C3.70842 16.9945 1.5055 14.7916 0.8437 11.9703C0.385433 10.0166 0.385433 7.9834 0.8437 6.02974C1.5055 3.20841 3.70842 1.00549 6.52975 0.343699ZM12.5524 7.47731C12.7689 7.2454 12.7563 6.88195 12.5244 6.6655C12.2925 6.44906 11.9291 6.46159 11.7126 6.6935L8.76776 9.84869L7.27358 8.35451C7.04927 8.1302 6.6856 8.1302 6.4613 8.35451C6.23699 8.57882 6.23699 8.94249 6.4613 9.16679L8.37587 11.0814C8.48601 11.1915 8.63617 11.2522 8.79191 11.2495C8.94765 11.2468 9.09563 11.181 9.20191 11.0671L12.5524 7.47731Z" fill="#39EB8B" />
                                         </svg>
                                         Active
                                     </> : 'Activate level'}

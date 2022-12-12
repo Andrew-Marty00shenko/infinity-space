@@ -1,5 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
+
+import { contract } from "../../utils/contract/contract";
 
 import LandingHeader from "../../components/Landing/LandingHeader/LandingHeader";
 import InfoProjectSection from "../../components/Landing/InfoProjectSection/InfoProjectSection";
@@ -22,12 +25,27 @@ const Landing = () => {
     const [clickedSignUp, setClickedSignUp] = useState(false);
     const [modalShow, setModalShow] = useState(false);
 
+    const [data, setData] = useState({
+        totalUsers: 0,
+        totalProfit: 0,
+    });
+
+    useEffect(() => {
+        contract.methods
+            .getGlobals()
+            .call()
+            .then(res => setData({
+                totalUsers: res[0],
+                totalProfit: res[1]
+            }))
+    }, [])
+
     return <div className="landing">
         <Routes>
             <Route path="/" element={<>
                 <LandingHeader setClickedSignIn={setClickedSignIn} setClickedSignUp={setClickedSignUp} />
-                <MainSection setClickedSignUp={setClickedSignUp} />
-                <InfoProjectSection />
+                <MainSection data={data} setClickedSignUp={setClickedSignUp} />
+                <InfoProjectSection data={data} />
                 <ContractAddressSection />
                 <SliderSection setClickedSignUp={setClickedSignUp} />
                 <DashboardSection setClickedSignIn={setClickedSignIn} setClickedSignUp={setClickedSignUp} />

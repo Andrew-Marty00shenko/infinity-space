@@ -13,7 +13,7 @@ const PrivacyPolicyModal = ({ show, setShow }) => {
     >
         <div className="close-btn">
             <svg onClick={() => setShow(false)} width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M25 1L1 25M1 1L25 25" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M25 1L1 25M1 1L25 25" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
         </div>
 

@@ -1,23 +1,13 @@
-import { useDispatch } from "react-redux";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { login } from "../../../redux/slices/userSlice";
+import { Link, useLocation } from "react-router-dom";
 
 import "./LandingHeader.scss";
 
 const LandingHeader = ({ setClickedSignIn, setClickedSignUp, clickedSignIn, setModalShow }) => {
     const location = useLocation();
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-
-    const handleClickConnectWallet = async () => {
-        const account = await connectWallet();
-        navigate('/dashboard');
-        dispatch(login(account));
-    };
 
     const connectWallet = () => {
         if (clickedSignIn) {
-            handleClickConnectWallet();
+            setModalShow(true);
         } else {
             setModalShow(true);
         }

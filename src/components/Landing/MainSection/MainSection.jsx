@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 
 import "./MainSection.scss";
 
-const MainSection = ({ setClickedSignUp }) => {
+const MainSection = ({ data, setClickedSignUp }) => {
+
     return <section className="main-section">
         <div className="main-section__content">
             <h1>
@@ -23,7 +24,7 @@ const MainSection = ({ setClickedSignUp }) => {
 
             <div className="main-section__stats">
                 <div>
-                    <p> &#62;2 350 008</p>
+                    <p> &#62;{data.totalUsers}</p>
                     <p>Quantity users</p>
                 </div>
                 <div>
@@ -31,7 +32,7 @@ const MainSection = ({ setClickedSignUp }) => {
                     <p>Joined within 24 hours</p>
                 </div>
                 <div>
-                    <p>$1 068 633 089</p>
+                    <p>${data.totalProfit}</p>
                     <p>Earned all the time</p>
                 </div>
             </div>
