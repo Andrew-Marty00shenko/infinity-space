@@ -11,6 +11,7 @@
     "bootstrap": "^5.2.2",
     "classnames": "^2.3.2",
     "i18next": "^22.0.6",
+    "parallax-js": "^3.1.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-copy-to-clipboard": "^5.1.0",

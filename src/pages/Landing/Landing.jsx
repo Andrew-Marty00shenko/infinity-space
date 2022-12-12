@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { contract } from "../../utils/contract/contract";
 
 import LandingHeader from "../../components/Landing/LandingHeader/LandingHeader";
-import InfoProjectSection from "../../components/Landing/InfoProjectSection/InfoProjectSection";
 import MainSection from "../../components/Landing/MainSection/MainSection";
 import ContractAddressSection from "../../components/Landing/ContractAddressSection/ContractAddressSection";
 import SliderSection from "../../components/Landing/SliderSection/SliderSection";
@@ -45,7 +44,6 @@ const Landing = () => {
             <Route path="/" element={<>
                 <LandingHeader setClickedSignIn={setClickedSignIn} setClickedSignUp={setClickedSignUp} />
                 <MainSection data={data} setClickedSignUp={setClickedSignUp} />
-                <InfoProjectSection data={data} />
                 <ContractAddressSection />
                 <SliderSection setClickedSignUp={setClickedSignUp} />
                 <DashboardSection setClickedSignIn={setClickedSignIn} setClickedSignUp={setClickedSignUp} />
