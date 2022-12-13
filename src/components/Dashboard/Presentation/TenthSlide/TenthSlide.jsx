@@ -9,7 +9,7 @@ const TenthSlide = () => {
                     <path d="M44 49.9788L49.2686 44.7098L54.5372 49.9788L49.2686 55.2477L44 49.9788ZM51.9314 42.049L64.9791 29L70.2477 34.2689L57.1993 47.3176L51.9314 42.049ZM51.8754 57.8555L72.856 36.8734L78.1246 42.1423L57.1436 63.124L51.8754 57.8555ZM59.7508 65.7314L80.7314 44.7494L86 50.0183L65.019 71L59.7508 65.7314Z" fill="white" />
                 </g>
                 <defs>
-                    <filter id="filter0_d_590_11519" x="0" y="0" width="130" height="130" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_d_590_11519" x="0" y="0" width="130" height="130" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood flood-opacity="0" result="BackgroundImageFix" />
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                         <feOffset dy="15" />
@@ -47,7 +47,7 @@ const TenthSlide = () => {
                     </g>
                 </g>
                 <defs>
-                    <filter id="filter0_d_590_11525" x="0" y="0" width="130" height="130" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_d_590_11525" x="0" y="0" width="130" height="130" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood flood-opacity="0" result="BackgroundImageFix" />
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                         <feOffset dy="15" />
@@ -57,7 +57,7 @@ const TenthSlide = () => {
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_590_11525" />
                         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_590_11525" result="shape" />
                     </filter>
-                    <filter id="filter1_d_590_11525" x="-39" y="-10" width="208" height="208" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter1_d_590_11525" x="-39" y="-10" width="208" height="208" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood flood-opacity="0" result="BackgroundImageFix" />
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                         <feOffset dy="44" />
@@ -124,7 +124,7 @@ const TenthSlide = () => {
                     </g>
                 </g>
                 <defs>
-                    <filter id="filter0_d_590_11531" x="0" y="0" width="130" height="130" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_d_590_11531" x="0" y="0" width="130" height="130" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood flood-opacity="0" result="BackgroundImageFix" />
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                         <feOffset dy="15" />
@@ -165,7 +165,7 @@ const TenthSlide = () => {
                     <path fillRule="evenodd" clipRule="evenodd" d="M54.6846 43.0616C54.6925 43.0747 54.7004 43.0877 54.7081 43.1006C57.5093 42.2447 61.9706 39.2425 63.851 37.8484C63.8471 37.8443 63.8432 37.8402 63.8393 37.8361C67.8206 35.7412 72.1308 34.0345 76.5478 34.1479C68.2153 35.0024 60.7583 41.5635 56.9452 45.9213C52.8601 50.59 47.9968 53.4107 44.5926 52.049C41.1883 50.6873 39.4375 45.1432 45.3707 41.2526C46.0476 40.8087 46.697 40.4882 47.3164 40.2706C45.6486 41.8227 43.6936 44.8168 48.5795 45.0458C50.3046 45.1267 52.3659 44.2962 54.6846 43.0616Z" fill="url(#paint6_linear_590_11569)" />
                 </g>
                 <defs>
-                    <filter id="filter0_d_590_11569" x="0" y="0" width="130" height="130" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_d_590_11569" x="0" y="0" width="130" height="130" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood flood-opacity="0" result="BackgroundImageFix" />
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                         <feOffset dy="15" />
