@@ -4,8 +4,10 @@ import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import { getLevelsInfo } from "../../../redux/slices/levelsSlice";
+import { getUserData } from "../../../redux/slices/userSlice";
 import contractAbi from "../../../utils/contract/contractAbi.json";
 import contractBUSDAbi from "../../../utils/contract/contractBUSDAbi.json";
 
@@ -25,49 +27,59 @@ const Levels = () => {
 
     useEffect(() => {
         dispatch(getLevelsInfo(user.id));
-    }, []);
+    }, [user]);
 
     const handleClickBuyLevel = (level, levelId) => {
-        const contract = new window.web3.eth.Contract(
-            contractAbi.abi,
-            contractAbi.address,
-            { from: wallet }
-        );
+        if (levels[levelId - 2]?.status === false) {
+            setModalShow(true);
 
-        const busdContract = new window.web3.eth.Contract(
-            contractBUSDAbi.abi,
-            contractBUSDAbi.address,
-            { from: wallet }
-        );
-
-
-
-        if (wallet === user.wallet) {
-            // busdContract.methods
-            //     .approve(contractAbi.address, level.price)
-            //     .send({
-            //         from: wallet
-            //     })
-            //     .on('transactionHash', hash => {
-            //         contract.methods[
-            //             'buyLevel(uint256, uint256)'
-            //         ](Number(levelId), Number(localStorage.getItem("uplineId")))
-            //             .send()
-            //             .then(res => console.log(res))
-            //     })
+            return;
         } else {
-            busdContract.methods
-                .approve(contractAbi.address, level.price)
-                .send({
-                    from: wallet
-                })
-                .on('transactionHash', hash => {
-                    contract.methods[
-                        'buyLevel(uint256,uint256)'
-                    ](Number(levelId), Number(localStorage.getItem("uplineId")))
-                        .send()
-                        .then(res => console.log(res))
-                })
+            const contract = new window.web3.eth.Contract(
+                contractAbi.abi,
+                contractAbi.address,
+                { from: wallet }
+            );
+
+            const busdContract = new window.web3.eth.Contract(
+                contractBUSDAbi.abi,
+                contractBUSDAbi.address,
+                { from: wallet }
+            );
+
+            if (wallet.toLowerCase() === user?.wallet.toLowerCase()) {
+                busdContract.methods
+                    .approve(contractAbi.address, level.price)
+                    .send({
+                        from: wallet
+                    })
+                    .on('transactionHash', hash => {
+                        contract.methods[
+                            'buyLevel(uint256)'
+                        ](Number(levelId))
+                            .send()
+                            .then(res => {
+                                toast.success(`You have successfully purchased a level ${levelId}`)
+                                dispatch(getUserData(wallet));
+                            });
+                    })
+            } else {
+                busdContract.methods
+                    .approve(contractAbi.address, level.price)
+                    .send({
+                        from: wallet
+                    })
+                    .on('transactionHash', hash => {
+                        contract.methods[
+                            'buyLevel(uint256,uint256)'
+                        ](Number(levelId), Number(localStorage.getItem("uplineId")))
+                            .send()
+                            .then(res => {
+                                toast.success('You have successfully purchased a level 1')
+                                dispatch(getUserData(wallet));
+                            });
+                    })
+            }
         }
     };
 
@@ -110,7 +122,7 @@ const Levels = () => {
                                             <rect x="0.5" width="24" height="24" rx="12" fill="#FFED4C" fillOpacity="0.08" />
                                             <path d="M4.86328 11.9922L6.77913 10.0762L8.69498 11.9922L6.77913 13.9081L4.86328 11.9922ZM7.74744 9.10861L12.4921 4.36353L14.4079 6.27951L9.66302 11.0245L7.74744 9.10861ZM7.72707 14.8564L15.3564 7.22658L17.2722 9.14256L9.64278 16.7723L7.72707 14.8564ZM10.5909 17.7204L18.2202 10.0906L20.136 12.0065L12.5066 19.6363L10.5909 17.7204Z" fill="#FFED4C" />
                                         </svg>
-                                        {level.price / 1e18}
+                                        {level.price}
                                     </div>
                                     <div className="stage__top-stats">
                                         <div>
@@ -146,9 +158,9 @@ const Levels = () => {
                 </Row>
             </Container>
         </div>
-        <div className="levels__transactions">
+        {/* <div className="levels__transactions">
             <Stats levels={true} />
-        </div>
+        </div> */}
 
         <ErrorModal setModalShow={setModalShow} modalShow={modalShow} />
     </div>

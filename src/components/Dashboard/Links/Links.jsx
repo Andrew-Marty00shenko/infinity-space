@@ -140,6 +140,7 @@ const Links = () => {
     const [activeMonthBtn, setActiveMonthBtn] = useState(true);
     const [activeYearBtn, setActiveYearBtn] = useState(false);
 
+    const user = useSelector(state => state.user.user);
     const wallet = useSelector(state => state.user.wallet);
     const slicedAddressWallet = wallet.substring(0, 5)
         + "..."
@@ -150,7 +151,7 @@ const Links = () => {
 
 
     useEffect(() => {
-        apiUser.getLinksClicked(0)
+        apiUser.getLinksClicked(user?.id)
             .then(({ data }) => {
                 setClickLinks({
                     totalClicks: data.total_clicks,
@@ -166,6 +167,8 @@ const Links = () => {
             toast.success('Address copied');
         }
     };
+
+    console.log(user)
 
     const handleClickMonth = () => {
         setActiveMonthBtn(true);
@@ -183,7 +186,7 @@ const Links = () => {
                 Links
             </h2>
             <div>
-                ID 0
+                ID {user?.id}
             </div>
         </div>
         <div className="links__info">
@@ -304,7 +307,7 @@ const Links = () => {
                                     </div>
                                     <div>
                                         <p>
-                                            0
+                                            {user?.userData.refCount}
                                         </p>
                                         <span>
                                             + 0
@@ -338,7 +341,7 @@ const Links = () => {
                                     </div>
                                     <div>
                                         <p>
-                                            0
+                                            {user?.userData.earned}
                                         </p>
                                         <span>
                                             + 0
@@ -371,11 +374,11 @@ const Links = () => {
                                             </svg>
                                         </div>
                                         <div className="user-link__bottom">
-                                            InfinitySpace.io/b/ob2oe5
+                                            {`InfinitySpace.io/b/${user?.id}`}
                                         </div>
                                     </div>
                                     <div className="user-link__copy">
-                                        <CopyToClipboard text={`${window.location.origin}/home-page?user_id=${0}`} onCopy={() => handleCopy(1)}>
+                                        <CopyToClipboard text={`${window.location.origin}/home-page?user_id=${user?.id}`} onCopy={() => handleCopy(1)}>
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_38_618)">
                                                     <path d="M6.66699 13.3333V15.6667C6.66699 16.6001 6.66699 17.0668 6.84865 17.4233C7.00844 17.7369 7.2634 17.9919 7.57701 18.1517C7.93353 18.3333 8.40024 18.3333 9.33366 18.3333H15.667C16.6004 18.3333 17.0671 18.3333 17.4236 18.1517C17.7372 17.9919 17.9922 17.7369 18.152 17.4233C18.3337 17.0668 18.3337 16.6001 18.3337 15.6667V9.33334C18.3337 8.39992 18.3337 7.93321 18.152 7.57669C17.9922 7.26308 17.7372 7.00812 17.4236 6.84833C17.0671 6.66667 16.6004 6.66667 15.667 6.66667H13.3337M4.33366 13.3333H10.667C11.6004 13.3333 12.0671 13.3333 12.4236 13.1517C12.7372 12.9919 12.9922 12.7369 13.152 12.4233C13.3337 12.0668 13.3337 11.6001 13.3337 10.6667V4.33334C13.3337 3.39992 13.3337 2.93321 13.152 2.57669C12.9922 2.26308 12.7372 2.00812 12.4236 1.84833C12.0671 1.66667 11.6004 1.66667 10.667 1.66667H4.33366C3.40024 1.66667 2.93353 1.66667 2.57701 1.84833C2.2634 2.00812 2.00844 2.26308 1.84865 2.57669C1.66699 2.93321 1.66699 3.39992 1.66699 4.33334V10.6667C1.66699 11.6001 1.66699 12.0668 1.84865 12.4233C2.00844 12.7369 2.2634 12.9919 2.57701 13.1517C2.93353 13.3333 3.40024 13.3333 4.33366 13.3333Z" stroke="#AFC6FF" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />

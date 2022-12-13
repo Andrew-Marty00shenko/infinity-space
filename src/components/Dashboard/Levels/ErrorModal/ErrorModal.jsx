@@ -21,7 +21,7 @@ const ErrorModal = ({ modalShow, setModalShow }) => {
             Attantion!
         </h2>
         <p>
-            To activate level 5, you must have activated level 4.
+            To activate this level, you must have activated previous level.
         </p>
         <button onClick={() => setModalShow(false)} >
             Close

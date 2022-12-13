@@ -68,7 +68,7 @@ const Level = () => {
                                 <rect width="48" height="48" rx="24" fill="#FFED4C" fillOpacity="0.08" />
                                 <path d="M8.72656 23.9838L12.5583 20.1519L16.39 23.9838L12.5583 27.8158L8.72656 23.9838ZM14.4949 18.2167L23.9841 8.72656L27.8158 12.5585L18.326 22.0484L14.4949 18.2167ZM14.4541 29.7123L29.7127 14.4527L33.5444 18.2846L18.2856 33.544L14.4541 29.7123ZM20.1817 35.4403L35.4403 20.1806L39.272 24.0126L24.0131 39.272L20.1817 35.4403Z" fill="#FFED4C" />
                             </svg>
-                            {currentLevel?.price / 1e18}
+                            {currentLevel?.price}
                         </div>
                     </div>
                     <div className="card-content__partners">
@@ -165,9 +165,9 @@ const Level = () => {
             />
         </div>
 
-        <div className="levels__transactions">
+        {/* <div className="levels__transactions">
             <Stats levels={true} />
-        </div>
+        </div> */}
     </div>
 }
 
