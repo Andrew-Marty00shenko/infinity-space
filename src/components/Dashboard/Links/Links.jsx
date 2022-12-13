@@ -168,8 +168,6 @@ const Links = () => {
         }
     };
 
-    console.log(user)
-
     const handleClickMonth = () => {
         setActiveMonthBtn(true);
         setActiveYearBtn(false);

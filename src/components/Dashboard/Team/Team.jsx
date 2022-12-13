@@ -11,22 +11,26 @@ const Team = () => {
     const [partners, setPartners] = useState([]);
     const [skip, setSkip] = useState(0);
     const [limit, setLimit] = useState(10);
+    const [total, setTotal] = useState(0);
 
     useEffect(() => {
         contract.methods[
             'getPartnersById(uint256,uint256,uint256)'
         ](user.id, skip, limit)
             .call()
-            .then(res => setPartners(res[1]));
+            .then(res => {
+                setTotal(Number(res[0]));
+                setPartners(res[1]);
+            });
     }, []);
 
     const handleLoadMore = () => {
-        setSkip(skip + 1);
+        setSkip(skip + 10);
         contract.methods[
             'getPartnersById(uint256,uint256,uint256)'
-        ](user.id, skip + 1, limit)
+        ](user.id, skip + 10, limit)
             .call()
-            .then(res => setPartners(res[1]));
+            .then(res => setPartners(partners.concat(res[1])));
     };
 
     return <div className="team">
@@ -65,9 +69,9 @@ const Team = () => {
                                 ' ' + addZero(dateFormat.getHours()) +
                                 ':' + addZero(dateFormat.getMinutes());
 
-                            const slicedAddressWallet = partner.wallet.substring(0, 5)
+                            const slicedAddressWallet = partner.wallet?.substring(0, 5)
                                 + "..."
-                                + partner.wallet.substring(
+                                + partner.wallet?.substring(
                                     partner.wallet.length - 5,
                                     partner.wallet.length
                                 );
@@ -130,9 +134,9 @@ const Team = () => {
                             "." + addZero((dateFormat.getMonth() + 1)) +
                             "." + addZero(dateFormat.getFullYear());
 
-                        const slicedAddressWallet = partner.wallet.substring(0, 5)
+                        const slicedAddressWallet = partner.wallet?.substring(0, 5)
                             + "..."
-                            + partner.wallet.substring(
+                            + partner.wallet?.substring(
                                 partner.wallet.length - 5,
                                 partner.wallet.length
                             );
@@ -196,9 +200,9 @@ const Team = () => {
                     })}
 
                 </div>
-                <button onClick={handleLoadMore}>
+                {total !== partners.length && <button onClick={handleLoadMore}>
                     Load more
-                </button>
+                </button>}
             </>
         )}
     </div >
