@@ -1,0 +1,99 @@
+.preloader{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    overflow: hidden;
+    // background-color: transparent;
+    background-color: rgba($color: #1A1B20, $alpha: 1) ;
+
+    .circle-1{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -70%) rotate(45deg);
+        background: linear-gradient(180deg, #6875DC 0%, rgba(9, 93, 255, 0) 100%);
+        filter: blur(60.5px);
+        width: 461px;
+        height: 453px;
+        border-radius: 50%;
+    }
+
+    .circle-2{
+        width: 797px;
+        height: 677px;
+        background: linear-gradient(180deg, #6875DC 0%, rgba(9, 93, 255, 0) 100%);
+        filter: blur(73.5px);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -10%) rotate(33deg);
+    }
+
+    &__block{
+        text-align: center;
+        position: absolute;
+        top: 50%;  /* position the top  edge of the element at the middle of the parent */
+        left: 50%; /* position the left edge of the element at the middle of the parent */
+        transform: translate(-50%, -50%);
+
+        svg{
+            path{
+                stroke: #5297FF;
+            }
+        }
+
+        #loading-bar{
+            &-left{
+                animation: loading-bar-morph 1s linear 1.5s infinite;
+                transform-origin: center;
+            }
+    
+            &-middle{
+                animation: loading-bar-morph 1s linear .5s infinite;
+                transform-origin: center;
+            }
+                
+            &-right{
+                animation: loading-bar-morph 1s linear 1s infinite;
+                transform-origin: center;
+                padding: 20px;
+            }     
+
+                @keyframes loading-bar-morph{
+                    0%{
+                        transform: scaleY(1)
+                    }
+                    25%{
+                        transform: scaleY(0.3)
+                    }
+                    50%{
+                        transform: scaleY(0.7)
+                    }
+                    75%{
+                        transform: scaleY(0.15)
+                    }
+                }
+            }
+ 
+
+        p{
+            margin-top: 15px;
+            font-family: 'Proxima Nova',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 33px;
+            color: #FFFFFF;
+            padding-bottom: 6px;
+        }
+
+        span{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+}

@@ -19,6 +19,8 @@ const MainHomeSection = ({ modalShow, setModalShow, clickedSignIn, clickedSignUp
     useEffect(() => {
         if (searchParams.get('user_id') !== null) {
             setUplineId(searchParams.get('user_id'));
+        } else {
+            setUplineId('1');
         }
     }, []);
 

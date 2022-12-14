@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import DashboardLaptop from "../../../assets/images/dashboard-laptop.png";
+import DashboardLaptop from "../../../assets/images/laptop-desktop.png";
 import DashboardLaptopopTablet from "../../../assets/images/dashboard-laptop-tablet.png";
 import DashboardLaptopopMobile from "../../../assets/images/mobile-laptop.png";
 
@@ -9,7 +9,7 @@ import "./DashboardSection.scss";
 const DashboardSection = ({ setClickedSignIn, setClickedSignUp }) => {
     return <section className="dashboard-section">
         <div className="dashboard-section__block">
-            <img className="dashboard-laptop-desktop" src={DashboardLaptop} alt="laptop" />
+            <img className="dashboard-laptop-desktop" height="500" src={DashboardLaptop} alt="laptop" />
             <img className="dashboard-laptop-tablet" src={DashboardLaptopopTablet} alt="laptop" />
             <img className="dashboard-laptop-mobile" src={DashboardLaptopopMobile} alt="laptop" height="280" />
             <svg className="icon-left" width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">

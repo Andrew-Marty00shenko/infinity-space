@@ -14,11 +14,13 @@ import Presentation from "../../components/Dashboard/Presentation/Presentation";
 import Web3Academy from "../../components/Dashboard/Web3Academy/Web3Academy";
 
 import "./Dashboard.scss";
-
+import { useSelector } from "react-redux";
+import Preloader from "../../components/Common/Preloader";
 
 const Dashboard = () => {
     const [showSidebar, setShowSidebar] = useState(false);
     const navigate = useNavigate()
+    const user = useSelector(state => state.user.user);
 
     useEffect(() => {
         navigate('/dashboard')
@@ -32,21 +34,24 @@ const Dashboard = () => {
         }
     }, []);
 
-    return <div className="dashboard">
-        <Header showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
-        <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
-        <Routes>
-            <Route path='/dashboard' element={<Main />} />
-            <Route path='/dashboard/user/levels' element={<Levels />} />
-            <Route path='/dashboard/user/levels/:id' element={<Level />} />
-            <Route path='/dashboard/team' element={<Team />} />
-            <Route path='/dashboard/links' element={<Links />} />
-            <Route path='/dashboard/stats' element={<Stats />} />
-            <Route path='/dashboard/presentation' element={<Presentation />} />
-            <Route path='/dashboard/contacts' element={<Contacts />} />
-            <Route path='/dashboard/web3-academy' element={<Web3Academy />} />
-        </Routes>
-    </div>
+    return <>
+        {user === null && <Preloader />}
+        <div className="dashboard">
+            <Header showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+            <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+            <Routes>
+                <Route path='/dashboard' element={<Main />} />
+                <Route path='/dashboard/user/levels' element={<Levels />} />
+                <Route path='/dashboard/user/levels/:id' element={<Level />} />
+                <Route path='/dashboard/team' element={<Team />} />
+                <Route path='/dashboard/links' element={<Links />} />
+                <Route path='/dashboard/stats' element={<Stats />} />
+                <Route path='/dashboard/presentation' element={<Presentation />} />
+                <Route path='/dashboard/contacts' element={<Contacts />} />
+                <Route path='/dashboard/web3-academy' element={<Web3Academy />} />
+            </Routes>
+        </div>
+    </>
 };
 
 export default Dashboard;

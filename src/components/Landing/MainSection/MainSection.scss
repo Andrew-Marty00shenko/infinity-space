@@ -435,7 +435,7 @@
     }
 
     &__stats{
-        margin-top: 138px;
+        margin-top: 200px;
         background: #24252B;
         border-radius: 16px;
         display: flex;
@@ -488,6 +488,7 @@
 
         &__stats{
             margin-left: 54px;
+            margin-right: 54px;
             padding: 20px 50px;
 
             div{
@@ -586,7 +587,7 @@
 }
 
 .info-project-section{
-    padding-top: 83px;
+    padding-top: 200px;
     padding-bottom: 0px;
     position: relative;
 
@@ -788,7 +789,7 @@
             padding-right: 59px;
 
             .info-block{
-                max-width: 290px;
+                max-width: 32%;
                 padding: 41px 24px 24px 24px;
     
                 &__text{

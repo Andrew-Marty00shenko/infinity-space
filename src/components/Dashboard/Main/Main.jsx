@@ -2,14 +2,14 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AreaChart, Area, ResponsiveContainer } from 'recharts';
 
 import AllTransactions from "../AllTransactions/AllTransactions";
+import { getUserData } from "../../../redux/slices/userSlice";
 
 import "./Main.scss";
-import { useEffect } from "react";
-import { getUserData } from "../../../redux/slices/userSlice";
 
 const data = [
     {
