@@ -2,16 +2,25 @@ import "./Preloader.scss";
 
 import { Player } from '@lottiefiles/react-lottie-player';
 import Animation from "../../assets/amimation/animation.json";
+import classNames from "classnames";
 
-const Preloader = () => {
-    return <div className="preloader">
-        <div className="circle-1">
+const Preloader = ({ team }) => {
+    return <div className={classNames("preloader", {
+        "preloader--side": team
+    })}    >
+        <div className={classNames("circle-1", {
+            "circle-1--side": team
+        })}   >
 
         </div>
-        <div className="circle-2">
+        <div className={classNames("circle-2", {
+            "circle-2--side": team
+        })}>
 
         </div>
-        <div className="preloader__block">
+        <div className={classNames("preloader__block", {
+            "preloader__block--side": team
+        })}  >
             <Player
                 src={Animation}
                 loop
