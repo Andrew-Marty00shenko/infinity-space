@@ -11,6 +11,23 @@
         display: none;
     }
 
+    button{
+        display: none;
+        color: #fff;
+        height: 37px;
+        background-color: rgba(255, 255, 255, 0.05);
+        width: 130px;
+        font-size: 13px !important;
+        position: absolute;
+        top: 15px;
+        left: 10px;
+
+        svg{
+            margin-left: 5px;
+            height: 13px;
+        }
+    }
+
     &__menu{
         margin: 62px 36px 0px 15px;
 
@@ -88,6 +105,10 @@
         left: 0;
         transition: .3s;
         z-index: 100;
+
+        button{
+            display: block;
+        }
 
         &__close-btn{
             display: block;

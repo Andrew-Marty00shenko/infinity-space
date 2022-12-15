@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setWallet } from "../../../redux/slices/userSlice";
 
 import { getBnbBalance, getBUSDBalance } from "../../../utils/contract/contract";
 
@@ -10,6 +11,7 @@ const Header = ({ showSidebar, setShowSidebar }) => {
     const [bnbBalance, setBnbBalance] = useState(null);
     const [busdBalance, setBusdBalance] = useState(null);
 
+    const dispatch = useDispatch();
     const wallet = useSelector(state => state.user.wallet);
     const slicedAddressWallet = wallet.substring(0, 5)
         + "..."
@@ -17,6 +19,11 @@ const Header = ({ showSidebar, setShowSidebar }) => {
             wallet.length - 5,
             wallet.length
         );
+
+    const handleLogout = () => {
+        localStorage.removeItem("wallet_signed");
+        dispatch(setWallet(null));
+    };
 
     useEffect(() => {
         (async () => {
@@ -52,6 +59,19 @@ const Header = ({ showSidebar, setShowSidebar }) => {
                 {slicedAddressWallet}
             </div>
         </div>
+
+        <button onClick={handleLogout}>
+            Disconnect
+            <svg height="15" width="20" version="1.1" id="Capa_1" x="0px" y="0px"
+                viewBox="0 0 384.971 384.971">
+                <path d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03
+			C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03
+			C192.485,366.299,187.095,360.91,180.455,360.91z" fill="#fff" />
+                <path d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279
+			c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179
+			c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z" fill="#fff" />
+            </svg>
+        </button>
 
         <div className="dashboard-header__burger" onClick={() => setShowSidebar(!showSidebar)}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

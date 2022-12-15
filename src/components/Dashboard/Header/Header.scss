@@ -53,6 +53,18 @@
             }
         }
     }
+
+    button{
+        color: #fff;
+        height: 44px;
+        background-color: rgba(255, 255, 255, 0.05);
+        margin-left: 20px;
+        width: 150px;
+
+        svg{
+            margin-left: 5px;
+        }
+    }
 }
 
 @media (max-width: 1220px) {
@@ -73,9 +85,13 @@
     .dashboard-header{
         padding-right: 15px;
         
-       &__burger{
+        &__burger{
            display: flex;
            align-items: center;
-       }
+        }
+
+        button{
+            display: none;
+        }
     }
 }

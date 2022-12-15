@@ -23,6 +23,8 @@ export const loginUser = createAsyncThunk(
 				if (res === true) {
 					toast.success('Welcome');
 
+					localStorage.setItem("wallet_signed", address);
+
 					return res;
 				} else {
 					toast.error('This address is not registered');
@@ -73,6 +75,9 @@ const userSlice = createSlice({
 			state.wallet = action.payload.account;
 			apiUser.postLinkClicked(action.payload.uplineId)
 		},
+		setWallet: (state, action) => {
+			state.wallet = action.payload;
+		}
 	},
 	extraReducers: builder => {
 		builder.addCase(loginUser.pending, state => {
@@ -100,6 +105,6 @@ const userSlice = createSlice({
 	}
 });
 
-export const { watch } = userSlice.actions;
+export const { watch, setWallet } = userSlice.actions;
 
 export default userSlice.reducer;

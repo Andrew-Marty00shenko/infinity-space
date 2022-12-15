@@ -2,13 +2,16 @@ import classNames from "classnames";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getBnbBalance } from "../../../utils/contract/contract";
+
+import { setWallet } from "../../../redux/slices/userSlice";
 
 import "./Sidebar.scss";
 
 const Sidebar = ({ showSidebar, setShowSidebar }) => {
     const location = useLocation();
+    const dispatch = useDispatch();
     const [bnbBalance, setBnbBalance] = useState(null);
 
     const wallet = useSelector(state => state.user.wallet);
@@ -26,6 +29,11 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
         })()
     }, []);
 
+    const handleLogout = () => {
+        localStorage.removeItem("wallet_signed");
+        dispatch(setWallet(null));
+    };
+
     return <div className={classNames("sidebar", {
         "sidebar--closed": !showSidebar
     })}>
@@ -34,6 +42,21 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                 <path d="M13 1L1 13M1 1L13 13" stroke="#AFC6FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
         </div>
+
+        <button
+            onClick={handleLogout}
+        >
+            Disconnect
+            <svg height="15" width="20" version="1.1" id="Capa_1" x="0px" y="0px"
+                viewBox="0 0 384.971 384.971">
+                <path d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03
+			C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03
+			C192.485,366.299,187.095,360.91,180.455,360.91z" fill="#fff" />
+                <path d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279
+			c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179
+			c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z" fill="#fff" />
+            </svg>
+        </button>
 
         <ul className="sidebar__menu">
             <Link to="/dashboard" onClick={() => setShowSidebar(false)}>
