@@ -57,7 +57,7 @@
 
             button{
                 height: 54px;
-                width: 105px;
+                width: 145px;
                 font-family: 'Proxima Nova',sans-serif !important;
                 font-style: normal !important;
                 font-weight: 700 !important;
@@ -67,10 +67,6 @@
                     background: #F22667;
                     border-radius: 12px;
                     margin-right: 9px;
-                }
-                &:nth-child(2){
-                    background: rgba(255, 255, 255, 0.15);
-                    border-radius: 12px;
                 }
             }
         }

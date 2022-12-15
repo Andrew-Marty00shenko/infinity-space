@@ -1,15 +1,44 @@
-import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import { loginUser } from "../../../redux/slices/userSlice";
+import { connectWallet } from "../../../utils/contract/contract";
+
+import ModalRegister from "../ModalRegister/ModalRegister";
 
 import "./LandingHeader.scss";
 
-const LandingHeader = ({ setClickedSignIn, setClickedSignUp, clickedSignIn, setModalShow }) => {
+const LandingHeader = () => {
     const location = useLocation();
+    const dispatch = useDispatch();
+    const [searchParams] = useSearchParams();
+    const [showModalRegister, setShowModalRegister] = useState(false);
+    const [uplineId, setUplineId] = useState("");
 
-    const connectWallet = () => {
-        if (clickedSignIn) {
-            setModalShow(true);
+    useEffect(() => {
+        if (searchParams.get('user_id') !== null) {
+            setShowModalRegister(true);
+            setUplineId(searchParams.get('user_id'));
         } else {
-            setModalShow(true);
+            setUplineId('');
+        }
+    }, []);
+
+    const handleClickConnectWallet = async () => {
+        if (window.web3) {
+            const account = await connectWallet();
+
+            if (account) {
+                dispatch(loginUser(account)).then(({ payload }) => {
+                    if (!payload.response) {
+                        setShowModalRegister(true);
+                    }
+                });
+            }
+        } else {
+            toast.error('Metamask is not intalled');
         }
     };
 
@@ -31,7 +60,12 @@ const LandingHeader = ({ setClickedSignIn, setClickedSignUp, clickedSignIn, setM
                 ) : null}
             </div>
             <div className="landing-header__block-login-btns">
-                {location.pathname === '/' ? (
+                <Link to="/">
+                    <button onClick={handleClickConnectWallet}>
+                        Connect wallet
+                    </button>
+                </Link>
+                {/* {location.pathname === '/' ? (
                     <>
                         <Link to="/home-page">
                             <button onClick={() => setClickedSignIn(true)}>
@@ -50,9 +84,17 @@ const LandingHeader = ({ setClickedSignIn, setClickedSignUp, clickedSignIn, setM
                             Connect wallet
                         </button>
                     </Link>
-                )}
+                )} */}
             </div>
         </div>
+
+        <ModalRegister
+            showModalRegister={showModalRegister}
+            setShowModalRegister={setShowModalRegister}
+            uplineId={uplineId}
+            setUplineId={setUplineId}
+        />
+
     </header>
 }
 

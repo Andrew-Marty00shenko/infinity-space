@@ -50,74 +50,84 @@
             color: #fff;
         }
 
-        button{
-            margin-top: 16px;
-            width: 186px;
-            height: 54px;
-            background: #184BFF;
+        h3{
+            font-family: 'Proxima Nova',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            margin-top: 20px;
+            line-height: 24px;
+            color: #696969;
+        }
+
+        div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            button{
+                margin-top: 16px;
+                width: 186px;
+                height: 54px;
+                background: #184BFF;
+            }
+
+            input{
+                margin-top: 13px;
+                background: #35373d;
+                border-radius: 8px;
+                height: 54px;
+                border: 0;
+                padding: 0px 18px;
+                color: #fff;
+    
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+                }
+    
+                /* Firefox */
+                &[type=number] {
+                -moz-appearance: textfield;
+                }
+            }
         }
    }
 }
 
-.modal-register{
-    .modal-content{
-        background: #24252B;
-        box-shadow: 0px 15px 51px rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
-        max-width: 640px;
-        margin: 0 auto;
-        padding: 24px;
-        border: 0;
-        position: relative;
-
-        svg{
-            position: absolute;
-            right: 30px;
-            top: 30px;
-            cursor: pointer;
-
-            &:hover{
-                opacity: .8;
+@media (max-width: 992px) {
+    .modal-connect-wallet{
+        .modal-content{
+            padding: 24px;
+    
+            img{
+                width: 69px;
+                height: 60px;
             }
-        }
-
-        h2{
-            font-family: 'Proxima Nova',sans-serif;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 32px;
-            color: #fff;
-        }
-
-        input{
-            margin-top: 13px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            border: 0;
-            padding: 19px 18px 17px;
-            color: #fff;
-
-            &::-webkit-outer-spin-button,
-            &::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
+    
+            h2{
+                font-size: 22px;
+                line-height: 32px;
             }
-
-            /* Firefox */
-            &[type=number] {
-            -moz-appearance: textfield;
+    
+            p{
+                font-size: 15px;
+                line-height: 24px;
             }
-        }
+    
+            div{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
 
-        button{
-            margin-top: 16px;
-            width: 186px;
-            height: 54px;
-            background: #184BFF;
-        }
+                button{
+                    margin-top: 15px;
+                }
+            }
+       }
     }
- }
+}
 
 @media (max-width: 690px) {
     .modal-connect-wallet{
@@ -138,9 +148,17 @@
                 font-size: 15px;
                 line-height: 24px;
             }
-    
-            button{
+
+            input{
                 width: 100%;
+            }
+
+            button{
+                width: 100% !important;
+            }
+
+            h3{
+                font-size: 18px;
             }
        }
     }

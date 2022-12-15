@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
+import ModalRegister from "../ModalRegister/ModalRegister";
 
 import DashboardLaptop from "../../../assets/images/laptop-desktop.png";
 import DashboardLaptopopTablet from "../../../assets/images/dashboard-laptop-tablet.png";
@@ -6,7 +9,10 @@ import DashboardLaptopopMobile from "../../../assets/images/mobile-laptop.png";
 
 import "./DashboardSection.scss";
 
-const DashboardSection = ({ setClickedSignIn, setClickedSignUp }) => {
+const DashboardSection = () => {
+    const [showModalRegister, setShowModalRegister] = useState(false);
+    const [uplineId, setUplineId] = useState("");
+
     return <section className="dashboard-section">
         <div className="dashboard-section__block">
             <img className="dashboard-laptop-desktop" height="500" src={DashboardLaptop} alt="laptop" />
@@ -30,14 +36,9 @@ const DashboardSection = ({ setClickedSignIn, setClickedSignUp }) => {
                 In your personal cabinet you will clearly see what`s going on with all your indicators and partners
             </p>
             <div className="buttons-block">
-                <Link to="/home-page">
-                    <button onClick={() => setClickedSignUp(true)}>
-                        Sign up
-                    </button>
-                </Link>
-                <Link to="/home-page">
-                    <button style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)' }} onClick={() => setClickedSignIn(true)}>
-                        Log in
+                <Link to="/">
+                    <button onClick={() => setShowModalRegister(true)}>
+                        Connect wallet
                     </button>
                 </Link>
             </div>
@@ -51,6 +52,13 @@ const DashboardSection = ({ setClickedSignIn, setClickedSignUp }) => {
                 </defs>
             </svg>
         </div>
+
+        <ModalRegister
+            showModalRegister={showModalRegister}
+            setShowModalRegister={setShowModalRegister}
+            uplineId={uplineId}
+            setUplineId={setUplineId}
+        />
     </section>
 }
 

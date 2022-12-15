@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react"
+import { useState } from "react";
+
+import ModalRegister from "../ModalRegister/ModalRegister";
 
 import SliderBack from "../../../assets/images/backgrounds/slider-back.png";
 import SliderBackMobile from "../../../assets/images/backgrounds/slider-back-mobile.png";
@@ -8,7 +11,10 @@ import "swiper/css";
 
 import "./SliderSection.scss";
 
-const SliderSection = ({ setClickedSignUp }) => {
+const SliderSection = () => {
+    const [showModalRegister, setShowModalRegister] = useState(false);
+    const [uplineId, setUplineId] = useState("");
+
     return <section className="slider-section">
         <div className="desktop">
             <img src={SliderBack} alt="slider-back" />
@@ -19,9 +25,9 @@ const SliderSection = ({ setClickedSignUp }) => {
                 <h3>
                     You can read all the rules of interaction on our platform in the smart contract code yourself. And we'll tell you a few of its undeniable advantages
                 </h3>
-                <Link to="/home-page">
-                    <button onClick={() => setClickedSignUp(true)}>
-                        Try now
+                <Link to="/">
+                    <button onClick={() => setShowModalRegister(true)}>
+                        Connect wallet
                     </button>
                 </Link>
             </div>
@@ -138,9 +144,9 @@ const SliderSection = ({ setClickedSignUp }) => {
                     <h3>
                         You can read all the rules of interaction on our platform in the smart contract code yourself. And we'll tell you a few of its undeniable advantages
                     </h3>
-                    <Link>
-                        <button>
-                            Try now
+                    <Link to="/">
+                        <button onClick={() => setShowModalRegister(true)}>
+                            Connect wallet
                         </button>
                     </Link>
                 </div>
@@ -249,6 +255,13 @@ const SliderSection = ({ setClickedSignUp }) => {
                 </SwiperSlide>
             </Swiper>
         </div>
+
+        <ModalRegister
+            showModalRegister={showModalRegister}
+            setShowModalRegister={setShowModalRegister}
+            uplineId={uplineId}
+            setUplineId={setUplineId}
+        />
 
     </section>
 }

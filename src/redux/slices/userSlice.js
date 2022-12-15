@@ -26,6 +26,8 @@ export const loginUser = createAsyncThunk(
 					return res;
 				} else {
 					toast.error('This address is not registered');
+
+					return res;
 				};
 			});
 

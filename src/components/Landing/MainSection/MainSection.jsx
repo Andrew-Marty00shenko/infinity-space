@@ -1,4 +1,9 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import Parallax from "parallax-js";
+import { useState } from "react";
+
+import ModalRegister from "../ModalRegister/ModalRegister";
 
 import ChainImg from "../../../assets/images/chain.png";
 import CryptoCurrencyImg from "../../../assets/images/cryptocurrency.png";
@@ -21,10 +26,9 @@ import CircleLight from "../../../assets/images/img/circle-light.png";
 
 import "./MainSection.scss";
 
-import { useEffect } from "react";
-import Parallax from "parallax-js";
-
-const MainSection = ({ data, setClickedSignUp }) => {
+const MainSection = ({ data }) => {
+    const [showModalRegister, setShowModalRegister] = useState(false);
+    const [uplineId, setUplineId] = useState("");
 
     useEffect(() => {
         if (window.innerWidth > 768) {
@@ -97,9 +101,9 @@ const MainSection = ({ data, setClickedSignUp }) => {
                 <h2>
                     Powerful marketing based on smart contract <br /> technology gives unlimited possibilities
                 </h2>
-                <Link to="/home-page">
-                    <button onClick={setClickedSignUp(true)}>
-                        Try now
+                <Link to="/">
+                    <button onClick={() => setShowModalRegister(true)}>
+                        Connect wallet
                     </button>
                 </Link>
 
@@ -213,6 +217,14 @@ const MainSection = ({ data, setClickedSignUp }) => {
                     </div>
                 </div>
             </div>
+
+            <ModalRegister
+                showModalRegister={showModalRegister}
+                setShowModalRegister={setShowModalRegister}
+                uplineId={uplineId}
+                setUplineId={setUplineId}
+            />
+
         </section>
     </>
 }

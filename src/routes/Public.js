@@ -7,7 +7,7 @@ const Public = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!location.pathname.includes('home-page')) {
+        if (!location.search.includes('user_id')) {
             navigate('/')
         }
     }, []);
