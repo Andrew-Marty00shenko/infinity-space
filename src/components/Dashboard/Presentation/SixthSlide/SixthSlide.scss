@@ -72,6 +72,14 @@
    }
 }
 
+@media (max-width: 1357px) {
+    .presentation-sixth{
+        .block{
+            height: 100%;
+        }
+    }
+}
+
 @media (max-width: 1200px) {
     .presentation-fifth{
         min-height: auto;

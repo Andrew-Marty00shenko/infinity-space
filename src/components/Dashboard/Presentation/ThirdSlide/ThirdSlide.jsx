@@ -7,7 +7,7 @@ const ThirdSlide = () => {
                 What is Web 3.0?
             </span>
         </h2>
-        <p>
+        <p className="blur">
             Web 3.0 is a new stage in the evolution of the Internet. But to understand what's Web 3.0 you first need to understand Web 1.0 and Web 2.0.
         </p>
         <p>

@@ -13,7 +13,7 @@ const FourthSlide = () => {
         <h3>
             Now we're getting to Web 3.0
         </h3>
-        <p>
+        <p className="blur">
             The main difference in Web 3.0 is decentralization. If now all your data, characteristics, and preferences are collected by big IT companies and resold to show you ads and make money on you, then in the Web 3.0 era all this will not be possible anymore, because the basic technologies of Web 3.0 are blockchain, cryptocurrencies, and smart contracts. On top of that, Web 3.0 has a whole host of other interesting advantages, which we want to introduce you to.
             The Web 1.0 era is over, the Web 2.0 era is coming to an end, and Web 3.0 is ready to take its place.
         </p>

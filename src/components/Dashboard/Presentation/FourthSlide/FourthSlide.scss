@@ -83,6 +83,18 @@
     }
 }
 
+@media (max-width: 1338px) {
+    .presentation-fourth{
+        .blur{
+            background: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(49.5px);
+            backdrop-filter: blur(49.5px);
+            border-radius: 17px;
+            padding: 10px 20px;
+        }
+    }
+}
+
 @media (max-width: 800px) {
     .presentation-fourth{
         min-height: auto;

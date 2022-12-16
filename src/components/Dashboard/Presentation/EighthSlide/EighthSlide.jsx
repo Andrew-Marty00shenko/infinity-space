@@ -12,7 +12,7 @@ const EighthSlide = () => {
                             Our project is a web 3.0 platform
                         </h3>
                         <p>
-                            To register, you'll need a cryptocurrency wallet called metamask. You can download the metamask extension for google chrome at this link to register from your computer. You can also download metamask from the App Store or Google Play to register from your smartphone.
+                            To register, you'll need a cryptocurrency wallet called metamask. You can download the metamask extension for google chrome at this <a href="https://metamask.io/download/" target="_blank">link</a> to register from your computer. You can also download metamask from the App Store or Google Play to register from your smartphone.
                             You can see more information on creating a metamask wallet here:
                         </p>
                     </div>

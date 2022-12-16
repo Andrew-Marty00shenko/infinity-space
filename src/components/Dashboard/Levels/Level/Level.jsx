@@ -26,7 +26,7 @@ const Level = () => {
 
     return <div className="level">
         <div className="level__info">
-            ID {user.id} &#62; <span>
+            <Link to="/dashboard/user/levels"> ID {user.id} </Link> &#62; <span>
                 Level {params.id}
             </span>
         </div>

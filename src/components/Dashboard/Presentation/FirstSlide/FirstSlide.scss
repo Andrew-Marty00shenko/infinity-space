@@ -42,6 +42,7 @@
         background-size: cover;
         background-position: bottom;
         min-height: auto;
+
         h2{
             font-weight: 800;
             font-size: 15px;
@@ -55,6 +56,14 @@
                 font-size: 25px;
                 line-height: 30px;
             }
+        }
+
+        p{
+            background: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(49.5px);
+            backdrop-filter: blur(49.5px);
+            border-radius: 17px;
+            padding: 10px 20px;
         }
     }
 }

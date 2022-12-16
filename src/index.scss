@@ -93,3 +93,17 @@ body {
       padding-left: 0 !important;
     }
   }
+
+  .tooltip{
+    
+
+    &-inner{
+      background-color: rgba($color: #3b3b3b, $alpha: 1) !important;
+    }
+
+    &-arrow{
+      &::before{
+        border-top-color: rgba($color: #3b3b3b, $alpha: 1) !important;
+      }
+    }
+  }

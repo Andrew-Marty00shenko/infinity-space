@@ -38,6 +38,18 @@
     }
 }
 
+@media (max-width: 950px) {
+    .presentation-second{
+        p{
+            background: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(49.5px);
+            backdrop-filter: blur(49.5px);
+            border-radius: 17px;
+            padding: 10px 20px;
+        }
+    }
+}
+
 @media (max-width: 800px) {
     .presentation-second{
         background-size: 600px 400px;

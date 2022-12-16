@@ -35,7 +35,7 @@ const TenthSlide = () => {
                 </p>
             </div>
         </div>
-        <div>
+        <div >
             <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_d_590_11525)">
                     <g clip-path="url(#clip0_590_11525)">
@@ -81,12 +81,12 @@ const TenthSlide = () => {
                 <h4>
                     BNB
                 </h4>
-                <p>
+                <p className="blur">
                     BNB is the main cryptocurrency of the BEP-20 network in Binance Smart Chain, which is used to pay the fee for any transaction in this network, including on our platform.
                 </p>
             </div>
         </div>
-        <div>
+        <div >
             <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_d_590_11531)">
                     <rect x="29" y="14" width="72" height="72" rx="22" fill="url(#paint0_linear_590_11531)" shape-rendering="crispEdges" />
@@ -148,12 +148,12 @@ const TenthSlide = () => {
                 <h4>
                     Metamask
                 </h4>
-                <p>
+                <p className="blur">
                     Metamask is a cryptocurrency wallet that only the owner of the secret phrase has access to. It serves as your identifier as a member of the program. You also use it to receive rewards in BUSD and pay for the activation of levels.
                 </p>
             </div>
         </div>
-        <div>
+        <div >
             <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_d_590_11569)">
                     <rect x="29" y="14" width="72" height="72" rx="22" fill="url(#paint0_linear_590_11569)" shape-rendering="crispEdges" />
@@ -210,7 +210,7 @@ const TenthSlide = () => {
                 <h4>
                     Infinity Space Marketing
                 </h4>
-                <p>
+                <p className="blur">
                     Infinity Space Marketing is a matrix system, which works in strict accordance with the smart contract algorithm.
                     The purpose of a smart contract is to automatically and immediately distribute all funds received on it between infinity space participants to their personal
                 </p>

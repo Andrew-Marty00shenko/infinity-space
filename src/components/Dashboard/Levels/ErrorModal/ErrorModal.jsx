@@ -18,7 +18,7 @@ const ErrorModal = ({ modalShow, setModalShow }) => {
         </svg>
         <img src={ErrorImage} alt="error" />
         <h2>
-            Attantion!
+            Attention!
         </h2>
         <p>
             To activate this level, you must have activated previous level.

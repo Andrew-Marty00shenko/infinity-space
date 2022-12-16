@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { getLevelsInfo } from "../../../redux/slices/levelsSlice";
@@ -85,7 +85,7 @@ const Levels = () => {
 
     return <div className="levels">
         <div className="levels__info">
-            ID 4728 &#62; <span>
+            <Link to="/dashboard"> ID {user?.id} </Link> &#62; <span>
                 Levels
             </span>
         </div>
