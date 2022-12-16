@@ -13,7 +13,9 @@ import "./LandingHeader.scss";
 const LandingHeader = () => {
     const location = useLocation();
     const dispatch = useDispatch();
+
     const [searchParams] = useSearchParams();
+    const [loading, setLoading] = useState(false);
     const [showModalRegister, setShowModalRegister] = useState(false);
     const [uplineId, setUplineId] = useState("");
 
@@ -29,12 +31,14 @@ const LandingHeader = () => {
     const handleClickConnectWallet = async () => {
         if (window.web3) {
             const account = await connectWallet();
-
+            setLoading(true);
             if (account) {
                 dispatch(loginUser(account)).then(({ payload }) => {
                     if (!payload.response) {
                         setShowModalRegister(true);
-                    }
+                    };
+
+                    setLoading(false);
                 });
             }
         } else {
@@ -61,8 +65,11 @@ const LandingHeader = () => {
             </div>
             <div className="landing-header__block-login-btns">
                 <Link to="/">
-                    <button onClick={handleClickConnectWallet}>
-                        Connect wallet
+                    <button
+                        onClick={handleClickConnectWallet}
+                        disabled={loading}
+                    >
+                        {loading ? 'Loading...' : ' Connect wallet'}
                     </button>
                 </Link>
                 {/* {location.pathname === '/' ? (

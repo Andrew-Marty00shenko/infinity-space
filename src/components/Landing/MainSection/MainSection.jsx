@@ -2,13 +2,17 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import Parallax from "parallax-js";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+
+import { loginUser } from "../../../redux/slices/userSlice";
+import { connectWallet } from "../../../utils/contract/contract";
 
 import ModalRegister from "../ModalRegister/ModalRegister";
 
 import ChainImg from "../../../assets/images/chain.png";
 import CryptoCurrencyImg from "../../../assets/images/cryptocurrency.png";
 import SmartContractImg from "../../../assets/images/smart-contract.png";
-
 import Circle from "../../../assets/images/img/circle.png";
 import Space from "../../../assets/images/img/space.png";
 import logo1 from "../../../assets/images/img/logo-1.png";
@@ -27,6 +31,9 @@ import CircleLight from "../../../assets/images/img/circle-light.png";
 import "./MainSection.scss";
 
 const MainSection = ({ data }) => {
+    const dispatch = useDispatch();
+
+    const [loading, setLoading] = useState(false);
     const [showModalRegister, setShowModalRegister] = useState(false);
     const [uplineId, setUplineId] = useState("");
 
@@ -47,6 +54,24 @@ const MainSection = ({ data }) => {
             });
         }
     }, []);
+
+    const handleClickConnectWallet = async () => {
+        if (window.web3) {
+            const account = await connectWallet();
+            setLoading(true);
+            if (account) {
+                dispatch(loginUser(account)).then(({ payload }) => {
+                    if (!payload.response) {
+                        setShowModalRegister(true);
+                    };
+
+                    setLoading(false);
+                });
+            }
+        } else {
+            toast.error('Metamask is not intalled');
+        }
+    };
 
     return <>
         <section className="main-section">
@@ -102,8 +127,10 @@ const MainSection = ({ data }) => {
                     Powerful marketing based on smart contract <br /> technology gives unlimited possibilities
                 </h2>
                 <Link to="/">
-                    <button onClick={() => setShowModalRegister(true)}>
-                        Connect wallet
+                    <button onClick={handleClickConnectWallet}
+                        disabled={loading}
+                    >
+                        {loading ? 'Loading...' : ' Connect wallet'}
                     </button>
                 </Link>
 

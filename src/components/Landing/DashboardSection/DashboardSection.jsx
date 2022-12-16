@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+
+import { connectWallet } from "../../../utils/contract/contract";
+import { loginUser } from "../../../redux/slices/userSlice";
 
 import ModalRegister from "../ModalRegister/ModalRegister";
 
@@ -10,8 +15,30 @@ import DashboardLaptopopMobile from "../../../assets/images/mobile-laptop.png";
 import "./DashboardSection.scss";
 
 const DashboardSection = () => {
+    const dispatch = useDispatch();
+
     const [showModalRegister, setShowModalRegister] = useState(false);
     const [uplineId, setUplineId] = useState("");
+    const [loading, setLoading] = useState(false);
+
+    const handleClickConnectWallet = async () => {
+        if (window.web3) {
+            const account = await connectWallet();
+            setLoading(true);
+
+            if (account) {
+                dispatch(loginUser(account)).then(({ payload }) => {
+                    if (!payload.response) {
+                        setShowModalRegister(true);
+                    };
+
+                    setLoading(false);
+                });
+            }
+        } else {
+            toast.error('Metamask is not intalled');
+        }
+    };
 
     return <section className="dashboard-section">
         <div className="dashboard-section__block">
@@ -37,8 +64,10 @@ const DashboardSection = () => {
             </p>
             <div className="buttons-block">
                 <Link to="/">
-                    <button onClick={() => setShowModalRegister(true)}>
-                        Connect wallet
+                    <button onClick={handleClickConnectWallet}
+                        disabled={loading}
+                    >
+                        {loading ? 'Loading...' : 'Connect wallet'}
                     </button>
                 </Link>
             </div>

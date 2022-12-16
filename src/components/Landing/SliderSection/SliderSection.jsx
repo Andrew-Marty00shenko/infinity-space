@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react"
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+
+import { loginUser } from "../../../redux/slices/userSlice";
+import { connectWallet } from "../../../utils/contract/contract";
 
 import ModalRegister from "../ModalRegister/ModalRegister";
 
@@ -12,8 +17,30 @@ import "swiper/css";
 import "./SliderSection.scss";
 
 const SliderSection = () => {
+    const dispatch = useDispatch();
+
     const [showModalRegister, setShowModalRegister] = useState(false);
     const [uplineId, setUplineId] = useState("");
+    const [loading, setLoading] = useState(false);
+
+    const handleClickConnectWallet = async () => {
+        if (window.web3) {
+            const account = await connectWallet();
+            setLoading(true);
+
+            if (account) {
+                dispatch(loginUser(account)).then(({ payload }) => {
+                    if (!payload.response) {
+                        setShowModalRegister(true);
+                    };
+
+                    setLoading(false);
+                });
+            }
+        } else {
+            toast.error('Metamask is not intalled');
+        }
+    };
 
     return <section className="slider-section">
         <div className="desktop">
@@ -26,8 +53,10 @@ const SliderSection = () => {
                     You can read all the rules of interaction on our platform in the smart contract code yourself. And we'll tell you a few of its undeniable advantages
                 </h3>
                 <Link to="/">
-                    <button onClick={() => setShowModalRegister(true)}>
-                        Connect wallet
+                    <button onClick={handleClickConnectWallet}
+                        disabled={loading}
+                    >
+                        {loading ? 'Loading...' : 'Connect wallet'}
                     </button>
                 </Link>
             </div>
@@ -145,8 +174,10 @@ const SliderSection = () => {
                         You can read all the rules of interaction on our platform in the smart contract code yourself. And we'll tell you a few of its undeniable advantages
                     </h3>
                     <Link to="/">
-                        <button onClick={() => setShowModalRegister(true)}>
-                            Connect wallet
+                        <button onClick={handleClickConnectWallet}
+                            disabled={loading}
+                        >
+                            {loading ? 'Loading...' : 'Connect wallet'}
                         </button>
                     </Link>
                 </div>
