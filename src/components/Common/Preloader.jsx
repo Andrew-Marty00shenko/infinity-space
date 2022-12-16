@@ -4,22 +4,22 @@ import { Player } from '@lottiefiles/react-lottie-player';
 import Animation from "../../assets/amimation/animation.json";
 import classNames from "classnames";
 
-const Preloader = ({ team }) => {
+const Preloader = ({ team, levels }) => {
     return <div className={classNames("preloader", {
-        "preloader--side": team
+        "preloader--side": team || levels
     })}    >
         <div className={classNames("circle-1", {
-            "circle-1--side": team
+            "circle-1--side": team || levels
         })}   >
 
         </div>
         <div className={classNames("circle-2", {
-            "circle-2--side": team
+            "circle-2--side": team || levels
         })}>
 
         </div>
         <div className={classNames("preloader__block", {
-            "preloader__block--side": team
+            "preloader__block--side": team || levels
         })}  >
             <Player
                 src={Animation}
@@ -29,7 +29,8 @@ const Preloader = ({ team }) => {
             />
             <div>
                 <p>
-                    Loading...
+                    {levels ? 'Loading level activation...' : 'Loading...'}
+
                 </p>
                 <span>
                     Please, wait a minute

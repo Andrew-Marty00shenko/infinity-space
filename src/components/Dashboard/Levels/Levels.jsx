@@ -6,11 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import { getLevelsInfo } from "../../../redux/slices/levelsSlice";
+import { buyingLevel, getLevelsInfo } from "../../../redux/slices/levelsSlice";
 import { getUserData } from "../../../redux/slices/userSlice";
 import contractAbi from "../../../utils/contract/contractAbi.json";
 import contractBUSDAbi from "../../../utils/contract/contractBUSDAbi.json";
 
+import Preloader from "../../Common/Preloader";
 import Stats from "../Stats/Stats";
 import ErrorModal from "./ErrorModal/ErrorModal";
 
@@ -20,10 +21,12 @@ const Levels = () => {
     const user = useSelector(state => state.user.user);
     const levels = useSelector(state => state.levels.levels);
     const wallet = useSelector(state => state.user.wallet);
+    const loading = useSelector(state => state.levels.loading);
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const [modalShow, setModalShow] = useState(false);
+    const [hash, setHash] = useState(null);
 
     useEffect(() => {
         dispatch(getLevelsInfo(user.id));
@@ -54,10 +57,15 @@ const Levels = () => {
                         from: wallet
                     })
                     .on('transactionHash', hash => {
+
                         contract.methods[
                             'buyLevel(uint256)'
                         ](Number(levelId))
                             .send()
+                            .on('transactionHash', hash => {
+                                dispatch(buyingLevel());
+                                setHash(hash)
+                            })
                             .then(res => {
                                 toast.success(`You have successfully purchased a level ${levelId}`)
                                 dispatch(getUserData(wallet));
@@ -74,6 +82,9 @@ const Levels = () => {
                             'buyLevel(uint256,uint256)'
                         ](Number(levelId), Number(localStorage.getItem("uplineId")))
                             .send()
+                            .on('transactionHash', hash => {
+                                dispatch(buyingLevel());
+                            })
                             .then(res => {
                                 toast.success('You have successfully purchased a level 1')
                                 dispatch(getUserData(wallet));
@@ -82,6 +93,15 @@ const Levels = () => {
             }
         }
     };
+
+
+    if (loading) {
+        if (hash !== null) {
+            return <Preloader levels={true} />
+        } else {
+            return <Preloader team={true} />
+        }
+    }
 
     return <div className="levels">
         <div className="levels__info">
