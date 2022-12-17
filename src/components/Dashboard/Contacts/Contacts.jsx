@@ -21,7 +21,7 @@ const Contacts = () => {
                 New partners and transactions notifications
             </p>
             <button>
-                Lets try!
+                Let's try!
             </button>
 
             <div className="right-background">
@@ -52,7 +52,7 @@ const Contacts = () => {
                 New partners and transactions notifications
             </p>
             <button>
-                Lets try!
+                Let's try!
             </button>
 
             <div className="right-background">

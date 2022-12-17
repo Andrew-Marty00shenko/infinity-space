@@ -1,10 +1,7 @@
 .main-section{
     padding-top: 108px;
     position: relative;
-    // background-image: url('../../../assets/images/backgrounds/main-section-back.jpg');
-    // background-repeat: no-repeat;
-    // background-size: contain;
-    // background-position-x: right;
+    margin-top: -65px;
 
     .lan{
         position: absolute;
@@ -674,6 +671,14 @@
                     line-height: 22px;
                     color: #AFC6FF;
                     cursor: pointer;
+
+                    a{
+                        color: #AFC6FF;
+
+                        &:hover{
+                            color: #AFC6FF;
+                        }
+                    }
                 }
             }
 

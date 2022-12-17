@@ -22,7 +22,7 @@ const Team = () => {
     useEffect(() => {
         contract.methods[
             'getPartnersById(uint256,uint256,uint256)'
-        ](user.id, skip, limit)
+        ](user?.id, skip, limit)
             .call()
             .then(res => {
                 setTotal(Number(res[0]));

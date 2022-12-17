@@ -8,6 +8,8 @@ import { toast } from "react-toastify";
 import { loginUser } from "../../../redux/slices/userSlice";
 import { connectWallet } from "../../../utils/contract/contract";
 
+import PresentationPDF from "../../../assets/pdfs/presentation.pdf";
+
 import ModalRegister from "../ModalRegister/ModalRegister";
 
 import ChainImg from "../../../assets/images/chain.png";
@@ -172,7 +174,7 @@ const MainSection = ({ data }) => {
                         <div className="info-block__text">
                             <p>Blockchain</p>
                             <p>Blockchain technology is an advanced database mechanism…</p>
-                            <div>Learn more &#62;</div>
+                            <div><a href={`${PresentationPDF}#page=6`} target="_blank">Learn more &#62;</a> </div>
                         </div>
                     </div>
                     <div className="info-block">
@@ -182,7 +184,7 @@ const MainSection = ({ data }) => {
                         <div className="info-block__text">
                             <p>Cryptocurrency</p>
                             <p>Blockchain-based digital currency that has real tangible value…</p>
-                            <div>Learn more &#62;</div>
+                            <div><a href={`${PresentationPDF}#page=6`} target="_blank">Learn more &#62;</a></div>
                         </div>
                     </div>
                     <div className="info-block">
@@ -192,7 +194,7 @@ const MainSection = ({ data }) => {
                         <div className="info-block__text">
                             <p>Smart Contract</p>
                             <p>Smart-contract is really an automated algorithm…</p>
-                            <div>Learn more &#62;</div>
+                            <div><a href={`${PresentationPDF}#page=6`} target="_blank">Learn more &#62;</a></div>
                         </div>
                     </div>
                 </div>

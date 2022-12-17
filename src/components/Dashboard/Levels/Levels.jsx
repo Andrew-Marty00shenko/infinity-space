@@ -30,7 +30,7 @@ const Levels = () => {
     const [hash, setHash] = useState(null);
 
     useEffect(() => {
-        dispatch(getLevelsInfo(user.id));
+        dispatch(getLevelsInfo(user?.id));
     }, [user]);
 
     const handleClickBuyLevel = async (level, levelId) => {
@@ -87,6 +87,7 @@ const Levels = () => {
                             .send()
                             .on('transactionHash', hash => {
                                 dispatch(buyingLevel());
+                                localStorage.setItem("wallet_signed", wallet);
                                 setHash(hash);
                             })
                             .then(res => {
