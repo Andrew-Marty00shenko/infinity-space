@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 
 import { buyingLevel, getLevelsInfo } from "../../../redux/slices/levelsSlice";
 import { getUserData } from "../../../redux/slices/userSlice";
+import { connectWallet } from "../../../utils/contract/contract";
 import contractAbi from "../../../utils/contract/contractAbi.json";
 import contractBUSDAbi from "../../../utils/contract/contractBUSDAbi.json";
 
@@ -32,7 +33,9 @@ const Levels = () => {
         dispatch(getLevelsInfo(user.id));
     }, [user]);
 
-    const handleClickBuyLevel = (level, levelId) => {
+    const handleClickBuyLevel = async (level, levelId) => {
+        const account = await connectWallet();
+
         if (levels[levelId - 2]?.status === false) {
             setModalShow(true);
 
@@ -41,13 +44,13 @@ const Levels = () => {
             const contract = new window.web3.eth.Contract(
                 contractAbi.abi,
                 contractAbi.address,
-                { from: wallet }
+                { from: account }
             );
 
             const busdContract = new window.web3.eth.Contract(
                 contractBUSDAbi.abi,
                 contractBUSDAbi.address,
-                { from: wallet }
+                { from: account }
             );
 
             if (wallet.toLowerCase() === user?.wallet.toLowerCase()) {
@@ -64,7 +67,7 @@ const Levels = () => {
                             .send()
                             .on('transactionHash', hash => {
                                 dispatch(buyingLevel());
-                                setHash(hash)
+                                setHash(hash);
                             })
                             .then(res => {
                                 toast.success(`You have successfully purchased a level ${levelId}`)
@@ -84,6 +87,7 @@ const Levels = () => {
                             .send()
                             .on('transactionHash', hash => {
                                 dispatch(buyingLevel());
+                                setHash(hash);
                             })
                             .then(res => {
                                 toast.success('You have successfully purchased a level 1')
