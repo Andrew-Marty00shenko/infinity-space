@@ -123,7 +123,7 @@ const Team = () => {
                                             <rect width="22" height="22" rx="11" fill="#FFED4C" fillOpacity="0.08" />
                                             <path d="M4 10.9929L5.75619 9.23661L7.51239 10.9929L5.75619 12.7492L4 10.9929ZM6.64381 8.34966L10.993 4L12.7492 5.75632L8.39976 10.1059L6.64381 8.34966ZM6.62514 13.6185L13.6187 6.62447L15.3749 8.38078L8.38121 15.3747L6.62514 13.6185ZM9.25027 16.2438L16.2438 9.24979L18 11.0061L11.0063 18L9.25027 16.2438Z" fill="#FFED4C" />
                                         </svg>
-                                        {partner.earned} BUSD
+                                        {partner.earned / 1e18} BUSD
                                     </div>
                                 </td>
                                 <td>
@@ -196,7 +196,7 @@ const Team = () => {
                                         <rect width="22" height="22" rx="11" fill="#FFED4C" fillOpacity="0.08" />
                                         <path d="M4 10.9929L5.75619 9.23661L7.51239 10.9929L5.75619 12.7492L4 10.9929ZM6.64381 8.34966L10.993 4L12.7492 5.75632L8.39976 10.1059L6.64381 8.34966ZM6.62514 13.6185L13.6187 6.62447L15.3749 8.38078L8.38121 15.3747L6.62514 13.6185ZM9.25027 16.2438L16.2438 9.24979L18 11.0061L11.0063 18L9.25027 16.2438Z" fill="#FFED4C" />
                                     </svg>
-                                    {partner.earned}
+                                    {partner.earned / 1e18}
                                 </div>
                                 <div className="partners">
                                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -218,7 +218,7 @@ const Team = () => {
                                     In-Space
                                 </div>
                                 <div className="amount">
-                                    {partner.earned}
+                                    {partner.earned / 1e18}
                                 </div>
                             </div>
                         </div>

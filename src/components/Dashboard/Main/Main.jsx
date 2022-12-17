@@ -268,7 +268,7 @@ const Main = () => {
                                 </div>
                                 <div className="stats-block__bottom">
                                     <p>
-                                        {user?.userData.earned || 0}
+                                        {user?.userData.earned / 1e18 || 0}
                                     </p>
                                     <span>
                                         + 0
@@ -316,7 +316,7 @@ const Main = () => {
                     Infinity Space
                 </h3>
                 <p>
-                    {user?.userData.earned || 0} BUSD
+                    {user?.userData.earned / 1e18 || 0} BUSD
                 </p>
                 <Link to="/dashboard/user/levels">
                     <button>

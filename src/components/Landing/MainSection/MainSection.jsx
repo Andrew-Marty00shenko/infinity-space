@@ -27,6 +27,7 @@ import BigCircle1 from "../../../assets/images/img/big-circle-1.png";
 import BigCircle2 from "../../../assets/images/img/big-circle-2.png";
 import Polygon from "../../../assets/images/img/polygon.png";
 import CircleLight from "../../../assets/images/img/circle-light.png";
+// import LogoVideo from "../../../assets/video/logo-spin.mp4";
 
 import "./MainSection.scss";
 
@@ -74,6 +75,11 @@ const MainSection = ({ data }) => {
     };
 
     return <>
+
+        {/* <video width="320" height="240" autoPlay loop muted>
+            <source src={LogoVideo} type="video/mp4" />
+        </video> */}
+
         <section className="main-section">
             <div className="lan">
 
@@ -144,7 +150,7 @@ const MainSection = ({ data }) => {
                         <p>Joined within 24 hours</p>
                     </div>
                     <div>
-                        <p>${data.totalProfit}</p>
+                        <p>${data.totalProfit / 1e18}</p>
                         <p>Earned all the time</p>
                     </div>
                 </div>
@@ -214,7 +220,7 @@ const MainSection = ({ data }) => {
                     </div>
                     <div className="result-block">
                         <div>
-                            <p className="result-block__top-text">{data.totalProfit}</p>
+                            <p className="result-block__top-text">{data.totalProfit / 1e18}</p>
                             <div>+ 392</div>
                         </div>
                         <p className="result-block__bottom-text">

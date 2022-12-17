@@ -375,7 +375,7 @@ const Links = () => {
                                     </div>
                                     <div>
                                         <p>
-                                            {user?.userData.earned}
+                                            {user?.userData.earned / 1e18}
                                         </p>
                                         <span>
                                             + 0
