@@ -20,7 +20,7 @@ const LandingFooter = () => {
                 <div className="info-contract">
                     Infinity Space
                     <span>
-                        0x2CAa...ae52
+                        0x5fD5...CA3582
                     </span>
                 </div>
                 <div className="info-links">
@@ -46,7 +46,7 @@ const LandingFooter = () => {
             <div>
                 Infinity Space
                 <span>
-                    0x2CAa...ae52
+                    0x5fD5...CA3582
                 </span>
             </div>
         </div>
