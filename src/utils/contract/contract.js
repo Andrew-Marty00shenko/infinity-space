@@ -2,7 +2,7 @@ import Web3 from "web3";
 import contractAbi from "./contractAbi.json";
 import contractBUSDAbi from "./contractBUSDAbi.json";
 
-const BINANCE_RPC_TEST = 'https://data-seed-prebsc-1-s1.binance.org:8545/';
+const BINANCE_RPC_TEST = ' https://bsc-dataseed.binance.org/';
 // const HASH_LINK = 'https://testnet.bscscan.com';
 
 const web3 = new Web3(new Web3.providers.HttpProvider(BINANCE_RPC_TEST));
