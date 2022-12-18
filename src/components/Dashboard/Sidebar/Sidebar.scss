@@ -11,6 +11,16 @@
         display: none;
     }
 
+    &__logo{
+        display: flex;
+        align-items: center;
+        top: 10px;
+        position: absolute;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 32px;
+    }
+
     button{
         display: none;
         color: #fff;
@@ -29,7 +39,7 @@
     }
 
     &__menu{
-        margin: 62px 36px 0px 15px;
+        margin: 82px 36px 0px 15px;
 
         a{
             li{
@@ -76,7 +86,11 @@
     &__links{
         margin: 62px 36px 0px 15px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+
+        a{
+            margin-left: 30px;
+        }
     }
 }
 
@@ -84,8 +98,13 @@
     .sidebar{
         width: 220px;
 
+        &__logo{
+           font-size: 13px;
+           margin-left: -20px;
+        }
+
         &__menu{
-            margin: 62px 10px 0px 10px;
+            margin: 82px 10px 0px 10px;
     
             a{
                 li{
@@ -105,6 +124,10 @@
         left: 0;
         transition: .3s;
         z-index: 100;
+
+        &__logo{
+           display: none;
+         }
 
         button{
             display: block;

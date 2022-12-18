@@ -5,6 +5,8 @@ import { setWallet } from "../../../redux/slices/userSlice";
 
 import { getBnbBalance, getBUSDBalance } from "../../../utils/contract/contract";
 
+import Logo from "../../../assets/images/logo.png";
+
 import "./Header.scss";
 
 const Header = ({ showSidebar, setShowSidebar }) => {
@@ -36,6 +38,11 @@ const Header = ({ showSidebar, setShowSidebar }) => {
     }, []);
 
     return <header className="dashboard-header">
+        <div className="dashboard-header__logo">
+            <img src={Logo} alt="logo" />
+            Infinity Space
+        </div>
+
         <div className="dashboard-header__info">
             <div className="info-busd-balance">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">

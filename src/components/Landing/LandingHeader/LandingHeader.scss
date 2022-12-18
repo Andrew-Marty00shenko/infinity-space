@@ -1,22 +1,31 @@
 .landing-header{
-    height: 65px;
+    height: 95px;
     position: relative;
     z-index: 10;
-    background: linear-gradient(90deg, #1A1B20 1.92%, rgba(26, 27, 32, 0) 34.87%), linear-gradient(180deg, #1A1B20 0%, rgba(26, 27, 32, 0) 100%);
+    background: linear-gradient(90deg, #1A1B20 1.92%, rgba(26, 27, 32, 0) 3.87%), linear-gradient(180deg, #1A1B20 0%, rgba(26, 27, 32, 0) 100%);
+
+    &__logo{
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 32px;
+        padding-bottom: 35px;
+    }
 
     &__block{
         max-width: 1200px;
         display: flex;
         justify-content: space-between;
-        align-items: center;
         height: 100%;
         margin: 0 auto;
 
         &-info{
             display: flex;
-            align-items: center;
+            padding-top: 19px;
 
             p{
+                padding-top: 5px;
                 padding-left: 140px;
                 font-weight: 400;
                 font-size: 16px;
@@ -41,6 +50,7 @@
         
 
         &-login-btns{
+            padding-top: 11px;
             a{
                 &:nth-child(1){
                     button{
@@ -95,12 +105,21 @@
     }
 }
 
+@media (max-width: 964px) {
+    .landing-header{
+        &__block-info{
+            display: none;
+        }
+    }
+}
+
 @media (max-width: 690px) {
     .landing-header{
         position: relative;
 
+
         &__block{
-            justify-content: flex-end;
+            // justify-content: flex-end;
 
             &-info{
                 display: none;
@@ -108,6 +127,18 @@
 
             &-login-btns{
                 padding-right: 15px;
+            }
+        }
+    }
+}
+
+@media (max-width: 440px) {
+    .landing-header{
+        &__logo{
+            img{
+                margin-left: -20px;
+                margin-right: -20px;
+                width: 130px;
             }
         }
     }

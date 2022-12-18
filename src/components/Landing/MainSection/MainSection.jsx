@@ -4,12 +4,14 @@ import Parallax from "parallax-js";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
+import { Player } from '@lottiefiles/react-lottie-player';
 
 import { loginUser } from "../../../redux/slices/userSlice";
 import { connectWallet } from "../../../utils/contract/contract";
 
 import PresentationPDF from "../../../assets/pdfs/presentation.pdf";
 
+import Preloader from "../../Common/Preloader";
 import ModalRegister from "../ModalRegister/ModalRegister";
 
 import ChainImg from "../../../assets/images/chain.png";
@@ -29,11 +31,11 @@ import BigCircle1 from "../../../assets/images/img/big-circle-1.png";
 import BigCircle2 from "../../../assets/images/img/big-circle-2.png";
 import Polygon from "../../../assets/images/img/polygon.png";
 import CircleLight from "../../../assets/images/img/circle-light.png";
-// import LogoVideo from "../../../assets/video/logo-spin.mp4";
+// import LogoAnimation from "../../../assets/animation/logo-animation.json";
 
 import "./MainSection.scss";
 
-const MainSection = ({ data }) => {
+const MainSection = ({ data, loadingData }) => {
     const dispatch = useDispatch();
 
     const [loading, setLoading] = useState(false);
@@ -77,11 +79,7 @@ const MainSection = ({ data }) => {
     };
 
     return <>
-
-        {/* <video width="320" height="240" autoPlay loop muted>
-            <source src={LogoVideo} type="video/mp4" />
-        </video> */}
-
+        {loadingData && <Preloader />}
         <section className="main-section">
             <div className="lan">
 
@@ -124,6 +122,18 @@ const MainSection = ({ data }) => {
                 </div>
             </div>
             <div className="main-section__content">
+                {/* <Player
+                    src={LogoAnimation}
+                    loop
+                    autoplay
+                    style={{
+                        width: "220px",
+                        height: "140px", position:
+                            'absolute', zIndex: 1000,
+                        top: '-75px',
+                        left: -50
+                    }}
+                /> */}
                 <h1>
                     <span>
                         Smart defi solution

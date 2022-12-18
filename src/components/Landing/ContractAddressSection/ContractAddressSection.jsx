@@ -16,7 +16,7 @@ const ContractAddressSection = () => {
             <p>
                 Infinity Space contract:
                 <span className="desktop">
-                    0x5acc84a3e955Bdd76467d3348077d003f00fFB97
+                    0x5fD5be65f63b0C96a067381aE4454D3569CA3582
                 </span>
                 <span className="mobile">
                     0x2CAa...ae52

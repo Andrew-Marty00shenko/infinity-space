@@ -1,7 +1,7 @@
 .main-section{
     padding-top: 108px;
     position: relative;
-    margin-top: -65px;
+    margin-top: -95px;
 
     .lan{
         position: absolute;
@@ -390,6 +390,7 @@
     &__content{
         max-width: 1200px;
         margin: 0 auto;
+        position: relative;
     }
 
     h1{
@@ -399,6 +400,7 @@
         line-height: 64px;
         z-index: 100;
         position: relative;
+        padding-top: 30px;
 
         span{
             color: #AFC6FF;

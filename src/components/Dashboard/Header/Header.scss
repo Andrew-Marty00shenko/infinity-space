@@ -9,6 +9,10 @@
         display: none;
     }
 
+    &__logo{
+        display: none;
+    }
+
     &__info{
         display: flex;
         justify-content: space-between;
@@ -84,6 +88,16 @@
 @media (max-width: 800px) {
     .dashboard-header{
         padding-right: 15px;
+        justify-content: space-between;
+
+        &__logo{
+            display: block;
+            margin-left: -60px;
+
+            img{
+                height: 45px;
+            }
+        }
         
         &__burger{
            display: flex;

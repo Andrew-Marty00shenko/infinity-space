@@ -8,6 +8,8 @@ import { connectWallet } from "../../../utils/contract/contract";
 
 import ModalRegister from "../ModalRegister/ModalRegister";
 
+import Logo from "../../../assets/images/logo.png";
+
 import "./LandingHeader.scss";
 
 const LandingHeader = () => {
@@ -48,6 +50,10 @@ const LandingHeader = () => {
 
     return <header className="landing-header">
         <div className="landing-header__block">
+            <div className="landing-header__logo">
+                <img src={Logo} alt="logo" />
+                Infinity Space
+            </div>
             <div className="landing-header__block-info">
                 {location.pathname === '/' ? (
                     <>
@@ -57,7 +63,7 @@ const LandingHeader = () => {
                         <div className="contract-info">
                             Infinity Space
                             <span>
-                                0x2CAa...ae52
+                                0x5fD5...CA3582
                             </span>
                         </div>
                     </>

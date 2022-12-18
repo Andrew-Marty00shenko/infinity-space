@@ -20,22 +20,26 @@ const Landing = () => {
         totalUsers: 0,
         totalProfit: 0,
     });
+    const [loadingData, setLoadingData] = useState(true);
 
     useEffect(() => {
         contract.methods
             .getGlobals()
             .call()
-            .then(res => setData({
-                totalUsers: res[0],
-                totalProfit: res[1]
-            }))
+            .then(res => {
+                setData({
+                    totalUsers: res[0],
+                    totalProfit: res[1]
+                });
+                setLoadingData(false);
+            });
     }, [])
 
     return <div className="landing">
         <Routes>
             <Route path="/" element={<>
                 <LandingHeader />
-                <MainSection data={data} />
+                <MainSection data={data} loadingData={loadingData} />
                 <ContractAddressSection />
                 <SliderSection />
                 <DashboardSection />

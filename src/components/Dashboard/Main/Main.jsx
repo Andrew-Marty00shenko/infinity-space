@@ -167,7 +167,7 @@ const Main = () => {
                     </Col>
                 </Row>
                 <Row className="main-info__stats">
-                    <Col xl={3} sm={4} xs={4}>
+                    <Col xl={4} sm={6} xs={6}>
                         <div className="main-info__stats-block">
                             <div className="stats-block__top">
                                 Partners
@@ -194,7 +194,7 @@ const Main = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col xl={3} sm={4} xs={4}>
+                    {/* <Col xl={3} sm={4} xs={4}>
                         <div className="main-info__stats-block">
                             <div className="stats-block__top">
                                 Team
@@ -220,8 +220,8 @@ const Main = () => {
                                 </span>
                             </div>
                         </div>
-                    </Col>
-                    <Col xl={3} sm={4} xs={4}>
+                    </Col> */}
+                    <Col xl={4} sm={6} xs={6}>
                         <div className="main-info__stats-block pre-last">
                             <div className="stats-block__top">
                                 Ratio
@@ -248,7 +248,7 @@ const Main = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col xl={3}>
+                    <Col xl={4}>
                         <div className="main-info__stats-block last">
                             <div>
                                 <div className="stats-block__top">
