@@ -142,7 +142,7 @@ const Level = () => {
                                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0 12.9869L3.2615 9.72512L6.52301 12.9869L3.2615 16.2486L0 12.9869ZM4.90993 8.07794L12.9871 0L16.2486 3.26173L8.17098 11.3394L4.90993 8.07794ZM4.87526 17.8629L17.8632 4.87401L21.1247 8.13574L8.13653 21.1244L4.87526 17.8629ZM9.75051 22.7385L22.7385 9.7496L26 13.0113L13.0118 26L9.75051 22.7385Z" fill="white" />
                                     </svg>
-                                    {currentLevel?.earned || 0} BUSD
+                                    {currentLevel?.earned / 1e18 || 0} BUSD
                                 </div>
                             </div>
                         </div>
