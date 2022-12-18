@@ -417,7 +417,7 @@ const Links = () => {
                                             </OverlayTrigger>
                                         </div>
                                         <div className="user-link__bottom">
-                                            {`InfinitySpace.io/b/${user?.id}`}
+                                            {`in-space.io/${user?.id}`}
                                         </div>
                                     </div>
                                     <div className="user-link__copy">
