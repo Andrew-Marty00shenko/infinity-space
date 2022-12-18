@@ -2,7 +2,8 @@
     height: 65px;
     position: relative;
     z-index: 10;
-    
+    background: linear-gradient(90deg, #1A1B20 1.92%, rgba(26, 27, 32, 0) 34.87%), linear-gradient(180deg, #1A1B20 0%, rgba(26, 27, 32, 0) 100%);
+
     &__block{
         max-width: 1200px;
         display: flex;
