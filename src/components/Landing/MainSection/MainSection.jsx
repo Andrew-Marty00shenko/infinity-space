@@ -4,7 +4,6 @@ import Parallax from "parallax-js";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import { Player } from '@lottiefiles/react-lottie-player';
 
 import { loginUser } from "../../../redux/slices/userSlice";
 import { connectWallet } from "../../../utils/contract/contract";
@@ -31,7 +30,7 @@ import BigCircle1 from "../../../assets/images/img/big-circle-1.png";
 import BigCircle2 from "../../../assets/images/img/big-circle-2.png";
 import Polygon from "../../../assets/images/img/polygon.png";
 import CircleLight from "../../../assets/images/img/circle-light.png";
-// import LogoAnimation from "../../../assets/animation/logo-animation.json";
+// import LogoAnimation from "../../../assets/animation/Logo.gif";
 
 import "./MainSection.scss";
 
@@ -122,18 +121,7 @@ const MainSection = ({ data, loadingData }) => {
                 </div>
             </div>
             <div className="main-section__content">
-                {/* <Player
-                    src={LogoAnimation}
-                    loop
-                    autoplay
-                    style={{
-                        width: "220px",
-                        height: "140px", position:
-                            'absolute', zIndex: 1000,
-                        top: '-75px',
-                        left: -50
-                    }}
-                /> */}
+                {/* <img src={LogoAnimation} alt="" width="200" height="100" /> */}
                 <h1>
                     <span>
                         Smart defi solution
@@ -224,7 +212,7 @@ const MainSection = ({ data, loadingData }) => {
                     <div className="result-block">
                         <div>
                             <p className="result-block__top-text">{data.totalUsers}</p>
-                            <div>+ 392</div>
+                            {/* <div>+ 392</div> */}
                         </div>
                         <p className="result-block__bottom-text">
                             Quantity users
@@ -233,7 +221,7 @@ const MainSection = ({ data, loadingData }) => {
                     <div className="result-block">
                         <div>
                             <p className="result-block__top-text">{data.totalProfit / 1e18}</p>
-                            <div>+ 392</div>
+                            {/* <div>+ 392</div> */}
                         </div>
                         <p className="result-block__bottom-text">
                             Total result
@@ -244,7 +232,7 @@ const MainSection = ({ data, loadingData }) => {
                         <div>
                             <div>
                                 <p className="result-block__mobile__top-text">{data.totalUsers}</p>
-                                <div>+ 392</div>
+                                {/* <div>+ 392</div> */}
                             </div>
                             <p className="result-block__mobile__bottom-text">
                                 Quantity users
@@ -252,8 +240,8 @@ const MainSection = ({ data, loadingData }) => {
                         </div>
                         <div>
                             <div>
-                                <p className="result-block__mobile__top-text">{data.totalProfit}</p>
-                                <div>+ 392</div>
+                                <p className="result-block__mobile__top-text">{data.totalProfit / 1e18}</p>
+                                {/* <div>+ 392</div> */}
                             </div>
                             <p className="result-block__mobile__bottom-text">
                                 Total result

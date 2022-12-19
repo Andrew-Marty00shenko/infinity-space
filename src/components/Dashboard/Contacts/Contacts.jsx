@@ -1,13 +1,16 @@
+import { useSelector } from "react-redux";
 import "./Contacts.scss";
 
 const Contacts = () => {
+    const user = useSelector(state => state.user.user);
+
     return <div className="contacts">
         <div className="contacts__header">
             <h2>
                 Our telegram bots
             </h2>
             <div>
-                ID 0
+                ID {user?.id}
             </div>
         </div>
         <div className="contacts__block">
@@ -15,14 +18,16 @@ const Contacts = () => {
                 <path d="M34.8864 0.814506L2.38141 13.349C0.163081 14.24 0.175914 15.4775 1.97441 16.0293L10.3197 18.6327L29.6284 6.45017C30.5414 5.89467 31.3756 6.19351 30.6899 6.80217L15.0461 20.9207H15.0424L15.0461 20.9225L14.4704 29.5245C15.3137 29.5245 15.6859 29.1377 16.1589 28.6812L20.2124 24.7395L28.6439 30.9673C30.1986 31.8235 31.3151 31.3835 31.7019 29.5282L37.2367 3.44351C37.8032 1.17201 36.3696 0.143506 34.8864 0.814506Z" fill="#AFC6FF" />
             </svg>
             <h3>
-                Infinity Space Alarm Bot
+                Infinity Space Bot
             </h3>
             <p>
-                New partners and transactions notifications
+                News notifications
             </p>
-            <button>
-                Let's try!
-            </button>
+            <a href="https://t.me/Infinity_Space_Notifications_bot" target="_blank">
+                <button>
+                    Let's try!
+                </button>
+            </a>
 
             <div className="right-background">
                 <svg width="41" height="50" viewBox="0 0 41 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,14 +51,16 @@ const Contacts = () => {
                 <path d="M34.8864 0.814506L2.38141 13.349C0.163081 14.24 0.175914 15.4775 1.97441 16.0293L10.3197 18.6327L29.6284 6.45017C30.5414 5.89467 31.3756 6.19351 30.6899 6.80217L15.0461 20.9207H15.0424L15.0461 20.9225L14.4704 29.5245C15.3137 29.5245 15.6859 29.1377 16.1589 28.6812L20.2124 24.7395L28.6439 30.9673C30.1986 31.8235 31.3151 31.3835 31.7019 29.5282L37.2367 3.44351C37.8032 1.17201 36.3696 0.143506 34.8864 0.814506Z" fill="#AFC6FF" />
             </svg>
             <h3>
-                Infinity Space Alarm Bot
+                Infinity Space Support
             </h3>
             <p>
-                New partners and transactions notifications
+                Help and advice
             </p>
-            <button>
-                Let's try!
-            </button>
+            <a href="https://t.me/Infinity_Space_Support_bot" target="_blank">
+                <button>
+                    Let's try!
+                </button>
+            </a>
 
             <div className="right-background">
                 <svg width="41" height="50" viewBox="0 0 41 50" fill="none" xmlns="http://www.w3.org/2000/svg">

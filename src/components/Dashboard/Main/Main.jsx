@@ -188,7 +188,7 @@ const Main = () => {
                                 <p>
                                     {user?.userData.refCount || 0}
                                 </p>
-                                <span>
+                                <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
                                     + 0
                                 </span>
                             </div>
@@ -242,7 +242,7 @@ const Main = () => {
                                 <p>
                                     {user?.userData.ratio || 0} %
                                 </p>
-                                <span>
+                                <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
                                     + 0%
                                 </span>
                             </div>
@@ -270,7 +270,7 @@ const Main = () => {
                                     <p>
                                         {user?.userData.earned / 1e18 || 0}
                                     </p>
-                                    <span>
+                                    <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
                                         + 0
                                     </span>
                                 </div>

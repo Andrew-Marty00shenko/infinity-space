@@ -63,7 +63,7 @@ const LandingHeader = () => {
                         <div className="contract-info">
                             Infinity Space
                             <span>
-                                0x5fD5...CA3582
+                            0xB1Bc...0dbf
                             </span>
                         </div>
                     </>

@@ -1,5 +1,5 @@
 {
-    "address": "0x5fD5be65f63b0C96a067381aE4454D3569CA3582",
+    "address": "0xB1Bc72552418418a2e0D098D00E6C72e674E0dbf",
     "abi": [
         {
             "inputs": [
@@ -50,6 +50,11 @@
                 {
                     "internalType": "address",
                     "name": "initialOwner",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "first",
                     "type": "address"
                 }
             ],
@@ -345,6 +350,24 @@
                 }
             ],
             "name": "transferOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "key",
+                    "type": "uint256[]"
+                }
+            ],
+            "name": "whitelist",
             "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"

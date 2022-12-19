@@ -325,12 +325,12 @@ const Links = () => {
                                         <p>
                                             {user?.userData.refCount}
                                         </p>
-                                        <span>
+                                        <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
                                             + 0
                                         </span>
                                     </div>
                                 </div>
-                                <div>
+                                {/* <div>
                                     <div>
                                         Team
                                         <OverlayTrigger
@@ -354,7 +354,7 @@ const Links = () => {
                                             + 0
                                         </span>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                             <div className="links__info-stats-bot">
                                 <div className="bot-info">
@@ -377,7 +377,7 @@ const Links = () => {
                                         <p>
                                             {user?.userData.earned / 1e18}
                                         </p>
-                                        <span>
+                                        <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
                                             + 0
                                         </span>
                                     </div>
