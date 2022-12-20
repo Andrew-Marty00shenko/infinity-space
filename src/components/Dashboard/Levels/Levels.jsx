@@ -73,10 +73,13 @@ const Levels = () => {
                         from: wallet
                     })
                     .on('transactionHash', hash => {
+
+                    })
+                    .on('receipt', receipt => {
                         contract.methods[
                             'buyLevel(uint256)'
                         ](Number(levelId))
-                            .send({ gasPrice: 5000000 })
+                            .send()
                             .on('transactionHash', hash => {
                                 dispatch(buyingLevel());
                                 setHash(hash);
@@ -84,7 +87,13 @@ const Levels = () => {
                             .then(res => {
                                 toast.success(`You have successfully purchased a level ${levelId}`)
                                 dispatch(getUserData(wallet));
-                            });
+                            })
+                            .on('error', error => {
+                                toast.error('Something went wrong!');
+                            })
+                    })
+                    .on('error', error => {
+                        toast.error('Something went wrong!');
                     })
             } else {
                 busdContract.methods
@@ -93,10 +102,13 @@ const Levels = () => {
                         from: wallet
                     })
                     .on('transactionHash', hash => {
+
+                    })
+                    .on('receipt', receipt => {
                         contract.methods[
                             'buyLevel(uint256,uint256)'
                         ](Number(levelId), Number(localStorage.getItem("uplineId")))
-                            .send({ gasPrice: 5000000 })
+                            .send()
                             .on('transactionHash', hash => {
                                 dispatch(buyingLevel());
                                 localStorage.setItem("wallet_signed", wallet);
@@ -105,7 +117,13 @@ const Levels = () => {
                             .then(res => {
                                 toast.success('You have successfully purchased a level 1')
                                 dispatch(getUserData(wallet));
-                            });
+                            })
+                            .on('error', error => {
+                                toast.error('Something went wrong!');
+                            })
+                    })
+                    .on('error', error => {
+                        toast.error('Something went wrong!');
                     })
             }
         }
