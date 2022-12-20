@@ -72,10 +72,7 @@ const Levels = () => {
                     .send({
                         from: wallet
                     })
-                    .on('transactionHash', hash => {
-
-                    })
-                    .on('receipt', receipt => {
+                    .then(res => {
                         contract.methods[
                             'buyLevel(uint256)'
                         ](Number(levelId))
@@ -92,19 +89,13 @@ const Levels = () => {
                                 toast.error('Something went wrong!');
                             })
                     })
-                    .on('error', error => {
-                        toast.error('Something went wrong!');
-                    })
             } else {
                 busdContract.methods
                     .approve(contractAbi.address, level.price)
                     .send({
                         from: wallet
                     })
-                    .on('transactionHash', hash => {
-
-                    })
-                    .on('receipt', receipt => {
+                    .then(res => {
                         contract.methods[
                             'buyLevel(uint256,uint256)'
                         ](Number(levelId), Number(localStorage.getItem("uplineId")))
