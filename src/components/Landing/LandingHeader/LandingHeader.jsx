@@ -63,7 +63,9 @@ const LandingHeader = () => {
                         <div className="contract-info">
                             Infinity Space
                             <span>
-                            0xB1Bc...0dbf
+                                <a href="https://bscscan.com/address/0xB1Bc72552418418a2e0D098D00E6C72e674E0dbf" target="_blank">
+                                    0xB1Bc...0dbf
+                                </a>
                             </span>
                         </div>
                     </>

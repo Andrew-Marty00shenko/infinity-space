@@ -8,6 +8,7 @@ import { loginUser, watch } from '../../../redux/slices/userSlice';
 import Metamask from "../../../assets/images/metamask.svg";
 
 import "./ModalRegister.scss";
+import { useEffect } from 'react';
 
 const ModalRegister = ({
     showModalRegister,
@@ -17,6 +18,14 @@ const ModalRegister = ({
 }) => {
     const dispatch = useDispatch();
     const loading = useSelector(state => state.user.loading);
+
+    useEffect(() => {
+        window.addEventListener('keypress', e => {
+            if (e.key === 'Enter') {
+                handleClickWatch();
+            }
+        });
+    }, [uplineId]);
 
     const handleClickWatch = async () => {
         if (window.web3) {

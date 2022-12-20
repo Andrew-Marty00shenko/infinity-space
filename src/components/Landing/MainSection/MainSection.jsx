@@ -30,7 +30,7 @@ import BigCircle1 from "../../../assets/images/img/big-circle-1.png";
 import BigCircle2 from "../../../assets/images/img/big-circle-2.png";
 import Polygon from "../../../assets/images/img/polygon.png";
 import CircleLight from "../../../assets/images/img/circle-light.png";
-// import LogoAnimation from "../../../assets/animation/Logo.gif";
+// import AnimationLogo from "../../../assets/animation/animation-logo.gif";
 
 import "./MainSection.scss";
 
@@ -40,6 +40,11 @@ const MainSection = ({ data, loadingData }) => {
     const [loading, setLoading] = useState(false);
     const [showModalRegister, setShowModalRegister] = useState(false);
     const [uplineId, setUplineId] = useState("");
+
+    let currentDate = new Date();
+    let launchDate = new Date("12/20/2022");
+    let timeDiff = Math.abs(launchDate.getTime() - currentDate.getTime());
+    let diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
     useEffect(() => {
         if (window.innerWidth > 768) {
@@ -121,7 +126,7 @@ const MainSection = ({ data, loadingData }) => {
                 </div>
             </div>
             <div className="main-section__content">
-                {/* <img src={LogoAnimation} alt="" width="200" height="100" /> */}
+                {/* <img src={AnimationLogo} alt="logo" /> */}
                 <h1>
                     <span>
                         Smart defi solution
@@ -146,11 +151,12 @@ const MainSection = ({ data, loadingData }) => {
                         <p>Quantity users</p>
                     </div>
                     <div>
-                        <p> &#62;2 350</p>
-                        <p>Joined within 24 hours</p>
+                        <p> {diffDays}</p>
+                        <p>{diffDays === 1 ? 'Day' : 'Days'} from launch</p>
                     </div>
+
                     <div>
-                        <p>${data.totalProfit / 1e18}</p>
+                        <p>${Math.ceil(data.totalProfit / 1e18)}</p>
                         <p>Earned all the time</p>
                     </div>
                 </div>
