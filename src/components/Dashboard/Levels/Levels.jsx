@@ -32,6 +32,12 @@ const Levels = () => {
     // const [signature, setSignature] = useState(null);
 
     useEffect(() => {
+        if (user === null) {
+            dispatch(getUserData(wallet));
+        }
+    }, []);
+
+    useEffect(() => {
         dispatch(getLevelsInfo(user?.id));
     }, [user]);
 
@@ -169,7 +175,7 @@ const Levels = () => {
         if (hash !== null) {
             return <Preloader levels={true} />
         } else {
-            return <Preloader team={true} />
+            return <Preloader team={user !== null ? true : false} />
         }
     }
 

@@ -163,6 +163,9 @@ const MainSection = ({ data, loadingData }) => {
             </div>
         </section>
         <section className="info-project-section">
+            <div className="info-project-section__presentation">
+                <a href={PresentationPDF} target="_blank" >Check PDF presentation</a>
+            </div>
             <div className="info-project-section__top">
                 <h2>
                     Our project is a web 3.0 <span> platform</span>
@@ -264,7 +267,7 @@ const MainSection = ({ data, loadingData }) => {
                 setUplineId={setUplineId}
             />
 
-        </section>
+        </section >
     </>
 }
 

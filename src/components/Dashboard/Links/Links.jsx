@@ -13,10 +13,11 @@ import {
 } from "recharts";
 import classNames from "classnames";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
 import apiUser from "../../../api/apiServer/apiUser";
+import { getUserData } from "../../../redux/slices/userSlice";
 
 const data = [
     {
@@ -140,6 +141,7 @@ const Links = () => {
     const [activeMonthBtn, setActiveMonthBtn] = useState(true);
     const [activeYearBtn, setActiveYearBtn] = useState(false);
 
+    const dispatch = useDispatch();
     const user = useSelector(state => state.user.user);
     const wallet = useSelector(state => state.user.wallet);
     const slicedAddressWallet = wallet.substring(0, 5)
@@ -149,6 +151,9 @@ const Links = () => {
             wallet.length
         );
 
+    useEffect(() => {
+        dispatch(getUserData(wallet));
+    }, []);
 
     useEffect(() => {
         apiUser.getLinksClicked(user?.id)
@@ -407,7 +412,8 @@ const Links = () => {
                                                 placement="top"
                                                 overlay={
                                                     <Tooltip>
-                                                        Your referral link for inviting new partners
+                                                        Your referral link for inviting new partners. <br />
+                                                        Your link will become available after the purchase of the first level.
                                                     </Tooltip>
                                                 }
                                             >

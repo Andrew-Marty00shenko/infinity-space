@@ -452,6 +452,7 @@
 
         div{
             p{
+                text-align: center;
                 &:nth-child(1){
                     font-family: 'Proxima Nova', sans-serif;
                     font-style: normal;
@@ -576,6 +577,8 @@
                 }
 
                 p{
+                    text-align: left;
+
                     &:nth-child(1){
                         font-size: 22px;
                         line-height: 26px;
@@ -592,9 +595,27 @@
 }
 
 .info-project-section{
-    padding-top: 170px;
+    padding-top: 90px;
     padding-bottom: 0px;
     position: relative;
+
+    &__presentation{
+        text-align: center;
+        padding-bottom: 50px;
+
+        a{
+            font-family: 'Proxima Nova',sans-serif;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 32px;
+            color: #c4c4f7;
+    
+            &:hover{
+                color: #c4c4f7;
+                opacity: .8;
+            }
+        }
+    }
 
     &__top{
 
@@ -786,7 +807,7 @@
 
 @media (max-width: 1400px) {
     .info-project-section{
-        padding-top: 159px;
+        padding-top: 70px;
         padding-right: 0px;
         padding-left: 0px;
 
@@ -916,9 +937,18 @@
 
 @media (max-width: 790px) {
     .info-project-section{
-        padding-top: 52px;
+        padding-top: 25px;
         padding-left: 15px;
         padding-right: 15px;
+
+        &__presentation{
+            text-align: left;
+            padding-left: 15px;
+            padding-bottom: 15px;
+            a{
+                font-size: 17px;
+            }
+        }
 
         &__top{
             background-position: bottom;

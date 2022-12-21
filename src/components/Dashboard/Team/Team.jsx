@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { Table } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
@@ -10,9 +10,12 @@ import { contract } from "../../../utils/contract/contract";
 import Preloader from "../../Common/Preloader";
 
 import "./Team.scss";
+import { getUserData } from "../../../redux/slices/userSlice";
 
 const Team = () => {
-    const user = useSelector((state) => state.user.user);
+    const user = useSelector(state => state.user.user);
+    const wallet = useSelector(state => state.user.wallet);
+    const dispatch = useDispatch();
     const [loading, setLoading] = useState(true);
     const [partners, setPartners] = useState([]);
     const [skip, setSkip] = useState(0);
@@ -20,16 +23,22 @@ const Team = () => {
     const [total, setTotal] = useState(0);
 
     useEffect(() => {
-        contract.methods[
-            'getPartnersById(uint256,uint256,uint256)'
-        ](user?.id, skip, limit)
-            .call()
-            .then(res => {
-                setTotal(Number(res[0]));
-                setPartners(res[1]);
-                setLoading(false);
-            });
+        dispatch(getUserData(wallet));
     }, []);
+
+    useEffect(() => {
+        if (user !== null) {
+            contract.methods[
+                'getPartnersById(uint256,uint256,uint256)'
+            ](user?.id, skip, limit)
+                .call()
+                .then(res => {
+                    setTotal(Number(res[0]));
+                    setPartners(res[1]);
+                    setLoading(false);
+                });
+        }
+    }, [user]);
 
     const handleLoadMore = () => {
         setSkip(skip + 10);
@@ -37,11 +46,11 @@ const Team = () => {
             'getPartnersById(uint256,uint256,uint256)'
         ](user.id, skip + 10, limit)
             .call()
-            .then(res => setPartners(partners.concat(res[1])));
+            .then(res => setPartners(partners?.concat(res[1])));
     };
 
     if (loading) {
-        return <Preloader team={true} />
+        return <Preloader team={user !== null ? true : false} />
     }
 
     return <div className="team">
@@ -66,7 +75,7 @@ const Team = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {partners.length > 0 && partners.map((partner, index) => {
+                        {partners?.length > 0 && partners?.map((partner, index) => {
                             function addZero(i) {
                                 if (i < 10) { i = "0" + i }
                                 return i;
@@ -104,7 +113,7 @@ const Team = () => {
                                         </svg>
                                     </CopyToClipboard>
                                     <a
-                                        href={`https://testnet.bscscan.com/address/${partner.wallet}`}
+                                        href={`https://bscscan.com/address/${partner.wallet}`}
                                         target="_blank"
                                     >
                                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -140,7 +149,7 @@ const Team = () => {
                     </tbody>
                 </Table>
                 <div className="team__mobile-transactions">
-                    {partners.length > 0 && partners.map((partner, index) => {
+                    {partners?.length > 0 && partners?.map((partner, index) => {
                         function addZero(i) {
                             if (i < 10) { i = "0" + i }
                             return i;
@@ -178,7 +187,7 @@ const Team = () => {
                                         </svg>
                                     </CopyToClipboard>
                                     <a
-                                        href={`https://testnet.bscscan.com/address/${partner.wallet}`}
+                                        href={`https://bscscan.com/address/${partner.wallet}`}
                                         target="_blank"
                                     >
                                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -225,7 +234,7 @@ const Team = () => {
                     })}
 
                 </div>
-                {total !== partners.length && <button onClick={handleLoadMore}>
+                {total !== partners?.length && <button onClick={handleLoadMore}>
                     Load more
                 </button>}
             </>

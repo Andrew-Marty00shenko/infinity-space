@@ -1,3 +1,5 @@
+import PresentationPDF from "../../../../assets/pdfs/presentation.pdf";
+
 import "./FirstSlide.scss";
 
 const FirstSlide = () => {
@@ -11,6 +13,10 @@ const FirstSlide = () => {
         <p>
             Powerful marketing based on smart contract technology gives unlimited possibilities
         </p>
+
+        <a href={PresentationPDF} target="_blank">
+            Check PDF presentation
+        </a>
     </div>
 }
 

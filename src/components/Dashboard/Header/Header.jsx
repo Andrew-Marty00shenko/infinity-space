@@ -38,7 +38,7 @@ const Header = ({ showSidebar, setShowSidebar }) => {
     }, []);
 
     return <header className="dashboard-header">
-        <div className="dashboard-header__logo">
+        <div className="dashboard-header__logo" onClick={handleLogout}>
             <img src={Logo} alt="logo" />
             Infinity Space
         </div>

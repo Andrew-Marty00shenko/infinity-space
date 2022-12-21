@@ -1,8 +1,16 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserData } from "../../../redux/slices/userSlice";
 import "./Contacts.scss";
 
 const Contacts = () => {
     const user = useSelector(state => state.user.user);
+    const wallet = useSelector(state => state.user.wallet);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getUserData(wallet));
+    }, []);
 
     return <div className="contacts">
         <div className="contacts__header">

@@ -6,7 +6,7 @@ const EighthSlide = () => {
     return <div className="presentation-eighth">
         <div>
             <Row>
-                <Col>
+                <Col lg={6}>
                     <div className="block">
                         <h3>
                             Our project is a web 3.0 platform
@@ -17,14 +17,16 @@ const EighthSlide = () => {
                         </p>
                     </div>
                     <div className="video">
-                        video
+                        <iframe width="420"
+                            src="https://www.youtube.com/embed/Af_lQ1zUnoM">
+                        </iframe>
                     </div>
                 </Col>
-                <Col>
+                <Col lg={6}>
                     <div className="block">
                         <p>
-                            When registering, you will need to activate Level 1 of Infinity Space, which costs 16 BUSD ($16). So, your wallet must have 16 BUSD and some BNB to pay the commission. More details about BUSD, BNB, and depositing options will talk a little later. <br />
-                            After you have downloaded and funded metamask, you need to paste the invitation link into your google chrome browser if you are registering from your computer, or open the metamask app on your phone, click on the "browser" tab and paste the link there.
+                            When registering, you will need to activate Level 1 of Infinity Space, which costs 16 BUSD ($16). So, your wallet must have 16 BUSD and some BNB to pay the commission. More details about BUSD, BNB, and depositing options will talk a little later. <br /> <br />
+                            After you have downloaded and funded metamask, you need to paste the invitation link into your google chrome browser if you are registering from your computer, or open the metamask app on your phone, click on the "browser" tab and paste the link there. <br /> <br />
                             Then you need to click "connect wallet" and confirm the connection of metamask to our platform. Once connected, metamask will ask you to confirm the transaction.
                             And here we are! You are registered on the platform and you are on the 1st level of the Infinity Space game!
                         </p>

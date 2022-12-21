@@ -120,7 +120,8 @@ const Main = () => {
                                             placement="top"
                                             overlay={
                                                 <Tooltip>
-                                                    Your referral link for inviting new partners
+                                                    Your referral link for inviting new partners. <br />
+                                                    Your link will become available after the purchase of the first level.
                                                 </Tooltip>
                                             }
                                         >

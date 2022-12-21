@@ -17,8 +17,18 @@ import FifteenthSlide from "./FifteenthSlide/FifteenthSlide";
 import SixteenthSlide from "./SixteenthSlide/SixteenthSlide";
 import SeventeenthSlide from "./SeventeenthSlide/SeventeenthSlide";
 import EighteenthSlide from "./EighteenthSlide/EighteenthSlide";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserData } from "../../../redux/slices/userSlice";
+import { useEffect } from "react";
 
 const Presentation = () => {
+    const wallet = useSelector(state => state.user.wallet);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getUserData(wallet));
+    }, []);
+
     return <div className="presentation">
         <FirstSlide />
         <SecondSlide />

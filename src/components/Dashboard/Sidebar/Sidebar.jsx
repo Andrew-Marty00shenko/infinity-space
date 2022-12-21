@@ -45,7 +45,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
             </svg>
         </div>
 
-        <div className="sidebar__logo">
+        <div className="sidebar__logo" onClick={handleLogout}>
             <img src={Logo} alt="logo" />
             Infinity Space
         </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 
 import Header from "../../components/Dashboard/Header/Header";
 import Sidebar from "../../components/Dashboard/Sidebar/Sidebar";
@@ -19,11 +19,26 @@ import Preloader from "../../components/Common/Preloader";
 
 const Dashboard = () => {
     const [showSidebar, setShowSidebar] = useState(false);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const location = useLocation();
     const user = useSelector(state => state.user.user);
 
     useEffect(() => {
-        navigate('/dashboard')
+        if (location.pathname === '/dashboard/team') {
+            navigate('/dashboard/team')
+        } else if (location.pathname.includes('/dashboard/user/levels')) {
+            navigate('/dashboard/user/levels')
+        } else if (location.pathname === '/dashboard/links') {
+            navigate('/dashboard/links')
+        } else if (location.pathname === '/dashboard/presentation') {
+            navigate('/dashboard/presentation')
+        } else if (location.pathname === '/dashboard/contacts') {
+            navigate('/dashboard/contacts')
+        } else if (location.pathname === '/dashboard/web3-academy') {
+            navigate('/dashboard/web3-academy')
+        } else {
+            navigate('/dashboard')
+        }
     }, []);
 
     useEffect(() => {
