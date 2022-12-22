@@ -8,6 +8,7 @@ import { AreaChart, Area, ResponsiveContainer } from 'recharts';
 
 import AllTransactions from "../AllTransactions/AllTransactions";
 import { getUserData } from "../../../redux/slices/userSlice";
+import { getLevelsInfo } from "../../../redux/slices/levelsSlice";
 
 import "./Main.scss";
 
@@ -58,6 +59,7 @@ const data = [
 
 const Main = () => {
     const dispatch = useDispatch();
+    const levels = useSelector(state => state.levels.levels);
     const user = useSelector(state => state.user.user);
     const wallet = useSelector(state => state.user.wallet);
     const slicedAddressWallet = wallet.substring(0, 5)
@@ -73,9 +75,23 @@ const Main = () => {
         "." + (dateFormat.getMonth() + 1) +
         "." + dateFormat.getFullYear();
 
+    let activatedAccount = user?.userData.earned !== '0' && user?.userData.ratio === '0';
+    let activatedLevels = levels?.filter(level => level.status === true);
+    let pricesActivatedLevels = activatedLevels?.map(level => level.price);
+    let totalSumActivatedLevels = null;
+
+    for (let i = 0; i < pricesActivatedLevels?.length; i++) {
+        let price = pricesActivatedLevels[i] / 1e18;
+        totalSumActivatedLevels += price;
+    }
+
     useEffect(() => {
         dispatch(getUserData(wallet));
     }, []);
+
+    useEffect(() => {
+        dispatch(getLevelsInfo(user?.id));
+    }, [user]);
 
     const handleCopy = (num) => {
         if (num === 1) {
@@ -84,6 +100,10 @@ const Main = () => {
             toast.success('Address copied');
         }
     };
+
+    // console.log(((user?.userData.earned / 1e18) / totalSumActivatedLevels) * 100)
+
+    // console.log(activatedAccount)
 
     return <div className="main">
         <div className="main-info">
@@ -241,7 +261,12 @@ const Main = () => {
                             </div>
                             <div className="stats-block__bottom">
                                 <p>
-                                    {user?.userData.ratio || 0} %
+                                    {
+                                        activatedAccount
+                                            ? (((user?.userData.earned / 1e18) / totalSumActivatedLevels) * 100).toFixed(2)
+                                            : user?.userData.ratio || 0
+                                    }%
+
                                 </p>
                                 <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
                                     + 0%

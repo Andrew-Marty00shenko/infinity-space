@@ -229,7 +229,7 @@ const MainSection = ({ data, loadingData }) => {
                     </div>
                     <div className="result-block">
                         <div>
-                            <p className="result-block__top-text">{data.totalProfit / 1e18}</p>
+                            <p className="result-block__top-text">{Math.ceil(data.totalProfit / 1e18)}</p>
                             {/* <div>+ 392</div> */}
                         </div>
                         <p className="result-block__bottom-text">
