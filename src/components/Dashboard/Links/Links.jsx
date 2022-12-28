@@ -134,6 +134,7 @@ const dataArea = [
 ];
 
 const Links = () => {
+    const [userData, setUserData] = useState(null);
     const [clickLinks, setClickLinks] = useState({
         totalClicks: 0,
         lastDayClicks: 0
@@ -156,6 +157,10 @@ const Links = () => {
     }, []);
 
     useEffect(() => {
+        apiUser.getUserData(user?.id)
+            .then(({ data }) => setUserData(data))
+            .catch(err => console.log(err));
+
         apiUser.getLinksClicked(user?.id)
             .then(({ data }) => {
                 setClickLinks({
@@ -330,12 +335,12 @@ const Links = () => {
                                         <p>
                                             {user?.userData.refCount}
                                         </p>
-                                        <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
-                                            + 0
+                                        <span>
+                                            + {userData?.partnersAtLatestDay || 0}
                                         </span>
                                     </div>
                                 </div>
-                                {/* <div>
+                                <div>
                                     <div>
                                         Team
                                         <OverlayTrigger
@@ -353,13 +358,13 @@ const Links = () => {
                                     </div>
                                     <div>
                                         <p>
-                                            0
+                                            {userData?.team || 0}
                                         </p>
                                         <span>
-                                            + 0
+                                            + {userData?.TeamAtLatestDay || 0}
                                         </span>
                                     </div>
-                                </div> */}
+                                </div>
                             </div>
                             <div className="links__info-stats-bot">
                                 <div className="bot-info">
@@ -380,10 +385,10 @@ const Links = () => {
                                     </div>
                                     <div>
                                         <p>
-                                            {user?.userData.earned / 1e18}
+                                            {`${(user?.userData.earned / 1e18).toLocaleString('ru')} $` || 0}
                                         </p>
-                                        <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
-                                            + 0
+                                        <span>
+                                            + {(userData?.profitAtLatestDay / 1e18) || 0}
                                         </span>
                                     </div>
                                 </div>

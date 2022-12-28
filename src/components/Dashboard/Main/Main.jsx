@@ -11,6 +11,8 @@ import { getUserData } from "../../../redux/slices/userSlice";
 import { getLevelsInfo } from "../../../redux/slices/levelsSlice";
 
 import "./Main.scss";
+import { useState } from "react";
+import apiUser from "../../../api/apiServer/apiUser";
 
 const data = [
     {
@@ -59,6 +61,9 @@ const data = [
 
 const Main = () => {
     const dispatch = useDispatch();
+
+    const [userData, setUserData] = useState(null);
+
     const levels = useSelector(state => state.levels.levels);
     const user = useSelector(state => state.user.user);
     const wallet = useSelector(state => state.user.wallet);
@@ -83,11 +88,19 @@ const Main = () => {
     for (let i = 0; i < pricesActivatedLevels?.length; i++) {
         let price = pricesActivatedLevels[i] / 1e18;
         totalSumActivatedLevels += price;
-    }
+    };
 
     useEffect(() => {
         dispatch(getUserData(wallet));
     }, []);
+
+    useEffect(() => {
+        if (user !== null) {
+            apiUser.getUserData(user?.id)
+                .then(({ data }) => setUserData(data))
+                .catch(err => console.log(err))
+        }
+    }, [user]);
 
     useEffect(() => {
         dispatch(getLevelsInfo(user?.id));
@@ -184,7 +197,7 @@ const Main = () => {
                     </Col>
                 </Row>
                 <Row className="main-info__stats">
-                    <Col xl={4} sm={6} xs={6}>
+                    <Col xl={3} sm={4} xs={4}>
                         <div className="main-info__stats-block">
                             <div className="stats-block__top">
                                 Partners
@@ -205,13 +218,13 @@ const Main = () => {
                                 <p>
                                     {user?.userData.refCount || 0}
                                 </p>
-                                <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
-                                    + 0
+                                <span>
+                                    + {userData?.partnersAtLatestDay || 0}
                                 </span>
                             </div>
                         </div>
                     </Col>
-                    {/* <Col xl={3} sm={4} xs={4}>
+                    <Col xl={3} sm={4} xs={4}>
                         <div className="main-info__stats-block">
                             <div className="stats-block__top">
                                 Team
@@ -230,15 +243,15 @@ const Main = () => {
                             </div>
                             <div className="stats-block__bottom">
                                 <p>
-                                    0
+                                    {userData?.team || 0}
                                 </p>
                                 <span>
-                                    + 0
+                                    + {userData?.TeamAtLatestDay || 0}
                                 </span>
                             </div>
                         </div>
-                    </Col> */}
-                    <Col xl={4} sm={6} xs={6}>
+                    </Col>
+                    <Col xl={3} sm={4} xs={4}>
                         <div className="main-info__stats-block pre-last">
                             <div className="stats-block__top">
                                 Ratio
@@ -264,13 +277,13 @@ const Main = () => {
                                     }%
 
                                 </p>
-                                <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
-                                    + 0%
+                                <span>
+                                    + {userData?.ratioAtLatestDay || 0}%
                                 </span>
                             </div>
                         </div>
                     </Col>
-                    <Col xl={4}>
+                    <Col xl={3}>
                         <div className="main-info__stats-block last">
                             <div>
                                 <div className="stats-block__top">
@@ -292,8 +305,8 @@ const Main = () => {
                                     <p>
                                         {`${(user?.userData.earned / 1e18).toLocaleString('ru')} $` || 0}
                                     </p>
-                                    <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
-                                        + 0
+                                    <span>
+                                        + {(userData?.profitAtLatestDay / 1e18) || 0}
                                     </span>
                                 </div>
                             </div>
@@ -349,7 +362,7 @@ const Main = () => {
         </div>
 
         {/* <AllTransactions /> */}
-    </div>
+    </div >
 }
 
 export default Main;

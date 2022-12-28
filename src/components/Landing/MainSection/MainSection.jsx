@@ -34,7 +34,7 @@ import CircleLight from "../../../assets/images/img/circle-light.png";
 
 import "./MainSection.scss";
 
-const MainSection = ({ data, loadingData }) => {
+const MainSection = ({ data, loadingData, totals }) => {
     const dispatch = useDispatch();
 
     const [loading, setLoading] = useState(false);
@@ -221,7 +221,7 @@ const MainSection = ({ data, loadingData }) => {
                     <div className="result-block">
                         <div>
                             <p className="result-block__top-text">{data.totalUsers}</p>
-                            {/* <div>+ 392</div> */}
+                            <div>+{totals.joinedAtLatestDay}</div>
                         </div>
                         <p className="result-block__bottom-text">
                             Quantity users
@@ -229,8 +229,8 @@ const MainSection = ({ data, loadingData }) => {
                     </div>
                     <div className="result-block">
                         <div>
-                            <p className="result-block__top-text">{Math.ceil(data.totalProfit / 1e18).toLocaleString('ru')} BUSD</p>
-                            {/* <div>+ 392</div> */}
+                            <p className="result-block__top-text">{Math.ceil(data.totalProfit / 1e18).toLocaleString('ru')} $</p>
+                            <div>+ {totals.profitAtLatestDay / 1e18}</div>
                         </div>
                         <p className="result-block__bottom-text">
                             Total result

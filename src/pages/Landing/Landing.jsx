@@ -14,6 +14,7 @@ import SocialLinkSection from "../../components/Landing/SocialLinksSection/Socia
 import LandingFooter from "../../components/Landing/LandingFooter/LandingFooter";
 
 import "./Landing.scss";
+import apiTotalInfo from "../../api/apiServer/apiTotalInfo";
 
 const Landing = () => {
     const [data, setData] = useState({
@@ -21,6 +22,11 @@ const Landing = () => {
         totalProfit: 0,
     });
     const [loadingData, setLoadingData] = useState(true);
+    const [totals, setTotals] = useState({
+        joinedAtLatestDay: 0,
+        profitAtLatestDay: 0,
+        transactionsAtLatestDay: 0,
+    });
 
     useEffect(() => {
         contract.methods
@@ -33,13 +39,29 @@ const Landing = () => {
                 });
                 setLoadingData(false);
             });
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        apiTotalInfo.getTotals()
+            .then(({ data }) => {
+                setTotals({
+                    joinedAtLatestDay: data.joinedAtLatestDay,
+                    profitAtLatestDay: data.profitAtLatestDay,
+                    transactionsAtLatestDay: data.transactionsAtLatestDay,
+                });
+            })
+            .catch(err => console.log(err));
+    }, []);
 
     return <div className="landing">
         <Routes>
             <Route path="/" element={<>
                 <LandingHeader />
-                <MainSection data={data} loadingData={loadingData} />
+                <MainSection
+                    data={data}
+                    loadingData={loadingData}
+                    totals={totals}
+                />
                 <ContractAddressSection />
                 <SliderSection />
                 <DashboardSection />
