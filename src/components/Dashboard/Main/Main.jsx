@@ -101,10 +101,6 @@ const Main = () => {
         }
     };
 
-    // console.log(((user?.userData.earned / 1e18) / totalSumActivatedLevels) * 100)
-
-    // console.log(activatedAccount)
-
     return <div className="main">
         <div className="main-info">
             <Container fluid>
@@ -294,7 +290,7 @@ const Main = () => {
                                 </div>
                                 <div className="stats-block__bottom">
                                     <p>
-                                        {user?.userData.earned / 1e18 || 0}
+                                        {`${(user?.userData.earned / 1e18).toLocaleString('ru')} $` || 0}
                                     </p>
                                     <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
                                         + 0
@@ -342,7 +338,7 @@ const Main = () => {
                     Infinity Space
                 </h3>
                 <p>
-                    {user?.userData.earned / 1e18 || 0} BUSD
+                    {`${(user?.userData.earned / 1e18).toLocaleString()}` || 0} BUSD
                 </p>
                 <Link to="/dashboard/user/levels">
                     <button>

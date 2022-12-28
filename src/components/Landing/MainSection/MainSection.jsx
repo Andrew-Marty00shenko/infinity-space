@@ -41,9 +41,9 @@ const MainSection = ({ data, loadingData }) => {
     const [showModalRegister, setShowModalRegister] = useState(false);
     const [uplineId, setUplineId] = useState("");
 
-    let currentDate = new Date();
-    let launchDate = new Date("12/20/2022");
-    let timeDiff = Math.abs(launchDate.getTime() - currentDate.getTime());
+    let currentDate = new Date("01/18/2023");
+    let launchDate = new Date();
+    let timeDiff = Math.abs(currentDate.getTime() - launchDate.getTime());
     let diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
     useEffect(() => {
@@ -152,11 +152,11 @@ const MainSection = ({ data, loadingData }) => {
                     </div>
                     <div>
                         <p> {diffDays}</p>
-                        <p>{diffDays === 1 ? 'Day' : 'Days'} from launch</p>
+                        <p>Days before the official start</p>
                     </div>
 
                     <div>
-                        <p>${Math.ceil(data.totalProfit / 1e18)}</p>
+                        <p>{Math.ceil(data.totalProfit / 1e18).toLocaleString('ru')} $</p>
                         <p>Earned all the time</p>
                     </div>
                 </div>
@@ -229,7 +229,7 @@ const MainSection = ({ data, loadingData }) => {
                     </div>
                     <div className="result-block">
                         <div>
-                            <p className="result-block__top-text">{Math.ceil(data.totalProfit / 1e18)}</p>
+                            <p className="result-block__top-text">{Math.ceil(data.totalProfit / 1e18).toLocaleString('ru')} BUSD</p>
                             {/* <div>+ 392</div> */}
                         </div>
                         <p className="result-block__bottom-text">
@@ -249,7 +249,7 @@ const MainSection = ({ data, loadingData }) => {
                         </div>
                         <div>
                             <div>
-                                <p className="result-block__mobile__top-text">{data.totalProfit / 1e18}</p>
+                                <p className="result-block__mobile__top-text">{Math.ceil(data.totalProfit / 1e18).toLocaleString('ru')} BUSD</p>
                                 {/* <div>+ 392</div> */}
                             </div>
                             <p className="result-block__mobile__bottom-text">
