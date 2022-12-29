@@ -126,7 +126,6 @@ const MainSection = ({ data, loadingData, totals }) => {
                 </div>
             </div>
             <div className="main-section__content">
-                {/* <img src={AnimationLogo} alt="logo" /> */}
                 <h1>
                     <span>
                         Smart defi solution
@@ -221,7 +220,7 @@ const MainSection = ({ data, loadingData, totals }) => {
                     <div className="result-block">
                         <div>
                             <p className="result-block__top-text">{data.totalUsers}</p>
-                            <div>+{totals.joinedAtLatestDay}</div>
+                            {/* <div>+ {totals.joinedAtLatestDay}</div> */}
                         </div>
                         <p className="result-block__bottom-text">
                             Quantity users
@@ -230,7 +229,7 @@ const MainSection = ({ data, loadingData, totals }) => {
                     <div className="result-block">
                         <div>
                             <p className="result-block__top-text">{Math.ceil(data.totalProfit / 1e18).toLocaleString('ru')} $</p>
-                            <div>+ {totals.profitAtLatestDay / 1e18}</div>
+                            {/* <div>+ {totals.profitAtLatestDay / 1e18}</div> */}
                         </div>
                         <p className="result-block__bottom-text">
                             Total result
