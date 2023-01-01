@@ -1,0 +1,27 @@
+.not-found{
+    width: 100%;
+    min-height: 70vh;
+    text-align: center;
+
+    h2{
+        font-family: 'Proxima Nova',sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 52px;
+    }
+
+    p{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    button{
+        width: 159px;
+        height: 54px;
+        background: #184BFF;
+        border-radius: 12px;
+        margin-top: 14px;
+    }
+}

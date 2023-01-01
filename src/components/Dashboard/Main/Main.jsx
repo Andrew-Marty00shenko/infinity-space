@@ -218,7 +218,7 @@ const Main = () => {
                                 <p>
                                     {user?.userData.refCount || 0}
                                 </p>
-                                <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
+                                <span>
                                     + {userData?.partnersAtLatestDay || 0}
                                 </span>
                             </div>
@@ -245,7 +245,7 @@ const Main = () => {
                                 <p>
                                     {userData?.team || 0}
                                 </p>
-                                <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
+                                <span>
                                     + {userData?.TeamAtLatestDay || 0}
                                 </span>
                             </div>
@@ -277,7 +277,7 @@ const Main = () => {
                                     }%
 
                                 </p>
-                                <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
+                                <span>
                                     + {userData?.ratioAtLatestDay || 0}%
                                 </span>
                             </div>
@@ -305,7 +305,7 @@ const Main = () => {
                                     <p>
                                         {`${(user?.userData.earned / 1e18).toLocaleString('ru')} $` || 0}
                                     </p>
-                                    <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
+                                    <span>
                                         + {(userData?.profitAtLatestDay / 1e18) || 0}
                                     </span>
                                 </div>
@@ -361,7 +361,7 @@ const Main = () => {
             </div>
         </div>
 
-        {/* <AllTransactions /> */}
+        <AllTransactions />
     </div >
 }
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setWallet } from "../../../redux/slices/userSlice";
 
@@ -14,6 +15,7 @@ const Header = ({ showSidebar, setShowSidebar }) => {
     const [busdBalance, setBusdBalance] = useState(null);
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const wallet = useSelector(state => state.user.wallet);
     const slicedAddressWallet = wallet.substring(0, 5)
         + "..."
@@ -25,6 +27,7 @@ const Header = ({ showSidebar, setShowSidebar }) => {
     const handleLogout = () => {
         localStorage.removeItem("wallet_signed");
         dispatch(setWallet(null));
+        navigate('/');
     };
 
     useEffect(() => {

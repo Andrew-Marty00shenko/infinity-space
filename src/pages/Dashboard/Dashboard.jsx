@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import Header from "../../components/Dashboard/Header/Header";
 import Sidebar from "../../components/Dashboard/Sidebar/Sidebar";
@@ -12,10 +13,10 @@ import Stats from "../../components/Dashboard/Stats/Stats";
 import Contacts from "../../components/Dashboard/Contacts/Contacts";
 import Presentation from "../../components/Dashboard/Presentation/Presentation";
 import Web3Academy from "../../components/Dashboard/Web3Academy/Web3Academy";
+import Play2earnGame from "../../components/Dashboard/Play2earnGame/Play2earnGame";
+import Preloader from "../../components/Common/Preloader";
 
 import "./Dashboard.scss";
-import { useSelector } from "react-redux";
-import Preloader from "../../components/Common/Preloader";
 
 const Dashboard = () => {
     const [showSidebar, setShowSidebar] = useState(false);
@@ -36,6 +37,8 @@ const Dashboard = () => {
             navigate('/dashboard/contacts')
         } else if (location.pathname === '/dashboard/web3-academy') {
             navigate('/dashboard/web3-academy')
+        } else if (location.pathname === '/dashboard/stats') {
+            navigate('/dashboard/stats')
         } else {
             navigate('/dashboard')
         }
@@ -64,6 +67,7 @@ const Dashboard = () => {
                 <Route path='/dashboard/presentation' element={<Presentation />} />
                 <Route path='/dashboard/contacts' element={<Contacts />} />
                 <Route path='/dashboard/web3-academy' element={<Web3Academy />} />
+                <Route path='/dashboard/play2earn-game' element={<Play2earnGame />} />
             </Routes>
         </div>
     </>

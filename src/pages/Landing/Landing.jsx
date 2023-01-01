@@ -15,6 +15,7 @@ import LandingFooter from "../../components/Landing/LandingFooter/LandingFooter"
 
 import "./Landing.scss";
 import apiTotalInfo from "../../api/apiServer/apiTotalInfo";
+import NotFound from "../NotFound/NotFound";
 
 const Landing = () => {
     const [data, setData] = useState({
@@ -54,9 +55,9 @@ const Landing = () => {
     }, []);
 
     return <div className="landing">
+        <LandingHeader />
         <Routes>
             <Route path="/" element={<>
-                <LandingHeader />
                 <MainSection
                     data={data}
                     loadingData={loadingData}
@@ -67,11 +68,11 @@ const Landing = () => {
                 <DashboardSection />
                 <FaqSection />
                 <SocialLinkSection />
-                <LandingFooter />
             </>}
             />
+            <Route path='*' element={<NotFound />} />
         </Routes>
-
+        <LandingFooter />
 
     </div>
 };

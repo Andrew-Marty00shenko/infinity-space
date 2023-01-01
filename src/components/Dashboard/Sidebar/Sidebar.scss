@@ -71,6 +71,13 @@
                 }
             }
 
+            &:nth-child(7){
+                li{
+                    background: linear-gradient(82deg, rgba(106,91,181,0.4150035014005602) 0%, rgba(165,184,255,0.1) 100%);
+                    border-radius: 8px;
+                }
+            }
+
             &:last-of-type{
                 li{
                     background: linear-gradient(82deg, rgba(106,91,181,0.4150035014005602) 0%, rgba(165,184,255,0.1) 100%);

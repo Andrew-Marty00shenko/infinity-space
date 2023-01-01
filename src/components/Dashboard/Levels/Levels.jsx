@@ -14,7 +14,7 @@ import contractAbi from "../../../utils/contract/contractAbi.json";
 import contractBUSDAbi from "../../../utils/contract/contractBUSDAbi.json";
 
 import Preloader from "../../Common/Preloader";
-import Stats from "../Stats/Stats";
+import AllTransactions from "../AllTransactions/AllTransactions";
 import ErrorModal from "./ErrorModal/ErrorModal";
 
 import "./Levels.scss";
@@ -257,9 +257,8 @@ const Levels = () => {
                 </Row>
             </Container>
         </div>
-        {/* <div className="levels__transactions">
-            <Stats levels={true} />
-        </div> */}
+
+        <AllTransactions />
 
         <ErrorModal setModalShow={setModalShow} modalShow={modalShow} />
     </div>

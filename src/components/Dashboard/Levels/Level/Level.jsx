@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
-import Stats from "../../Stats/Stats";
+import AllTransactions from "../../AllTransactions/AllTransactions";
 
 import "./Level.scss";
 
@@ -26,7 +26,7 @@ const Level = () => {
 
     return <div className="level">
         <div className="level__info">
-            <Link to="/dashboard/user/levels"> ID {user.id} </Link> &#62; <span>
+            <Link to="/dashboard/user/levels"> ID {user?.id} </Link> &#62; <span>
                 Level {params.id}
             </span>
         </div>
@@ -70,7 +70,7 @@ const Level = () => {
                     </h2>
                     <div className="card-content__info">
                         <p>
-                            ID {user.id}
+                            ID {user?.id}
                         </p>
                         <div>
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -174,9 +174,9 @@ const Level = () => {
             />
         </div>
 
-        {/* <div className="levels__transactions">
-            <Stats levels={true} />
-        </div> */}
+        <div className="levels__transactions">
+            <AllTransactions />
+        </div>
     </div>
 }
 

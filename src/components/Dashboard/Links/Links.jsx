@@ -335,7 +335,7 @@ const Links = () => {
                                         <p>
                                             {user?.userData.refCount}
                                         </p>
-                                        <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
+                                        <span>
                                             + {userData?.partnersAtLatestDay || 0}
                                         </span>
                                     </div>
@@ -360,7 +360,7 @@ const Links = () => {
                                         <p>
                                             {userData?.team || 0}
                                         </p>
-                                        <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
+                                        <span>
                                             + {userData?.TeamAtLatestDay || 0}
                                         </span>
                                     </div>
@@ -387,7 +387,7 @@ const Links = () => {
                                         <p>
                                             {`${(user?.userData.earned / 1e18).toLocaleString('ru')} $` || 0}
                                         </p>
-                                        <span style={{ color: 'rgba(255, 255, 255, 0.005)' }}>
+                                        <span>
                                             + {(userData?.profitAtLatestDay / 1e18) || 0}
                                         </span>
                                     </div>
