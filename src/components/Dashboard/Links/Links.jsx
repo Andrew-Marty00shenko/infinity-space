@@ -157,18 +157,20 @@ const Links = () => {
     }, []);
 
     useEffect(() => {
-        apiUser.getUserData(user?.id)
-            .then(({ data }) => setUserData(data))
-            .catch(err => console.log(err));
+        if (user !== null) {
+            apiUser.getUserData(user?.id)
+                .then(({ data }) => setUserData(data))
+                .catch(err => console.log(err));
 
-        apiUser.getLinksClicked(user?.id)
-            .then(({ data }) => {
-                setClickLinks({
-                    totalClicks: data.total_clicks,
-                    lastDayClicks: data.last_day_clicks
-                });
-            })
-    }, []);
+            apiUser.getLinksClicked(user?.id)
+                .then(({ data }) => {
+                    setClickLinks({
+                        totalClicks: data.total_clicks,
+                        lastDayClicks: data.last_day_clicks
+                    });
+                })
+        }
+    }, [user]);
 
     const handleCopy = (num) => {
         if (num === 1) {

@@ -229,7 +229,7 @@ const MainSection = ({ data, loadingData, totals }) => {
                     <div className="result-block">
                         <div>
                             <p className="result-block__top-text">{Math.ceil(data.totalProfit / 1e18).toLocaleString('ru')} $</p>
-                            <div>+ {totals.profitAtLatestDay / 1e18}</div>
+                            <div>+ {(totals.profitAtLatestDay / 1e18).toFixed(0)}</div>
                         </div>
                         <p className="result-block__bottom-text">
                             Total result
@@ -249,7 +249,7 @@ const MainSection = ({ data, loadingData, totals }) => {
                         <div>
                             <div>
                                 <p className="result-block__mobile__top-text">{Math.ceil(data.totalProfit / 1e18).toLocaleString('ru')} BUSD</p>
-                                <div>+ {totals.profitAtLatestDay / 1e18}</div>
+                                <div>+ {(totals.profitAtLatestDay / 1e18).toFixed(0)}</div>
                             </div>
                             <p className="result-block__mobile__bottom-text">
                                 Total result
