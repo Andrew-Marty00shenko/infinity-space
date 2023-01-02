@@ -180,7 +180,7 @@ const AllTransactions = () => {
                     <div>
                         {(results?.totalProfit / 1e18).toLocaleString() || 0}
                         <span>
-                            + {totals?.profitAtLatestDay || 0}
+                            + {(totals?.profitAtLatestDay / 1e18).toLocaleString() || 0}
                         </span>
                     </div>
                 </div>
