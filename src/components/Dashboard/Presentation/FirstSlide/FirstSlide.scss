@@ -1,5 +1,5 @@
 .presentation-first{
-    background-image: url(../../../../assets/images/backgrounds/presentation-1.webp);
+    background-image: url(../../../../assets/images/backgrounds/presentation-1.png);
     background-repeat: no-repeat;
     margin: 0 auto;
     padding: 35px;
@@ -80,6 +80,7 @@
             backdrop-filter: blur(49.5px);
             border-radius: 17px;
             padding: 10px 20px;
+            // line-height: 24px;
         }
 
         a{

@@ -1,4 +1,4 @@
-import Table from "../../../../assets/images/backgrounds/presentation-18.webp";
+import Table from "../../../../assets/images/backgrounds/presentation-18.png";
 
 import "./EighteenthSlide.scss";
 
@@ -7,7 +7,7 @@ const EighteenthSlide = () => {
         <h2>
             Profit table by level:
         </h2>
-        <img src={Table} alt="table" style={{ marginTop: 30 }} />
+        <img src={Table} alt="" style={{ marginTop: 30 }} />
     </div>
 }
 

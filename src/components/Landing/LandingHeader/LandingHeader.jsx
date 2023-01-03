@@ -80,6 +80,26 @@ const LandingHeader = () => {
                         {loading ? 'Loading...' : ' Connect wallet'}
                     </button>
                 </Link>
+                {/* {location.pathname === '/' ? (
+                    <>
+                        <Link to="/home-page">
+                            <button onClick={() => setClickedSignIn(true)}>
+                                Log in
+                            </button>
+                        </Link>
+                        <Link to="/home-page">
+                            <button onClick={() => setClickedSignUp(true)}>
+                                Sign up
+                            </button>
+                        </Link>
+                    </>
+                ) : (
+                    <Link to="/home-page" >
+                        <button className="connect-btn" onClick={connectWallet}>
+                            Connect wallet
+                        </button>
+                    </Link>
+                )} */}
             </div>
         </div>
 

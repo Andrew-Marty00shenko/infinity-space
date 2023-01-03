@@ -4,7 +4,6 @@ import Parallax from "parallax-js";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import { isWebpSupported } from 'react-image-webp/dist/utils';
 
 import { loginUser } from "../../../redux/slices/userSlice";
 import { connectWallet } from "../../../utils/contract/contract";
@@ -17,38 +16,21 @@ import ModalRegister from "../ModalRegister/ModalRegister";
 import ChainImg from "../../../assets/images/chain.png";
 import CryptoCurrencyImg from "../../../assets/images/cryptocurrency.png";
 import SmartContractImg from "../../../assets/images/smart-contract.png";
-
 import Circle from "../../../assets/images/img/circle.png";
-import CircleWebp from "../../../assets/images/img/circle.webp";
-
 import Space from "../../../assets/images/img/space.png";
-import SpaceWebp from "../../../assets/images/img/space.webp";
-
 import logo1 from "../../../assets/images/img/logo-1.png";
-import logo1Webp from "../../../assets/images/img/logo-1.webp";
-
 import logo2 from "../../../assets/images/img/logo-2.png";
-import logo2Webp from "../../../assets/images/img/logo-2.webp";
-
 import Moon from "../../../assets/images/img/moon.png";
-import MoonWebp from "../../../assets/images/img/moon.webp";
-
 import Coin2 from "../../../assets/images/img/coin-2.png";
-import Coin2Webp from "../../../assets/images/img/coin-2.webp";
-
 import Main from "../../../assets/images/img/main.png";
-import MainWebp from "../../../assets/images/img/main.webp";
-
 import Coin1 from "../../../assets/images/img/coin-1.png";
 import DotsLeft from "../../../assets/images/img/dots-left.png";
 import DotsRight from "../../../assets/images/img/dots-right.png";
 import BigCircle1 from "../../../assets/images/img/big-circle-1.png";
 import BigCircle2 from "../../../assets/images/img/big-circle-2.png";
-
 import Polygon from "../../../assets/images/img/polygon.png";
-import PolygonWebp from "../../../assets/images/img/polygon.webp";
-
 import CircleLight from "../../../assets/images/img/circle-light.png";
+// import AnimationLogo from "../../../assets/animation/animation-logo.gif";
 
 import "./MainSection.scss";
 
@@ -105,80 +87,40 @@ const MainSection = ({ data, loadingData, totals }) => {
         <section className="main-section">
             <div className="lan">
 
-                <div className="bg-sections-wrapper">
-                    {isWebpSupported()
-                        ? <img src={CircleWebp} alt="circle" className="img-circle" />
-                        : <img src={Circle} alt="circle" className="img-circle" />
-                    }
+                <div class="bg-sections-wrapper">
+                    <img src={Circle} alt="" class="img-circle" />
 
-                    <section className="section-bg section-bg-1">
-                        {isWebpSupported()
-                            ? <img src={SpaceWebp} alt="space" className="space" />
-                            : <img src={Space} alt="space" className="space" />
-                        }
+                    <section class="section-bg section-bg-1">
+                        <img src={Space} alt="" class="space" />
 
-                        <div className="parallax js-parallax">
-                            <div className="img logo-1">
-                                {isWebpSupported()
-                                    ? <img src={logo1Webp} alt="logo-1" data-depth="0.12" className="layer part" />
-                                    : <img src={logo1} alt="logo-1" data-depth="0.12" className="layer part" />
-                                }
-                            </div>
-                            <div className="img logo-2">
-                                {isWebpSupported()
-                                    ? <img src={logo2Webp} alt="logo-2" data-depth="0.1" className="layer part" />
-                                    : <img src={logo2} alt="logo-2" data-depth="0.1" className="layer part" />
-                                }
-                            </div>
-                            <div className="img moon">
-                                {isWebpSupported()
-                                    ? <img src={MoonWebp} alt="moon" data-depth="0.08" className="layer part" />
-                                    : <img src={Moon} alt="moon" data-depth="0.08" className="layer part" />
-                                }
-                            </div>
-                            <div className="img coin-2">
-                                {isWebpSupported()
-                                    ? <img src={Coin2Webp} alt="coin-2" data-depth="0.05" className="layer part" />
-                                    : <img src={Coin2} alt="coin-2" data-depth="0.05" className="layer part" />
-                                }
-                            </div>
-                            <div className="img lead">
-                                {isWebpSupported()
-                                    ? <img src={MainWebp} alt="main" data-depth="0.02" className="layer part" />
-                                    : <img src={Main} alt="main" data-depth="0.02" className="layer part" />
-                                }
-                            </div>
-                            <div className="img coin-1">
-                                <img src={Coin1} alt="coin-1" data-depth="0.2" className="layer part" />
-                            </div>
+                        <div class="parallax js-parallax">
+                            <div class="img logo-1"><img src={logo1} alt="" data-depth="0.12" class="layer part" /></div>
+                            <div class="img logo-2"><img src={logo2} alt="" data-depth="0.1" class="layer part" /></div>
+                            <div class="img moon"><img src={Moon} alt="" data-depth="0.08" class="layer part" /></div>
+                            <div class="img coin-2"><img src={Coin2} alt="" data-depth="0.05" class="layer part" /></div>
+                            <div class="img lead"><img src={Main} alt="" data-depth="0.02" class="layer part" /></div>
+                            <div class="img coin-1"><img src={Coin1} alt="" data-depth="0.2" class="layer part" /></div>
                         </div>
                     </section>
 
-                    <section className="section-bg section-bg-2">
-                        <div className="parallax js-parallax-1">
-                            <div className="img dots-left">
-                                <img src={DotsLeft} alt="dots-left" data-depth="0.04" className="layer part" />
-                            </div>
-                            <div className="img dots-right">
-                                <img src={DotsRight} alt="dots-right" data-depth="0.04" className="layer part" />
-                            </div>
+                    <section class="section-bg section-bg-2">
+                        <div class="parallax js-parallax-1">
+                            <div class="img dots-left"><img src={DotsLeft} alt="" data-depth="0.04" class="layer part" /></div>
+                            <div class="img dots-right"><img src={DotsRight} alt="" data-depth="0.04" class="layer part" /></div>
                         </div>
 
-                        <div className="imgs-wrap">
-                            <img src={BigCircle1} alt="big-circle-1" className="big-circle-1" />
-                            <img src={BigCircle2} alt="big-circle-1" className="big-circle-2" />
+                        <div class="imgs-wrap">
+                            <img src={BigCircle1} alt="" class="big-circle-1" />
+                            <img src={BigCircle2} alt="" class="big-circle-2" />
                         </div>
 
-                        <div className="parallax js-parallax-2">
-                            <div className="img polygon">{isWebpSupported()
-                                ? <img src={PolygonWebp} alt="polygon" data-depth="0.01" className="layer part" />
-                                : <img src={Polygon} alt="polygon" data-depth="0.01" className="layer part" />
-                            }</div>
+                        <div class="parallax js-parallax-2">
+                            <div class="img polygon"><img src={Polygon} alt="" data-depth="0.01" class="layer part" /></div>
                         </div>
 
-                        <div className="imgs-wrap">
-                            <img src={CircleLight} alt="circle-right" className="circle-light left" />
-                            <img src={CircleLight} alt="circle-left" className="circle-light right" />
+                        <div class="imgs-wrap">
+                            <img src={CircleLight} alt="" class="circle-light left" />
+                            <img src={CircleLight} alt="" class="circle-light right" />
                         </div>
                     </section>
                 </div>
@@ -287,7 +229,7 @@ const MainSection = ({ data, loadingData, totals }) => {
                     <div className="result-block">
                         <div>
                             <p className="result-block__top-text">{Math.ceil(data.totalProfit / 1e18).toLocaleString('ru')} $</p>
-                            <div>+ {(totals.profitAtLatestDay / 1e18).toLocaleString()}</div>
+                            <div>+ {(totals.profitAtLatestDay / 1e18).toFixed(0)}</div>
                         </div>
                         <p className="result-block__bottom-text">
                             Total result
@@ -307,7 +249,7 @@ const MainSection = ({ data, loadingData, totals }) => {
                         <div>
                             <div>
                                 <p className="result-block__mobile__top-text">{Math.ceil(data.totalProfit / 1e18).toLocaleString('ru')} BUSD</p>
-                                <div>+ {(totals.profitAtLatestDay / 1e18).toLocaleString()}</div>
+                                <div>+ {(totals.profitAtLatestDay / 1e18).toFixed(0)}</div>
                             </div>
                             <p className="result-block__mobile__bottom-text">
                                 Total result
