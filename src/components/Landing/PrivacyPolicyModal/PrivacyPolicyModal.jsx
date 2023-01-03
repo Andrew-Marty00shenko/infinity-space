@@ -53,11 +53,11 @@ const PrivacyPolicyModal = ({ show, setShow }) => {
 
         <div className="block">
             <div>
-                <img src={Crystal} alt="" />
+                <img src={Crystal} alt="crystal" />
                 Service Service is the forsaz.cz website operated by Infinity Space
             </div>
             <div>
-                <img src={Crystal} alt="" />
+                <img src={Crystal} alt="crystal" />
                 Personal Data Personal Data means data about a living individual who can be identified from those data (or from those <br />
                 and other information either in our <br />
                 possession or likely to come into our possession).
@@ -80,15 +80,15 @@ const PrivacyPolicyModal = ({ show, setShow }) => {
 
         <div className="block">
             <div>
-                <img src={Crystal} alt="" />
+                <img src={Crystal} alt="crystal" />
                 E-mail address
             </div>
             <div>
-                <img src={Crystal} alt="" />
+                <img src={Crystal} alt="crystal" />
                 First name and last name
             </div>
             <div>
-                <img src={Crystal} alt="" />
+                <img src={Crystal} alt="crystal" />
                 Cookies and Usage Data
             </div>
         </div>

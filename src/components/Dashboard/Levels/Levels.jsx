@@ -29,7 +29,6 @@ const Levels = () => {
 
     const [modalShow, setModalShow] = useState(false);
     const [hash, setHash] = useState(null);
-    // const [signature, setSignature] = useState(null);
 
     useEffect(() => {
         if (user === null) {
@@ -43,15 +42,6 @@ const Levels = () => {
 
     const handleClickBuyLevel = async (level, levelId) => {
         const account = await connectWallet();
-
-        // apiUser.getSignature({
-        //     level: Number(levelId),
-        //     sender: account
-        // }).then(({ data }) => {
-        //     if (data.status !== 'error') {
-        //         setSignature(data);
-        //     };
-        // }).catch(err => toast.error(err));
 
         if (levels[levelId - 2]?.status === false) {
             setModalShow(true);
@@ -69,8 +59,6 @@ const Levels = () => {
                 contractBUSDAbi.address,
                 { from: account }
             );
-
-            // if (signature === null) {
 
             if (wallet.toLowerCase() === user?.wallet.toLowerCase()) {
                 busdContract.methods
@@ -124,50 +112,6 @@ const Levels = () => {
                     })
             }
         }
-        //  else {
-        //     if (wallet.toLowerCase() === user?.wallet.toLowerCase()) {
-        //         busdContract.methods
-        //             .approve(contractAbi.address, level.price)
-        //             .send({
-        //                 from: wallet
-        //             })
-        //             .on('transactionHash', hash => {
-        //                 contract.methods[
-        //                     'presale(uint256,uint256,uint256,bytes)'
-        //                 ](Number(levelId))
-        //                     .send()
-        //                     .on('transactionHash', hash => {
-        //                         dispatch(buyingLevel());
-        //                         setHash(hash);
-        //                     })
-        //                     .then(res => {
-        //                         toast.success(`You have successfully purchased a level ${levelId}`)
-        //                         dispatch(getUserData(wallet));
-        //                     });
-        //             })
-        //     } else {
-        //         busdContract.methods
-        //             .approve(contractAbi.address, level.price)
-        //             .send({
-        //                 from: wallet
-        //             })
-        //             .on('transactionHash', hash => {
-        //                 contract.methods[
-        //                     'buyLevel(uint256,uint256)'
-        //                 ](Number(levelId), Number(localStorage.getItem("uplineId")))
-        //                     .send()
-        //                     .on('transactionHash', hash => {
-        //                         dispatch(buyingLevel());
-        //                         localStorage.setItem("wallet_signed", wallet);
-        //                         setHash(hash);
-        //                     })
-        //                     .then(res => {
-        //                         toast.success('You have successfully purchased a level 1')
-        //                         dispatch(getUserData(wallet));
-        //                     });
-        //             })
-        //     }
-
     };
 
 
