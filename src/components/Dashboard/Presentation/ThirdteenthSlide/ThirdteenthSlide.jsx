@@ -1,7 +1,7 @@
 import { Row, Col } from "react-bootstrap";
 
-import SlideThirdteenOne from "../../../../assets/images/backgrounds/presentation-13-1.png";
-import SlideThirdteenTwo from "../../../../assets/images/backgrounds/presentation-13-2.png";
+import SlideThirdteenOne from "../../../../assets/images/backgrounds/presentation-13-1.webp";
+import SlideThirdteenTwo from "../../../../assets/images/backgrounds/presentation-13-2.webp";
 
 import "./ThirdteenthSlide.scss";
 
@@ -11,12 +11,12 @@ const ThirdteenthSlide = () => {
             <Row>
                 <Col md={6}>
                     <div>
-                        <img src={SlideThirdteenOne} alt="" />
+                        <img src={SlideThirdteenOne} alt="slide" />
                     </div>
                 </Col>
                 <Col md={6}>
                     <div>
-                        <img src={SlideThirdteenTwo} alt="" />
+                        <img src={SlideThirdteenTwo} alt="slide" />
                     </div>
                 </Col>
             </Row>

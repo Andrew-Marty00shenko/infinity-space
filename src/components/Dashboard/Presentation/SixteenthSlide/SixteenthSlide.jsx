@@ -1,6 +1,6 @@
 import { Row, Col } from "react-bootstrap";
 
-import SlideSixteen from "../../../../assets/images/backgrounds/presentation-16.png";
+import SlideSixteen from "../../../../assets/images/backgrounds/presentation-16.webp";
 
 import "./SixteenthSlide.scss";
 
@@ -20,7 +20,7 @@ const SixteenthSlide = () => {
                 </p>
             </Col>
             <Col lg={6}>
-                <img style={{ marginLeft: -30 }} src={SlideSixteen} alt="" />
+                <img style={{ marginLeft: -30 }} src={SlideSixteen} alt="slide" />
             </Col>
         </Row>
     </div>

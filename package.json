@@ -19,6 +19,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.39.4",
     "react-i18next": "^12.0.0",
+    "react-image-webp": "^0.8.0",
     "react-paginate": "^8.1.4",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.3",
