@@ -3,6 +3,15 @@
     padding-right: 48px;
     padding-bottom: 40px;
 
+    .no-data{
+        font-family: 'Proxima Nova',sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        margin-top: 20px;
+        color: #BFBFC1;
+    }
+
     &__header{
         display: flex;
         align-items: center;
@@ -60,6 +69,10 @@
             box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.04);
             backdrop-filter: blur(21px);
             border-radius: 16px;
+
+            tspan{
+                font-size: 12px;
+            }
 
             .recharts-surface{
                 .recharts-bar-rectangle{

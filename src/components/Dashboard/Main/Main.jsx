@@ -273,12 +273,12 @@ const Main = () => {
                                     {
                                         activatedAccount
                                             ? (((user?.userData.earned / 1e18) / totalSumActivatedLevels) * 100).toFixed(2)
-                                            : user?.userData.ratio || 0
+                                            : ((parseInt(user?.userData.ratio * 100)) / 100) || 0
                                     }%
 
                                 </p>
                                 <span>
-                                    + {userData?.ratioAtLatestDay || 0}%
+                                    + {((parseInt(userData?.ratioAtLatestDay * 100)) / 100) || 0}%
                                 </span>
                             </div>
                         </div>

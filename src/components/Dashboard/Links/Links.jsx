@@ -8,7 +8,6 @@ import {
     AreaChart,
     Area,
     YAxis,
-    // Tooltip,
     ResponsiveContainer
 } from "recharts";
 import classNames from "classnames";
@@ -18,75 +17,6 @@ import { toast } from "react-toastify";
 import { useEffect } from "react";
 import apiUser from "../../../api/apiServer/apiUser";
 import { getUserData } from "../../../redux/slices/userSlice";
-
-const data = [
-    {
-        name: "Page A",
-        uv: 4000,
-        pv: 2400,
-        amt: 2400
-    },
-    {
-        name: "Page B",
-        uv: 3000,
-        pv: 1398,
-        amt: 2210
-    },
-    {
-        name: "Page C",
-        uv: 2000,
-        pv: 9800,
-        amt: 2290
-    },
-    {
-        name: "Page D",
-        uv: 2780,
-        pv: 3908,
-        amt: 2000
-    },
-    {
-        name: "Page E",
-        uv: 1890,
-        pv: 4800,
-        amt: 2181
-    },
-    {
-        name: "Page F",
-        uv: 2390,
-        pv: 3800,
-        amt: 2500
-    },
-    {
-        name: "Page G",
-        uv: 0,
-        pv: 0,
-        amt: 0
-    },
-    {
-        name: "Page G",
-        uv: 0,
-        pv: 0,
-        amt: 0
-    },
-    {
-        name: "Page G",
-        uv: 0,
-        pv: 0,
-        amt: 0
-    },
-    {
-        name: "Page G",
-        uv: 0,
-        pv: 0,
-        amt: 0
-    },
-    {
-        name: "Page G",
-        uv: 0,
-        pv: 0,
-        amt: 0
-    }
-];
 
 const dataArea = [
     {
@@ -139,8 +69,11 @@ const Links = () => {
         totalClicks: 0,
         lastDayClicks: 0
     });
-    const [activeMonthBtn, setActiveMonthBtn] = useState(true);
-    const [activeYearBtn, setActiveYearBtn] = useState(false);
+    const [activeMonthBtn, setActiveMonthBtn] = useState(false);
+    const [activeYearBtn, setActiveYearBtn] = useState(true);
+    const [selectedMonth, setSelectedMonth] = useState('2023-01-01');
+    const [selectedYear, setSelectedYear] = useState('2023');
+    const [data, setData] = useState([])
 
     const dispatch = useDispatch();
     const user = useSelector(state => state.user.user);
@@ -168,9 +101,222 @@ const Links = () => {
                         totalClicks: data.total_clicks,
                         lastDayClicks: data.last_day_clicks
                     });
-                })
+                });
+
+            if (activeMonthBtn) {
+                let date = new Date(selectedMonth);
+                let firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+                let lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+                apiUser.getUserProfit(user?.id, firstDay.getTime() / 1000, lastDay.getTime() / 1000)
+                    .then((res) => {
+                        setData(res.data)
+                    });
+            }
+
+            if (activeYearBtn) {
+                let date = new Date(selectedYear);
+                let firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+                let lastDay = new Date(date.getFullYear(), date.getMonth() + 12, 0);
+
+                apiUser.getUserProfit(user?.id, firstDay.getTime() / 1000, lastDay.getTime() / 1000)
+                    .then((res) => {
+                        setData(res.data);
+                    });
+            }
         }
-    }, [user]);
+    }, [user, selectedMonth, selectedYear, activeYearBtn, activeMonthBtn]);
+
+    const graphMonth = Array.from({ length: 31 }, (_, i) => i + 1);
+    const graphYear = Array.from({ length: 12 }, (_, i) => i + 1);
+
+    if (activeMonthBtn) {
+        if (data.length > 0) {
+            for (let i = 1; i <= graphMonth.length; i++) {
+                for (let j = 0; j < data.length; j++) {
+                    if (graphMonth[i]?.toString() === (data[j].tx_date.slice(-2) < 10 ? data[j].tx_date.slice(-1) : data[j].tx_date.slice(-2))) {
+                        graphMonth[i] = {
+                            name: "Page A",
+                            uv: data[j]?.total_amount / 1e18,
+                            pv: data[j]?.total_amount / 1e18,
+                            amt: 0
+                        }
+                    }
+                }
+            }
+        }
+    } else if (activeYearBtn) {
+        if (data.length > 0) {
+            let sumJanuary = 0;
+            let sumFebruary = 0;
+            let sumMarch = 0;
+            let sumApril = 0;
+            let sumMay = 0;
+            let sumJune = 0;
+            let sumJuly = 0;
+            let sumAugust = 0;
+            let sumSeptember = 0;
+            let sumOctober = 0;
+            let sumNovember = 0;
+            let sumDecember = 0;
+
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].tx_date.slice(5, 7) == 1) {
+                    sumJanuary += data[i].total_amount / 1e18;
+                };
+            }
+
+            graphYear[0] = {
+                name: "Page A",
+                uv: sumJanuary.toFixed(0),
+                pv: sumJanuary.toFixed(0),
+                amt: 0
+            }
+
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].tx_date.slice(5, 7) == 2) {
+                    sumFebruary += data[i].total_amount / 1e18;
+                };
+            }
+
+            graphYear[1] = {
+                name: "Page A",
+                uv: sumFebruary.toFixed(0),
+                pv: sumFebruary.toFixed(0),
+                amt: 0
+            }
+
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].tx_date.slice(5, 7) == 3) {
+                    sumMarch += data[i].total_amount / 1e18;
+                };
+            }
+
+            graphYear[2] = {
+                name: "Page A",
+                uv: sumMarch.toFixed(0),
+                pv: sumMarch.toFixed(0),
+                amt: 0
+            }
+
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].tx_date.slice(5, 7) == 4) {
+                    sumApril += data[i].total_amount / 1e18;
+                };
+            }
+
+            graphYear[3] = {
+                name: "Page A",
+                uv: sumApril.toFixed(0),
+                pv: sumApril.toFixed(0),
+                amt: 0
+            }
+
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].tx_date.slice(5, 7) == 5) {
+                    sumMay += data[i].total_amount / 1e18;
+                };
+            }
+
+            graphYear[4] = {
+                name: "Page A",
+                uv: sumMay.toFixed(0),
+                pv: sumMay.toFixed(0),
+                amt: 0
+            }
+
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].tx_date.slice(5, 7) == 6) {
+                    sumJune += data[i].total_amount / 1e18;
+                };
+            }
+
+            graphYear[5] = {
+                name: "Page A",
+                uv: sumJune.toFixed(0),
+                pv: sumJune.toFixed(0),
+                amt: 0
+            }
+
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].tx_date.slice(5, 7) == 7) {
+                    sumJuly += data[i].total_amount / 1e18;
+                };
+            }
+
+            graphYear[6] = {
+                name: "Page A",
+                uv: sumJuly.toFixed(0),
+                pv: sumJuly.toFixed(0),
+                amt: 0
+            }
+
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].tx_date.slice(5, 7) == 8) {
+                    sumAugust += data[i].total_amount / 1e18;
+                };
+            }
+
+            graphYear[7] = {
+                name: "Page A",
+                uv: sumAugust.toFixed(0),
+                pv: sumAugust.toFixed(0),
+                amt: 0
+            }
+
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].tx_date.slice(5, 7) == 9) {
+                    sumSeptember += data[i].total_amount / 1e18;
+                };
+            }
+
+            graphYear[8] = {
+                name: "Page A",
+                uv: sumSeptember.toFixed(0),
+                pv: sumSeptember.toFixed(0),
+                amt: 0
+            }
+
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].tx_date.slice(5, 7) == 10) {
+                    sumOctober += data[i].total_amount / 1e18;
+                };
+            }
+
+            graphYear[9] = {
+                name: "Page A",
+                uv: sumOctober.toFixed(0),
+                pv: sumOctober.toFixed(0),
+                amt: 0
+            }
+
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].tx_date.slice(5, 7) == 11) {
+                    sumNovember += data[i].total_amount / 1e18;
+                };
+            }
+
+            graphYear[10] = {
+                name: "Page A",
+                uv: sumNovember.toFixed(0),
+                pv: sumNovember.toFixed(0),
+                amt: 0
+            }
+
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].tx_date.slice(5, 7) == 12) {
+                    sumDecember += data[i].total_amount / 1e18;
+                };
+            }
+
+            graphYear[11] = {
+                name: "Page A",
+                uv: sumDecember.toFixed(0),
+                pv: sumDecember.toFixed(0),
+                amt: 0
+            }
+        }
+    }
 
     const handleCopy = (num) => {
         if (num === 1) {
@@ -217,68 +363,77 @@ const Links = () => {
                                         Year
                                     </button>
                                 </div>
-                                <select>
-                                    <option>
+                                {!activeYearBtn && <select defaultValue={'January'} value={selectedMonth} onChange={e => {
+                                    setSelectedMonth(e.target.value);
+                                }}>
+                                    <option value={selectedYear === '2023' ? '2023-01-01' : '2022-01-01'}>
                                         January
                                     </option>
-                                    <option>
+                                    <option value={selectedYear === '2023' ? '2023-02-01' : '2022-02-01'}>
                                         February
                                     </option>
-                                    <option>
+                                    <option value={selectedYear === '2023' ? '2023-03-01' : '2022-03-01'}>
                                         March
                                     </option>
-                                    <option>
+                                    <option value={selectedYear === '2023' ? '2023-04-01' : '2022-04-01'}>
                                         April
                                     </option>
-                                    <option>
+                                    <option value={selectedYear === '2023' ? '2023-05-01' : '2022-05-01'}>
                                         May
                                     </option>
-                                    <option>
+                                    <option value={selectedYear === '2023' ? '2023-06-01' : '2022-06-01'}>
                                         June
                                     </option>
-                                    <option>
+                                    <option value={selectedYear === '2023' ? '2023-07-01' : '2022-07-01'}>
                                         July
                                     </option>
-                                    <option>
+                                    <option value={selectedYear === '2023' ? '2023-08-01' : '2022-08-01'}>
                                         August
                                     </option>
-                                    <option>
+                                    <option value={selectedYear === '2023' ? '2023-09-01' : '2022-09-01'}>
                                         September
                                     </option>
-                                    <option>
+                                    <option value={selectedYear === '2023' ? '2023-10-01' : '2022-10-01'}>
                                         October
-                                    </option>
-                                    <option>
+                                    </option >
+                                    <option value={selectedYear === '2023' ? '2023-11-01' : '2022-11-01'}>
                                         November
                                     </option>
-                                    <option>
+                                    <option value={selectedYear === '2023' ? '2023-12-01' : '2022-12-01'}>
                                         December
                                     </option>
-                                </select>
-                                <select>
-                                    <option>
-                                        2021
-                                    </option>
-                                    <option>
+                                </select>}
+                                <select value={selectedYear} onChange={e => {
+                                    setSelectedYear(e.target.value);
+                                    setSelectedMonth(`${e.target.value}${selectedMonth.slice(4)}`);
+                                }} defaultValue={'2023'}>
+                                    <option value="2022">
                                         2022
+                                    </option>
+                                    <option value="2023">
+                                        2023
                                     </option>
                                 </select>
                             </div>
-                            <ResponsiveContainer>
-                                <BarChart
-                                    data={data}
-                                    margin={{
-                                        top: 21,
-                                        right: 0,
-                                        left: 0,
-                                        bottom: 50
-                                    }}
-                                >
-                                    <YAxis />
-                                    {/* <Tooltip /> */}
-                                    <Bar dataKey="pv" fill="#6083FF" />
-                                </BarChart>
-                            </ResponsiveContainer>
+
+                            {data.length === 0
+                                ? <p className="no-data">
+                                    No data yet
+                                </p>
+                                : <ResponsiveContainer>
+                                    <BarChart
+                                        data={activeMonthBtn ? graphMonth : graphYear}
+                                        margin={{
+                                            top: 21,
+                                            right: 0,
+                                            left: 0,
+                                            bottom: 50
+                                        }}
+                                    >
+                                        <YAxis />
+                                        <Bar dataKey="pv" fill="#6083FF" />
+                                    </BarChart>
+                                </ResponsiveContainer>}
                         </div>
                         <div className="text" style={{ marginTop: 16 }}>
                             <h3>
@@ -470,7 +625,7 @@ const Links = () => {
                 </Row>
             </Container>
         </div>
-    </div>
+    </div >
 }
 
 export default Links;
