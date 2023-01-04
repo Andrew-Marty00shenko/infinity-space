@@ -40,15 +40,22 @@ import Main from "../../../assets/images/img/main.png";
 import MainWebp from "../../../assets/images/img/main.webp";
 
 import Coin1 from "../../../assets/images/img/coin-1.png";
+import Coin1Webp from "../../../assets/images/img/coin-1.webp";
+
 import DotsLeft from "../../../assets/images/img/dots-left.png";
 import DotsRight from "../../../assets/images/img/dots-right.png";
+
 import BigCircle1 from "../../../assets/images/img/big-circle-1.png";
+import BigCircle1Webp from "../../../assets/images/img/big-circle-1.webp";
+
 import BigCircle2 from "../../../assets/images/img/big-circle-2.png";
+import BigCircle2Webp from "../../../assets/images/img/big-circle-2.webp";
 
 import Polygon from "../../../assets/images/img/polygon.png";
 import PolygonWebp from "../../../assets/images/img/polygon.webp";
 
 import CircleLight from "../../../assets/images/img/circle-light.png";
+import CircleLightWebp from "../../../assets/images/img/circle-light.webp";
 
 import "./MainSection.scss";
 
@@ -149,7 +156,10 @@ const MainSection = ({ data, loadingData, totals }) => {
                                 }
                             </div>
                             <div className="img coin-1">
-                                <img src={Coin1} alt="coin-1" data-depth="0.2" className="layer part" />
+                                {isWebpSupported()
+                                    ? <img src={Coin1Webp} alt="coin-1" data-depth="0.2" className="layer part" />
+                                    : <img src={Coin1} alt="coin-1" data-depth="0.2" className="layer part" />
+                                }
                             </div>
                         </div>
                     </section>
@@ -165,8 +175,14 @@ const MainSection = ({ data, loadingData, totals }) => {
                         </div>
 
                         <div className="imgs-wrap">
-                            <img src={BigCircle1} alt="big-circle-1" className="big-circle-1" />
-                            <img src={BigCircle2} alt="big-circle-1" className="big-circle-2" />
+                            {isWebpSupported()
+                                ? <img src={BigCircle1Webp} alt="big-circle-1" className="big-circle-1" />
+                                : <img src={BigCircle1} alt="big-circle-1" className="big-circle-1" />
+                            }
+                            {isWebpSupported()
+                                ? <img src={BigCircle2Webp} alt="big-circle-1" className="big-circle-2" />
+                                : <img src={BigCircle2} alt="big-circle-1" className="big-circle-2" />
+                            }
                         </div>
 
                         <div className="parallax js-parallax-2">
@@ -177,8 +193,14 @@ const MainSection = ({ data, loadingData, totals }) => {
                         </div>
 
                         <div className="imgs-wrap">
-                            <img src={CircleLight} alt="circle-right" className="circle-light left" />
-                            <img src={CircleLight} alt="circle-left" className="circle-light right" />
+                            {isWebpSupported()
+                                ? <img src={CircleLightWebp} alt="circle-right" className="circle-light left" />
+                                : <img src={CircleLight} alt="circle-right" className="circle-light left" />
+                            }
+                            {isWebpSupported()
+                                ? <img src={CircleLightWebp} alt="circle-right" className="circle-light right" />
+                                : <img src={CircleLight} alt="circle-right" className="circle-light right" />
+                            }
                         </div>
                     </section>
                 </div>
