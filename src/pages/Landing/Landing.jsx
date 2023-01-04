@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 import { contract } from "../../utils/contract/contract";
+import apiTotalInfo from "../../api/apiServer/apiTotalInfo";
 
 import LandingHeader from "../../components/Landing/LandingHeader/LandingHeader";
 import MainSection from "../../components/Landing/MainSection/MainSection";
@@ -12,10 +13,9 @@ import DashboardSection from "../../components/Landing/DashboardSection/Dashboar
 import FaqSection from "../../components/Landing/FaqSection/FaqSection";
 import SocialLinkSection from "../../components/Landing/SocialLinksSection/SocialLinksSection";
 import LandingFooter from "../../components/Landing/LandingFooter/LandingFooter";
+import NotFound from "../NotFound/NotFound";
 
 import "./Landing.scss";
-import apiTotalInfo from "../../api/apiServer/apiTotalInfo";
-import NotFound from "../NotFound/NotFound";
 
 const Landing = () => {
     const [data, setData] = useState({
