@@ -355,12 +355,12 @@ const Links = () => {
                                     <button className={classNames({ "active": activeMonthBtn })}
                                         onClick={handleClickMonth}
                                     >
-                                        Month
+                                        {window.innerWidth < 690 ? 'M' : 'Month'}
                                     </button>
                                     <button className={classNames({ "active": activeYearBtn })}
                                         onClick={handleClickYear}
                                     >
-                                        Year
+                                        {window.innerWidth < 690 ? 'Y' : 'Year'}
                                     </button>
                                 </div>
                                 {!activeYearBtn && <select defaultValue={'January'} value={selectedMonth} onChange={e => {

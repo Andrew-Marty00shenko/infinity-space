@@ -269,21 +269,25 @@
             margin-top: 14px;
     
             &-chart-partners{
+
                 .chart-partners__menu{
+                    flex-wrap: wrap;
+
                     .menu__range{
-                        width: 48%;
+                        width: 32%;
                     }
     
                     select{
-                        width: 48%;
+                        width: 32%;
+                        padding: 12px 3px;
             
-                        &:nth-child(2){
-                            display: none;
+                        &:nth-child(3){
+                        //    w3
                         }
                     }
                 }
             }
-    
+
             &-stats{ 
                 &-top{
                     display: flex;
