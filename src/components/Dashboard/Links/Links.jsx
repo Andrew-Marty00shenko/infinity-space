@@ -8,6 +8,7 @@ import {
     AreaChart,
     Area,
     YAxis,
+    XAxis,
     ResponsiveContainer
 } from "recharts";
 import classNames from "classnames";
@@ -69,8 +70,8 @@ const Links = () => {
         totalClicks: 0,
         lastDayClicks: 0
     });
-    const [activeMonthBtn, setActiveMonthBtn] = useState(false);
-    const [activeYearBtn, setActiveYearBtn] = useState(true);
+    const [activeMonthBtn, setActiveMonthBtn] = useState(true);
+    const [activeYearBtn, setActiveYearBtn] = useState(false);
     const [selectedMonth, setSelectedMonth] = useState('2023-01-01');
     const [selectedYear, setSelectedYear] = useState('2023');
     const [data, setData] = useState([])
@@ -136,7 +137,7 @@ const Links = () => {
                 for (let j = 0; j < data.length; j++) {
                     if (graphMonth[i]?.toString() === (data[j].tx_date.slice(-2) < 10 ? data[j].tx_date.slice(-1) : data[j].tx_date.slice(-2))) {
                         graphMonth[i] = {
-                            name: "Page A",
+                            name: i,
                             uv: data[j]?.total_amount / 1e18,
                             pv: data[j]?.total_amount / 1e18,
                             amt: 0
@@ -167,7 +168,7 @@ const Links = () => {
             }
 
             graphYear[0] = {
-                name: "Page A",
+                name: 1,
                 uv: sumJanuary.toFixed(0),
                 pv: sumJanuary.toFixed(0),
                 amt: 0
@@ -180,7 +181,7 @@ const Links = () => {
             }
 
             graphYear[1] = {
-                name: "Page A",
+                name: 2,
                 uv: sumFebruary.toFixed(0),
                 pv: sumFebruary.toFixed(0),
                 amt: 0
@@ -193,7 +194,7 @@ const Links = () => {
             }
 
             graphYear[2] = {
-                name: "Page A",
+                name: 3,
                 uv: sumMarch.toFixed(0),
                 pv: sumMarch.toFixed(0),
                 amt: 0
@@ -206,7 +207,7 @@ const Links = () => {
             }
 
             graphYear[3] = {
-                name: "Page A",
+                name: 4,
                 uv: sumApril.toFixed(0),
                 pv: sumApril.toFixed(0),
                 amt: 0
@@ -219,7 +220,7 @@ const Links = () => {
             }
 
             graphYear[4] = {
-                name: "Page A",
+                name: 5,
                 uv: sumMay.toFixed(0),
                 pv: sumMay.toFixed(0),
                 amt: 0
@@ -232,7 +233,7 @@ const Links = () => {
             }
 
             graphYear[5] = {
-                name: "Page A",
+                name: 6,
                 uv: sumJune.toFixed(0),
                 pv: sumJune.toFixed(0),
                 amt: 0
@@ -245,7 +246,7 @@ const Links = () => {
             }
 
             graphYear[6] = {
-                name: "Page A",
+                name: 7,
                 uv: sumJuly.toFixed(0),
                 pv: sumJuly.toFixed(0),
                 amt: 0
@@ -258,7 +259,7 @@ const Links = () => {
             }
 
             graphYear[7] = {
-                name: "Page A",
+                name: 8,
                 uv: sumAugust.toFixed(0),
                 pv: sumAugust.toFixed(0),
                 amt: 0
@@ -271,7 +272,7 @@ const Links = () => {
             }
 
             graphYear[8] = {
-                name: "Page A",
+                name: 9,
                 uv: sumSeptember.toFixed(0),
                 pv: sumSeptember.toFixed(0),
                 amt: 0
@@ -284,7 +285,7 @@ const Links = () => {
             }
 
             graphYear[9] = {
-                name: "Page A",
+                name: 10,
                 uv: sumOctober.toFixed(0),
                 pv: sumOctober.toFixed(0),
                 amt: 0
@@ -297,7 +298,7 @@ const Links = () => {
             }
 
             graphYear[10] = {
-                name: "Page A",
+                name: 11,
                 uv: sumNovember.toFixed(0),
                 pv: sumNovember.toFixed(0),
                 amt: 0
@@ -310,7 +311,7 @@ const Links = () => {
             }
 
             graphYear[11] = {
-                name: "Page A",
+                name: 12,
                 uv: sumDecember.toFixed(0),
                 pv: sumDecember.toFixed(0),
                 amt: 0
@@ -431,6 +432,7 @@ const Links = () => {
                                         }}
                                     >
                                         <YAxis />
+                                        <XAxis dataKey="name" />
                                         <Bar dataKey="pv" fill="#6083FF" />
                                     </BarChart>
                                 </ResponsiveContainer>}
