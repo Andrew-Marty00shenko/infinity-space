@@ -20,6 +20,7 @@ import EighteenthSlide from "./EighteenthSlide/EighteenthSlide";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserData } from "../../../redux/slices/userSlice";
 import { useEffect } from "react";
+import VideoSlide from "./VideoSlide/VideoSlide";
 
 const Presentation = () => {
     const wallet = useSelector(state => state.user.wallet);
@@ -31,6 +32,7 @@ const Presentation = () => {
 
     return <div className="presentation">
         <FirstSlide />
+        <VideoSlide />
         <SecondSlide />
         <ThirdSlide />
         <FourthSlide />
