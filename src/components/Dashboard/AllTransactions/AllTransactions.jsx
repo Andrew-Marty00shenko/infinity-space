@@ -148,9 +148,9 @@ const AllTransactions = () => {
                                     <path d="M19 7.00001L19 1.00001M19 1.00001H13M19 1.00001L10 10M8 1H5.8C4.11984 1 3.27976 1 2.63803 1.32698C2.07354 1.6146 1.6146 2.07354 1.32698 2.63803C1 3.27976 1 4.11984 1 5.8V14.2C1 15.8802 1 16.7202 1.32698 17.362C1.6146 17.9265 2.07354 18.3854 2.63803 18.673C3.27976 19 4.11984 19 5.8 19H14.2C15.8802 19 16.7202 19 17.362 18.673C17.9265 18.3854 18.3854 17.9265 18.673 17.362C19 16.7202 19 15.8802 19 14.2V12" stroke="#717275" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </a>
-                            <span>
+                            {/* <span>
                                 {registerDate}
-                            </span>
+                            </span> */}
                         </div>
                     </li>
                 })}
@@ -169,7 +169,7 @@ const AllTransactions = () => {
                     <div>
                         {results?.totalUsers || 0}
                         <span>
-                            + {totals?.joinedAtLatestDay || 0}
+                            {/* + {totals?.joinedAtLatestDay || 0} */}
                         </span>
                     </div>
                 </div>
@@ -180,7 +180,7 @@ const AllTransactions = () => {
                     <div>
                         {(results?.totalProfit / 1e18).toLocaleString() || 0}
                         <span>
-                            + {(totals?.profitAtLatestDay / 1e18).toLocaleString() || 0}
+                            {/* + {(totals?.profitAtLatestDay / 1e18).toLocaleString() || 0} */}
                         </span>
                     </div>
                 </div>
@@ -215,7 +215,7 @@ const AllTransactions = () => {
                         <div>
                             {total || 0}
                             <span>
-                                + {totals?.transactionsAtLatestDay || 0}
+                                {/* + {totals?.transactionsAtLatestDay || 0} */}
                             </span>
                         </div>
                     </div>
