@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getBnbBalance } from "../../../utils/contract/contract";
 
-import { setWallet } from "../../../redux/slices/userSlice";
+import { setViewer, setWallet } from "../../../redux/slices/userSlice";
 
 import Logo from "../../../assets/images/logo.png";
 
@@ -36,6 +36,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
         localStorage.removeItem("wallet_signed");
         dispatch(setWallet(null));
         navigate('/');
+        dispatch(setViewer());
     };
 
     return <div className={classNames("sidebar", {

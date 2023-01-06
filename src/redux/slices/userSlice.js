@@ -9,6 +9,7 @@ const initialState = {
 	user: null,
 	loading: false,
 	id: null,
+	viewer: false
 };
 
 
@@ -66,6 +67,27 @@ export const getUserData = createAsyncThunk(
 	}
 );
 
+export const searchUser = createAsyncThunk(
+	'user/search',
+	async (idUser) => {
+		const userDataById = await contract.methods[
+			'getUserDataById(uint256)'
+		](idUser)
+			.call()
+			.then(res => res);
+
+		const walletUser = await contract.methods[
+			'getAddressByID(uint256)'
+		](idUser)
+			.call()
+			.then(res => res);
+
+		return {
+			userDataById,
+			walletUser
+		};
+	}
+)
 
 const userSlice = createSlice({
 	name: 'user',
@@ -77,7 +99,10 @@ const userSlice = createSlice({
 		},
 		setWallet: (state, action) => {
 			state.wallet = action.payload;
-		}
+		},
+		setViewer: (state) => {
+			state.viewer = false;
+		},
 	},
 	extraReducers: builder => {
 		builder.addCase(loginUser.pending, state => {
@@ -102,9 +127,22 @@ const userSlice = createSlice({
 				userData: action.payload.userDataById,
 			}
 		});
+		builder.addCase(searchUser.fulfilled, (state, action) => {
+			if (action.payload.user?.userId === '0') {
+				toast.error('User with this ID is not exists!')
+			} else {
+				state.user = {
+					id: action.payload.userDataById?.userId,
+					wallet: action.payload.walletUser,
+					userData: action.payload.userDataById,
+				}
+				state.wallet = action.payload.walletUser;
+				state.viewer = true;
+			}
+		})
 	}
 });
 
-export const { watch, setWallet } = userSlice.actions;
+export const { watch, setWallet, setViewer } = userSlice.actions;
 
 export default userSlice.reducer;

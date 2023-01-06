@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setWallet } from "../../../redux/slices/userSlice";
+import { setViewer, setWallet } from "../../../redux/slices/userSlice";
 
 import { getBnbBalance, getBUSDBalance } from "../../../utils/contract/contract";
 
@@ -27,6 +27,7 @@ const Header = ({ showSidebar, setShowSidebar }) => {
     const handleLogout = () => {
         localStorage.removeItem("wallet_signed");
         dispatch(setWallet(null));
+        dispatch(setViewer());
         navigate('/');
     };
 

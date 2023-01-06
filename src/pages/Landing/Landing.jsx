@@ -13,6 +13,7 @@ import DashboardSection from "../../components/Landing/DashboardSection/Dashboar
 import FaqSection from "../../components/Landing/FaqSection/FaqSection";
 import SocialLinkSection from "../../components/Landing/SocialLinksSection/SocialLinksSection";
 import LandingFooter from "../../components/Landing/LandingFooter/LandingFooter";
+import View from "../../components/Landing/View/View";
 import NotFound from "../NotFound/NotFound";
 
 import "./Landing.scss";
@@ -70,6 +71,7 @@ const Landing = () => {
                 <SocialLinkSection />
             </>}
             />
+            <Route path="/view" element={<View />} />
             <Route path='*' element={<NotFound />} />
         </Routes>
         <LandingFooter />

@@ -24,6 +24,7 @@ const Levels = () => {
     const levels = useSelector(state => state.levels.levels);
     const wallet = useSelector(state => state.user.wallet);
     const loading = useSelector(state => state.levels.loading);
+    const viewerMode = useSelector(state => state.user.viewer);
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -41,76 +42,80 @@ const Levels = () => {
     }, [user]);
 
     const handleClickBuyLevel = async (level, levelId) => {
-        const account = await connectWallet();
+        if (!viewerMode) {
+            const account = await connectWallet();
 
-        if (levels[levelId - 2]?.status === false) {
-            setModalShow(true);
+            if (levels[levelId - 2]?.status === false) {
+                setModalShow(true);
 
-            return;
-        } else {
-            const contract = new window.web3.eth.Contract(
-                contractAbi.abi,
-                contractAbi.address,
-                { from: account }
-            );
-
-            const busdContract = new window.web3.eth.Contract(
-                contractBUSDAbi.abi,
-                contractBUSDAbi.address,
-                { from: account }
-            );
-
-            if (wallet.toLowerCase() === user?.wallet.toLowerCase()) {
-                busdContract.methods
-                    .approve(contractAbi.address, level.price)
-                    .send({
-                        from: wallet
-                    })
-                    .then(res => {
-                        contract.methods[
-                            'buyLevel(uint256)'
-                        ](Number(levelId))
-                            .send()
-                            .on('transactionHash', hash => {
-                                dispatch(buyingLevel());
-                                setHash(hash);
-                            })
-                            .then(res => {
-                                toast.success(`You have successfully purchased a level ${levelId}`)
-                                dispatch(getUserData(wallet));
-                            })
-                            .on('error', error => {
-                                toast.error('Something went wrong!');
-                            })
-                    })
+                return;
             } else {
-                busdContract.methods
-                    .approve(contractAbi.address, level.price)
-                    .send({
-                        from: wallet
-                    })
-                    .then(res => {
-                        contract.methods[
-                            'buyLevel(uint256,uint256)'
-                        ](Number(levelId), Number(localStorage.getItem("uplineId")))
-                            .send()
-                            .on('transactionHash', hash => {
-                                dispatch(buyingLevel());
-                                localStorage.setItem("wallet_signed", wallet);
-                                setHash(hash);
-                            })
-                            .then(res => {
-                                toast.success('You have successfully purchased a level 1')
-                                dispatch(getUserData(wallet));
-                            })
-                            .on('error', error => {
-                                toast.error('Something went wrong!');
-                            })
-                    })
-                    .on('error', error => {
-                        toast.error('Something went wrong!');
-                    })
+                const contract = new window.web3.eth.Contract(
+                    contractAbi.abi,
+                    contractAbi.address,
+                    { from: account }
+                );
+
+                const busdContract = new window.web3.eth.Contract(
+                    contractBUSDAbi.abi,
+                    contractBUSDAbi.address,
+                    { from: account }
+                );
+
+                if (wallet.toLowerCase() === user?.wallet.toLowerCase()) {
+                    busdContract.methods
+                        .approve(contractAbi.address, level.price)
+                        .send({
+                            from: wallet
+                        })
+                        .then(res => {
+                            contract.methods[
+                                'buyLevel(uint256)'
+                            ](Number(levelId))
+                                .send()
+                                .on('transactionHash', hash => {
+                                    dispatch(buyingLevel());
+                                    setHash(hash);
+                                })
+                                .then(res => {
+                                    toast.success(`You have successfully purchased a level ${levelId}`)
+                                    dispatch(getUserData(wallet));
+                                })
+                                .on('error', error => {
+                                    toast.error('Something went wrong!');
+                                })
+                        })
+                } else {
+                    busdContract.methods
+                        .approve(contractAbi.address, level.price)
+                        .send({
+                            from: wallet
+                        })
+                        .then(res => {
+                            contract.methods[
+                                'buyLevel(uint256,uint256)'
+                            ](Number(levelId), Number(localStorage.getItem("uplineId")))
+                                .send()
+                                .on('transactionHash', hash => {
+                                    dispatch(buyingLevel());
+                                    localStorage.setItem("wallet_signed", wallet);
+                                    setHash(hash);
+                                })
+                                .then(res => {
+                                    toast.success('You have successfully purchased a level 1')
+                                    dispatch(getUserData(wallet));
+                                })
+                                .on('error', error => {
+                                    toast.error('Something went wrong!');
+                                })
+                        })
+                        .on('error', error => {
+                            toast.error('Something went wrong!');
+                        })
+                }
             }
+        } else {
+            toast.error('You are in view mode! Please, login to your account');
         }
     };
 
