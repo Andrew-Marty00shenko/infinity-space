@@ -7,6 +7,7 @@
         position: absolute;
         width: 100%;
         top: 0;
+
         .bg-sections-wrapper{
             overflow: hidden;
             position: relative;
@@ -378,19 +379,31 @@
         }
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
 
     &__content{
         max-width: 1200px;
         margin: 0 auto;
         position: relative;
+
+         .animation-logo{
+            width: 225px;
+            position: absolute;
+            top: -100px;
+            left: -20px;
+            z-index: 100;
+
+            p{
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 32px;
+                padding-left: 30px;
+            }
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
 
     h1{
@@ -400,7 +413,7 @@
         line-height: 64px;
         z-index: 100;
         position: relative;
-        padding-top: 30px;
+        padding-top: 90px;
 
         span{
             color: #AFC6FF;
@@ -434,7 +447,7 @@
     }
 
     &__stats{
-        margin-top: 198px;
+        margin-top: 140px;
         background: #24252B;
         border-radius: 16px;
         display: flex;
@@ -486,6 +499,10 @@
             margin-left: 54px;
         }
 
+        .animation-logo{
+           margin-left: 56px;
+        }
+
         &__stats{
             margin-left: 54px;
             margin-right: 54px;
@@ -530,6 +547,7 @@
             margin-right: 15px;
             font-size: 32px;
             line-height: 40px;
+            padding-top: 30px;
     
             span{
                 margin-bottom: 8px;
@@ -551,6 +569,19 @@
             font-size: 16px !important;
             height: 51px !important;    
             width: 142px !important;
+        }
+
+        .animation-logo{
+            width: 140px;
+            margin-left: 15px;
+            top: -105px;
+
+            p{
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 20px;
+                padding-left: 25px;
+            }
         }
 
         &__stats{

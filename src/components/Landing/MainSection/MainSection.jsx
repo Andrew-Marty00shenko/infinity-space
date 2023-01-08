@@ -57,6 +57,8 @@ import PolygonWebp from "../../../assets/images/img/polygon.webp";
 import CircleLight from "../../../assets/images/img/circle-light.png";
 import CircleLightWebp from "../../../assets/images/img/circle-light.webp";
 
+import LogoAnimation from "../../../assets/animation/logoAnimation.gif";
+
 import "./MainSection.scss";
 
 const MainSection = ({ data, loadingData, totals }) => {
@@ -111,7 +113,6 @@ const MainSection = ({ data, loadingData, totals }) => {
         {loadingData && <Preloader />}
         <section className="main-section">
             <div className="lan">
-
                 <div className="bg-sections-wrapper">
                     {isWebpSupported()
                         ? <img src={CircleWebp} alt="circle" className="img-circle" />
@@ -206,6 +207,11 @@ const MainSection = ({ data, loadingData, totals }) => {
                 </div>
             </div>
             <div className="main-section__content">
+                <div className="animation-logo">
+                    <img src={LogoAnimation} alt="logo" />
+                    <p>  Infinity Space</p>
+                </div>
+
                 <h1>
                     <span>
                         Smart defi solution

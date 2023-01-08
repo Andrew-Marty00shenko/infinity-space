@@ -59,9 +59,9 @@ const LandingFooter = () => {
                 © 2022 All Rights Reserved
             </p>
             <div className="info">
-                <a href="">
+                {/* <a href="">
                     Terms Of Use
-                </a>
+                </a> */}
                 <span onClick={() => setShow(true)}>
                     Privacy Policy
                 </span>
