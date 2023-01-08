@@ -172,7 +172,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
         </div>
 
         <ul className="sidebar__links">
-            <a href="https://t.me/Infinity_Space_Notifications_bot" target="_blank">
+            <a href="https://t.me/InfinitySpaceWeb3" target="_blank">
                 <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14.4985 0.787737L1.20095 5.91549C0.293455 6.27999 0.298705 6.78624 1.03445 7.01199L4.44845 8.07699L12.3475 3.09324C12.721 2.86599 13.0622 2.98824 12.7817 3.23724L6.38196 9.01299H6.38045L6.38196 9.01374L6.14646 12.5327C6.49146 12.5327 6.6437 12.3745 6.8372 12.1877L8.49545 10.5752L11.9447 13.123C12.5807 13.4732 13.0375 13.2932 13.1957 12.5342L15.46 1.86324C15.6917 0.933987 15.1052 0.513237 14.4985 0.787737Z" fill="#717275" />
                 </svg>

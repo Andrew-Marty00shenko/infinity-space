@@ -3,12 +3,12 @@ import "./SocialLinksSection.scss";
 const SocialLinksSection = () => {
     return <section className="social-links-section">
         <div className="social-links-section__block">
-            <a href="https://t.me/Infinity_Space_Notifications_bot" target="_blank">
+            <a href="https://t.me/InfinitySpaceWeb3" target="_blank">
                 <div>
                     <svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19.165 0.717064L1.43497 7.55406C0.224973 8.04006 0.231973 8.71506 1.21297 9.01606L5.76497 10.4361L16.297 3.79106C16.795 3.48806 17.25 3.65106 16.876 3.98306L8.34297 11.6841H8.34097L8.34297 11.6851L8.02897 16.3771C8.48897 16.3771 8.69197 16.1661 8.94997 15.9171L11.161 13.7671L15.76 17.1641C16.608 17.6311 17.217 17.3911 17.428 16.3791L20.447 2.15106C20.756 0.912064 19.974 0.351064 19.165 0.717064Z" fill="white" />
                     </svg>
-                    Telegram Bot
+                    Telegram Channel
                 </div>
             </a>
             <a href="https://t.me/Infinity_Space_Support_bot" target="_blank">
