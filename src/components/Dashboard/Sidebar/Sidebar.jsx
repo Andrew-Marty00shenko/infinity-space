@@ -7,7 +7,7 @@ import { getBnbBalance } from "../../../utils/contract/contract";
 
 import { setViewer, setWallet } from "../../../redux/slices/userSlice";
 
-import Logo from "../../../assets/images/logo.png";
+import Logo from "../../../assets/animation/logoAnimation.gif";
 
 import "./Sidebar.scss";
 

@@ -20,6 +20,11 @@
         font-size: 16px;
         line-height: 32px;
         cursor: pointer;
+
+        img{
+            width: 116px;
+            margin-right: 20px;
+        }
     }
 
     button{
@@ -108,7 +113,11 @@
 
         &__logo{
            font-size: 13px;
-           margin-left: -20px;
+           margin-left: 0px;
+           
+           img{
+               margin-right: 0;
+           }
         }
 
         &__menu{

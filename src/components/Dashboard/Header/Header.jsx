@@ -6,7 +6,7 @@ import { setViewer, setWallet } from "../../../redux/slices/userSlice";
 
 import { getBnbBalance, getBUSDBalance } from "../../../utils/contract/contract";
 
-import Logo from "../../../assets/images/logo.png";
+import LogoAnimation from "../../../assets/animation/logoAnimation.gif";
 
 import "./Header.scss";
 
@@ -43,7 +43,7 @@ const Header = ({ showSidebar, setShowSidebar }) => {
 
     return <header className="dashboard-header">
         <div className="dashboard-header__logo" onClick={handleLogout}>
-            <img src={Logo} alt="logo" />
+            <img src={LogoAnimation} alt="logo" />
             Infinity Space
         </div>
 
