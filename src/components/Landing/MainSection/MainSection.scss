@@ -1128,37 +1128,3 @@
         }
     }
 }
-
-@media (max-width: 450px) {
-    .animation-logo{
-        p{
-            font-weight: 700;
-            font-size: 23px !important;
-            line-height: 25px;
-            padding-left: 15px !important;
-            letter-spacing: 13px;
-            text-align: center;
-            position: relative;
-            text-transform: uppercase;
-            width: 100vw;
-            padding-top: 22px;
-        }
-    }
-}
-
-@media (max-width: 383px) {
-    .animation-logo{
-        p{
-            letter-spacing: 10px;
-        }
-    }
-}
-
-@media (max-width: 360px) {
-    .animation-logo{
-        p{
-            font-size: 20px !important;
-            letter-spacing: 10px;
-        }
-    }
-}

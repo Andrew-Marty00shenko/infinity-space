@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import Parallax from "parallax-js";
 import { useState } from "react";
@@ -64,6 +64,10 @@ import "./MainSection.scss";
 const MainSection = ({ data, loadingData, totals }) => {
     const dispatch = useDispatch();
 
+    const params = useParams();
+    const navigate = useNavigate();
+
+
     const [loading, setLoading] = useState(false);
     const [showModalRegister, setShowModalRegister] = useState(false);
     const [uplineId, setUplineId] = useState("");
@@ -72,6 +76,16 @@ const MainSection = ({ data, loadingData, totals }) => {
     let launchDate = new Date();
     let timeDiff = Math.abs(currentDate.getTime() - launchDate.getTime());
     let diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+    useEffect(() => {
+        if (params.id !== undefined) {
+            if (!isNaN(parseInt(params.id, 10))) {
+                navigate(`/?user_id=${params.id}`, { replace: true })
+            } else {
+                navigate('/404');
+            }
+        }
+    }, []);
 
     useEffect(() => {
         if (window.innerWidth > 768) {

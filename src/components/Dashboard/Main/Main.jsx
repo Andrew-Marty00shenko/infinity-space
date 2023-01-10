@@ -108,9 +108,9 @@ const Main = () => {
 
     const handleCopy = (num) => {
         if (num === 1) {
-            toast.success('Personal link copied');
+            toast.success('Personal link copied', { autoClose: 1000 });
         } else {
-            toast.success('Address copied');
+            toast.success('Address copied', { autoClose: 1000 });
         }
     };
 

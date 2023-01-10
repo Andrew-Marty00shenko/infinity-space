@@ -78,7 +78,7 @@ const Levels = () => {
                                     setHash(hash);
                                 })
                                 .then(res => {
-                                    toast.success(`You have successfully purchased a level ${levelId}`)
+                                    toast.success(`You have successfully purchased a level ${levelId}`, { autoClose: 1000 })
                                     dispatch(getUserData(wallet));
                                 })
                                 .on('error', error => {
@@ -102,7 +102,7 @@ const Levels = () => {
                                     setHash(hash);
                                 })
                                 .then(res => {
-                                    toast.success('You have successfully purchased a level 1')
+                                    toast.success('You have successfully purchased a level 1', { autoClose: 1000 })
                                     dispatch(getUserData(wallet));
                                 })
                                 .on('error', error => {

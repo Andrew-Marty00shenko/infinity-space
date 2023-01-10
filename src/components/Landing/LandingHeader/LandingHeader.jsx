@@ -28,7 +28,7 @@ const LandingHeader = () => {
         } else {
             setUplineId('');
         }
-    }, []);
+    }, [location]);
 
     const handleClickConnectWallet = async () => {
         if (window.web3) {

@@ -22,7 +22,7 @@ export const loginUser = createAsyncThunk(
 			.call()
 			.then(res => {
 				if (res === true) {
-					toast.success('Welcome');
+					toast.success('Welcome', { autoClose: 1000 });
 
 					localStorage.setItem("wallet_signed", address);
 

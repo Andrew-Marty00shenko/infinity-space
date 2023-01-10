@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -71,8 +71,22 @@ const Landing = () => {
                 <SocialLinkSection />
             </>}
             />
+            <Route path="/:id" element={<>
+                <MainSection
+                    data={data}
+                    loadingData={loadingData}
+                    totals={totals}
+                />
+                <ContractAddressSection />
+                <SliderSection />
+                <DashboardSection />
+                <FaqSection />
+                <SocialLinkSection />
+            </>}
+            />
             <Route path="/view" element={<View />} />
-            <Route path='*' element={<NotFound />} />
+            <Route path="/404" element={<NotFound />} />
+            <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
         <LandingFooter />
 
