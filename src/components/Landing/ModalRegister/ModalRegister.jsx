@@ -9,6 +9,7 @@ import Metamask from "../../../assets/images/metamask.svg";
 
 import "./ModalRegister.scss";
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const ModalRegister = ({
     showModalRegister,
@@ -17,14 +18,17 @@ const ModalRegister = ({
     setUplineId
 }) => {
     const dispatch = useDispatch();
+    const location = useLocation();
     const loading = useSelector(state => state.user.loading);
 
     useEffect(() => {
-        window.addEventListener('keypress', e => {
-            if (e.key === 'Enter') {
-                handleClickWatch();
-            }
-        });
+        if (location.pathname !== '/view') {
+            window.addEventListener('keypress', e => {
+                if (e.key === 'Enter') {
+                    handleClickWatch();
+                }
+            });
+        }
     }, [uplineId]);
 
     const handleClickWatch = async () => {

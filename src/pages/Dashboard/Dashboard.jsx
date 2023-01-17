@@ -13,6 +13,7 @@ import Stats from "../../components/Dashboard/Stats/Stats";
 import Contacts from "../../components/Dashboard/Contacts/Contacts";
 import Presentation from "../../components/Dashboard/Presentation/Presentation";
 import Web3Academy from "../../components/Dashboard/Web3Academy/Web3Academy";
+import Airdrop from "../../components/Dashboard/Airdrop/Airdrop";
 import Play2earnGame from "../../components/Dashboard/Play2earnGame/Play2earnGame";
 import Preloader from "../../components/Common/Preloader";
 
@@ -39,6 +40,8 @@ const Dashboard = () => {
             navigate('/dashboard/web3-academy')
         } else if (location.pathname === '/dashboard/stats') {
             navigate('/dashboard/stats')
+        } else if (location.pathname === '/dashboard/airdrop') {
+            navigate('/dashboard/airdrop')
         } else {
             navigate('/dashboard')
         }
@@ -68,6 +71,7 @@ const Dashboard = () => {
                 <Route path='/dashboard/contacts' element={<Contacts />} />
                 <Route path='/dashboard/web3-academy' element={<Web3Academy />} />
                 <Route path='/dashboard/play2earn-game' element={<Play2earnGame />} />
+                <Route path='/dashboard/airdrop' element={<Airdrop />} />
             </Routes>
         </div>
     </>

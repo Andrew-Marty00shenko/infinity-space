@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 
@@ -9,10 +8,11 @@ import "./View.scss";
 
 const View = () => {
     const [idValue, setIdValue] = useState("");
-    const { handleSubmit } = useForm();
     const dispatch = useDispatch();
 
-    const onSubmit = () => {
+    const onSubmit = (e) => {
+        e.preventDefault();
+
         if (idValue !== "") {
             dispatch(searchUser(idValue));
         } else {
@@ -20,7 +20,7 @@ const View = () => {
         }
     };
 
-    return <form className="view" onSubmit={handleSubmit(onSubmit)}>
+    return <form className="view" onSubmit={onSubmit}>
         <input type="text"
             placeholder="enter id"
             value={idValue}
