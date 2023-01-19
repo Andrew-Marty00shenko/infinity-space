@@ -127,11 +127,10 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
             </Link>
             <Link to="/dashboard/airdrop" onClick={() => setShowSidebar(false)}>
                 <li className={classNames({ "active": location.pathname === "/dashboard/airdrop" })}>
-
                     Airdrop
                 </li>
             </Link>
-            <Link to="/dashboard/web3-academy" onClick={() => setShowSidebar(false)}>
+            {/* <Link to="/dashboard/web3-academy" onClick={() => setShowSidebar(false)}>
                 <li className={classNames({ "active": location.pathname === "/dashboard/web3-academy" })}>
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fillRule="evenodd" clipRule="evenodd" d="M14.7805 9.50473C15.3728 8.06635 13.9344 6.62795 12.496 7.22023L9.81913 8.32247C9.14103 8.60169 8.60254 9.14018 8.32332 9.81827L7.22108 12.4951C6.62881 13.9335 8.06719 15.3719 9.50558 14.7796L12.1825 13.6774C12.8606 13.3982 13.399 12.8597 13.6783 12.1816L14.7805 9.50473ZM13.0671 8.60725C13.2726 8.52264 13.4781 8.72812 13.3935 8.9336L12.2912 11.6105C12.1643 11.9187 11.9196 12.1635 11.6113 12.2904L8.93445 13.3926C8.72897 13.4772 8.52349 13.2718 8.6081 13.0663L9.71034 10.3894C9.83726 10.0812 10.082 9.83641 10.3903 9.70949L13.0671 8.60725Z" fill="#AFC6FF" />
@@ -139,7 +138,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
                     </svg>
                     Web 3.0 Academy
                 </li>
-            </Link>
+            </Link> */}
             <Link to="/dashboard/play2earn-game" onClick={() => setShowSidebar(false)}>
                 <li className={classNames({ "active": location.pathname === "/dashboard/play2earn-game" })}>
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
