@@ -46,6 +46,20 @@
             text-align: center;
             transform: translate(-50%, -50%);
         }
+
+        .text_viewer {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 16px;
+            color: #fff;
+            position: absolute;
+            left: 50%;
+            z-index: 5;
+            max-width: 445px;
+            top: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+        }
     }
 
     &-form {
@@ -60,6 +74,16 @@
             &::after {
                 content: "";
                 background: linear-gradient(-45deg, #6ACF47, #0CD638) !important;
+                z-index: 0 !important;
+            }
+        }
+
+        &--viewer {
+            filter: blur(2px);
+
+            &::after {
+                content: "";
+                background: linear-gradient(-45deg, #8C47CF, #0C38D6);
                 z-index: 0 !important;
             }
         }

@@ -20,9 +20,9 @@ import axios from 'axios';
 const Airdrop = () => {
     const user = useSelector(state => state.user.user);
     const wallet = useSelector(state => state.user.wallet);
+    const viewer = useSelector(state => state.user.viewer);
     const dispatch = useDispatch();
     const { handleSubmit, register, formState: { errors } } = useForm();
-
 
     const active = false;
 
@@ -69,7 +69,8 @@ const Airdrop = () => {
         <Row>
             <Col xl={6} className="form__active" style={{ position: 'relative' }}>
                 <form className={classNames("airdrop-form", {
-                    "airdrop-form--active": active
+                    "airdrop-form--active": active,
+                    "airdrop-form--viewer": viewer,
                 })} onSubmit={handleSubmit(onSubmit)}>
 
                     <input
@@ -120,6 +121,9 @@ const Airdrop = () => {
                 </form>
                 {active && <span className='text_filled'>
                     You have already filled out the necessary data
+                </span>}
+                {viewer && <span className='text_viewer'>
+                    You are in viewer mode
                 </span>}
             </Col>
             <Col xl={6} className='block'>
