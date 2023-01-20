@@ -16,18 +16,37 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import classNames from 'classnames';
 import axios from 'axios';
+import apiUser from '../../../api/apiServer/apiUser';
+import Preloader from '../../Common/Preloader';
 
 const Airdrop = () => {
     const user = useSelector(state => state.user.user);
     const wallet = useSelector(state => state.user.wallet);
     const viewer = useSelector(state => state.user.viewer);
     const dispatch = useDispatch();
-    const { handleSubmit, register, formState: { errors } } = useForm();
-
-    const active = false;
+    const { handleSubmit, register, formState: { errors }, reset } = useForm();
 
     const [phone, setPhone] = useState('');
     const [countryData, setCountryData] = useState({});
+    const [userData, setUserData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [updated, setUpdated] = useState(false);
+
+    useEffect(() => {
+        apiUser.getUserData(user?.id)
+            .then(({ data }) => {
+                setUpdated(false);
+                setUserData(data);
+                setLoading(false);
+                reset({
+                    full_name: data.name,
+                    email: data.email
+                });
+                if (data.phone !== null) {
+                    setPhone(data.phone);
+                }
+            })
+    }, [user, updated]);
 
     useEffect(() => {
         axios
@@ -49,12 +68,31 @@ const Airdrop = () => {
     }, []);
 
     const onChange = (status, phoneNumber, country) => {
-        console.log(phoneNumber, status, country)
         setPhone(phoneNumber)
     }
 
     const onSubmit = data => {
-        console.log(data)
+        if (phone !== '') {
+            apiUser.postUserData({
+                wallet: wallet,
+                email: data.email,
+                phone: phone,
+                ip: countryData.ip,
+                name: data.full_name,
+                country: countryData.country
+            }).then(({ data }) => {
+                if (data.status === 'success') {
+                    toast.success("Your data has been sent");
+                    setUpdated(true);
+                }
+            })
+        } else {
+            toast.error('Enter the phone number!')
+        }
+    }
+
+    if (loading) {
+        return <Preloader team={user !== null ? true : false} />
     }
 
     return <div className="airdrop">
@@ -69,7 +107,7 @@ const Airdrop = () => {
         <Row>
             <Col xl={6} className="form__active" style={{ position: 'relative' }}>
                 <form className={classNames("airdrop-form", {
-                    "airdrop-form--active": active,
+                    "airdrop-form--active": userData?.ip !== null,
                     "airdrop-form--viewer": viewer,
                 })} onSubmit={handleSubmit(onSubmit)}>
 
@@ -119,11 +157,14 @@ const Airdrop = () => {
                         </button>
                     </div>
                 </form>
-                {active && <span className='text_filled'>
+                {userData?.ip !== null && user?.id !== '0' && <span className='text_filled'>
                     You have already filled out the necessary data
                 </span>}
                 {viewer && <span className='text_viewer'>
                     You are in viewer mode
+                </span>}
+                {user?.id === '0' && <span className='text_viewer'>
+                    You should buy a level to post this form
                 </span>}
             </Col>
             <Col xl={6} className='block'>
