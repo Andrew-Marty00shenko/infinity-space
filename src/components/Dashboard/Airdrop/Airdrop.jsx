@@ -127,11 +127,9 @@ const Airdrop = () => {
                     <br />
                     <IntlTelInput
                         preferredCountries={["br"]}
-                        placeholder="|Phone number"
                         onPhoneNumberChange={onChange}
                         value={phone}
                         format
-                        separateDialCode
                     />
 
                     <br />

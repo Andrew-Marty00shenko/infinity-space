@@ -156,6 +156,14 @@
             padding-left: 5px;
         }
 
+        .intl-tel-input.allow-dropdown.separate-dial-code.iti-sdc-3 .selected-flag {
+            width: 51px !important;
+        }
+
+        .intl-tel-input.allow-dropdown .selected-flag {
+            background-color: rgba($color: #fff, $alpha: .02);
+        }
+
         .flag-container {
             .country-list {
                 border-radius: 5px;
