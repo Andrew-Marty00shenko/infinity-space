@@ -251,7 +251,7 @@ const MainSection = ({ data, loadingData, totals }) => {
                     </div>
                     <div>
                         <p> {diffDays}</p>
-                        <p>Days before the official start</p>
+                        <p>Days after the official start</p>
                     </div>
 
                     <div>

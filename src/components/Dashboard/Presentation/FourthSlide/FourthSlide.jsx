@@ -20,12 +20,6 @@ const FourthSlide = () => {
         <div>
             In addition to this truly useful intellectual foundation of our community, here you have the opportunity to earn thousands, tens, and even hundreds of thousands of dollars in a matter of weeks.
         </div>
-        <button>
-            Read on to learn more
-            <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 2.5L8 8.5L14 2.5" stroke="white" strokeWidth="3.42857" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-        </button>
     </div>
 }
 

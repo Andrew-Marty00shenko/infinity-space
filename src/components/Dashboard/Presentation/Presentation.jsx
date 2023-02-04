@@ -15,7 +15,6 @@ import ThirdteenthSlide from "./ThirdteenthSlide/ThirdteenthSlide";
 import FourteenthSlide from "./FourteenthSlide/FourteenthSlide";
 import FifteenthSlide from "./FifteenthSlide/FifteenthSlide";
 import SixteenthSlide from "./SixteenthSlide/SixteenthSlide";
-import SeventeenthSlide from "./SeventeenthSlide/SeventeenthSlide";
 import EighteenthSlide from "./EighteenthSlide/EighteenthSlide";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserData } from "../../../redux/slices/userSlice";
@@ -48,7 +47,6 @@ const Presentation = () => {
         <FourteenthSlide />
         <FifteenthSlide />
         <SixteenthSlide />
-        <SeventeenthSlide />
         <EighteenthSlide />
     </div>
 }
