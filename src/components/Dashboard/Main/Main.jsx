@@ -338,7 +338,6 @@ const Main = () => {
                     Program
                 </h2>
             </div>
-
             <div className="main-program__content">
                 <svg width="549" height="8" viewBox="0 0 549 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="549" height="8" fill="white" fillOpacity="0.05" />
