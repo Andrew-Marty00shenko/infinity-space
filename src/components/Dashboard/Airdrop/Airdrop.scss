@@ -399,6 +399,13 @@
                     margin-top: 14px;
                     width: 131px;
                     height: 220px;
+                    cursor: pointer;
+                    transition: transform .3s;
+                    border-radius: 10px;
+
+                    &:hover{
+                        transform: scale(1.4);
+                    }
                 }
             }
         }
@@ -610,6 +617,10 @@
                         margin-top: 0px;
                         width: 82px;
                         height: 137px;
+
+                        &:hover{
+                            transform: scale(1);
+                        }
                     }
                 }
             }
