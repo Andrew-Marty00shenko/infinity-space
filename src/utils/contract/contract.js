@@ -1,6 +1,7 @@
 import Web3 from "web3";
 import contractAbi from "./contractAbi.json";
 import contractBUSDAbi from "./contractBUSDAbi.json";
+import contractClaimAbi from "./contractClaimAbi.json";
 
 const BINANCE_RPC_TEST = 'https://bsc-dataseed.binance.org/';
 // const HASH_LINK = 'https://testnet.bscscan.com';
@@ -9,6 +10,7 @@ const web3 = new Web3(new Web3.providers.HttpProvider(BINANCE_RPC_TEST));
 
 export const contract = new web3.eth.Contract(contractAbi.abi, contractAbi.address);
 export const contractBUSD = new web3.eth.Contract(contractBUSDAbi.abi, contractBUSDAbi.address);
+export const contractClaim = new web3.eth.Contract(contractClaimAbi.abi, contractClaimAbi.address);
 
 export const connectWallet = async () => {
     if (window.ethereum) {

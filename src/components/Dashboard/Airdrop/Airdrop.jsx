@@ -1,23 +1,26 @@
 import { useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import classNames from 'classnames';
+import axios from 'axios';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import IntlTelInput from 'react-intl-tel-input';
 
 import { getUserData } from '../../../redux/slices/userSlice';
+import apiUser from '../../../api/apiServer/apiUser';
+import Preloader from '../../Common/Preloader';
+import { connectWallet } from '../../../utils/contract/contract';
+import contractClaimAbi from "../../../utils/contract/contractClaimAbi.json";
 
 import ContractImg1 from "../../../assets/images/contract-1.png";
 import ContractImg2 from "../../../assets/images/contract-2.png";
 import ContractImg3 from "../../../assets/images/contract-3.png";
-import 'react-intl-tel-input/dist/main.css';
+
 import './Airdrop.scss';
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import classNames from 'classnames';
-import axios from 'axios';
-import apiUser from '../../../api/apiServer/apiUser';
-import Preloader from '../../Common/Preloader';
+import 'react-intl-tel-input/dist/main.css';
 
 const Airdrop = () => {
     const user = useSelector(state => state.user.user);
@@ -31,6 +34,8 @@ const Airdrop = () => {
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [updated, setUpdated] = useState(false);
+    const [userBonus, setUserBonus] = useState(null);
+    const [signature, setSignature] = useState(null);
 
     useEffect(() => {
         apiUser.getUserData(user?.id)
@@ -47,6 +52,18 @@ const Airdrop = () => {
                 }
             })
     }, [user, updated]);
+
+    useEffect(() => {
+        apiUser.getUserBonus(wallet)
+            .then(({ data }) => {
+                setUserBonus(data[0]);
+            });
+
+        apiUser.getClaimSignature({ sender: wallet })
+            .then(({ data }) => {
+                setSignature(data);
+            });
+    }, []);
 
     useEffect(() => {
         axios
@@ -90,6 +107,31 @@ const Airdrop = () => {
             toast.error('Enter the phone number!')
         }
     }
+
+    const handleClaimBonus = async () => {
+        if (userBonus === 0) {
+            toast.error('Nothing to claim!');
+        } else {
+            const account = await connectWallet();
+
+            const contractClaim = new window.web3.eth.Contract(
+                contractClaimAbi.abi,
+                contractClaimAbi.address,
+                { from: account }
+            );
+
+            contractClaim.methods[
+                'claim(uint256,bytes)'
+            ](signature.nonce, signature.signature)
+                .send()
+                .then(res => {
+                    toast.success('Successfully claimed!');
+                })
+                .catch(err => {
+                    toast.error('Some Error!');
+                });
+        }
+    };
 
     if (loading) {
         return <Preloader team={user !== null ? true : false} />
@@ -188,7 +230,7 @@ const Airdrop = () => {
                                 LEVEL 3
                             </li>
                             <li>
-                                2300 tokens
+                                2500 tokens
                             </li>
                         </div>
                         <div className="info-tokens-item">
@@ -196,7 +238,7 @@ const Airdrop = () => {
                                 LEVEL 6
                             </li>
                             <li>
-                                2500 tokens
+                                3500 tokens
                             </li>
                         </div>
                         <div className="info-tokens-item">
@@ -204,7 +246,7 @@ const Airdrop = () => {
                                 LEVEL 9
                             </li>
                             <li>
-                                2500 tokens
+                                5000 tokens
                             </li>
                         </div>
                         <div className="info-tokens-item">
@@ -219,9 +261,9 @@ const Airdrop = () => {
 
                     <div className="info-tokens__total">
                         <p>
-                            Total tokens:
+                            Total tokens: {userBonus !== null ? userBonus : 0}
                         </p>
-                        <button onClick={() => alert('You can not claim tokens yet')}>
+                        <button onClick={handleClaimBonus}>
                             Go to claim !
                         </button>
                     </div>

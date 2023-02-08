@@ -6,5 +6,7 @@ export default {
     getSignature: ({ level, sender }) => axios.post('/get_signature', { level, sender }),
     getUserData: (user_id) => axios.get(`/userdata?user_id=${user_id}`),
     getUserProfit: (user_id, start, end) => axios.get(`/user_profit?user_id=${user_id}&start=${start}&end=${end}`),
-    postUserData: ({ wallet, email, phone, ip, name, country }) => axios.post('/userdata', { wallet, email, phone, ip, name, country })
+    postUserData: ({ wallet, email, phone, ip, name, country }) => axios.post('/userdata', { wallet, email, phone, ip, name, country }),
+    getUserBonus: (wallet) => axios.get(`/userbonus?wallet=${wallet}`),
+    getClaimSignature: ({ sender }) => axios.post('/get_claim_signature', { sender })
 }
