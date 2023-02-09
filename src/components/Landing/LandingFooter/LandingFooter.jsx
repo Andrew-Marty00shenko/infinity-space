@@ -56,7 +56,7 @@ const LandingFooter = () => {
         </div>
         <div className="landing-footer__bottom">
             <p>
-                © 2022 All Rights Reserved
+                © 2023 All Rights Reserved
             </p>
             <div className="info">
                 {/* <a href="">
