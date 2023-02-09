@@ -484,9 +484,11 @@ const Airdrop = () => {
                 </div>
 
                 <div className="button-block">
-                    <button>
-                        Get 30 tokens
-                    </button>
+                    <a href="https://gleam.io/U1hI0/airdrop-30-insp-tokens" target="_blank" rel="noopener noreferrer">
+                        <button>
+                            Get 30 tokens
+                        </button>
+                    </a>
                 </div>
             </Col>
         </Row>
