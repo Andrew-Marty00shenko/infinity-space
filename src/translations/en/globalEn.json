@@ -1,0 +1,11 @@
+{
+    "address-not-registered": "This address is not registered!",
+    "channel": "Channel",
+    "support": "Support",
+    "metamask-is-not": "Metamask is not installed",
+    "personal-link-copied": "Personal link copied",
+    "address-copied": "Address copied",
+    "loading": "Loading",
+    "please-wait": "Please, wait a minute",
+    "loading-level-activation": "Loading level activation"
+}

@@ -1,0 +1,18 @@
+{
+    "invited": "invited ",
+    "users": " users",
+    "joined-by": "joined",
+    "personal-link": "Personal link",
+    "personal-link-tooltip": "Your referral link for inviting new partners.",
+    "personal-link-tooltip-2": " Your link will become available after the purchase of the first level.",
+    "partners": "Partners",
+    "partners-tooltip": "The number of users registered through your referral link",
+    "team":"Team",
+    "team-tooltip": "The number of users registered through a referral link of one of your partners",
+    "ratio":"Ratio",
+    "ratio-tooltip": "Amount of money earned in relation to money spent",
+    "profits": "Profits",
+    "profits-tooltip": "Total income from all levels",
+    "program": "Program",
+    "lets-go": "Let's go"
+}

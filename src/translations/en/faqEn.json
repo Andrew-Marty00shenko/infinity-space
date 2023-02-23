@@ -1,0 +1,18 @@
+{
+    "title": "FAQ",
+    "text": "  If you have any questions, you may find the answer below. If not, you can contact support and ask your question",
+    "q-1": "Where can I get a metamask wallet?",
+    "a-1": "You can register a metamask wallet by using the metamask extension for the Google Chrome browser. You can download the extension here Or download the metamask app on your phone and register your wallet there.",
+    "q-2": "How many levels should I activate at the beginning?",
+    "a-2":"You can activate any number of levels, but for the best start we recommend activating at least the first 3 levels.",
+    "q-3": "How secure is it?",
+    "a-3": "All actions and transactions are controlled by a smart contract. No one is able to influence its operation from outside. Consequently, it is completely secure.",
+    "q-4": "Can my money disappear?",
+    "a-4": "All transactions are allocated to participants' personal wallets. The balance of the smart contract itself never contains funds and is always zero. Therefore, your funds can disappear only if you give someone access to your wallet.",
+    "q-5": "What is the role of the smart contract?",
+    "a-5": "A smart contract coordinates and distributes transactions and activates your tiers. It enables all processes on the platform to happen automatically.",
+    "q-6": "How much can I earn?",
+    "a-6": "Your earnings are not limited to anything. It depends on the number of completed cycles. And they, in turn, depend on how many new participants you and your partners have invited.",
+    "q-7": "How do I withdraw money?",
+    "a-7": "All your rewards go straight to your personal Metamask wallet. Then you can exchange BUSD to any other currency through any cryptocurrency exchange."
+}

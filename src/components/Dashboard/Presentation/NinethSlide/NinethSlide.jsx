@@ -1,23 +1,20 @@
+import { useTranslation } from "react-i18next";
 import "./NinethSlide.scss";
 
 const NinethSlide = () => {
-    return <div className="presentation-nineth">
-        <h2>
-            INFINITY SPACE <br />
-            <span>
-                Marketing
-            </span>
-        </h2>
-        <p>
-            So what happens after you sign up? BUSD from your MetaMask wallet is transferred to a smart contract and according to the algorithm is redistributed among the wallets of other Infinity Space community members. The person who invited you - the upliner - gets 60% of the value of the level you bought. Their upliner gets 30% and that person’s upliner gets 10%.
-        </p>
-        <h3>
-            There is no limit to the number of cycles.
-        </h3>
-        <p>
-            Infinity Space Marketing works based on smart contracts technology in the Binance Smart Chain blockchain. All transactions are conducted in BUSD tokens on the BEP-20 network and transaction fees are charged in BNB tokens.
-        </p>
+  const { t } = useTranslation();
+
+  return (
+    <div className="presentation-nineth">
+      <h2>
+        {t("presentation:slide-9-title-1")} <br />
+        <span> {t("presentation:slide-9-title-2")}</span>
+      </h2>
+      <p>{t("presentation:slide-9-text-1")}</p>
+      <h3>T{t("presentation:slide-9-text-2")}</h3>
+      <p>{t("presentation:slide-9-text-3")}</p>
     </div>
-}
+  );
+};
 
 export default NinethSlide;

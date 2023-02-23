@@ -1,0 +1,17 @@
+{
+    "title":" Decentralized open source platform guarantees equality and security for everyone",
+    "text": "You can read all the rules of interaction on our platform in the smart contract code yourself. And we'll tell you a few of its undeniable advantages",
+    "connect-btn": "Connect wallet",
+    "decentralization": "Decentralization",
+    "decentralization-text": "There is no one who can interfere in the work of a smart contract and influence it in any way",
+    "equal-conditions": "Equal conditions",
+    "equal-conditions-text": "Each participant can count on the same as everyone else. There are no favorites with special advantages",
+    "transparency": "Transparency",
+    "transparency-text": "The whole interface of the platform is intuitive even for inexperienced users",
+    "digital-access": "Digital Access",
+    "digital-access-text": "Access to the account only through your wallet metamask",
+    "total-security": "Total security",
+    "total-security-text": "All funds are instantly credited to users' personal wallets. Funds are never stored on the smart contract itself",
+    "immutability": "Immutability",
+    "immutability-text": "Once a smart contract has been started, it cannot be changed, stopped, or deleted. It will last as long as the blockchain itself exists"
+}
