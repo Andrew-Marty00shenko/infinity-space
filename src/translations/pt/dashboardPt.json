@@ -1,0 +1,18 @@
+{
+    "invited": " convidados ",
+    "users": " usuários",
+    "joined-by": "juntou-se",
+    "personal-link": "Link pessoal",
+    "personal-link-tooltip": "O seu endereço de referência para convidar novos participantes.",
+    "personal-link-tooltip-2": " O seu link se torna disponível para você depois da compra do nível 1",
+    "partners": "Participantes",
+    "partners-tooltip": "O número dos usuários registrados através do seu endereço de referência",
+    "team":"Equipe",
+    "team-tooltip": "O número dos usuários registrados através do endereço de referência de um dos seus participantes ",
+    "ratio":"Razão",
+    "ratio-tooltip": "Quantia de dinheiro ganho com relação a quantia gasto",
+    "profits": "Ganhos",
+    "profits-tooltip": "Rendimento total de todos os níveis",
+    "program": "Programação",
+    "lets-go": "Bora lá ver"
+}

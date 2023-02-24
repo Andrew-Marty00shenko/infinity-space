@@ -17,7 +17,7 @@ export const loginUser = createAsyncThunk("user/login", async (address) => {
     .call()
     .then((res) => {
       if (res === true) {
-        toast.success("Welcome", { autoClose: 1000 });
+        toast.success(i18next.t("global:welcome"), { autoClose: 1000 });
 
         localStorage.setItem("wallet_signed", address);
 

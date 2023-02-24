@@ -7,5 +7,14 @@
     "address-copied": "Address copied",
     "loading": "Loading",
     "please-wait": "Please, wait a minute",
-    "loading-level-activation": "Loading level activation"
+    "loading-level-activation": "Loading level activation",
+    "coming-soon": "Coming soon...",
+    "disconnect": "Disconnect",
+    "level-success": "You have successfully purchased a level ",
+    "err": "Something went wrong!"   ,
+    "viewer-mode": "You are in view mode! Please, login to your account" ,
+    "attention": "Attention!",
+    "attention-text": "To activate this level, you must have activated previous level.",
+    "attention-close": "Close",
+    "welcome": "Welcome!" 
 }

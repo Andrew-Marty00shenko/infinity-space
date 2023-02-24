@@ -366,7 +366,7 @@ const MainSection = ({ data, loadingData, totals }) => {
           </h2>
           <Link to="/">
             <button onClick={handleClickConnectWallet} disabled={loading}>
-              {loading ? "Loading..." : t("landing:connect-btn")}
+              {loading ? t("global:loading") : t("landing:connect-btn")}
             </button>
           </Link>
 

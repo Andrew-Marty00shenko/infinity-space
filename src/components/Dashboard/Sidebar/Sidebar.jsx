@@ -72,7 +72,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
       </div>
 
       <button onClick={handleLogout}>
-        Disconnect
+        {t("global:disconnect")}
         <svg
           height="15"
           width="20"

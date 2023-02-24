@@ -53,7 +53,7 @@ const SliderSection = () => {
           <h3>{t("slider:text")}</h3>
           <Link to="/">
             <button onClick={handleClickConnectWallet} disabled={loading}>
-              {loading ? "Loading..." : t("slider:connect-btn")}
+              {loading ? t("global:loading") : t("slider:connect-btn")}
             </button>
           </Link>
         </div>
@@ -247,7 +247,7 @@ const SliderSection = () => {
             <h3>{t("slider:text")}</h3>
             <Link to="/">
               <button onClick={handleClickConnectWallet} disabled={loading}>
-                {loading ? "Loading..." : t("slider:connect-btn")}
+                {loading ? t("global:loading") : t("slider:connect-btn")}
               </button>
             </Link>
           </div>

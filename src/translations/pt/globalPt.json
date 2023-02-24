@@ -1,0 +1,20 @@
+{
+    "address-not-registered": "Este endereço não está registrado",
+    "channel": "Canal",
+    "support": "Suporte",
+    "metamask-is-not": "A metamask não está instalada",
+    "personal-link-copied": "O link pessoal foi copiado",
+    "address-copied": "Endereço copiado",
+    "loading": "Carregando",
+    "please-wait": "Por favor, espere um minuto",
+    "loading-level-activation": "Ativação do nível de carregamento",
+    "coming-soon": "Em breve...",
+    "disconnect": "desconectar",
+    "level-success": "Você comprou com sucesso um nível ",
+    "err": "Algo deu errado!"   ,
+    "viewer-mode": "Você está no modo de exibição! Por favor, entre na sua conta" ,
+    "attention": "Atenção!",
+    "attention-text": "Para ativar este nível, você deve ter ativado o nível anterior.",
+    "attention-close": "Fechar",
+    "welcome": "Bem-vindo!" 
+}

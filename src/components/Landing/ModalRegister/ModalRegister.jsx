@@ -88,7 +88,7 @@ const ModalRegister = ({
           onChange={(e) => setUplineId(e.target.value)}
         />
         <button onClick={handleClickWatch} disabled={loading}>
-          {loading ? "Loading..." : t("modalRegister:connect-btn")}
+          {loading ? t("global:loading") : t("modalRegister:connect-btn")}
         </button>
       </div>
     </Modal>

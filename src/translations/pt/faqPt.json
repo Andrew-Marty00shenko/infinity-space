@@ -1,0 +1,18 @@
+{
+    "title": "FAQ (Perguntas Frequentes)",
+    "text": "Caso você tenha qualquer questão adicional, sinta-se livre para navegar pela nossa seção FAQ abaixo",
+    "q-1": "Onde posso obter uma carteira Metamask?",
+    "a-1": "Você pode registrar a carteira Metamask usando a extensão de navegador para o Chrome. É possível fazer o download aqui ou baixar o aplicativo Metamask em seu telefone e registrar sua carteira lá.",
+    "q-2": "Quantos níveis é melhor ativar no início?",
+    "a-2":"Você pode ativar quantos níveis quiser, mas para ter um começo perfeito, recomendamos ativar pelo menos os três primeiros níveis.",
+    "q-3": "Quão confiável é isso?",
+    "a-3": "Todas as ações e transações são controladas pelo contrato inteligente. Não há como alguém influenciar de fora no processo da operação, garantindo que a segurança seja total",
+    "q-4": "É possível que o meu dinheiro desapareça?",
+    "a-4": "Todas as transações são atribuídas aos carteiras pessoais dos membros. A balança do contrato inteligente em si nunca reserva fundos, sendo sempre zero. Por isso, seus fundos só podem desaparecer se você der a alguém acesso à sua carteira.",
+    "q-5": "Qual é a função do contrato inteligente?",
+    "a-5": "Um contrato inteligente coordena e distribui as transacções e ativa os seus escalões, permitindo que todos os processos na plataforma ocorram automaticamente.",
+    "q-6": "Quanto posso ganhar?",
+    "a-6": "Os seus ganhos não estão limitados por nada. Este processo depende do número de ciclos concluídos, que, por sua vez, dependem de quantos novos membros você e seus participantes associaram.",
+    "q-7": "Como faço para retirar dinheiro?",
+    "a-7": "Todos os seus ganhos vão diretamente para a sua carteira pessoal do Metamask. Então você pode trocar BUSD por qualquer outra moeda através de qualquer corretora de criptomoedas."
+}

@@ -11,6 +11,8 @@ import ModalRegister from "../ModalRegister/ModalRegister";
 
 import EnIcon from "../../../assets/images/en.svg";
 import HiIcon from "../../../assets/images/hi.svg";
+import PtIcon from "../../../assets/images/pt.svg";
+import BrIcon from "../../../assets/images/br.svg";
 import Logo from "../../../assets/images/logo.png";
 
 import "./LandingHeader.scss";
@@ -28,6 +30,18 @@ const languages = [
     name: "हिंदी",
     abr: "HI",
     icon: HiIcon,
+  },
+  {
+    id: 3,
+    name: "Português",
+    abr: "PT",
+    icon: PtIcon,
+  },
+  {
+    id: 4,
+    name: "Brasil",
+    abr: "PT",
+    icon: BrIcon,
   },
   // {
   //     id: 3,
@@ -166,7 +180,7 @@ const LandingHeader = () => {
 
           <Link to="/">
             <button onClick={handleClickConnectWallet} disabled={loading}>
-              {loading ? "Loading..." : t("header:header_connect_btn")}
+              {loading ? t("global:loading") : t("header:header_connect_btn")}
             </button>
           </Link>
 
