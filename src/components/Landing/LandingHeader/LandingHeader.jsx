@@ -68,6 +68,7 @@ const LandingHeader = () => {
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
 
+  const [windowWidth, setWindowWidth] = useState();
   const [searchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [showModalRegister, setShowModalRegister] = useState(false);
@@ -88,6 +89,10 @@ const LandingHeader = () => {
       abr: languages[indexLanguage]?.abr,
       icon: languages[indexLanguage]?.icon,
     });
+  }, []);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
   }, []);
 
   useEffect(() => {
@@ -160,7 +165,8 @@ const LandingHeader = () => {
             className="active-language"
             onClick={() => setOpenLanguagesMenu(!openLanguagesMenu)}
           >
-            <img src={activeLanguage.icon} alt="" /> {activeLanguage.name}{" "}
+            <img src={activeLanguage.icon} alt="" />
+            {windowWidth > 690 ? activeLanguage.name : " "}
             <svg
               width="10"
               height="7"

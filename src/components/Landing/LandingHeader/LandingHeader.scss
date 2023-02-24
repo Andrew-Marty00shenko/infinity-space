@@ -169,6 +169,10 @@
   .landing-header {
     position: relative;
 
+    &__logo {
+      max-width: 120px;
+    }
+
     &__block {
       &-info {
         display: none;
