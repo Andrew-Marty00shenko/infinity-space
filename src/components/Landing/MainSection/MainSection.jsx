@@ -10,6 +10,8 @@ import { loginUser } from "../../../redux/slices/userSlice";
 import { connectWallet } from "../../../utils/contract/contract";
 
 import PresentationPDF from "../../../assets/pdfs/presentation.pdf";
+import PresentationPDFHindi from "../../../assets/pdfs/presentationHi.pdf";
+import PresentationPDFPt from "../../../assets/pdfs/presentationPt.pdf";
 
 import Preloader from "../../Common/Preloader";
 import ModalRegister from "../ModalRegister/ModalRegister";
@@ -64,7 +66,7 @@ import { useTranslation } from "react-i18next";
 
 const MainSection = ({ data, loadingData, totals }) => {
   const dispatch = useDispatch();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const params = useParams();
   const navigate = useNavigate();
@@ -389,7 +391,16 @@ const MainSection = ({ data, loadingData, totals }) => {
       </section>
       <section className="info-project-section">
         <div className="info-project-section__presentation">
-          <a href={PresentationPDF} target="_blank">
+          <a
+            href={
+              i18n.language === "EN"
+                ? PresentationPDF
+                : i18n.language === "HI"
+                ? PresentationPDFHindi
+                : PresentationPDFPt
+            }
+            target="_blank"
+          >
             {t("landing:check-pdf")}
           </a>
         </div>

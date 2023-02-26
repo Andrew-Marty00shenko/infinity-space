@@ -73,6 +73,10 @@ import contactsHi from "../../translations/hi/contactsHindi.json";
 import contactsEn from "../../translations/en/contactsEn.json";
 import contactsPt from "../../translations/pt/contactsPt.json";
 
+import privacyPolicyHi from "../../translations/hi/privacyPolicyHindi.json";
+import privacyPolicyEn from "../../translations/en/privacyPolicyEn.json";
+import privacyPolicyPt from "../../translations/pt/privacyPolicyPt.json";
+
 const resources = {
   HI: {
     landing: landingHi,
@@ -93,6 +97,7 @@ const resources = {
     airdrop: airdropHi,
     levels: levelsHi,
     contacts: contactsHi,
+    privacyPolicy: privacyPolicyHi,
   },
   EN: {
     landing: landingEn,
@@ -113,6 +118,7 @@ const resources = {
     airdrop: airdropEn,
     levels: levelsEn,
     contacts: contactsEn,
+    privacyPolicy: privacyPolicyEn,
   },
   PT: {
     landing: landingPt,
@@ -133,6 +139,7 @@ const resources = {
     airdrop: airdropPt,
     levels: levelsPt,
     contacts: contactsPt,
+    privacyPolicy: privacyPolicyPt,
   },
 };
 
