@@ -38,7 +38,7 @@ const PrivacyPolicyModal = ({ show, setShow }) => {
 
       <div className="update">
         {t("privacyPolicy:updated")}
-        <div>12/09/2022</div>
+        <div>27/02/2023</div>
       </div>
 
       <div className="text">

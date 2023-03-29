@@ -286,7 +286,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
             {t("sidebar:contact-us")}
           </li>
         </Link>
-        <Link to="/dashboard/airdrop" onClick={() => setShowSidebar(false)}>
+        {/* <Link to="/dashboard/airdrop" onClick={() => setShowSidebar(false)}>
           <li
             className={classNames({
               active: location.pathname === "/dashboard/airdrop",
@@ -309,7 +309,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
 
             {t("sidebar:airdrop")}
           </li>
-        </Link>
+        </Link> */}
         {/* <Link to="/dashboard/web3-academy" onClick={() => setShowSidebar(false)}>
                 <li className={classNames({ "active": location.pathname === "/dashboard/web3-academy" })}>
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
