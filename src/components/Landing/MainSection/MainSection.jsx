@@ -59,8 +59,6 @@ import PolygonWebp from "../../../assets/images/img/polygon.webp";
 import CircleLight from "../../../assets/images/img/circle-light.png";
 import CircleLightWebp from "../../../assets/images/img/circle-light.webp";
 
-import LogoAnimation from "../../../assets/animation/logoAnimation.gif";
-
 import "./MainSection.scss";
 import { useTranslation } from "react-i18next";
 
@@ -352,11 +350,6 @@ const MainSection = ({ data, loadingData, totals }) => {
           </div>
         </div>
         <div className="main-section__content">
-          <div className="animation-logo">
-            <img src={LogoAnimation} alt="logo" />
-            <p> Infinity Space</p>
-          </div>
-
           <h1>
             <span>{t("landing:title-small")}</span>
             <br />

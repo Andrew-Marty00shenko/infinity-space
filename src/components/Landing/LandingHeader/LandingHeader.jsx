@@ -9,14 +9,17 @@ import { loginUser } from "../../../redux/slices/userSlice";
 import { connectWallet } from "../../../utils/contract/contract";
 import ModalRegister from "../ModalRegister/ModalRegister";
 
+import LogoAnimation from "../../../assets/animation/logoAnimation.gif";
 import EnIcon from "../../../assets/images/en.svg";
 import HiIcon from "../../../assets/images/hi.svg";
 import PtIcon from "../../../assets/images/pt.svg";
 import BrIcon from "../../../assets/images/br.svg";
 import Logo from "../../../assets/images/logo.png";
+import burgerIcon from "../../../assets/images/burger.svg";
 
 import "./LandingHeader.scss";
 import classNames from "classnames";
+import useBreakpoint from "../../../hooks/useBreakpoints";
 
 const languages = [
   {
@@ -25,24 +28,24 @@ const languages = [
     abr: "EN",
     icon: EnIcon,
   },
-  {
-    id: 2,
-    name: "हिंदी",
-    abr: "HI",
-    icon: HiIcon,
-  },
-  {
-    id: 3,
-    name: "Português",
-    abr: "PT",
-    icon: PtIcon,
-  },
-  {
-    id: 4,
-    name: "Brasil",
-    abr: "PT",
-    icon: BrIcon,
-  },
+  // {
+  //   id: 2,
+  //   name: "हिंदी",
+  //   abr: "HI",
+  //   icon: HiIcon,
+  // },
+  // {
+  //   id: 3,
+  //   name: "Português",
+  //   abr: "PT",
+  //   icon: PtIcon,
+  // },
+  // {
+  //   id: 4,
+  //   name: "Brasil",
+  //   abr: "PT",
+  //   icon: BrIcon,
+  // },
   // {
   //     id: 3,
   //     name: 'Український',
@@ -67,8 +70,8 @@ const LandingHeader = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
+  const breakpoint = useBreakpoint();
 
-  const [windowWidth, setWindowWidth] = useState();
   const [searchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [showModalRegister, setShowModalRegister] = useState(false);
@@ -89,10 +92,6 @@ const LandingHeader = () => {
       abr: languages[indexLanguage]?.abr,
       icon: languages[indexLanguage]?.icon,
     });
-  }, []);
-
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
   }, []);
 
   useEffect(() => {
@@ -137,28 +136,27 @@ const LandingHeader = () => {
 
   return (
     <header className="landing-header">
+      <div className="landing-header__top">
+        <span>SPACE CLUB</span>
+        <span>
+          {breakpoint === "0"
+            ? "0xB1Bc72..4E0dbf"
+            : "0xB1Bc72552418418a2e0D098D00E6C72e674E0dbf"}{" "}
+        </span>
+      </div>
+
       <div className="landing-header__block">
-        <div className="landing-header__logo">
-          <img src={Logo} alt="logo" />
-          Infinity Space
+        <div className="animation-logo">
+          <img src={LogoAnimation} alt="logo" />
+          <p>SPACE CLUB</p>
         </div>
         <div className="landing-header__block-info">
-          {location.pathname === "/" ? (
-            <>
-              <p>{t("header:header_comunity")}</p>
-              <div className="contract-info">
-                Infinity Space
-                <span>
-                  <a
-                    href="https://bscscan.com/address/0xB1Bc72552418418a2e0D098D00E6C72e674E0dbf"
-                    target="_blank"
-                  >
-                    0xB1Bc...0dbf
-                  </a>
-                </span>
-              </div>
-            </>
-          ) : null}
+          <a
+            href="https://bscscan.com/address/0xB1Bc72552418418a2e0D098D00E6C72e674E0dbf"
+            target="_blank"
+          >
+            {t("header:header_comunity")}
+          </a>
         </div>
         <div className="landing-header__block-login-btns">
           <div
@@ -166,7 +164,9 @@ const LandingHeader = () => {
             onClick={() => setOpenLanguagesMenu(!openLanguagesMenu)}
           >
             <img src={activeLanguage.icon} alt="" />
-            {windowWidth > 690 ? activeLanguage.name : " "}
+            {breakpoint > 0
+              ? activeLanguage.name
+              : activeLanguage.name.slice(0, 3).toLocaleUpperCase()}
             <svg
               width="10"
               height="7"
@@ -184,11 +184,19 @@ const LandingHeader = () => {
             </svg>
           </div>
 
-          <Link to="/">
+          <div className="block-btns">
             <button onClick={handleClickConnectWallet} disabled={loading}>
-              {loading ? t("global:loading") : t("header:header_connect_btn")}
+              Log in
             </button>
-          </Link>
+
+            <button onClick={handleClickConnectWallet} disabled={loading}>
+              Sign up
+            </button>
+          </div>
+
+          <div className="block-burger">
+            <img src={burgerIcon} alt="burger" />
+          </div>
 
           {openLanguagesMenu && (
             <ul className="languages__menu">
