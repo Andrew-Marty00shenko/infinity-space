@@ -17,80 +17,92 @@ import View from "../../components/Landing/View/View";
 import NotFound from "../NotFound/NotFound";
 
 import "./Landing.scss";
+import BenefitsSection from "../../components/Landing/BenefitsSection/BenefitsSection";
 
 const Landing = () => {
-    const [data, setData] = useState({
-        totalUsers: 0,
-        totalProfit: 0,
-    });
-    const [loadingData, setLoadingData] = useState(true);
-    const [totals, setTotals] = useState({
-        joinedAtLatestDay: 0,
-        profitAtLatestDay: 0,
-        transactionsAtLatestDay: 0,
-    });
+  const [data, setData] = useState({
+    totalUsers: 0,
+    totalProfit: 0,
+  });
+  const [loadingData, setLoadingData] = useState(true);
+  const [totals, setTotals] = useState({
+    joinedAtLatestDay: 0,
+    profitAtLatestDay: 0,
+    transactionsAtLatestDay: 0,
+  });
 
-    useEffect(() => {
-        contract.methods
-            .getGlobals()
-            .call()
-            .then(res => {
-                setData({
-                    totalUsers: res[0],
-                    totalProfit: res[1]
-                });
-                setLoadingData(false);
-            });
-    }, []);
+  useEffect(() => {
+    contract.methods
+      .getGlobals()
+      .call()
+      .then((res) => {
+        setData({
+          totalUsers: res[0],
+          totalProfit: res[1],
+        });
+        setLoadingData(false);
+      });
+  }, []);
 
-    useEffect(() => {
-        apiTotalInfo.getTotals()
-            .then(({ data }) => {
-                setTotals({
-                    joinedAtLatestDay: data.joinedAtLatestDay,
-                    profitAtLatestDay: data.profitAtLatestDay,
-                    transactionsAtLatestDay: data.transactionsAtLatestDay,
-                });
-            })
-            .catch(err => console.log(err));
-    }, []);
+  useEffect(() => {
+    apiTotalInfo
+      .getTotals()
+      .then(({ data }) => {
+        setTotals({
+          joinedAtLatestDay: data.joinedAtLatestDay,
+          profitAtLatestDay: data.profitAtLatestDay,
+          transactionsAtLatestDay: data.transactionsAtLatestDay,
+        });
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
-    return <div className="landing">
-        <LandingHeader />
-        <Routes>
-            <Route path="/" element={<>
-                <MainSection
-                    data={data}
-                    loadingData={loadingData}
-                    totals={totals}
-                />
-                <ContractAddressSection />
-                <SliderSection />
-                <DashboardSection />
-                <FaqSection />
-                <SocialLinkSection />
-            </>}
-            />
-            <Route path="/:id" element={<>
-                <MainSection
-                    data={data}
-                    loadingData={loadingData}
-                    totals={totals}
-                />
-                <ContractAddressSection />
-                <SliderSection />
-                <DashboardSection />
-                <FaqSection />
-                <SocialLinkSection />
-            </>}
-            />
-            <Route path="/view" element={<View />} />
-            <Route path="/404" element={<NotFound />} />
-            <Route path="*" element={<Navigate to="/404" replace />} />
-        </Routes>
-        <LandingFooter />
-
+  return (
+    <div className="landing">
+      <LandingHeader />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <MainSection
+                data={data}
+                loadingData={loadingData}
+                totals={totals}
+              />
+              <BenefitsSection />
+              <ContractAddressSection />
+              <SliderSection />
+              <DashboardSection />
+              <FaqSection />
+              <SocialLinkSection />
+            </>
+          }
+        />
+        <Route
+          path="/:id"
+          element={
+            <>
+              <MainSection
+                data={data}
+                loadingData={loadingData}
+                totals={totals}
+              />
+              <ContractAddressSection />
+              <SliderSection />
+              <DashboardSection />
+              <FaqSection />
+              <SocialLinkSection />
+            </>
+          }
+        />
+        <Route path="/view" element={<View />} />
+        <Route path="/404" element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/404" replace />} />
+      </Routes>
+      <LandingFooter />
     </div>
+  );
 };
 
 export default Landing;

@@ -128,8 +128,14 @@ const MainSection = ({ data, loadingData, totals }) => {
           </div>
         </div>
       </section>
+    </>
+  );
+};
 
-      <section className="info-project-section">
+export default MainSection;
+
+{
+  /* <section className="info-project-section">
         <div className="info-project-section__presentation">
           <a
             href={
@@ -204,61 +210,57 @@ const MainSection = ({ data, loadingData, totals }) => {
             <div className="result-block">
               <div>
                 <p className="result-block__top-text">{data.totalUsers}</p>
-                {/* <div>+ {totals.joinedAtLatestDay}</div> */}
-              </div>
-              <p className="result-block__bottom-text">
-                {t("landing:quantity-users")}
-              </p>
-            </div>
-            <div className="result-block">
-              <div>
-                <p className="result-block__top-text">
-                  {Math.ceil(data.totalProfit / 1e18).toLocaleString("ru")} $
-                </p>
-                {/* <div>+ {(totals.profitAtLatestDay / 1e18).toLocaleString()}</div> */}
-              </div>
-              <p className="result-block__bottom-text">
-                {t("landing:total-result")}
-              </p>
-            </div>
+                {/* <div>+ {totals.joinedAtLatestDay}</div> */
+}
+//   </div>
+//   <p className="result-block__bottom-text">
+//     {t("landing:quantity-users")}
+//   </p>
+// </div>
+// <div className="result-block">
+//   <div>
+//     <p className="result-block__top-text">
+//       {Math.ceil(data.totalProfit / 1e18).toLocaleString("ru")} $
+//     </p>
+//     {/* <div>+ {(totals.profitAtLatestDay / 1e18).toLocaleString()}</div> */}
+//   </div>
+//   <p className="result-block__bottom-text">
+//     {t("landing:total-result")}
+//   </p>
+// </div>
 
-            <div className="result-block__mobile">
-              <div>
-                <div>
-                  <p className="result-block__mobile__top-text">
-                    {data.totalUsers}
-                  </p>
-                  {/* <div> + {totals.joinedAtLatestDay}</div> */}
-                </div>
-                <p className="result-block__mobile__bottom-text">
-                  {t("landing:quantity-users")}
-                </p>
-              </div>
-              <div>
-                <div>
-                  <p className="result-block__mobile__top-text">
-                    {Math.ceil(data.totalProfit / 1e18).toLocaleString("ru")}{" "}
-                    BUSD
-                  </p>
-                  {/* <div>+ {(totals.profitAtLatestDay / 1e18).toLocaleString()}</div> */}
-                </div>
-                <p className="result-block__mobile__bottom-text">
-                  {t("landing:total-result")}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+//     <div className="result-block__mobile">
+//       <div>
+//         <div>
+//           <p className="result-block__mobile__top-text">
+//             {data.totalUsers}
+//           </p>
+//           {/* <div> + {totals.joinedAtLatestDay}</div> */}
+//         </div>
+//         <p className="result-block__mobile__bottom-text">
+//           {t("landing:quantity-users")}
+//         </p>
+//       </div>
+//       <div>
+//         <div>
+//           <p className="result-block__mobile__top-text">
+//             {Math.ceil(data.totalProfit / 1e18).toLocaleString("ru")}{" "}
+//             BUSD
+//           </p>
+//           {/* <div>+ {(totals.profitAtLatestDay / 1e18).toLocaleString()}</div> */}
+//         </div>
+//         <p className="result-block__mobile__bottom-text">
+//           {t("landing:total-result")}
+//         </p>
+//       </div>
+//     </div>
+//   </div>
+// </div>
 
-        <ModalRegister
-          showModalRegister={showModalRegister}
-          setShowModalRegister={setShowModalRegister}
-          uplineId={uplineId}
-          setUplineId={setUplineId}
-        />
-      </section>
-    </>
-  );
-};
-
-export default MainSection;
+//   <ModalRegister
+//     showModalRegister={showModalRegister}
+//     setShowModalRegister={setShowModalRegister}
+//     uplineId={uplineId}
+//     setUplineId={setUplineId}
+//   />
+// </section> */}
