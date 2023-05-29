@@ -20,6 +20,7 @@ import "./Landing.scss";
 import BenefitsSection from "../../components/Landing/BenefitsSection/BenefitsSection";
 import CardsSection from "../../components/Landing/CardsSection/CardsSection";
 import ProjectSection from "../../components/Landing/ProjectSection/ProjectSection";
+import ResultsSection from "../../components/Landing/ResultsSection/ResultsSection";
 
 const Landing = () => {
   const [data, setData] = useState({
@@ -75,6 +76,7 @@ const Landing = () => {
               <BenefitsSection />
               <CardsSection />
               <ProjectSection />
+              <ResultsSection />
               <ContractAddressSection />
               <SliderSection />
               <DashboardSection />
