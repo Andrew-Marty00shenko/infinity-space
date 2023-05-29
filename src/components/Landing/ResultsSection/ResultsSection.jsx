@@ -4,8 +4,11 @@ import SideSplash from "../../../assets/images/results-section/side-splass.png";
 import SideCircle from "../../../assets/images/results-section/circle.png";
 import Moon from "../../../assets/images/results-section/moon.png";
 import Blur from "../../../assets/images/results-section/blur.png";
+import useBreakpoint from "../../../hooks/useBreakpoints";
 
 const ResultsSection = () => {
+  const breakpoint = useBreakpoint();
+
   return (
     <section className="results-section">
       <div className="gradient"></div>
@@ -44,6 +47,17 @@ const ResultsSection = () => {
           </div>
           <span>+ 392</span>
         </div>
+      </div>
+
+      <div className="results-section__contract">
+        <span>
+          {breakpoint === "0" ? "SPACE CLUB:" : "SPACE CLUB contract:"}
+        </span>
+        <p>
+          {breakpoint === "0"
+            ? "0x5acc84a3..f00fFB97"
+            : "0x5acc84a3e955Bdd76467d3348077d003f00fFB97"}
+        </p>
       </div>
     </section>
   );
