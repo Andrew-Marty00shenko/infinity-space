@@ -1,0 +1,177 @@
+.project-section {
+  background-image: url("../../../assets/images/project-section/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 99px;
+  background-attachment: fixed;
+
+  h2 {
+    text-align: center;
+    font-family: "Proxima Nova", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 52px;
+    padding-top: 54px;
+  }
+
+  p {
+    margin: 18px auto;
+    max-width: 745px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+    color: #bfbfc1;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+
+    button {
+      width: 150px;
+      height: 54px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      margin-top: 27px;
+
+      &:nth-child(1) {
+        margin-right: 9px;
+        background: linear-gradient(
+          90deg,
+          #247bfe 0%,
+          #4e79fe 6.25%,
+          #6676fe 12.5%,
+          #7974fe 18.75%,
+          #8972fe 25%,
+          #976ffe 31.25%,
+          #a36dfe 37.5%,
+          #ae6afe 43.75%,
+          #b967ff 50%,
+          #c264ff 56.25%,
+          #cb61ff 62.5%,
+          #d45eff 68.75%,
+          #dc5bff 75%,
+          #e458ff 81.25%,
+          #eb54ff 87.5%,
+          #f251ff 93.75%,
+          #f94dff 100%
+        );
+        box-shadow: 10px -14px 36px rgba(240, 83, 255, 0.33),
+          -15px 9px 32px rgba(107, 70, 255, 0.6);
+      }
+
+      &:nth-child(2) {
+        background: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+  &__blocks {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+
+    .block {
+      background: rgba(251, 38, 255, 0.05);
+      border: 1px solid rgba(113, 104, 220, 0.5);
+      backdrop-filter: blur(45px);
+      border-radius: 16px;
+      padding: 28px 24px;
+      width: 389px;
+      height: 267px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0px 10px;
+
+      &:nth-child(1) {
+        margin-top: 100px;
+      }
+
+      &:nth-child(3) {
+        margin-top: 100px;
+      }
+
+      h4 {
+        font-family: "Proxima Nova", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 32px;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: left;
+        color: #bfbfc1;
+      }
+
+      span {
+        font-family: "Proxima Nova", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        color: #947cdf;
+
+        svg {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 690px) {
+  .project-section {
+    background-image: url("../../../assets/images/project-section/mobile-background.jpg");
+    background-attachment: inherit;
+
+    h2 {
+      font-size: 24px;
+      line-height: 32px;
+      text-align: left;
+      margin-left: 15px;
+      padding-top: 32px;
+    }
+
+    p {
+      margin-top: 12px;
+      margin-left: 15px;
+      font-size: 15px;
+      line-height: 24px;
+      text-align: left;
+    }
+
+    &__blocks {
+      flex-direction: column;
+      align-items: center;
+      padding: 0px 15px;
+      margin-top: 20px;
+
+      .block {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 20px 15px;
+
+        p {
+          margin-left: 0;
+        }
+
+        &:nth-child(1) {
+          margin-top: 0px;
+        }
+
+        &:nth-child(3) {
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,8 @@
 .cards-section {
   background-image: url("../../../assets/images/cards-section/background.jpg");
   background-size: cover;
-  //   background-attachment: fixed;
+  background-attachment: fixed;
   position: relative;
-  //   height: 918px;
 
   .moon {
     position: absolute;
@@ -352,6 +351,7 @@
     &__buy {
       width: 90%;
       margin: 50px auto;
+      margin-bottom: 0 !important;
       height: 202px;
       border-radius: 24px;
       flex-direction: column;
@@ -388,6 +388,7 @@
 
 @media (max-width: 690px) {
   .cards-section {
+    background-attachment: initial;
     .moon-2 {
       display: none;
     }
