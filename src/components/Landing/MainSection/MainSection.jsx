@@ -55,23 +55,13 @@ const MainSection = ({ data, loadingData, totals }) => {
     }
   }, []);
 
-  // useEffect(() => {
-  //   if (window.innerWidth > 768) {
-  //     var scene1 = document.querySelector(".js-parallax");
-  //     var scene2 = document.querySelector(".js-parallax-1");
-  //     var scene3 = document.querySelector(".js-parallax-2");
+  useEffect(() => {
+    var scene1 = document.querySelector(".main-section__content-images");
 
-  //     new Parallax(scene1, {
-  //       selector: ".layer",
-  //     });
-  //     new Parallax(scene2, {
-  //       selector: ".layer",
-  //     });
-  //     new Parallax(scene3, {
-  //       selector: ".layer",
-  //     });
-  //   }
-  // }, []);
+    new Parallax(scene1, {
+      selector: ".layer",
+    });
+  }, []);
 
   const handleClickConnectWallet = async () => {
     if (window.web3) {
@@ -123,7 +113,12 @@ const MainSection = ({ data, loadingData, totals }) => {
               src={MainImageBackround}
               alt=""
             />
-            <img className="main-image" src={MainImage} alt="" />
+            <img
+              data-depth="0.4"
+              className="layer main-image"
+              src={MainImage}
+              alt=""
+            />
             <div className="bot-circle"></div>
           </div>
         </div>
