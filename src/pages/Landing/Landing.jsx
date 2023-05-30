@@ -7,7 +7,6 @@ import apiTotalInfo from "../../api/apiServer/apiTotalInfo";
 
 import LandingHeader from "../../components/Landing/LandingHeader/LandingHeader";
 import MainSection from "../../components/Landing/MainSection/MainSection";
-import ContractAddressSection from "../../components/Landing/ContractAddressSection/ContractAddressSection";
 import SliderSection from "../../components/Landing/SliderSection/SliderSection";
 import DashboardSection from "../../components/Landing/DashboardSection/DashboardSection";
 import FaqSection from "../../components/Landing/FaqSection/FaqSection";
@@ -77,9 +76,8 @@ const Landing = () => {
               <CardsSection />
               <ProjectSection />
               <ResultsSection />
-              <ContractAddressSection />
               <SliderSection />
-              <DashboardSection />
+              {/* <DashboardSection /> */}
               <FaqSection />
               <SocialLinkSection />
             </>
@@ -94,7 +92,6 @@ const Landing = () => {
                 loadingData={loadingData}
                 totals={totals}
               />
-              <ContractAddressSection />
               <SliderSection />
               <DashboardSection />
               <FaqSection />
