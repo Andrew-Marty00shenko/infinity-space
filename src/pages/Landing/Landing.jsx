@@ -77,7 +77,7 @@ const Landing = () => {
               <ProjectSection />
               <ResultsSection />
               <SliderSection />
-              {/* <DashboardSection /> */}
+              <DashboardSection />
               <FaqSection />
               <SocialLinkSection />
             </>
