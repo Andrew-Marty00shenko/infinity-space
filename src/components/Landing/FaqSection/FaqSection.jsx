@@ -1,6 +1,9 @@
 import { Accordion } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
+import CircleBig from "../../../assets/images/faq-section/circle-big.png";
+import CircleSmall from "../../../assets/images/faq-section/circle-small.png";
+
 import "./FaqSection.scss";
 
 const FaqSection = () => {
@@ -8,8 +11,22 @@ const FaqSection = () => {
 
   return (
     <section className="faq-section">
-      <h2>{t("faq:title")}</h2>
-      <p>{t("faq:text")}</p>
+      <div className="gradient-side left"></div>
+      <div className="gradient-side right"></div>
+      <div className="gradient-top"></div>
+      <div className="faq-section__title">
+        <h2>FAQ</h2>
+        <p>
+          If you have any questions, you may find the answer below. If not, you
+          can contact support and ask your question
+        </p>
+      </div>
+
+      <div className="faq-section__accordion">
+        <img className="circle-big" src={CircleBig} alt="" />
+        <img className="circle-small" src={CircleSmall} alt="" />
+      </div>
+
       <Accordion>
         <Accordion.Item eventKey="0">
           <Accordion.Header> {t("faq:q-1")}</Accordion.Header>
