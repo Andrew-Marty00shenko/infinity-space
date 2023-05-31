@@ -4,6 +4,7 @@ import PrivacyPolicyModal from "../PrivacyPolicyModal/PrivacyPolicyModal";
 
 import Logo from "../../../assets/images/logo.png";
 import QrCode from "../../../assets/images/qr-code.png";
+import LogoAnimation from "../../../assets/animation/logoAnimation.gif";
 
 import "./LandingFooter.scss";
 import { useTranslation } from "react-i18next";
@@ -17,12 +18,13 @@ const LandingFooter = () => {
     <footer className="landing-footer">
       <div className="landing-footer__top">
         <div className="block__logo">
-          <img src={QrCode} alt="logo" />
+          <img src={LogoAnimation} alt="logo" />
+          <p>SPACE CLUB</p>
         </div>
 
         <div className="info">
           <div className="info-contract">
-            Infinity Space
+            SPACE CLUB
             <span>
               <a
                 href="https://bscscan.com/address/0xB1Bc72552418418a2e0D098D00E6C72e674E0dbf"
@@ -80,7 +82,7 @@ const LandingFooter = () => {
       </div>
       <div className="landing-footer__line">
         <div>
-          Infinity Space
+          SPACE CLUB
           <span>
             <a
               href="https://bscscan.com/address/0xB1Bc72552418418a2e0D098D00E6C72e674E0dbf"
@@ -94,9 +96,7 @@ const LandingFooter = () => {
       <div className="landing-footer__bottom">
         <p>© 2023 {t("footer:all-rights-reserved")}</p>
         <div className="info">
-          {/* <a href="">
-                    Terms Of Use
-                </a> */}
+          <a href="">Terms Of Use</a>
           <span onClick={() => setShow(true)}>
             {t("footer:privacy-policy")}
           </span>
