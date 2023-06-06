@@ -2,8 +2,6 @@ import { useState } from "react";
 
 import PrivacyPolicyModal from "../PrivacyPolicyModal/PrivacyPolicyModal";
 
-import Logo from "../../../assets/images/logo.png";
-import QrCode from "../../../assets/images/qr-code.png";
 import LogoAnimation from "../../../assets/animation/logoAnimation.gif";
 
 import "./LandingFooter.scss";

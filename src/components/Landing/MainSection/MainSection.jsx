@@ -9,16 +9,8 @@ import { isWebpSupported } from "react-image-webp/dist/utils";
 import { loginUser } from "../../../redux/slices/userSlice";
 import { connectWallet } from "../../../utils/contract/contract";
 
-import PresentationPDF from "../../../assets/pdfs/presentation.pdf";
-import PresentationPDFHindi from "../../../assets/pdfs/presentationHi.pdf";
-import PresentationPDFPt from "../../../assets/pdfs/presentationPt.pdf";
-
 import Preloader from "../../Common/Preloader";
 import ModalRegister from "../ModalRegister/ModalRegister";
-
-import ChainImg from "../../../assets/images/chain.png";
-import CryptoCurrencyImg from "../../../assets/images/cryptocurrency.png";
-import SmartContractImg from "../../../assets/images/smart-contract.png";
 
 import MainImage from "../../../assets/images/main-section/main.png";
 import MainImageBackround from "../../../assets/images/main-section/main-image-background.png";
@@ -28,6 +20,7 @@ import BotCirlcle2 from "../../../assets/images/main-section/bot-2-circle.png";
 
 import "./MainSection.scss";
 import { useTranslation } from "react-i18next";
+import { Fade } from "react-awesome-reveal";
 
 const MainSection = ({ data, loadingData, totals }) => {
   const dispatch = useDispatch();
@@ -94,8 +87,15 @@ const MainSection = ({ data, loadingData, totals }) => {
 
         <div className="main-section__content">
           <h1>
-            Worldwide DeFi platform <br /> for making money
+            <Fade cascade triggerOnce damping={0.1}>
+              Worldwide DeFi platform
+            </Fade>{" "}
+            <br />{" "}
+            <Fade cascade damping={0.1} triggerOnce>
+              for making money
+            </Fade>
           </h1>
+
           <h2>
             Powerful marketing based on smart contract
             <br /> technology gives unlimited possibilities

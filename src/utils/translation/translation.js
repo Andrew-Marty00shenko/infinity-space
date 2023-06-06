@@ -61,10 +61,6 @@ import presentationHi from "../../translations/hi/presentationHindi.json";
 import presentationEn from "../../translations/en/presentationEn.json";
 import presentationPt from "../../translations/pt/presentationPt.json";
 
-import airdropHi from "../../translations/hi/airdropHindi.json";
-import airdropEn from "../../translations/en/airdropEn.json";
-import airdropPt from "../../translations/pt/airdropPt.json";
-
 import levelsHi from "../../translations/hi/levelsHi.json";
 import levelsEn from "../../translations/en/levelsEn.json";
 import levelsPt from "../../translations/pt/levelsPt.json";
@@ -94,7 +90,6 @@ const resources = {
     links: linksHi,
     stats: statsHi,
     presentation: presentationHi,
-    airdrop: airdropHi,
     levels: levelsHi,
     contacts: contactsHi,
     privacyPolicy: privacyPolicyHi,
@@ -115,7 +110,6 @@ const resources = {
     links: linksEn,
     stats: statsEn,
     presentation: presentationEn,
-    airdrop: airdropEn,
     levels: levelsEn,
     contacts: contactsEn,
     privacyPolicy: privacyPolicyEn,
@@ -136,7 +130,6 @@ const resources = {
     links: linksPt,
     stats: statsPt,
     presentation: presentationPt,
-    airdrop: airdropPt,
     levels: levelsPt,
     contacts: contactsPt,
     privacyPolicy: privacyPolicyPt,

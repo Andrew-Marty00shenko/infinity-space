@@ -6,16 +6,16 @@ import { useEffect } from "react";
 import { setWallet } from "../redux/slices/userSlice";
 
 const Routes = () => {
-    const dispatch = useDispatch();
-    const wallet = useSelector(state => state.user.wallet);
+  const dispatch = useDispatch();
+  const wallet = useSelector((state) => state.user.wallet);
 
-    useEffect(() => {
-        if (localStorage.getItem("wallet_signed") !== null) {
-            dispatch(setWallet(localStorage.getItem("wallet_signed")));
-        };
-    }, [wallet]);
+  useEffect(() => {
+    if (localStorage.getItem("wallet_signed") !== null) {
+      dispatch(setWallet(localStorage.getItem("wallet_signed")));
+    }
+  }, [wallet]);
 
-    return wallet !== null ? <Private /> : <Public />
-}
+  return wallet !== null ? <Private /> : <Public />;
+};
 
 export default Routes;

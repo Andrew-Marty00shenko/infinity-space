@@ -14,7 +14,6 @@ import EnIcon from "../../../assets/images/en.svg";
 import HiIcon from "../../../assets/images/hi.svg";
 import PtIcon from "../../../assets/images/pt.svg";
 import BrIcon from "../../../assets/images/br.svg";
-import Logo from "../../../assets/images/logo.png";
 import burgerIcon from "../../../assets/images/burger.svg";
 
 import "./LandingHeader.scss";

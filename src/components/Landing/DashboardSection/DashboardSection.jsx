@@ -13,13 +13,6 @@ import Bnb from "../../../assets/images/dashboard-section/bnb.png";
 
 import ModalRegister from "../ModalRegister/ModalRegister";
 
-import DashboardLaptop from "../../../assets/images/laptop-desktop.png";
-import DashboardLaptopWebp from "../../../assets/images/laptop-desktop.webp";
-import DashboardLaptopopTablet from "../../../assets/images/dashboard-laptop-tablet.png";
-import DashboardLaptopopTabletWebp from "../../../assets/images/dashboard-laptop-tablet.webp";
-import DashboardLaptopopMobile from "../../../assets/images/mobile-laptop.png";
-import DashboardLaptopopMobileWebp from "../../../assets/images/mobile-laptop.webp";
-
 import "./DashboardSection.scss";
 import { useTranslation } from "react-i18next";
 
