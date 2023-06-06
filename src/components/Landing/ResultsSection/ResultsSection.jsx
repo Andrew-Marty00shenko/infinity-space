@@ -5,6 +5,7 @@ import SideCircle from "../../../assets/images/results-section/circle.png";
 import Moon from "../../../assets/images/results-section/moon.png";
 import Blur from "../../../assets/images/results-section/blur.png";
 import useBreakpoint from "../../../hooks/useBreakpoints";
+import { Fade } from "react-awesome-reveal";
 
 const ResultsSection = () => {
   const breakpoint = useBreakpoint();
@@ -21,7 +22,11 @@ const ResultsSection = () => {
 
       <div className="results-section__title">
         <h4>RESULTS</h4>
-        <h2>User earnings</h2>
+        <h2>
+          <Fade cascade triggerOnce damping={0.1}>
+            User earnings
+          </Fade>
+        </h2>
         <p>
           Statistics are retrieved from the blockchain and displayed in real
           time

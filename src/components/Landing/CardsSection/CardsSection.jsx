@@ -17,7 +17,12 @@ const CardsSection = () => {
       <div className="gradient-top"></div>
       <div className="cards-section__title">
         <h3>CARDS</h3>
-        <h2>Select your type of card </h2>
+
+        <h2>
+          <Fade cascade triggerOnce damping={0.1}>
+            Select your type of card
+          </Fade>
+        </h2>
         <p>
           Our project is a web 3.0 platform that combines blockchain,
           cryptocurrency

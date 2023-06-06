@@ -3,11 +3,16 @@ import "./ProjectSection.scss";
 import Img1 from "../../../assets/images/project-section/im-1.png";
 import Img2 from "../../../assets/images/project-section/img-2.png";
 import Img3 from "../../../assets/images/project-section/img-3.png";
+import { Fade } from "react-awesome-reveal";
 
 const ProjectSection = () => {
   return (
     <section className="project-section">
-      <h2>Our project is a web 3.0 platform</h2>
+      <h2>
+        <Fade cascade triggerOnce damping={0.1}>
+          Our project is a web 3.0 platform
+        </Fade>
+      </h2>
       <p>
         Our project is a web 3.0 platform that combines blockchain,
         cryptocurrency, and smart contracts technologies while allowing
