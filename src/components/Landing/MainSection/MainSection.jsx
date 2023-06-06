@@ -13,7 +13,6 @@ import Preloader from "../../Common/Preloader";
 import ModalRegister from "../ModalRegister/ModalRegister";
 
 import MainImage from "../../../assets/images/main-section/main.png";
-import MainImageBackround from "../../../assets/images/main-section/main-image-background.png";
 import MainBottom from "../../../assets/images/main-section/bot-background.png";
 import BotCirlcle1 from "../../../assets/images/main-section/bot-1-circle.png";
 import BotCirlcle2 from "../../../assets/images/main-section/bot-2-circle.png";
@@ -108,11 +107,6 @@ const MainSection = ({ data, loadingData, totals }) => {
           </div>
 
           <div className="main-section__content-images">
-            <img
-              className="main-image-background"
-              src={MainImageBackround}
-              alt=""
-            />
             <img
               data-depth="0.4"
               className="layer main-image"

@@ -117,20 +117,15 @@
     }
 
     &-images {
-      margin-top: 14px;
+      margin-top: -50px;
       display: flex;
       justify-content: center;
       position: relative;
+      margin-bottom: 44px;
 
       .main-image {
         position: relative;
         z-index: 100;
-      }
-
-      .main-image-background {
-        position: absolute;
-        z-index: 0;
-        top: -205px;
       }
 
       .bot-circle {
@@ -148,6 +143,7 @@
 @media (max-width: 690px) {
   .main-section {
     background-attachment: initial;
+    background-position: center;
     &__bottom-image {
       .main-bottom-image {
         height: 120px;
@@ -158,13 +154,13 @@
       }
 
       .bot-circle-1 {
-        left: -40%;
-        bottom: -150px;
+        display: none;
       }
 
       .bot-circle-2 {
         right: -40%;
         bottom: -150px;
+        display: none;
       }
     }
 
@@ -174,7 +170,7 @@
 
       h1 {
         text-align: left;
-        font-size: 32px;
+        font-size: 30px;
         line-height: 42px;
         padding-top: 20px;
 
@@ -197,13 +193,11 @@
       }
 
       &-images {
-        .main-image {
-          width: 357px;
-        }
+        margin-top: 50px;
+        margin-bottom: 0;
 
-        .main-image-background {
-          width: 510px;
-          top: -12px;
+        .main-image {
+          width: 380px;
         }
       }
     }
