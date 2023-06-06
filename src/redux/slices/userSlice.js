@@ -5,7 +5,7 @@ import { contract } from "../../utils/contract/contract";
 import i18next from "i18next";
 
 const initialState = {
-  wallet: null,
+  wallet: "0xA88EE7aE77fA66cd61B24F8261B360a989a6686D",
   user: null,
   loading: false,
   id: null,

@@ -1,117 +1,115 @@
-.preloader{
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    overflow: hidden;
-    background-color: rgba($color: #1A1B20, $alpha: 1) ;
+.preloader {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  overflow: hidden;
+  background-color: rgba($color: #1a1b20, $alpha: 1);
 
-    &--side{
-        background-color: rgba($color: #1A1B20, $alpha: .7);
-        left: 300px;
+  &--side {
+    background-color: rgba($color: #1a1b20, $alpha: 0.7);
+    left: 300px;
+  }
+
+  .circle-1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%) rotate(45deg);
+    background: linear-gradient(180deg, #ae7aff 0%, rgba(9, 93, 255, 0) 100%);
+    filter: blur(60.5px);
+    width: 461px;
+    height: 453px;
+    border-radius: 50%;
+
+    &--side {
+      transform: translate(-80%, -70%) rotate(45deg);
+    }
+  }
+
+  .circle-2 {
+    width: 797px;
+    height: 677px;
+    background: linear-gradient(180deg, #ae7aff 0%, rgba(9, 93, 255, 0) 100%);
+    filter: blur(73.5px);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -10%) rotate(33deg);
+
+    &--side {
+      transform: translate(-70%, -10%) rotate(33deg);
+    }
+  }
+
+  &__block {
+    text-align: center;
+    position: absolute;
+    top: 50%; /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%);
+
+    &--side {
+      transform: translate(-127%, -50%);
     }
 
-    .circle-1{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -70%) rotate(45deg);
-        background: linear-gradient(180deg, #6875DC 0%, rgba(9, 93, 255, 0) 100%);
-        filter: blur(60.5px);
-        width: 461px;
-        height: 453px;
-        border-radius: 50%;
-
-        &--side{
-            transform: translate(-80%, -70%) rotate(45deg);
-        }
+    svg {
+      path {
+        stroke: #cfb0ff;
+      }
     }
 
-    .circle-2{
-        width: 797px;
-        height: 677px;
-        background: linear-gradient(180deg, #6875DC 0%, rgba(9, 93, 255, 0) 100%);
-        filter: blur(73.5px);
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -10%) rotate(33deg);
-
-        &--side{
-            transform: translate(-70%, -10%) rotate(33deg)
-        }
+    p {
+      margin-top: 15px;
+      font-family: "Proxima Nova", sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 33px;
+      color: #ffffff;
+      padding-bottom: 6px;
     }
 
-    &__block{
-        text-align: center;
-        position: absolute;
-        top: 50%;  /* position the top  edge of the element at the middle of the parent */
-        left: 50%; /* position the left edge of the element at the middle of the parent */
-        transform: translate(-50%, -50%);
-
-        &--side{
-            transform: translate(-127%, -50%);
-        }
-         
-        svg{
-            path{
-                stroke: #5297FF;
-            }
-        }
-
-        p{
-            margin-top: 15px;
-            font-family: 'Proxima Nova',sans-serif;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 33px;
-            color: #FFFFFF;
-            padding-bottom: 6px;
-        }
-
-        span{
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 19px;
-        }
+    span {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
     }
+  }
 }
 
 @media (max-width: 1200px) {
-    .preloader{
-
-        &--side{
-            left: 220px;
-        }
+  .preloader {
+    &--side {
+      left: 220px;
     }
+  }
 }
 
 @media (max-width: 800px) {
-    .preloader{
-
-        &--side{
-            left: 0px;
-        }
-
-        .circle-1{
-            &--side{
-                transform: translate(-50%, -70%) rotate(45deg);
-            }
-        }
-    
-        .circle-2{
-            &--side{
-                transform: translate(-50%, -10%) rotate(33deg)
-            }
-        }
-
-        &__block{
-            &--side{
-                transform: translate(-50%, -50%);
-            }
-        }
+  .preloader {
+    &--side {
+      left: 0px;
     }
+
+    .circle-1 {
+      &--side {
+        transform: translate(-50%, -70%) rotate(45deg);
+      }
+    }
+
+    .circle-2 {
+      &--side {
+        transform: translate(-50%, -10%) rotate(33deg);
+      }
+    }
+
+    &__block {
+      &--side {
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
 }
