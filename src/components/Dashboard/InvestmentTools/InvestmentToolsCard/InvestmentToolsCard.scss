@@ -1,0 +1,157 @@
+.invest-tools-card {
+  width: 267px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 386px;
+  background: linear-gradient(
+    180deg,
+    rgba(152, 101, 255, 0.19) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(21px);
+  border-radius: 12px;
+  padding-top: 42px;
+  overflow: hidden;
+  position: relative;
+
+  .stars-background {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 0;
+  }
+
+  .gradient {
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+
+    &.left {
+      bottom: -13px;
+      left: -35px;
+      width: 160px;
+      height: 160px;
+      background: #1d5cff;
+      filter: blur(75px);
+    }
+
+    &.right {
+      bottom: 0;
+      right: -17px;
+      width: 143px;
+      height: 143px;
+      background: #9071ff;
+      filter: blur(59.5px);
+    }
+  }
+
+  .card-images {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .shadow {
+      width: 137px;
+      height: 25px;
+      background: #090a15;
+      filter: blur(16px);
+    }
+
+    .dollar {
+      position: absolute;
+      z-index: 100;
+      &.left {
+        left: 0;
+        top: 0;
+      }
+
+      &.right {
+        right: 0;
+        // bottom: 0;
+      }
+    }
+  }
+
+  .card-info {
+    position: relative;
+    z-index: 10;
+    margin: 36px 18px 0px;
+
+    h4 {
+      font-family: "Proxima Nova", sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 17px;
+      color: #bfbfc1;
+      margin-top: 6px;
+    }
+  }
+
+  .card-price {
+    position: relative;
+    z-index: 10;
+    margin: 19px 18px 0px;
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      p {
+        font-family: "Proxima Nova", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 26px;
+      }
+
+      span {
+        font-size: 14px;
+        line-height: 17px;
+        color: #bfbfc1;
+      }
+    }
+
+    button {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(
+        90deg,
+        #247bfe 0%,
+        #4e79fe 6.25%,
+        #6676fe 12.5%,
+        #7974fe 18.75%,
+        #8972fe 25%,
+        #976ffe 31.25%,
+        #a36dfe 37.5%,
+        #ae6afe 43.75%,
+        #b967ff 50%,
+        #c264ff 56.25%,
+        #cb61ff 62.5%,
+        #d45eff 68.75%,
+        #dc5bff 75%,
+        #e458ff 81.25%,
+        #eb54ff 87.5%,
+        #f251ff 93.75%,
+        #f94dff 100%
+      );
+      box-shadow: 10px -14px 36px rgba(240, 83, 255, 0.33),
+        -15px 9px 32px rgba(107, 70, 255, 0.6);
+      border-radius: 56px !important;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .invest-tools-card {
+    width: 345px;
+  }
+}
