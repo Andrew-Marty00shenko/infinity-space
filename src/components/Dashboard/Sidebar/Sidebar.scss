@@ -76,6 +76,10 @@
         &.active {
           background: rgba(255, 255, 255, 0.05);
 
+          .gradient {
+            width: 70%;
+          }
+
           svg {
             path {
               stroke: #9959ff;
@@ -91,6 +95,14 @@
           transition: all 0.3s;
           left: 0;
           background: rgba(214, 52, 255, 0.65);
+          -webkit-backface-visibility: hidden;
+          -webkit-perspective: 1000;
+          -webkit-transform: translate3d(0, 0, 0);
+          -webkit-transform: translateZ(0);
+          backface-visibility: hidden;
+          perspective: 1000;
+          transform: translate3d(0, 0, 0);
+          transform: translateZ(0);
           filter: blur(30.5px);
         }
 

@@ -9,7 +9,8 @@ import Levels from "../../components/Dashboard/Levels/Levels";
 import Level from "../../components/Dashboard/Levels/Level/Level";
 import Contacts from "../../components/Dashboard/Contacts/Contacts";
 import Presentation from "../../components/Dashboard/Presentation/Presentation";
-import Preloader from "../../components/Common/Preloader";
+import Preloader from "../../components/Common/Preloader/Preloader";
+import InvestmentTools from "../../components/Dashboard/InvestmentTools/InvestmentTools";
 
 import "./Dashboard.scss";
 
@@ -55,6 +56,10 @@ const Dashboard = () => {
         <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
         <Routes>
           <Route path="/dashboard" element={<Main />} />
+          <Route
+            path="/dashboard/investment-tools"
+            element={<InvestmentTools />}
+          />
           <Route path="/dashboard/user/levels" element={<Levels />} />
           <Route path="/dashboard/user/levels/:id" element={<Level />} />
           <Route path="/dashboard/presentation" element={<Presentation />} />

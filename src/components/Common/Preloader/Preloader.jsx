@@ -1,7 +1,7 @@
 import "./Preloader.scss";
 
 import { Player } from "@lottiefiles/react-lottie-player";
-import Animation from "../../assets/animation/animation.json";
+import Animation from "../../../assets/animation/animation.json";
 import classNames from "classnames";
 import { useTranslation } from "react-i18next";
 

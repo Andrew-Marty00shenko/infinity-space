@@ -9,7 +9,7 @@ import { isWebpSupported } from "react-image-webp/dist/utils";
 import { loginUser } from "../../../redux/slices/userSlice";
 import { connectWallet } from "../../../utils/contract/contract";
 
-import Preloader from "../../Common/Preloader";
+import Preloader from "../../Common/Preloader/Preloader";
 import ModalRegister from "../ModalRegister/ModalRegister";
 
 import MainImage from "../../../assets/images/main-section/main.png";

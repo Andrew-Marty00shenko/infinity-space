@@ -14,7 +14,7 @@ import { connectWallet } from "../../../utils/contract/contract";
 import contractAbi from "../../../utils/contract/contractAbi.json";
 import contractBUSDAbi from "../../../utils/contract/contractBUSDAbi.json";
 
-import Preloader from "../../Common/Preloader";
+import Preloader from "../../Common/Preloader/Preloader";
 import AllTransactions from "../AllTransactions/AllTransactions";
 import ErrorModal from "./ErrorModal/ErrorModal";
 
