@@ -4,6 +4,7 @@ import InvestmentToolsCard from "./InvestmentToolsCard/InvestmentToolsCard";
 
 import "./InvestmentTools.scss";
 import { Col, Row } from "react-bootstrap";
+import Pagination from "../../Common/Pagination/Pagination";
 
 const sortMenu = [
   { id: 1, name: "ASC" },
@@ -167,6 +168,8 @@ const InvestmentTools = () => {
           </Col>
         </Row>
       </div>
+
+      <Pagination />
     </div>
   );
 };
