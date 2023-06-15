@@ -16,8 +16,6 @@ import "./InvestmentToolsItem.scss";
 const InvestmentTools = () => {
   const breakpoint = useBreakpoint();
 
-  console.log(breakpoint);
-
   return (
     <div className="investment-tools-item">
       <Breadcrumbs />
