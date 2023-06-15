@@ -1,0 +1,78 @@
+.login-modal {
+  .modal-content {
+    width: 375px;
+    background: #24252b;
+    box-shadow: 0px 15px 51px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 40px 40px;
+    border: 0;
+    position: relative;
+
+    svg {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .email {
+      margin-bottom: 26px;
+    }
+
+    .forgot-password {
+      margin-top: 24px;
+      color: #ffffff;
+      opacity: 0.6;
+      cursor: pointer;
+      text-align: center;
+
+      span {
+        border-bottom: 1px solid #fff;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 9px;
+
+      button {
+        width: 145px;
+        height: 52px;
+
+        &:nth-child(1) {
+          background: rgba(255, 255, 255, 0.05);
+        }
+
+        &:nth-child(2) {
+          background: linear-gradient(
+            90deg,
+            #247bfe 0%,
+            #4e79fe 6.25%,
+            #6676fe 12.5%,
+            #7974fe 18.75%,
+            #8972fe 25%,
+            #976ffe 31.25%,
+            #a36dfe 37.5%,
+            #ae6afe 43.75%,
+            #b967ff 50%,
+            #c264ff 56.25%,
+            #cb61ff 62.5%,
+            #d45eff 68.75%,
+            #dc5bff 75%,
+            #e458ff 81.25%,
+            #eb54ff 87.5%,
+            #f251ff 93.75%,
+            #f94dff 100%
+          );
+        }
+      }
+    }
+  }
+}

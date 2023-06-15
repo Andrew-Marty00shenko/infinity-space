@@ -19,6 +19,8 @@ import burgerIcon from "../../../assets/images/burger.svg";
 import "./LandingHeader.scss";
 import classNames from "classnames";
 import useBreakpoint from "../../../hooks/useBreakpoints";
+import LoginModal from "../../Modals/LoginModal/LoginModal";
+import RegisterModal from "../../Modals/RegisterModal/RegisterModal";
 
 const languages = [
   {
@@ -73,7 +75,9 @@ const LandingHeader = () => {
 
   const [searchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
+  const [showModalLogin, setShowModalLogin] = useState(false);
   const [showModalRegister, setShowModalRegister] = useState(false);
+  // const [showModalRegister, setShowModalRegister] = useState(false);
   const [uplineId, setUplineId] = useState("");
   const [activeLanguage, setActiveLanguage] = useState({
     name: "",
@@ -115,23 +119,23 @@ const LandingHeader = () => {
     setOpenLanguagesMenu(false);
   };
 
-  const handleClickConnectWallet = async () => {
-    if (window.web3) {
-      const account = await connectWallet();
-      setLoading(true);
-      if (account) {
-        dispatch(loginUser(account)).then(({ payload }) => {
-          if (!payload.response) {
-            setShowModalRegister(true);
-          }
+  // const handleClickConnectWallet = async () => {
+  //   if (window.web3) {
+  //     const account = await connectWallet();
+  //     setLoading(true);
+  //     if (account) {
+  //       dispatch(loginUser(account)).then(({ payload }) => {
+  //         if (!payload.response) {
+  //           setShowModalRegister(true);
+  //         }
 
-          setLoading(false);
-        });
-      }
-    } else {
-      toast.error(t("global:metamask-is-not"));
-    }
-  };
+  //         setLoading(false);
+  //       });
+  //     }
+  //   } else {
+  //     toast.error(t("global:metamask-is-not"));
+  //   }
+  // };
 
   return (
     <header className="landing-header">
@@ -184,11 +188,14 @@ const LandingHeader = () => {
           </div>
 
           <div className="block-btns">
-            <button onClick={handleClickConnectWallet} disabled={loading}>
+            <button onClick={() => setShowModalLogin(true)} disabled={loading}>
               Log in
             </button>
 
-            <button onClick={handleClickConnectWallet} disabled={loading}>
+            <button
+              onClick={() => setShowModalRegister(true)}
+              disabled={loading}
+            >
               Sign up
             </button>
           </div>
@@ -221,12 +228,22 @@ const LandingHeader = () => {
         </div>
       </div>
 
-      <ModalRegister
+      <LoginModal
+        modalShow={showModalLogin}
+        setModalShow={() => setShowModalLogin(false)}
+      />
+
+      <RegisterModal
+        modalShow={showModalRegister}
+        setModalShow={() => setShowModalRegister(false)}
+      />
+
+      {/* <ModalRegister
         showModalRegister={showModalRegister}
         setShowModalRegister={setShowModalRegister}
         uplineId={uplineId}
         setUplineId={setUplineId}
-      />
+      /> */}
     </header>
   );
 };
