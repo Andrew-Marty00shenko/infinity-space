@@ -1,0 +1,542 @@
+.learning-tools-item {
+  padding-left: 325px;
+  padding-right: 48px;
+  padding-bottom: 40px;
+
+  &__top {
+    margin-top: 32px;
+    position: relative;
+    max-width: 1100px;
+
+    .image {
+      position: absolute;
+      z-index: 100;
+      background: linear-gradient(
+        90deg,
+        #5a78ff 0%,
+        rgba(218, 93, 255, 0.23) 46.68%,
+        rgba(1, 21, 47, 0) 94.59%
+      );
+      filter: drop-shadow(0px 492px 197px rgba(23, 24, 28, 0.01))
+        drop-shadow(0px 277px 166px rgba(23, 24, 28, 0.05))
+        drop-shadow(0px 123px 123px rgba(23, 24, 28, 0.09))
+        drop-shadow(0px 31px 68px rgba(23, 24, 28, 0.1))
+        drop-shadow(0px 0px 0px rgba(23, 24, 28, 0.1));
+      border-radius: 35px;
+
+      img {
+        width: 1100px;
+        height: 524px;
+        border-radius: 35px;
+      }
+    }
+
+    .background-block {
+      z-index: 50;
+      position: absolute;
+      width: 1074px;
+      top: 0;
+      height: 515px;
+      background: linear-gradient(
+        74.82deg,
+        #390e4b 8.15%,
+        #441054 13%,
+        #ff37e9 95.08%
+      );
+      box-shadow: 0px 71px 75px rgba(0, 0, 0, 0.25);
+      border-radius: 35px;
+      transform: rotate(-4.71deg);
+    }
+
+    &-block {
+      padding-top: 255px;
+      padding-left: 46px;
+      position: relative;
+      z-index: 150;
+
+      .block-image {
+        display: flex;
+        align-items: center;
+
+        div {
+          margin-top: 15px;
+
+          p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #bfbfc1;
+            padding-bottom: 8px;
+          }
+
+          span {
+            font-family: "Proxima Nova", sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            color: #ffffff;
+          }
+        }
+      }
+
+      h2 {
+        max-width: 570px;
+        font-family: "Proxima Nova", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 40px;
+      }
+
+      p {
+        max-width: 530px;
+        margin-top: 23px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #bfbfc1;
+      }
+
+      .block-invest {
+        display: flex;
+        flex-direction: column;
+        padding: 26px;
+        position: absolute;
+        top: 402px;
+        right: 60px;
+        z-index: 150;
+        width: 366px;
+        height: 500px;
+        background: rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(45px);
+        border-radius: 16px;
+
+        span {
+          font-size: 14px;
+          line-height: 17px;
+          color: #bfbfc1;
+        }
+
+        p {
+          font-family: "Proxima Nova", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 22px;
+          line-height: 26px;
+          color: #fff;
+          margin-top: 2px !important;
+          margin-bottom: 2px !important;
+        }
+
+        button {
+          margin-top: 21px;
+          width: 100%;
+          height: 64px;
+          border-radius: 12px;
+        }
+
+        .buy {
+          background: linear-gradient(
+            90deg,
+            #247bfe 0%,
+            #4e79fe 6.25%,
+            #6676fe 12.5%,
+            #7974fe 18.75%,
+            #8972fe 25%,
+            #976ffe 31.25%,
+            #a36dfe 37.5%,
+            #ae6afe 43.75%,
+            #b967ff 50%,
+            #c264ff 56.25%,
+            #cb61ff 62.5%,
+            #d45eff 68.75%,
+            #dc5bff 75%,
+            #e458ff 81.25%,
+            #eb54ff 87.5%,
+            #f251ff 93.75%,
+            #f94dff 100%
+          );
+          box-shadow: 10px -14px 36px rgba(240, 83, 255, 0.33),
+            -15px 9px 32px rgba(107, 70, 255, 0.6);
+        }
+
+        .share {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: rgba(255, 255, 255, 0.05);
+
+          svg {
+            margin-right: 10px;
+          }
+        }
+
+        h4 {
+          margin-top: 30px;
+          font-family: "Proxima Nova", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 22px;
+        }
+
+        ul {
+          li {
+            display: flex;
+            align-items: center;
+            margin: 13px 0px;
+
+            svg {
+              margin-right: 20px;
+            }
+
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+          }
+        }
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 352px;
+
+    .gradient-img {
+      display: none;
+    }
+
+    h3 {
+      font-weight: 800;
+      font-size: 14px;
+      line-height: 24px;
+      letter-spacing: 0.23em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .content-text {
+      max-width: 660px;
+
+      h4 {
+        margin-top: 4px;
+        font-family: "Proxima Nova", sans-serif;
+        color: #ffff !important;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 40px;
+      }
+
+      p {
+        margin-top: 14px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 32px;
+        color: #bfbfc1;
+        margin-bottom: 32px !important;
+      }
+
+      span {
+        font-family: "Proxima Nova", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        color: #ae7aff;
+      }
+    }
+
+    .content-image {
+      max-width: 700px;
+      margin-top: 28px;
+      position: relative;
+      border-radius: 25px;
+
+      .gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(
+          180deg,
+          #24252b 0%,
+          rgba(36, 37, 43, 0) 152.03%
+        );
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 25px;
+      }
+
+      button {
+        position: absolute;
+        bottom: 55px;
+        left: 31px;
+        background: linear-gradient(
+          90deg,
+          #247bfe 0%,
+          #4e79fe 6.25%,
+          #6676fe 12.5%,
+          #7974fe 18.75%,
+          #8972fe 25%,
+          #976ffe 31.25%,
+          #a36dfe 37.5%,
+          #ae6afe 43.75%,
+          #b967ff 50%,
+          #c264ff 56.25%,
+          #cb61ff 62.5%,
+          #d45eff 68.75%,
+          #dc5bff 75%,
+          #e458ff 81.25%,
+          #eb54ff 87.5%,
+          #f251ff 93.75%,
+          #f94dff 100%
+        );
+        box-shadow: 10px -14px 36px rgba(240, 83, 255, 0.33),
+          -15px 9px 32px rgba(107, 70, 255, 0.6);
+        border-radius: 56px !important;
+        width: 173px;
+        height: 44px;
+
+        &:hover {
+          opacity: 1;
+          box-shadow: 10px -14px 36px rgba(240, 83, 255, 0.43),
+            -15px 9px 32px rgba(107, 70, 255, 0.5);
+        }
+
+        svg {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .content-info {
+      margin-top: 36px;
+      max-width: 700px;
+
+      h3 {
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.23em;
+        text-transform: uppercase;
+      }
+
+      h4 {
+        margin-top: 4px;
+        font-family: "Proxima Nova", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 40px;
+      }
+
+      &__blocks {
+        margin-top: 17px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .block {
+          margin-bottom: 10px;
+          width: 343px;
+          height: 277px;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          backdrop-filter: blur(45px);
+          border-radius: 16px;
+
+          h5 {
+            margin-left: 24px;
+            font-family: "Proxima Nova", sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 32px;
+          }
+
+          p {
+            margin-left: 24px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #bfbfc1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .learning-tools-item {
+    padding-left: 232px;
+    padding-right: 20px;
+
+    &__top {
+      .background-block {
+        width: 100%;
+        height: 514px;
+        background: linear-gradient(180deg, #3662ff 10.78%, #0f34b8 116.04%);
+        box-shadow: 0px 71px 75px rgba(0, 0, 0, 0.25);
+        border-radius: 35px;
+      }
+
+      .image {
+        width: 100%;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 503px;
+        }
+      }
+
+      &-block {
+        padding-top: 210px;
+
+        .block-invest {
+          top: 520px;
+          width: 100%;
+          right: 0;
+        }
+      }
+    }
+
+    &__content {
+      margin-top: 777px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .learning-tools-item {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &__top {
+      .background-block {
+        height: 330px;
+      }
+
+      .image {
+        height: 332px;
+
+        img {
+          height: 100%;
+        }
+      }
+
+      &-block {
+        padding-top: 80px;
+        padding-left: 23px;
+
+        .block-image {
+          margin-left: -20px;
+          div {
+            margin-left: -20px;
+
+            p {
+              font-size: 12px;
+              line-height: 15px;
+              padding-bottom: 0;
+              margin-top: 0px;
+            }
+            span {
+              font-size: 14px;
+              line-height: 17px;
+            }
+          }
+        }
+
+        h2 {
+          margin-top: -20px;
+          font-size: 18px;
+          line-height: 22px;
+        }
+
+        p {
+          font-size: 15px;
+          line-height: 24px;
+          margin-top: 8px;
+        }
+
+        .block-invest {
+          top: 340px;
+        }
+      }
+    }
+
+    &__content {
+      position: relative;
+
+      .gradient-img {
+        position: absolute;
+        top: -30%;
+        left: -15px;
+        width: 110%;
+        height: 100%;
+        display: block;
+      }
+
+      .content-text {
+        h4 {
+          font-size: 22px;
+          line-height: 27px;
+        }
+
+        p {
+          font-size: 15px;
+          line-height: 24px;
+        }
+      }
+
+      .content-image {
+        button {
+          transform: translate(-50%, -50%);
+          left: 50%;
+          top: 50%;
+        }
+      }
+
+      .content-info {
+        h4 {
+          font-size: 22px;
+          line-height: 27px;
+        }
+
+        &__blocks {
+          .block {
+            width: 100%;
+            padding-right: 20px;
+            height: 163px;
+
+            div {
+              display: flex;
+              align-items: center;
+
+              img {
+                width: 100px;
+              }
+
+              h5 {
+                margin-left: -20px;
+                font-size: 16px;
+              }
+            }
+
+            p {
+              margin-top: -20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

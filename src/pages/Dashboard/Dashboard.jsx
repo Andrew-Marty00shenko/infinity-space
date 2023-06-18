@@ -23,6 +23,8 @@ import TravelClub from "../../components/Dashboard/TravelClub/TravelClub";
 import TravelClubItem from "../../components/Dashboard/TravelClub/TravelClubItem/TravelClubItem";
 
 import "./Dashboard.scss";
+import LearningTools from "../../components/Dashboard/LearningTools/LearningTools";
+import LearningToolsItem from "../../components/Dashboard/LearningTools/LearningToolsItem/LearningToolsItem";
 
 const Dashboard = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -54,6 +56,11 @@ const Dashboard = () => {
             element={<TravelClubItem />}
           />
           <Route path="/dashboard/travel-club" element={<TravelClub />} />
+          <Route
+            path="/dashboard/learning-tools/:id"
+            element={<LearningToolsItem />}
+          />
+          <Route path="/dashboard/learning-tools" element={<LearningTools />} />
           <Route
             path="/dashboard/investment-tools/:id"
             element={<InvestmentToolsItem />}
