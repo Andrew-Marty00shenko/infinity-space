@@ -1,55 +1,23 @@
-import useBreakpoint from "../../../../hooks/useBreakpoints";
-
 import Breadcrumbs from "../../../Common/Breadcrumbs/Breadcrumbs";
 
-import Image1 from "../../../../assets/images/dashboard/investment-tools/img1.png";
-import Image1Tablet from "../../../../assets/images/dashboard/investment-tools/img1-desktop.png";
-import Image1Mobile from "../../../../assets/images/dashboard/investment-tools/img1-mobile.png";
-import Logo from "../../../../assets/images/dashboard/investment-tools/logo.png";
-import LogoMobile from "../../../../assets/images/dashboard/investment-tools/logo-mobile.png";
+import Image1 from "../../../../assets/images/dashboard/travel-club/img1.png";
 import CourseImage from "../../../../assets/images/dashboard/investment-tools/course.png";
 import SmartContactImage from "../../../../assets/images/dashboard/investment-tools/smart-contract.png";
 import Gradient from "../../../../assets/images/dashboard/investment-tools/gradient.png";
 
-import "./InvestmentToolsItem.scss";
+import "./TravelClubItem.scss";
 
-const InvestmentTools = () => {
-  const breakpoint = useBreakpoint();
-
+const TravelClubItem = () => {
   return (
-    <div className="investment-tools-item">
-      <Breadcrumbs location={"Invest tools"} />
+    <div className="travel-club-item">
+      <Breadcrumbs location={"Travel club"} />
 
-      <div className="investment-tools-item__top">
+      <div className="travel-club-item__top">
         <div className="background-block"></div>
         <div className="image">
-          <img
-            className="img-1"
-            src={
-              breakpoint < 690
-                ? Image1Mobile
-                : breakpoint < 1440
-                ? Image1Tablet
-                : Image1
-            }
-            alt=""
-          />
+          <img className="img-1" src={Image1} alt="" />
         </div>
-        <div className="investment-tools-item__top-block">
-          <div className="block-image">
-            <img src={breakpoint === "0" ? LogoMobile : Logo} alt="logo" />
-
-            <div>
-              <p>Creator</p>
-              <span>SPACE CLUB</span>
-            </div>
-          </div>
-          <h2>The Complete Cryptocurrency & Bitcoin Trading Course 2023</h2>
-          <p>
-            Cryptocurrency & Bitcoin Trading - Earn Extra Passive Income Weekly
-            Trading Crypto & Altcoin Using Technical Analysis
-          </p>
-
+        <div className="travel-club-item__top-block">
           <div className="block-invest">
             <span>price</span>
             <p>29 117.1 BUSD</p>
@@ -148,7 +116,7 @@ const InvestmentTools = () => {
           </div>
         </div>
       </div>
-      <div className="investment-tools-item__content">
+      <div className="travel-club-item__content">
         <img src={Gradient} alt="" className="gradient-img" />
         <h3>ABOUT</h3>
         <div className="content-text">
@@ -253,4 +221,4 @@ const InvestmentTools = () => {
   );
 };
 
-export default InvestmentTools;
+export default TravelClubItem;

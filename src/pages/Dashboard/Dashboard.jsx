@@ -19,6 +19,8 @@ import Presentation from "../../components/Dashboard/Presentation/Presentation";
 import Preloader from "../../components/Common/Preloader/Preloader";
 import InvestmentTools from "../../components/Dashboard/InvestmentTools/InvestmentTools";
 import InvestmentToolsItem from "../../components/Dashboard/InvestmentTools/InvestmentToolsItem/InvestmentToolsItem";
+import TravelClub from "../../components/Dashboard/TravelClub/TravelClub";
+import TravelClubItem from "../../components/Dashboard/TravelClub/TravelClubItem/TravelClubItem";
 
 import "./Dashboard.scss";
 
@@ -47,6 +49,11 @@ const Dashboard = () => {
             path="/dashboard/investment-tools"
             element={<InvestmentTools />}
           />
+          <Route
+            path="/dashboard/travel-club/:id"
+            element={<TravelClubItem />}
+          />
+          <Route path="/dashboard/travel-club" element={<TravelClub />} />
           <Route
             path="/dashboard/investment-tools/:id"
             element={<InvestmentToolsItem />}

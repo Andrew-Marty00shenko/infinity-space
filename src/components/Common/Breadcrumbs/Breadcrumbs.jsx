@@ -1,12 +1,9 @@
-import { useLocation } from "react-router-dom";
 import "./Breadcrumbs.scss";
 
-const Breadcrumbs = () => {
-  const location = useLocation();
-
-  return location.pathname === "/dashboard/investment-tools" ? (
+const Breadcrumbs = ({ location }) => {
+  return (
     <div className="breadcrumbs">
-      <p>Investment tools</p>
+      <p>{location}</p>
       <svg
         width="6"
         height="10"
@@ -24,7 +21,7 @@ const Breadcrumbs = () => {
       </svg>
       <span>How to start in crypto in fast way</span>
     </div>
-  ) : null;
+  );
 };
 
 export default Breadcrumbs;

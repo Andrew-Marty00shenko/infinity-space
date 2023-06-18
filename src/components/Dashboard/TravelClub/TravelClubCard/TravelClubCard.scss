@@ -1,0 +1,129 @@
+.travel-club-card {
+  width: 365px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 405px;
+  background: linear-gradient(
+    180deg,
+    rgba(152, 101, 255, 0.19) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(21px);
+  border-radius: 12px;
+  padding: 8px;
+  overflow: hidden;
+  position: relative;
+
+  .card-image {
+    img {
+      width: 100%;
+    }
+  }
+
+  .card-text {
+    h4 {
+      font-weight: 500;
+      font-size: 12px;
+      margin-top: 15px;
+      color: #ffffff;
+      opacity: 0.6;
+      line-height: 24px;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  .card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+
+    div {
+      &:nth-child(1) {
+        display: flex;
+        align-items: center;
+
+        div {
+          margin-right: 9px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 32px;
+          height: 32px;
+          border: 1px solid #afc6ff;
+          border-radius: 50%;
+        }
+      }
+
+      &:nth-child(2) {
+        display: flex;
+
+        p {
+          display: flex;
+          flex-direction: column;
+
+          span {
+            &:nth-child(1) {
+              font-weight: 500;
+              font-size: 12px;
+              line-height: 16px;
+              color: #ffffff;
+              opacity: 0.6;
+            }
+
+            &:nth-child(2) {
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 17px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  button {
+    margin-top: 22px;
+    width: 168px;
+    height: 44px;
+    background: linear-gradient(
+      90deg,
+      #247bfe 0%,
+      #4e79fe 6.25%,
+      #6676fe 12.5%,
+      #7974fe 18.75%,
+      #8972fe 25%,
+      #976ffe 31.25%,
+      #a36dfe 37.5%,
+      #ae6afe 43.75%,
+      #b967ff 50%,
+      #c264ff 56.25%,
+      #cb61ff 62.5%,
+      #d45eff 68.75%,
+      #dc5bff 75%,
+      #e458ff 81.25%,
+      #eb54ff 87.5%,
+      #f251ff 93.75%,
+      #f94dff 100%
+    );
+    box-shadow: 10px -14px 36px rgba(240, 83, 255, 0.33),
+      -15px 9px 32px rgba(107, 70, 255, 0.6);
+    border-radius: 56px !important;
+
+    svg {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .travel-club-card {
+    width: 345px;
+  }
+}
