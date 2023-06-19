@@ -41,7 +41,7 @@ const InvestmentTools = () => {
 
             <div>
               <p>Creator</p>
-              <span>SPACE CLUB</span>
+              <span>IN SPACE</span>
             </div>
           </div>
           <h2>The Complete Cryptocurrency & Bitcoin Trading Course 2023</h2>

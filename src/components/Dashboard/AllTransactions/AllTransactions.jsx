@@ -315,7 +315,7 @@ const AllTransactions = () => {
             </div>
           </div>
           <div className="total-info">
-            <p>SPACE CLUB {t("transactions:contract-address")}</p>
+            <p>IN SPACE {t("transactions:contract-address")}</p>
             <p>
               0xB1Bc...0dbf
               <span>

@@ -17,12 +17,12 @@ const LandingFooter = () => {
       <div className="landing-footer__top">
         <div className="block__logo">
           <img src={LogoAnimation} alt="logo" />
-          <p>SPACE CLUB</p>
+          <p>IN SPACE</p>
         </div>
 
         <div className="info">
           <div className="info-contract">
-            SPACE CLUB
+            IN SPACE
             <span>
               <a
                 href="https://bscscan.com/address/0xB1Bc72552418418a2e0D098D00E6C72e674E0dbf"
@@ -80,7 +80,7 @@ const LandingFooter = () => {
       </div>
       <div className="landing-footer__line">
         <div>
-          SPACE CLUB
+          IN SPACE
           <span>
             <a
               href="https://bscscan.com/address/0xB1Bc72552418418a2e0D098D00E6C72e674E0dbf"

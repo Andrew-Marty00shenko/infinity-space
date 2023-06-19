@@ -142,7 +142,7 @@ const LandingHeader = ({ setOpenSidebar }) => {
       <div className="landing-header__block">
         <div className="animation-logo">
           <img src={LogoAnimation} alt="logo" />
-          <p>SPACE CLUB</p>
+          <p>IN SPACE</p>
         </div>
         <div className="landing-header__block-info">
           <a

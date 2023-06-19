@@ -59,9 +59,7 @@ const ResultsSection = () => {
         </div>
 
         <div className="results-section__contract">
-          <span>
-            {breakpoint === "0" ? "SPACE CLUB:" : "SPACE CLUB contract:"}
-          </span>
+          <span>{breakpoint === "0" ? "IN SPACE:" : "IN SPACE contract:"}</span>
           <p>
             {breakpoint === "0"
               ? "0x5acc84a3..f00fFB97"

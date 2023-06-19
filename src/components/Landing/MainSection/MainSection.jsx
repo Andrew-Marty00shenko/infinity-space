@@ -102,11 +102,7 @@ const MainSection = ({ data, loadingData, totals }) => {
             <br /> technology gives unlimited possibilities
           </h2>
 
-          <div className="main-section__content-button">
-            <button onClick={handleClickConnectWallet} disabled={loading}>
-              Try now
-            </button>
-          </div>
+          <div className="main-section__content-button"></div>
 
           <div className="main-section__content-images">
             <img

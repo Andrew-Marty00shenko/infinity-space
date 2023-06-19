@@ -361,7 +361,7 @@ const Main = () => {
               </div>
               <div className="gradient"></div>
               <img src={ProgramImage} alt="" />
-              <h3>SPACE CLUB</h3>
+              <h3>IN SPACE</h3>
               <p>11 920 BUSD</p>
               <button>Let`s go</button>
             </div>
@@ -698,7 +698,7 @@ const Main = () => {
             <rect width="225" height="8" fill="#184BFF" />
           </svg>
           <div className="elips"></div>
-          <h3>SPACE CLUB</h3>
+          <h3>IN SPACE</h3>
           <p>
             {`${(user?.userData.earned / 1e18).toLocaleString()}` || 0} BUSD
           </p>

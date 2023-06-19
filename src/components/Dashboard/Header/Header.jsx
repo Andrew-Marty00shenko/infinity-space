@@ -49,7 +49,7 @@ const Header = ({ showSidebar, setShowSidebar }) => {
     <header className="dashboard-header">
       <div className="dashboard-header__logo" onClick={handleLogout}>
         <img src={LogoAnimation} alt="logo" />
-        SPACE CLUB
+        IN SPACE
       </div>
 
       <div className="dashboard-header__info">

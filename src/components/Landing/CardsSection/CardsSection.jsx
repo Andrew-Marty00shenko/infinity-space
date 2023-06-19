@@ -98,9 +98,6 @@ const CardsSection = () => {
               <span>$50,00</span>
               <span>per month</span>
             </div>
-            <div>
-              <button>Try now</button>
-            </div>
           </div>
         </div>
       </section>

@@ -59,10 +59,6 @@ const SliderSection = () => {
         </p>
       </div>
 
-      <div className="slider-section__button">
-        <button>Try now</button>
-      </div>
-
       <div className="slider-section__swiper">
         <Swiper
           slidesPerView={"auto"}
