@@ -14,14 +14,16 @@ import SocialLinkSection from "../../components/Landing/SocialLinksSection/Socia
 import LandingFooter from "../../components/Landing/LandingFooter/LandingFooter";
 import View from "../../components/Landing/View/View";
 import NotFound from "../NotFound/NotFound";
-
-import "./Landing.scss";
 import BenefitsSection from "../../components/Landing/BenefitsSection/BenefitsSection";
 import CardsSection from "../../components/Landing/CardsSection/CardsSection";
 import ProjectSection from "../../components/Landing/ProjectSection/ProjectSection";
 import ResultsSection from "../../components/Landing/ResultsSection/ResultsSection";
 
+import "./Landing.scss";
+import Sidebar from "../../components/Landing/Sidebar/Sidebar";
+
 const Landing = () => {
+  const [openSidebar, setOpenSidebar] = useState(false);
   const [data, setData] = useState({
     totalUsers: 0,
     totalProfit: 0,
@@ -61,7 +63,8 @@ const Landing = () => {
 
   return (
     <div className="landing">
-      <LandingHeader />
+      <LandingHeader setOpenSidebar={setOpenSidebar} />
+      <Sidebar openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} />
       <Routes>
         <Route
           path="/"

@@ -20,6 +20,7 @@ import BotCirlcle2 from "../../../assets/images/main-section/bot-2-circle.png";
 import "./MainSection.scss";
 import { useTranslation } from "react-i18next";
 import { Fade } from "react-awesome-reveal";
+import { Element } from "react-scroll";
 
 const MainSection = ({ data, loadingData, totals }) => {
   const dispatch = useDispatch();
@@ -76,6 +77,7 @@ const MainSection = ({ data, loadingData, totals }) => {
   return (
     <>
       {loadingData && <Preloader />}
+      <Element name="main"></Element>
       <section className="main-section">
         <div className="main-section__bottom-image">
           <div className="gradient"></div>

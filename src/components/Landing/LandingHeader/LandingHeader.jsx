@@ -67,7 +67,7 @@ const languages = [
   // }
 ];
 
-const LandingHeader = () => {
+const LandingHeader = ({ setOpenSidebar }) => {
   const location = useLocation();
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
@@ -139,15 +139,6 @@ const LandingHeader = () => {
 
   return (
     <header className="landing-header">
-      <div className="landing-header__top">
-        <span>SPACE CLUB</span>
-        <span>
-          {breakpoint === "0"
-            ? "0xB1Bc72..4E0dbf"
-            : "0xB1Bc72552418418a2e0D098D00E6C72e674E0dbf"}{" "}
-        </span>
-      </div>
-
       <div className="landing-header__block">
         <div className="animation-logo">
           <img src={LogoAnimation} alt="logo" />
@@ -200,7 +191,7 @@ const LandingHeader = () => {
             </button>
           </div>
 
-          <div className="block-burger">
+          <div className="block-burger" onClick={() => setOpenSidebar(true)}>
             <img src={burgerIcon} alt="burger" />
           </div>
 
