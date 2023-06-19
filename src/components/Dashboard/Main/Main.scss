@@ -20,7 +20,7 @@
     top: 54px;
     padding: 25px;
     width: 366px;
-    height: 1021px;
+    height: auto;
     background: rgba(0, 0, 0, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(45px);
@@ -48,24 +48,219 @@
     &-circles {
       margin-top: 13px;
       position: relative;
+      // width: 280px;
+      height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
 
       .circle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 5px;
+        border-radius: 5px;
+        cursor: pointer;
 
-        .round {
-          transform: rotate(-90deg);
-          transition: all 1s ease-in-out;
-
-          /* SVG */
-          fill: none;
-          stroke: red;
-          stroke-width: 8;
-          stroke-linecap: round;
-          stroke-dasharray: 0 999;
+        &.red {
+          background-color: #ff3f3f;
         }
+
+        &.orange {
+          background-color: #ff843f;
+        }
+
+        &.yellow {
+          background-color: #f0ff3f;
+        }
+
+        &.purple {
+          background-color: #aa3fff;
+        }
+
+        &.blue {
+          background-color: #3f69ff;
+        }
+
+        &.lightblue {
+          background-color: #3fd1ff;
+        }
+
+        &.green {
+          background-color: #2ce68d;
+        }
+
+        &.pink {
+          background-color: #e62ca7;
+        }
+      }
+    }
+
+    &-items {
+      margin-top: 20px;
+
+      .item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 20px;
+        width: 100%;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        margin-bottom: 4px;
+
+        &-block {
+          display: flex;
+          align-items: center;
+        }
+
+        &-color {
+          margin-right: 10px;
+          border-radius: 12px;
+          width: 24px;
+          height: 24px;
+
+          &.blue {
+            box-shadow: 0px 7px 11px rgba(0, 0, 0, 0.25),
+              inset 0px 4px 4px #85a8ff;
+            background: linear-gradient(180deg, #3f69ff 0%, #6486ff 100%);
+          }
+
+          &.green {
+            box-shadow: 0px 7px 11px rgba(0, 0, 0, 0.25),
+              inset 0px 4px 4px #acff85;
+            background: linear-gradient(180deg, #16a25f 0%, #5ad102 100%);
+          }
+
+          &.pink {
+            background: linear-gradient(180deg, #e62ca7 0%, #ff64c1 100%),
+              linear-gradient(180deg, #16a25f 0%, #5ad102 100%);
+            box-shadow: 0px 7px 11px rgba(0, 0, 0, 0.25),
+              inset 0px 4px 4px #ff4eb8;
+          }
+        }
+
+        &-name {
+          font-family: "Proxima Nova", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 22px;
+        }
+
+        &-stats {
+          p {
+            &:nth-child(1) {
+              font-family: "Proxima Nova", sans-serif;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 18px;
+              line-height: 22px;
+            }
+
+            &:nth-child(2) {
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 17px;
+              color: rgba(255, 255, 255, 0.6);
+            }
+          }
+        }
+      }
+    }
+
+    &-button {
+      margin-top: 10px;
+
+      button {
+        width: 100%;
+        background: linear-gradient(
+          90deg,
+          #247bfe 0%,
+          #4e79fe 6.25%,
+          #6676fe 12.5%,
+          #7974fe 18.75%,
+          #8972fe 25%,
+          #976ffe 31.25%,
+          #a36dfe 37.5%,
+          #ae6afe 43.75%,
+          #b967ff 50%,
+          #c264ff 56.25%,
+          #cb61ff 62.5%,
+          #d45eff 68.75%,
+          #dc5bff 75%,
+          #e458ff 81.25%,
+          #eb54ff 87.5%,
+          #f251ff 93.75%,
+          #f94dff 100%
+        );
+        height: 64px;
+        box-shadow: 10px -14px 36px rgba(240, 83, 255, 0.33),
+          -15px 9px 32px rgba(107, 70, 255, 0.6);
+      }
+    }
+
+    &-info {
+      margin-top: 25px;
+
+      h4 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.23em;
+        text-transform: uppercase;
+        color: #bfbfc1;
+      }
+
+      p {
+        font-family: "Proxima Nova", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 27px;
+      }
+
+      .info-item {
+        padding: 12px 0px 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .info-title {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          color: #bfbfc1;
+          display: flex;
+          align-items: center;
+
+          svg {
+            margin-right: 12px;
+          }
+        }
+
+        p {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    &-button-edit {
+      margin-top: 18px;
+
+      svg {
+        margin-right: 10px;
+      }
+
+      button {
+        width: 100%;
+        height: 64px;
+        background: rgba(255, 255, 255, 0.05);
       }
     }
   }
@@ -295,6 +490,168 @@
             line-height: 22px;
             color: #39eb8b;
           }
+        }
+      }
+    }
+  }
+
+  &__user {
+    margin-top: 29px;
+
+    &-link-block {
+      padding: 0px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 613px;
+      height: 84px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+
+      div {
+        .title {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          color: #717275;
+        }
+
+        .link {
+          font-family: "Proxima Nova", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 22px;
+          line-height: 27px;
+          color: #ffffff;
+        }
+      }
+
+      svg {
+        cursor: pointer;
+      }
+    }
+
+    &-program {
+      margin-top: 44px;
+
+      h2 {
+        font-family: "Proxima Nova", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 40px;
+      }
+
+      .program-block {
+        margin-top: 16px;
+        overflow: hidden;
+        position: relative;
+        width: 549px;
+        height: 339px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.04);
+        backdrop-filter: blur(21px);
+        border-radius: 16px;
+        padding: 61px 32px 24px;
+
+        .line {
+          position: absolute;
+          top: 0;
+          width: 110%;
+          background: rgba(255, 255, 255, 0.05);
+          height: 8px;
+          left: -32px;
+
+          .line-gradient {
+            position: absolute;
+            left: -32px;
+            width: 50%;
+            height: 8px;
+            background: linear-gradient(
+              90deg,
+              #247bfe 0%,
+              #4e79fe 6.25%,
+              #6676fe 12.5%,
+              #7974fe 18.75%,
+              #8972fe 25%,
+              #976ffe 31.25%,
+              #a36dfe 37.5%,
+              #ae6afe 43.75%,
+              #b967ff 50%,
+              #c264ff 56.25%,
+              #cb61ff 62.5%,
+              #d45eff 68.75%,
+              #dc5bff 75%,
+              #e458ff 81.25%,
+              #eb54ff 87.5%,
+              #f251ff 93.75%,
+              #f94dff 100%
+            );
+          }
+        }
+
+        .gradient {
+          position: absolute;
+          right: -108px;
+          bottom: -200px;
+          width: 390px;
+          height: 360px;
+          background: linear-gradient(
+            180deg,
+            #6875dc 0%,
+            rgba(9, 93, 255, 0) 100%
+          );
+          filter: blur(103.5px);
+        }
+
+        img {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+
+        h3 {
+          font-family: "Proxima Nova", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 36px;
+          line-height: 40px;
+        }
+
+        p {
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 32px;
+          color: #bfbfc1;
+        }
+
+        button {
+          margin-top: 124px;
+          width: 128px;
+          height: 54px;
+          background: linear-gradient(
+            90deg,
+            #247bfe 0%,
+            #4e79fe 6.25%,
+            #6676fe 12.5%,
+            #7974fe 18.75%,
+            #8972fe 25%,
+            #976ffe 31.25%,
+            #a36dfe 37.5%,
+            #ae6afe 43.75%,
+            #b967ff 50%,
+            #c264ff 56.25%,
+            #cb61ff 62.5%,
+            #d45eff 68.75%,
+            #dc5bff 75%,
+            #e458ff 81.25%,
+            #eb54ff 87.5%,
+            #f251ff 93.75%,
+            #f94dff 100%
+          );
+          box-shadow: 10px -14px 36px rgba(240, 83, 255, 0.33),
+            -15px 9px 32px rgba(107, 70, 255, 0.6);
         }
       }
     }

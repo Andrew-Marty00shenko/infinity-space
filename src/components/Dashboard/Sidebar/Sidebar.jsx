@@ -68,7 +68,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }) => {
 
       <div className="sidebar__logo" onClick={handleLogout}>
         <img src={Logo} alt="logo" />
-        Infinity Space
+        SPACE CLUB
       </div>
 
       <button onClick={handleLogout}>
