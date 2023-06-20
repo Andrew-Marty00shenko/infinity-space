@@ -1,0 +1,123 @@
+.edit-profile-modal {
+  .modal-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(24.5px);
+    border-radius: 16px;
+    width: 687px;
+    height: auto;
+    padding: 25px;
+
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .title {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 14px;
+
+      h3 {
+        display: flex;
+        align-items: center;
+        font-family: "Proxima Nova", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 26px;
+        color: #fff;
+
+        svg {
+          margin-right: 10px;
+        }
+      }
+
+      p {
+        margin-top: 13px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #ffffff;
+      }
+    }
+
+    .fields {
+      & > div {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .input-block {
+          margin-bottom: 16px;
+          width: 49%;
+        }
+      }
+    }
+
+    .images {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      position: relative;
+
+      svg {
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    button {
+      width: 100%;
+      height: 54px;
+      margin-top: 17px;
+      background: linear-gradient(
+        90deg,
+        #247bfe 0%,
+        #4e79fe 6.25%,
+        #6676fe 12.5%,
+        #7974fe 18.75%,
+        #8972fe 25%,
+        #976ffe 31.25%,
+        #a36dfe 37.5%,
+        #ae6afe 43.75%,
+        #b967ff 50%,
+        #c264ff 56.25%,
+        #cb61ff 62.5%,
+        #d45eff 68.75%,
+        #dc5bff 75%,
+        #e458ff 81.25%,
+        #eb54ff 87.5%,
+        #f251ff 93.75%,
+        #f94dff 100%
+      );
+      /* Primary */
+
+      box-shadow: 10px -14px 36px rgba(240, 83, 255, 0.33),
+        -15px 9px 32px rgba(107, 70, 255, 0.6);
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .edit-profile-modal {
+    .modal-content {
+      height: auto;
+
+      .fields {
+        div {
+          flex-direction: column;
+
+          .input-block {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -18,6 +18,7 @@ import { useTranslation } from "react-i18next";
 import BoyImage from "../../../assets/images/boy.png";
 import StatsModal from "../../Modals/StatsModal/StatsModal";
 import ProgramImage from "../../../assets/images/dashboard/main/program.png";
+import EditProfileModal from "../../Modals/EditProfileModal/EditProfileModal";
 
 const data = [
   {
@@ -69,6 +70,7 @@ const Main = () => {
   const { t } = useTranslation();
 
   const [openModalStats, setOpenModalStats] = useState(false);
+  const [openModalEditProfile, setOpenModalEditProfile] = useState(false);
   const [userData, setUserData] = useState(null);
 
   const levels = useSelector((state) => state.levels.levels);
@@ -310,7 +312,7 @@ const Main = () => {
           </div>
 
           <div className="main__popup-button-edit">
-            <button>
+            <button onClick={() => setOpenModalEditProfile(true)}>
               <svg
                 width="23"
                 height="22"
@@ -368,7 +370,7 @@ const Main = () => {
           </div>
         </div>
 
-        <AllTransactions />
+        {/* <AllTransactions /> */}
 
         {/* <div className="main-info">
         <Container fluid>
@@ -713,6 +715,11 @@ const Main = () => {
       <StatsModal
         modalShow={openModalStats}
         setModalShow={() => setOpenModalStats(false)}
+      />
+
+      <EditProfileModal
+        modalShow={openModalEditProfile}
+        setModalShow={() => setOpenModalEditProfile(false)}
       />
     </>
   );
