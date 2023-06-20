@@ -98,6 +98,10 @@
     &-items {
       margin-top: 20px;
 
+      &__button {
+        display: none;
+      }
+
       .item {
         display: flex;
         justify-content: space-between;
@@ -426,73 +430,6 @@
         cursor: pointer;
       }
     }
-
-    &__stats {
-      margin-top: 18px !important;
-
-      &-block {
-        padding: 22px 32px;
-        background: rgba(255, 255, 255, 0.05);
-        box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.04);
-        backdrop-filter: blur(21px);
-        border-radius: 16px;
-        margin-right: 18px !important;
-
-        &.last {
-          margin-right: 0 !important;
-          display: flex;
-          justify-content: space-between;
-          padding: 0px;
-          overflow: hidden;
-
-          & {
-            & > div {
-              &:nth-child(1) {
-                padding: 22px 0px 22px 22px;
-              }
-            }
-
-            .chart {
-              width: 55%;
-            }
-          }
-        }
-
-        .stats-block__top {
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 19px;
-
-          svg {
-            margin-left: 10px;
-            cursor: pointer;
-          }
-        }
-
-        .stats-block__bottom {
-          margin-top: 2px;
-          display: flex;
-          flex-direction: column;
-
-          p {
-            font-family: "Proxima Nova", sans-serif;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 22px;
-            line-height: 26px;
-          }
-
-          span {
-            font-family: "Proxima Nova", sans-serif;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 22px;
-            color: #39eb8b;
-          }
-        }
-      }
-    }
   }
 
   &__user {
@@ -739,76 +676,74 @@
   }
 }
 
-@media (max-width: 1338px) {
-  .main {
-    &-info {
-      &__stats {
-        &-block {
-          &.last {
-            & {
-              .chart {
-                width: 50%;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
 @media (max-width: 1220px) {
   .main {
     padding-left: 232px;
     padding-right: 20px;
 
-    &-info {
-      &__user-card {
-        margin-right: 0;
+    &__popup {
+      $self: &;
+      position: relative;
+      width: 100%;
+      left: 0;
+      right: 0;
+      top: 30px;
+
+      &-block {
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding-bottom: 25px;
 
-        .user-card__top {
-          border-bottom: 0;
+        #{$self}-circles {
+          width: 250px;
+          height: 250px;
         }
-      }
 
-      .link {
-        display: flex;
-        flex-direction: column-reverse;
-      }
+        #{$self}-items {
+          width: 361px;
+          margin-top: 0;
+          margin-left: 65px;
 
-      &__user-link {
-        margin-top: 16px;
-      }
-
-      &__stats {
-        margin-top: 18px !important;
-
-        &-block {
-          &.pre-last {
-            margin-right: 0 !important;
+          .item {
+            width: 100%;
           }
 
-          &.last {
-            margin-top: 16px !important;
+          &__button {
+            display: block;
 
-            & {
-              .chart {
-                width: 75%;
-              }
+            button {
+              width: 100%;
+              height: 54px;
+              background: linear-gradient(
+                90deg,
+                #247bfe 0%,
+                #4e79fe 6.25%,
+                #6676fe 12.5%,
+                #7974fe 18.75%,
+                #8972fe 25%,
+                #976ffe 31.25%,
+                #a36dfe 37.5%,
+                #ae6afe 43.75%,
+                #b967ff 50%,
+                #c264ff 56.25%,
+                #cb61ff 62.5%,
+                #d45eff 68.75%,
+                #dc5bff 75%,
+                #e458ff 81.25%,
+                #eb54ff 87.5%,
+                #f251ff 93.75%,
+                #f94dff 100%
+              );
+              box-shadow: 10px -14px 36px rgba(240, 83, 255, 0.33),
+                -15px 9px 32px rgba(107, 70, 255, 0.6);
             }
           }
         }
       }
-    }
 
-    &-program {
-      margin-top: 40px;
-
-      &__content {
-        width: 100%;
+      &-button {
+        display: none;
       }
     }
   }
@@ -818,138 +753,105 @@
   .main {
     padding-left: 15px;
     padding-right: 15px;
+
+    &__popup {
+      $self: &;
+
+      &-block {
+        flex-direction: column;
+        align-items: center;
+
+        #{$self}-circles {
+          width: 220px;
+          height: 220px;
+        }
+
+        #{$self}-items {
+          width: 100%;
+          margin-top: 20px;
+          margin-left: 0;
+
+          .item {
+            width: 100%;
+          }
+
+          &__button {
+            display: block;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+
+    &__user {
+      margin-top: 55px;
+
+      &-link-block {
+        width: 100%;
+      }
+    }
   }
 }
 
-@media (max-width: 690px) {
+@media (max-width: 550px) {
   .main {
+    &__popup {
+      top: 125px;
+    }
+
     &-info {
-      &__user-card {
-        align-items: center;
+      &__user {
+        img.boy {
+          top: -55px;
+          left: 50%;
+          transform: translate(-50%, 50%);
+        }
 
-        .user-card__top {
-          svg {
-            width: 40px;
-            height: 40px;
-          }
+        .user-info {
+          position: absolute;
+          margin-left: 0;
 
-          div {
-            p {
-              font-size: 18px;
-              line-height: 22px;
-            }
+          &.one {
+            bottom: -55%;
 
             span {
               font-size: 14px;
-              line-height: 17px;
             }
           }
-        }
 
-        .user-card__bottom {
-          font-size: 14px;
-          line-height: 17px;
-          padding: 0px;
-          padding-right: 15px;
-        }
-      }
+          &.two {
+            bottom: -55%;
+            right: 0;
 
-      &__user-link {
-        padding: 20px 15px;
-
-        & > div {
-          .user-link__top {
-            font-size: 14px;
-            line-height: 17px;
-          }
-
-          .user-link__bottom {
-            font-size: 18px;
-            line-height: 22px;
-          }
-        }
-      }
-
-      &__stats {
-        &-block {
-          margin-right: 10px !important;
-          padding: 20px 15px;
-          .stats-block__top {
-            svg {
-              display: none;
+            span {
+              font-size: 14px;
             }
           }
         }
       }
     }
 
-    &-program {
-      margin-top: 24px;
+    &__user {
+      margin-top: 150px;
 
-      &__top {
-        h2 {
-          font-size: 24px;
-          line-height: 32px;
-        }
-      }
-
-      &__content {
+      &-program {
         width: 100%;
-        background-position: center right;
-        padding: 68px 20px;
 
-        .elips {
-          position: absolute;
-          top: 251px;
-          right: -198px;
-          width: 390px;
-          height: 360px;
-          background: linear-gradient(
-            180deg,
-            #6875dc 0%,
-            rgba(9, 93, 255, 0) 100%
-          );
-          filter: blur(103.5px);
-          z-index: -1;
-        }
-
-        h3 {
-          font-size: 22px;
-          line-height: 27px;
-        }
-
-        p {
-          font-size: 18px;
-          line-height: 32px;
-        }
-
-        button {
-          margin-top: 125px;
+        .program-block {
           width: 100%;
-          height: 54px;
-          font-size: 18px !important;
-          position: relative;
-          z-index: 5;
+
+          h3 {
+            position: relative;
+          }
+
+          img {
+            z-index: 0;
+          }
+
+          button {
+            position: relative;
+          }
         }
-      }
-    }
-  }
-}
-
-@media (max-width: 472px) {
-  .main {
-    &-program {
-      margin-top: 24px;
-
-      &__top {
-        h2 {
-          font-size: 24px;
-          line-height: 32px;
-        }
-      }
-
-      &__content {
-        background-size: 75%;
       }
     }
   }
