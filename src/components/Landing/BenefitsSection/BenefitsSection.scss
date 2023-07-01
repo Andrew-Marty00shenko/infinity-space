@@ -45,7 +45,7 @@
     h1 {
       text-align: center;
       font-family: "Proxima Nova", sans-serif;
-      font-weight: 700;
+      font-weight: 500;
       font-size: 135.156px;
       line-height: 135px;
       background: linear-gradient(
@@ -78,7 +78,7 @@
       justify-content: center;
 
       .human {
-        margin-top: -100px;
+        margin-top: -45px;
         z-index: 50;
       }
 
@@ -104,80 +104,505 @@
 
       .block {
         position: absolute;
-        z-index: 100;
+        z-index: 1000;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(
-          90deg,
-          rgba(36, 123, 254, 0.2) 0%,
-          rgba(78, 121, 254, 0.2) 6.25%,
-          rgba(102, 118, 254, 0.2) 12.5%,
-          rgba(121, 116, 254, 0.2) 18.75%,
-          rgba(137, 114, 254, 0.2) 25%,
-          rgba(151, 111, 254, 0.2) 31.25%,
-          rgba(163, 109, 254, 0.2) 37.5%,
-          rgba(174, 106, 254, 0.2) 43.75%,
-          rgba(185, 103, 255, 0.2) 50%,
-          rgba(194, 100, 255, 0.2) 56.25%,
-          rgba(203, 97, 255, 0.2) 62.5%,
-          rgba(212, 94, 255, 0.2) 68.75%,
-          rgba(220, 91, 255, 0.2) 75%,
-          rgba(228, 88, 255, 0.2) 81.25%,
-          rgba(235, 84, 255, 0.2) 87.5%,
-          rgba(242, 81, 255, 0.2) 93.75%,
-          rgba(249, 77, 255, 0.2) 100%
-        );
-        box-shadow: 0px 25px 35px rgba(0, 0, 0, 0.46),
-          10px -14px 36px rgba(240, 83, 255, 0.33),
-          -15px 9px 32px rgba(107, 70, 255, 0.6);
-        backdrop-filter: blur(22px);
         border-radius: 83px;
         width: 140px;
         height: 140px;
+        cursor: pointer;
+        transition: box-shadow 0.3s ease-in-out;
 
-        span {
-          &:nth-child(2) {
-            margin-top: 14px;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.5);
-          }
+        &:hover {
+          box-shadow: 0px 10px 20px 20px rgba(103, 89, 255, 0.5),
+            10px -10px 20px 0px rgba(124, 77, 202, 0.5);
+        }
 
-          &:last-child {
-            font-size: 18px;
+        div {
+          margin-right: 6px;
+          span {
+            position: absolute;
+            bottom: -25px;
+            transform-origin: 50% 0;
+            padding-top: 50%;
+            color: #afc5ff;
+            font-size: 16px;
+            font-family: Inter;
+            font-style: normal;
             font-weight: 700;
+            text-transform: uppercase;
           }
         }
 
         &.one {
           bottom: 184px;
           left: 420px;
+
+          .char-1 {
+            transform: rotate(-300deg);
+          }
+
+          .char-2 {
+            transform: rotate(-310deg);
+          }
+
+          .char-3 {
+            transform: rotate(-320deg);
+          }
+
+          .char-4 {
+            transform: rotate(-330deg);
+          }
+
+          .char-5 {
+            transform: rotate(-343deg);
+          }
+
+          .char-6 {
+            transform: rotate(-349deg);
+          }
+
+          .char-7 {
+            transform: rotate(0deg);
+          }
+
+          .char-8 {
+            transform: rotate(-10deg);
+          }
+
+          .char-9 {
+            transform: rotate(-20deg);
+          }
+
+          .char-10 {
+            transform: rotate(-30deg);
+          }
+
+          .char-11 {
+            transform: rotate(-40deg);
+          }
+
+          .char-12 {
+            transform: rotate(-51deg);
+          }
+
+          .char-13 {
+            transform: rotate(-60deg);
+          }
+
+          .char-14 {
+            transform: rotate(-70deg);
+          }
         }
 
         &.two {
           bottom: 184px;
           right: 420px;
+
+          .char-1 {
+            transform: rotate(-300deg);
+          }
+
+          .char-2 {
+            transform: rotate(-310deg);
+          }
+
+          .char-3 {
+            transform: rotate(-320deg);
+          }
+
+          .char-4 {
+            transform: rotate(-330deg);
+          }
+
+          .char-5 {
+            transform: rotate(-340deg);
+          }
+
+          .char-6 {
+            transform: rotate(-10deg);
+          }
+
+          .char-7 {
+            transform: rotate(-20deg);
+          }
+
+          .char-8 {
+            transform: rotate(-30deg);
+          }
+
+          .char-9 {
+            transform: rotate(-40deg);
+          }
+
+          .char-10 {
+            transform: rotate(-50deg);
+          }
+
+          .char-11 {
+            transform: rotate(-60deg);
+          }
         }
 
         &.three {
-          bottom: 340px;
+          bottom: 280px;
           left: 280px;
+
+          .char-1 {
+            transform: rotate(-290deg);
+          }
+
+          .char-2 {
+            transform: rotate(-300deg);
+          }
+
+          .char-3 {
+            transform: rotate(-310deg);
+          }
+
+          .char-4 {
+            transform: rotate(-320deg);
+          }
+
+          .char-5 {
+            transform: rotate(-330deg);
+          }
+
+          .char-6 {
+            transform: rotate(-340deg);
+          }
+
+          .char-7 {
+            transform: rotate(-350deg);
+          }
+
+          .char-8 {
+            transform: rotate(-355deg);
+          }
+
+          .char-9 {
+            transform: rotate(-10deg);
+          }
+
+          .char-10 {
+            transform: rotate(-15deg);
+          }
+
+          .char-11 {
+            transform: rotate(-25deg);
+          }
+
+          .char-12 {
+            transform: rotate(-35deg);
+          }
+
+          .char-13 {
+            transform: rotate(-45deg);
+          }
+
+          .char-14 {
+            transform: rotate(-55deg);
+          }
+
+          .char-15 {
+            transform: rotate(-65deg);
+          }
+
+          .char-16 {
+            transform: rotate(-75deg);
+          }
         }
 
         &.four {
-          bottom: 340px;
+          bottom: 280px;
           right: 280px;
+
+          .char-1 {
+            transform: rotate(-290deg);
+          }
+
+          .char-2 {
+            transform: rotate(-300deg);
+          }
+
+          .char-3 {
+            margin-bottom: 4px;
+            transform: rotate(-312deg);
+          }
+
+          .char-4 {
+            transform: rotate(-315deg);
+          }
+
+          .char-5 {
+            transform: rotate(-325deg);
+          }
+
+          .char-6 {
+            transform: rotate(-335deg);
+          }
+
+          .char-7 {
+            transform: rotate(-345deg);
+          }
+
+          .char-8 {
+            transform: rotate(-355deg);
+          }
+
+          .char-9 {
+            transform: rotate(-25deg);
+          }
+
+          .char-10 {
+            transform: rotate(-35deg);
+          }
+
+          .char-11 {
+            transform: rotate(-45deg);
+          }
+
+          .char-12 {
+            transform: rotate(-55deg);
+          }
+
+          .char-13 {
+            transform: rotate(-65deg);
+          }
+
+          .char-14 {
+            transform: rotate(-75deg);
+          }
         }
 
         &.five {
-          bottom: 510px;
-          left: 170px;
+          bottom: 420px;
+          left: 200px;
+
+          .char-1 {
+            transform: rotate(-310deg);
+          }
+
+          .char-2 {
+            transform: rotate(-320deg);
+          }
+
+          .char-3 {
+            transform: rotate(-330deg);
+          }
+
+          .char-4 {
+            transform: rotate(-340deg);
+          }
+
+          .char-5 {
+            transform: rotate(-360deg);
+          }
+
+          .char-6 {
+            transform: rotate(-10deg);
+          }
+
+          .char-7 {
+            transform: rotate(-20deg);
+          }
+
+          .char-8 {
+            transform: rotate(-30deg);
+          }
+
+          .char-9 {
+            transform: rotate(-40deg);
+          }
+
+          .char-10 {
+            transform: rotate(-50deg);
+          }
+
+          .char-11 {
+            transform: rotate(-60deg);
+          }
         }
 
         &.six {
-          bottom: 510px;
+          bottom: 420px;
+          right: 200px;
+
+          .char-1 {
+            transform: rotate(-290deg);
+          }
+
+          .char-2 {
+            transform: rotate(-300deg);
+          }
+
+          .char-3 {
+            transform: rotate(-310deg);
+          }
+
+          .char-4 {
+            transform: rotate(-320deg);
+          }
+
+          .char-5 {
+            transform: rotate(-330deg);
+          }
+
+          .char-6 {
+            transform: rotate(-5deg);
+          }
+
+          .char-7 {
+            transform: rotate(-15deg);
+          }
+
+          .char-8 {
+            transform: rotate(-25deg);
+          }
+
+          .char-9 {
+            transform: rotate(-35deg);
+          }
+
+          .char-10 {
+            transform: rotate(-45deg);
+          }
+
+          .char-11 {
+            transform: rotate(-55deg);
+          }
+
+          .char-12 {
+            transform: rotate(-65deg);
+          }
+
+          .char-13 {
+            transform: rotate(-75deg);
+          }
+        }
+
+        &.seven {
+          bottom: 580px;
+          left: 170px;
+
+          .char-1 {
+            transform: rotate(-290deg);
+          }
+
+          .char-2 {
+            transform: rotate(-300deg);
+          }
+
+          .char-3 {
+            transform: rotate(-310deg);
+          }
+
+          .char-4 {
+            transform: rotate(-320deg);
+          }
+
+          .char-5 {
+            transform: rotate(-330deg);
+          }
+
+          .char-6 {
+            transform: rotate(-5deg);
+          }
+
+          .char-7 {
+            transform: rotate(-15deg);
+          }
+
+          .char-8 {
+            transform: rotate(-25deg);
+          }
+
+          .char-9 {
+            transform: rotate(-35deg);
+          }
+
+          .char-10 {
+            transform: rotate(-45deg);
+          }
+
+          .char-11 {
+            transform: rotate(-55deg);
+          }
+
+          .char-12 {
+            transform: rotate(-65deg);
+          }
+
+          .char-13 {
+            transform: rotate(-75deg);
+          }
+        }
+
+        &.eight {
+          bottom: 580px;
           right: 170px;
+
+          .char-1 {
+            transform: rotate(-290deg);
+          }
+
+          .char-2 {
+            transform: rotate(-300deg);
+          }
+
+          .char-3 {
+            transform: rotate(-310deg);
+          }
+
+          .char-4 {
+            transform: rotate(-320deg);
+          }
+
+          .char-5 {
+            transform: rotate(-330deg);
+          }
+
+          .char-6 {
+            transform: rotate(-345deg);
+          }
+
+          .char-7 {
+            transform: rotate(-355deg);
+          }
+
+          .char-8 {
+            transform: rotate(-7deg);
+          }
+
+          .char-9 {
+            transform: rotate(-15deg);
+          }
+
+          .char-10 {
+            transform: rotate(-25deg);
+          }
+
+          .char-11 {
+            transform: rotate(-35deg);
+          }
+
+          .char-12 {
+            transform: rotate(-45deg);
+          }
+
+          .char-13 {
+            transform: rotate(-55deg);
+          }
+
+          .char-14 {
+            transform: rotate(-65deg);
+          }
+
+          .char-15 {
+            transform: rotate(-75deg);
+          }
         }
       }
     }
