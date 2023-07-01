@@ -12,8 +12,6 @@ import { useSelector } from "react-redux";
 import Header from "../../components/Dashboard/Header/Header";
 import Sidebar from "../../components/Dashboard/Sidebar/Sidebar";
 import Main from "../../components/Dashboard/Main/Main";
-import Levels from "../../components/Dashboard/Levels/Levels";
-import Level from "../../components/Dashboard/Levels/Level/Level";
 import Contacts from "../../components/Dashboard/Contacts/Contacts";
 import Presentation from "../../components/Dashboard/Presentation/Presentation";
 import Preloader from "../../components/Common/Preloader/Preloader";
@@ -25,6 +23,7 @@ import TravelClubItem from "../../components/Dashboard/TravelClub/TravelClubItem
 import "./Dashboard.scss";
 import LearningTools from "../../components/Dashboard/LearningTools/LearningTools";
 import LearningToolsItem from "../../components/Dashboard/LearningTools/LearningToolsItem/LearningToolsItem";
+import Program from "../../components/Dashboard/Program/Program";
 
 const Dashboard = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -65,8 +64,7 @@ const Dashboard = () => {
             path="/dashboard/investment-tools/:id"
             element={<InvestmentToolsItem />}
           />
-          <Route path="/dashboard/user/levels" element={<Levels />} />
-          <Route path="/dashboard/user/levels/:id" element={<Level />} />
+          <Route path="/dashboard/program" element={<Program />} />
           <Route path="/dashboard/presentation" element={<Presentation />} />
           <Route path="/dashboard/contacts" element={<Contacts />} />
         </Routes>
