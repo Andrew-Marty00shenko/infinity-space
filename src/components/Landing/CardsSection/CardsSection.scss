@@ -83,6 +83,7 @@
     justify-content: center;
 
     .card-pack {
+      overflow: hidden;
       position: relative;
       z-index: 150;
       width: 389px;
@@ -94,28 +95,33 @@
       &.one {
         background: linear-gradient(
           180deg,
-          rgba(255, 32, 32, 0.1) 51%,
-          #000000 102.94%
+          rgba(237, 237, 237, 0.4) 0%,
+          #000 100%
         );
-        box-shadow: inset 0px 4px 14px rgba(249, 35, 89, 0.24);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
       }
 
       &.two {
         background: linear-gradient(
           180deg,
-          rgba(32, 121, 255, 0.1) 51%,
-          #000000 102.94%
+          rgba(251, 38, 255, 0.4) 0%,
+          #000 100%
         );
-        box-shadow: inset 0px 4px 14px rgba(35, 146, 249, 0.24);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
       }
 
       &.three {
         background: linear-gradient(
           180deg,
-          rgba(143, 32, 255, 0.1) 51%,
-          #000000 102.94%
+          rgba(40, 0, 255, 0.4) 0%,
+          #000 100%
         );
-        box-shadow: inset 0px 4px 14px rgba(52, 35, 249, 0.24);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+      }
+
+      img {
+        position: relative;
+        z-index: 1000;
       }
 
       &__top {
@@ -123,17 +129,15 @@
         justify-content: center;
 
         .card-1 {
-          margin-top: 63px;
+          height: 215px;
         }
 
         .card-2 {
-          margin-top: 41px;
-          height: 269px;
+          height: 215px;
         }
 
         .card-3 {
-          margin-top: 60px;
-          height: 249px;
+          height: 215px;
         }
 
         .circle-big {
@@ -141,28 +145,31 @@
           position: absolute;
           width: 308px;
           height: 308px;
+          top: -75px;
 
           &.one {
             background: linear-gradient(
               360deg,
-              rgba(255, 0, 15, 0.23) 0%,
-              rgba(255, 116, 37, 0) 64.45%
+              rgba(91, 101, 114, 0.4) 0%,
+              rgba(144, 154, 168, 0) 100%
             );
           }
 
           &.two {
+            border-radius: 256px;
             background: linear-gradient(
               360deg,
-              rgba(0, 102, 255, 0.23) 0%,
-              rgba(37, 150, 255, 0) 64.45%
+              rgba(251, 38, 255, 0.4) 0%,
+              rgba(251, 38, 255, 0) 100%
             );
           }
 
           &.three {
+            border-radius: 256px;
             background: linear-gradient(
               360deg,
-              rgba(105, 35, 255, 0.23) 0%,
-              rgba(120, 37, 255, 0) 64.45%
+              rgba(40, 0, 255, 0.4) 0%,
+              rgba(40, 0, 255, 0) 100%
             );
           }
         }
@@ -171,30 +178,35 @@
           top: 34px;
           border-radius: 50%;
           position: absolute;
+          z-index: 0;
           width: 259px;
           height: 259px;
+          top: -55px;
 
           &.one {
+            border-radius: 224px;
             background: linear-gradient(
               360deg,
-              rgba(255, 0, 15, 0.23) 0%,
-              rgba(255, 116, 37, 0) 64.45%
+              rgba(91, 101, 114, 0.5) 0%,
+              rgba(144, 154, 168, 0) 100%
             );
           }
 
           &.two {
+            border-radius: 224px;
             background: linear-gradient(
               360deg,
-              rgba(0, 102, 255, 0.23) 0%,
-              rgba(37, 150, 255, 0) 64.45%
+              rgba(251, 38, 255, 0.5) 0%,
+              rgba(251, 38, 255, 0) 100%
             );
           }
 
           &.three {
+            border-radius: 222px;
             background: linear-gradient(
               360deg,
-              rgba(105, 35, 255, 0.23) 0%,
-              rgba(120, 37, 255, 0) 64.45%
+              rgba(40, 0, 255, 0.5) 0%,
+              rgba(40, 0, 255, 0) 100%
             );
           }
         }

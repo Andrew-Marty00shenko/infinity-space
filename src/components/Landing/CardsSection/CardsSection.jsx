@@ -42,8 +42,12 @@ const CardsSection = () => {
                 <img className="card-1" src={Card1} alt="" />
               </div>
               <div className="card-pack__content">
-                <h4>Gold card</h4>
-                <p>We will release it soon</p>
+                <h4>Invest Tools</h4>
+                <p>
+                  Modernity and convenience at the service of your space
+                  investments. Invest Tools offers innovative solutions for
+                  effective space asset management.
+                </p>
               </div>
 
               <div className="card-pack__button">
@@ -59,8 +63,12 @@ const CardsSection = () => {
                 <img className="card-2" src={Card2} alt="" />
               </div>
               <div className="card-pack__content">
-                <h4>Gold card</h4>
-                <p>We will release it soon</p>
+                <h4>Space Travel Club</h4>
+                <p>
+                  Modernity and convenience at the service of your space
+                  investments. Invest Tools offers innovative solutions for
+                  effective space asset management.
+                </p>
               </div>
 
               <div className="card-pack__button">
@@ -76,8 +84,12 @@ const CardsSection = () => {
                 <img className="card-3" src={Card3} alt="" />
               </div>
               <div className="card-pack__content">
-                <h4>Gold card</h4>
-                <p>We will release it soon</p>
+                <h4>Learning Tools</h4>
+                <p>
+                  Mastering the space industry and finance has never been more
+                  accessible. Learning Tools provides all the resources you need
+                  to develop knowledge and make informed investment decisions.
+                </p>
               </div>
 
               <div className="card-pack__button">
